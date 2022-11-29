@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="none">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>Wiki</title>
+
+                <!-- Includes -->
+                
+<script src="/obs.html/static/obsidian_core.js"></script>
+<script src="/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/obs.html/static/master.css" />
+<script src="/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script>
+  MathJax = {
+    loader: {
+      load: [
+        '[tex]/action',
+        'output/chtml',
+        '[tex]/centernot'
+      ]
+    },
+    tex: {
+      inlineMath: [ ["\\(","\\)"] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['centernot']}
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="/obs.html/static/flexsearch.bundle.js"></script>
+<script src="/obs.html/static/pako.js"></script>
+<script src="/obs.html/static/search.js"></script>
+<script src="/obs.html/static/dirtree.js"></script>
+<link rel="stylesheet" href="/obs.html/static/taglist.css" />
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'none';
+                        const HTML_URL_PREFIX = '';
+                        const PAGE_DEPTH = {page_depth};
+                </script>
+        </head>
+
+<body class="theme-obs-light">
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle_id('search-master-div');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            toggle_id('search-master-div');
+            return false;
+        } 
+    }, true);
+
+    function click_list_link(element){
+        element.parentElement.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+        <div id="page_holder" class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index.html" id="homelink" title="Clear screen and go to homepage">Wiki</a>
+                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar requires_js">
+                                        
+                                        <div class="icon-tray">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                                        <div onclick="openSearch()" class="theme-button requires_js">
+                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+                function openSearch(){
+                        // toggle search popup and continue with extra code if it is enabled this time
+                        if (toggle_id('search-master-div')){
+                                // clear input and put focus on it so that we can start typing immediately
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=none" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                
+                                        </div>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">light</option>
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+    </select> 
+</div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane" class="left_pane active">
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+                                <div id="left_pane_content" class="left_pane_content">
+                                        
+                                </div>
+                        </div>
+                        <div class="container">
+                                <h1 id="notes">Notes</h1>
+<ul>
+<li><a href="/archive/ontology vs taxonomy.html">ontology vs taxonomy</a></li>
+<li><a href="/archive/cigarettes contain polonium and lead.html">cigarettes contain polonium and lead</a></li>
+<li><a href="/archive/post traumatic growth.html">post traumatic growth</a></li>
+<li><a href="/archive/Mandela Effect.html">Mandela Effect</a></li>
+<li><a href="/archive/dadaism.html">dadaism</a></li>
+<li><a href="/archive/king harald bluetooth.html">king harald bluetooth</a></li>
+<li><a href="/archive/lillustration.html">lillustration</a></li>
+<li><a href="/archive/bioassay.html">bioassay</a></li>
+<li><a href="/archive/aethyr.html">aethyr</a></li>
+<li><a href="/archive/enochian.html">enochian</a></li>
+<li><a href="/archive/red herring.html">red herring</a></li>
+<li><a href="/archive/debt equity swap.html">debt equity swap</a></li>
+<li><a href="/archive/great resignation.html">great resignation</a></li>
+<li><a href="/archive/pax romana.html">pax romana</a></li>
+<li><a href="/archive/ceefax.html">ceefax</a></li>
+<li><a href="/archive/edifice complex.html">edifice complex</a></li>
+<li><a href="/archive/copyleft.html">copyleft</a></li>
+<li><a href="/archive/stockholm syndrome.html">stockholm syndrome</a></li>
+<li><a href="/archive/International Phonetic Alphabet.html">International Phonetic Alphabet</a></li>
+<li><a href="/archive/evolutionary trap.html">evolutionary trap</a></li>
+<li><a href="/archive/trichomes.html">trichomes</a></li>
+<li><a href="/archive/aramaic.html">aramaic</a></li>
+<li><a href="/archive/hyperthymesia.html">hyperthymesia</a></li>
+<li><a href="/archive/chinese wall.html">chinese wall</a></li>
+<li><a href="/archive/suica.html">suica</a></li>
+<li><a href="/archive/negative frequency dependence.html">negative frequency dependence</a></li>
+<li><a href="/archive/all-or-none law.html">all-or-none law</a></li>
+<li><a href="/archive/iou.html">iou</a></li>
+<li><a href="/archive/hachiko.html">hachiko</a></li>
+<li><a href="/archive/shock humour.html">shock humour</a></li>
+<li><a href="/archive/turritopsis dohrnii.html">turritopsis dohrnii</a></li>
+<li><a href="/archive/triz.html">triz</a></li>
+<li><a href="/archive/the arecibo message.html">the arecibo message</a></li>
+<li><a href="/archive/filial piety.html">filial piety</a></li>
+<li><a href="/archive/Ferrocerium.html">Ferrocerium</a></li>
+<li><a href="/archive/nikāya.html">nikāya</a></li>
+<li><a href="/archive/sod s law.html">sod s law</a></li>
+<li><a href="/archive/repairing hubble.html">repairing hubble</a></li>
+<li><a href="/archive/poetry and poems.html">poetry and poems</a></li>
+<li><a href="/archive/tsundoku.html">tsundoku</a></li>
+<li><a href="/archive/novelty effect.html">novelty effect</a></li>
+<li><a href="/archive/swipe file.html">swipe file</a></li>
+<li><a href="/archive/zeno s paradox.html">zeno s paradox</a></li>
+<li><a href="/archive/ukiyo-e.html">ukiyo-e</a></li>
+<li><a href="/archive/rosetta s singing comet.html">rosetta s singing comet</a></li>
+<li><a href="/archive/ashwatthama.html">ashwatthama</a></li>
+<li><a href="/archive/fata morgana.html">fata morgana</a></li>
+<li><a href="/archive/fort knox.html">fort knox</a></li>
+<li><a href="/archive/govinda.html">govinda</a></li>
+<li><a href="/archive/zoroastrianism.html">zoroastrianism</a></li>
+<li><a href="/archive/zeigarnik effect.html">zeigarnik effect</a></li>
+<li><a href="/archive/project xanadu.html">project xanadu</a></li>
+<li><a href="/archive/green flashes.html">green flashes</a></li>
+<li><a href="/archive/metamodernism.html">metamodernism</a></li>
+<li><a href="/archive/Shiritori.html">Shiritori</a></li>
+<li><a href="/archive/patent foramen ovale pfo.html">patent foramen ovale pfo</a></li>
+<li><a href="/archive/philaster  play.html">philaster  play</a></li>
+<li><a href="/archive/emphysema.html">emphysema</a></li>
+<li><a href="/archive/scandinavian mile.html">scandinavian mile</a></li>
+<li><a href="/archive/death drive.html">death drive</a></li>
+<li><a href="/archive/lapsang souchong.html">lapsang souchong</a></li>
+<li><a href="/archive/chupa chups.html">chupa chups</a></li>
+<li><a href="/archive/Reiki.html">Reiki</a></li>
+<li><a href="/archive/gale–shapley algorithm.html">gale–shapley algorithm</a></li>
+<li><a href="/archive/haute couture.html">haute couture</a></li>
+<li><a href="/archive/tds.html">tds</a></li>
+<li><a href="/archive/nephilim.html">nephilim</a></li>
+<li><a href="/archive/human papillomavirus.html">human papillomavirus</a></li>
+<li><a href="/archive/Streisand effect.html">Streisand effect</a></li>
+<li><a href="/archive/demerara.html">demerara</a></li>
+<li><a href="/archive/maladaptive daydreaming.html">maladaptive daydreaming</a></li>
+<li><a href="/archive/nikah mut ah.html">nikah mut ah</a></li>
+<li><a href="/archive/orthorexia.html">orthorexia</a></li>
+<li><a href="/archive/oblique strategies.html">oblique strategies</a></li>
+<li><a href="/archive/hear vs listen.html">hear vs listen</a></li>
+<li><a href="/archive/Havana syndrome.html">Havana syndrome</a></li>
+<li><a href="/archive/phthalate syndrome.html">phthalate syndrome</a></li>
+<li><a href="/archive/ojibwe writing systems.html">ojibwe writing systems</a></li>
+<li><a href="/archive/Bikram Yoga.html">Bikram Yoga</a></li>
+<li><a href="/archive/Berne Convention.html">Berne Convention</a></li>
+<li><a href="/archive/The word rice is derived from the Tamil word Arisi.html">The word rice is derived from the Tamil word Arisi</a></li>
+<li><a href="/archive/why are native americans also called indians.html">why are native americans also called indians</a></li>
+<li><a href="/archive/ouroboros.html">ouroboros</a></li>
+<li><a href="/archive/cortisone.html">cortisone</a></li>
+<li><a href="/archive/keloid.html">keloid</a></li>
+<li><a href="/archive/psychoanalysis.html">psychoanalysis</a></li>
+<li><a href="/archive/oliver daemen.html">oliver daemen</a></li>
+<li><a href="/archive/solarpunk.html">solarpunk</a></li>
+<li><a href="/archive/frankfurter würstchen.html">frankfurter würstchen</a></li>
+<li><a href="/archive/civil suit.html">civil suit</a></li>
+<li><a href="/archive/dust jacket.html">dust jacket</a></li>
+<li><a href="/archive/the john doe order.html">the john doe order</a></li>
+<li><a href="/archive/pantone 448 c.html">pantone 448 c</a></li>
+<li><a href="/archive/division slash vs fraction slash.html">division slash vs fraction slash</a></li>
+<li><a href="/archive/ifalik.html">ifalik</a></li>
+<li><a href="/archive/blondi.html">blondi</a></li>
+<li><a href="/archive/Terminal lucidity.html">Terminal lucidity</a></li>
+<li><a href="/archive/pfeilstorch.html">pfeilstorch</a></li>
+<li><a href="/archive/winter solstice.html">winter solstice</a></li>
+<li><a href="/archive/ctags.html">ctags</a></li>
+<li><a href="/archive/rooibos.html">rooibos</a></li>
+<li><a href="/archive/semmelweis reflex.html">semmelweis reflex</a></li>
+<li><a href="/archive/anemometer.html">anemometer</a></li>
+<li><a href="/archive/pativrata.html">pativrata</a></li>
+<li><a href="/archive/ptomaine poisoning.html">ptomaine poisoning</a></li>
+<li><a href="/archive/daphnia.html">daphnia</a></li>
+<li><a href="/archive/murphy s law.html">murphy s law</a></li>
+<li><a href="/archive/richard wagner was franz liszt s son in law.html">richard wagner was franz liszt s son in law</a></li>
+<li><a href="/archive/avesta.html">avesta</a></li>
+<li><a href="/archive/Law of triviality.html">Law of triviality</a></li>
+<li><a href="/archive/yours &amp;c.html">yours &amp;c</a></li>
+<li><a href="/archive/falklands war.html">falklands war</a></li>
+<li><a href="/archive/causal loop.html">causal loop</a></li>
+<li><a href="/archive/reversible inhibition of sperm under guidance.html">reversible inhibition of sperm under guidance</a></li>
+<li><a href="/archive/apadana.html">apadana</a></li>
+<li><a href="/archive/cai lun.html">cai lun</a></li>
+<li><a href="/archive/Cunningham s law.html">Cunningham s law</a></li>
+<li><a href="/archive/impact play.html">impact play</a></li>
+<li><a href="/archive/randwa.html">randwa</a></li>
+<li><a href="/archive/Castle doctrine.html">Castle doctrine</a></li>
+<li><a href="/archive/choux crème.html">choux crème</a></li>
+<li><a href="/archive/rekhta.html">rekhta</a></li>
+<li><a href="/archive/dust bunny.html">dust bunny</a></li>
+<li><a href="/archive/mercury retrograde.html">mercury retrograde</a></li>
+<li><a href="/archive/iran  word.html">iran  word</a></li>
+<li><a href="/archive/Hemi-Sync.html">Hemi-Sync</a></li>
+<li><a href="/archive/conium maculatum was used to kill socrates.html">conium maculatum was used to kill socrates</a></li>
+<li><a href="/archive/Anuloma pranayama.html">Anuloma pranayama</a></li>
+<li><a href="/archive/maya  religion.html">maya  religion</a></li>
+<li><a href="/archive/paradox of tolerance.html">paradox of tolerance</a></li>
+<li><a href="/archive/ideophone.html">ideophone</a></li>
+<li><a href="/archive/meconium.html">meconium</a></li>
+<li><a href="/archive/gurmukhi.html">gurmukhi</a></li>
+<li><a href="/archive/kakawin ramayana.html">kakawin ramayana</a></li>
+<li><a href="/archive/i was born at 368 ppm.html">i was born at 368 ppm</a></li>
+<li><a href="/archive/parkinson s law.html">parkinson s law</a></li>
+<li><a href="/archive/catatonia.html">catatonia</a></li>
+<li><a href="/archive/arameans.html">arameans</a></li>
+<li><a href="/archive/idiom vs phrase vs expression.html">idiom vs phrase vs expression</a></li>
+<li><a href="/archive/iatrogenic illness.html">iatrogenic illness</a></li>
+<li><a href="/archive/sasanian empire.html">sasanian empire</a></li>
+<li><a href="/archive/the dunning-kruger effect.html">the dunning-kruger effect</a></li>
+<li><a href="/archive/ELIZA effect.html">ELIZA effect</a></li>
+<li><a href="/archive/amatonormativity.html">amatonormativity</a></li>
+<li><a href="/archive/Rhinoplasty.html">Rhinoplasty</a></li>
+<li><a href="/archive/novec 7100.html">novec 7100</a></li>
+<li><a href="/archive/iambic pentameter.html">iambic pentameter</a></li>
+<li><a href="/archive/Malthusianism.html">Malthusianism</a></li>
+<li><a href="/archive/ian knot.html">ian knot</a></li>
+<li><a href="/archive/Alexander Technique.html">Alexander Technique</a></li>
+<li><a href="/archive/nota bene.html">nota bene</a></li>
+<li><a href="/archive/tetrahydrocannabinol.html">tetrahydrocannabinol</a></li>
+<li><a href="/archive/Void Meditation.html">Void Meditation</a></li>
+<li><a href="/archive/inbox.webmark.metatheory - wikipedia.html">inbox.webmark.metatheory - wikipedia</a></li>
+<li><a href="/archive/atm inventor.html">atm inventor</a></li>
+<li><a href="/archive/metcalfes s law.html">metcalfes s law</a></li>
+<li><a href="/archive/sidereal.html">sidereal</a></li>
+<li><a href="/archive/stream of consciousness.html">stream of consciousness</a></li>
+<li><a href="/archive/hypnagogia.html">hypnagogia</a></li>
+<li><a href="/archive/Hypogonadism.html">Hypogonadism</a></li>
+<li><a href="/archive/Somatic therapy.html">Somatic therapy</a></li>
+<li><a href="/archive/hanlon s razor.html">hanlon s razor</a></li>
+<li><a href="/archive/tweet from tim urban  2022-03-08 20-28-51.html">tweet from tim urban  2022-03-08 20-28-51</a></li>
+<li><a href="/archive/serenity prayer.html">serenity prayer</a></li>
+<li><a href="/archive/water spider.html">water spider</a></li>
+<li><a href="/archive/Hanged  drawn and quartered.html">Hanged  drawn and quartered</a></li>
+<li><a href="/archive/shahnameh.html">shahnameh</a></li>
+<li><a href="/archive/conway s game of life.html">conway s game of life</a></li>
+<li><a href="/archive/maslow s hierarchy.html">maslow s hierarchy</a></li>
+<li><a href="/archive/Rabbit test.html">Rabbit test</a></li>
+<li><a href="/archive/lateral thinking.html">lateral thinking</a></li>
+<li><a href="/archive/affect vs effect.html">affect vs effect</a></li>
+<li><a href="/archive/why do goats poop pellets.html">why do goats poop pellets</a></li>
+<li><a href="/archive/orthostatic intolerance.html">orthostatic intolerance</a></li>
+<li><a href="/archive/lollywood.html">lollywood</a></li>
+<li><a href="/archive/real freedom.html">real freedom</a></li>
+<li><a href="/archive/aṅguttara nikāya.html">aṅguttara nikāya</a></li>
+<li><a href="/archive/the estrous cycle.html">the estrous cycle</a></li>
+<li><a href="/archive/hedonic adaptation.html">hedonic adaptation</a></li>
+<li><a href="/archive/vendor lock-in.html">vendor lock-in</a></li>
+<li><a href="/resources/articles/inbox.say no to smokes – you could do it!.html">inbox.say no to smokes – you could do it!</a></li>
+<li><a href="/resources/people/narinder singh kapany.html">narinder singh kapany</a></li>
+<li><a href="/resources/people/jeff atwood.html">jeff atwood</a></li>
+<li><a href="/resources/people/sir charles kuen kao.html">sir charles kuen kao</a></li>
+<li><a href="/resources/people/kanō jigorō.html">kanō jigorō</a></li>
+<li><a href="/swipes/life didn t give us lemons we gave lemons life.html">life didn t give us lemons we gave lemons life</a></li>
+<li><a href="/devlog/gray code.html">gray code</a></li>
+<li><a href="/devlog/anti-pattern.html">anti-pattern</a></li>
+<li><a href="/devlog/plato  computer system.html">plato  computer system</a></li>
+<li><a href="/devlog/gnu global.html">gnu global</a></li>
+<li><a href="/devlog/jack cannot support bluetooth headphones.html">jack cannot support bluetooth headphones</a></li>
+<li><a href="/devlog/halfwidth and fullwidth forms.html">halfwidth and fullwidth forms</a></li>
+<li><a href="/devlog/capability maturity model integration.html">capability maturity model integration</a></li>
+<li><a href="/devlog/android os was originally meant to.html">android os was originally meant to</a></li>
+</ul>
+<blockquote>
+<p><a href="/obs.html/tags/index.html">View all tags</a></p>
+</blockquote>
+                                <!-- end content -->
+                        </div>
+                        <div class="container_filler">
+                        </div>
+                        <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <script>
+                function handle_toggle_side_bar(e){
+                        let header;
+                        let pane; 
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav'){
+                                target = document.getElementById('left_pane_fold_header')
+                        }
+                        else if (target.id == 'right_pane_toggle_nav'){
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        }
+                        else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+                function handle_toggle_side_bar_button(e){
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active){
+                                disable_side_bar(pane, header, save);
+                        }
+                        else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+                function enable_side_bar(pane, header, save){
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, true) }
+                }
+                function disable_side_bar(pane, header, save){
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, false) }
+                }
+                function set_correct_header_symbol(header){
+                        let pane = header.parentElement;
+                        let symbol = [['>', '<'],['<', '>']]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane.classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+                function panel_folding_get_panel_name(header){
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+                function save_panel_folding_state(header, active){
+                        localStorage.setItem('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                }
+                function load_panel_folding_state(panel_name){
+                        val = localStorage.getItem('pane_folding_state_'+panel_name)
+                        if (!val){ return {'exists': false, 'value': null}}
+                        return {'exists': true, 'value': Boolean(Number(val))}
+                }
+                function set_pane_folding_start(left_header, right_header){
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000){
+                                left_pane_enabled = false
+                        }
+                        if (w < 800){
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']){
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']){
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled){
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById('left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled){
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById('right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header){
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+                
+                
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+        </script>
+
+        <script src="/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+        
+
+
+
+
+</body>
+</html>

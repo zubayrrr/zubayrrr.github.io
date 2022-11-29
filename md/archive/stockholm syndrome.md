@@ -1,0 +1,18 @@
+---
+created: '2022-03-09T00:00:00.000Z'
+desc: ''
+id: 8m8w3skrqddnqn0rdv3w9yi
+tags:
+- TIL
+title: Stockholm syndrome
+updated: 1652817197691
+---
+   
+Topics::  [psychology](../topics/psychology.md)   
+   
+   
+---   
+   
+**Stockholm syndrome** is a condition in which hostages develop a psychological bond with their captors during captivity. Stockholm Syndrome results from a rather specific set of circumstances, namely the power imbalances contained in hostage-taking, kidnapping, and abusive relationships. Therefore, it is difficult to find a large number of people who experience Stockholm Syndrome to conduct studies with any sort of power. This makes it hard to determine trends in the development and effects of the condition.Emotional bonds may be formed between captors and captives, during intimate time together, but these are generally considered irrational in light of the danger or risk endured by the victims. Stockholm syndrome has never been included in the Diagnostic and Statistical Manual of Mental Disorders or DSM, the standard tool for diagnosis of psychiatric illnesses and disorders in the US, mainly due to the lack of a consistent body of academic research. The syndrome is rare: according to data from the FBI, about 5% of hostage victims show evidence of Stockholm syndrome.This term was first used by the media in 1973 when four hostages were taken during a bank robbery in Stockholm, Sweden. The hostages defended their captors after being released and would not agree to testify in court against them. It was noted that in this case, however, the police were perceived to have acted with little care for the hostages' safety, providing an alternative reason for their unwillingness to testify. Stockholm syndrome is paradoxical because the sympathetic sentiments that captives feel towards their captors are the opposite of the fear and disdain which an onlooker might feel towards the captors.There are four key components that characterize Stockholm syndrome: A hostage's development of positive feelings towards the captorNo previous relationship between hostage and captorA refusal by hostages to cooperate with police and other government authoritiesA hostage's belief in the humanity of the captor, ceasing to perceive them as a threat, when the victim holds the same values as the aggressor.Stockholm syndrome is a "contested illness" due to doubt about the legitimacy of the condition. It has also come to describe the reactions of some abuse victims beyond the context of kidnappings or hostage-taking. Actions and attitudes similar to those suffering from Stockholm syndrome have also been found in victims of sexual abuse, human trafficking, extremism, terrorism, economic oppression, financial repression, political repression and religious persecution. This is because Stockholm syndrome can be argued as "another method of coping with the stress and danger...similar to some forms of coping in that the participants do not directly address the problem but find a way to cope with the situation by identifying with the aggressor. Coping mechanisms such as these can have a large impact on PTSD."Helsinki syndrome is a term sometimes used incorrectly instead of Stockholm syndrome. The confusion is often deliberate and used for ironic effect. It originates in the substitution of one Nordic capital (Stockholm, Sweden) for another (Helsinki, Finland). It entered popular culture when used in the Bruce Willis film Die Hard, by a doctor appearing on a television show and describing the phenomenon. The bumbling host says this refers to "Helsinki, Sweden", and the doctor corrects him, saying "Finland".   
+   
+> - via [Wikipedia](https://en.wikipedia.org/wiki/Stockholm%20syndrome)

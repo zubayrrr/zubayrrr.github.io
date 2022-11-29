@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+        <head>
+                <!-- Page information -->
+                <meta charset="UTF-8" />
+                <meta name="node_id" content="none">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                <link rel="shortcut icon" href="/favicon.ico" />
+
+                <!-- Set title -->
+                <title>Wiki</title>
+
+                <!-- Includes -->
+                
+<script src="/obs.html/static/obsidian_core.js"></script>
+<script src="/obs.html/static/encoding.js"></script>
+<link rel="stylesheet" href="/obs.html/static/master.css" />
+<script src="/obs.html/static/mermaid.9.0.1.min.js"></script>
+<script>
+  MathJax = {
+    loader: {
+      load: [
+        '[tex]/action',
+        'output/chtml',
+        '[tex]/centernot'
+      ]
+    },
+    tex: {
+      inlineMath: [ ["\\(","\\)"] ],
+      displayMath: [ ["\\[","\\]"] ],
+      processEscapes: true,
+      processEnvironments: true,
+      packages: {'[+]': ['centernot']}
+    }
+  };
+</script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<script src="/obs.html/static/flexsearch.bundle.js"></script>
+<script src="/obs.html/static/pako.js"></script>
+<script src="/obs.html/static/search.js"></script>
+<script src="/obs.html/static/dirtree.js"></script>
+<link rel="stylesheet" href="/obs.html/static/taglist.css" />
+
+                <!-- Onload tweaks -->
+                <script>
+                        const CURRENT_NODE = 'none';
+                        const HTML_URL_PREFIX = '';
+                        const PAGE_DEPTH = {page_depth};
+                </script>
+        </head>
+
+<body class="theme-obs-light">
+        <div id="antiflash" style="display: none;"></div>
+        <script>
+                document.getElementById('antiflash').style.display = 'block';
+        </script>
+        <div id="search-master-div">
+    <div id="search-slab" king_ramses="return the slaaab">
+            <div id="search-controls">
+                    <input id="search_string" placeholder="Type to search notes" type="text" />
+                    <div class="tooltip" style="display: none;">
+                        <input type="checkbox" id="hard_search" name="hard" />
+                        <span class="tooltiptext">Hard search (require exact match)</span>
+                    </div>
+                    <div id="search-results-box">
+                        <div id="search-results"></div>
+                    </div>
+                    <div id="search-instructions">
+                        <div class="prompt-instruction">
+                                <b>esc</b> to dismiss
+                        </div>
+                    </div>
+            </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById("search-master-div").addEventListener('click', e => {
+            if(e.target !== e.currentTarget){
+                    return
+            }
+            toggle_id('search-master-div');
+    })
+    document.getElementById("search_string").addEventListener("input", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    }); 
+    document.getElementById("hard_search").addEventListener("click", function(event) {
+            setTimeout( () =>run_search('search_string', 'hard_search'), 100 );
+    });
+
+    window.addEventListener('keydown', e => {
+        if((e.key=='Escape'||e.key=='Esc'||e.keyCode==27)){
+            toggle_id('search-master-div');
+            return false;
+        } 
+    }, true);
+
+    function click_list_link(element){
+        element.parentElement.getElementsByTagName('a')[0].click()
+    }
+</script>
+
+        <div id="page_holder" class="flex_col">
+                <div id="header" class="header">
+                        <div id="header_flex" class="flex_row">
+                                <a href="/index.html" id="homelink" title="Clear screen and go to homepage">Wiki</a>
+                                <div id="menu_toggle_button" class="navbar-button requires_js" onclick="toggle_menu()">
+                                        ≡
+                                </div>
+                                <div id="navbar" class="navbar requires_js">
+                                        
+                                        <div class="icon-tray">
+                                                <div id="theme-button" class="theme-button requires_js" title="Change theme" onclick="toggle_theme_popup(this)">
+    T
+</div>
+<script>
+    function toggle_theme_popup(el){
+        // make theme button show that it's active by adding the .active class
+        toggle(el);
+
+        // show the theme selector
+        toggle_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            toggle(pu);
+        }
+    }
+
+    function disable_theme_popup(){
+        disable_id('theme-button');
+
+        // show the theme selector
+        disable_id('theme-popup')
+
+        let h2 = document.getElementById('header2')
+        if (h2){
+            let pu = document.getElementById('header2').getElementsByClassName('popup')[0];
+            disable(pu);
+        }
+    }
+</script>
+                                                        <div onclick="openSearch()" class="theme-button requires_js">
+                <img src = "/obs.html/static/search.svg" alt="Search notes" title="Search notes" style="margin: 4px;"/>
+        </div>
+        <script>
+                function openSearch(){
+                        // toggle search popup and continue with extra code if it is enabled this time
+                        if (toggle_id('search-master-div')){
+                                // clear input and put focus on it so that we can start typing immediately
+                                let ss = document.getElementById('search_string');
+                                ss.value = '';
+                                ss.focus()
+                                ss.select()
+                        }
+                }
+        </script>
+                                                        <div class="graph_header_div requires_js">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=none" title="Open fullpage Graph">
+                    <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
+            </a>
+        </div>
+                                                        <div >
+            <a id="dirtree_link" class="system-link" href="/obs.html/dir_index.html" title="View directory tree">
+                    <img src = "/obs.html/static/dirtree.svg" style="width: 12px; padding: 4px;" alt="Directory tree link"/>
+            </a>
+        </div>
+                                                <div>
+    <a href="/obs.html/tags/index.html" title="Open tag view">
+            <img src = "/obs.html/static/hashtag.svg" alt="RSS Feed link" style="width: 24px; margin-left: -2px; margin-top: -2px;"/>
+    </a>
+</div>
+                                                
+                                        </div>
+                                        <div style="display: flex; flex-direction:column">
+                                                <div id="left_pane_toggle_nav" class="left_pane_toggle_nav">Toggle Directory Tree Pane</div>
+                                                <div id="right_pane_toggle_nav" class="right_pane_toggle_nav">Toggle Table of Contents Pane</div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="popup" id="theme-popup">
+    <label for="cars">Theme </label>
+
+    <select name="theme" id="theme" onchange="set_theme(this.value)">
+      <option value="light">light</option>
+      <option value="obs-light" selected="selected">obsidian-light</option>
+      <option value="obs-dark">obsidian-dark</option>
+    </select> 
+</div>
+                </div>
+                <div class="flex_row">
+                        <div id="left_pane" class="left_pane active">
+                                <div id="left_pane_fold_header" class="left_pane_fold_header fold_header">x</div>
+                                <div id="left_pane_content" class="left_pane_content">
+                                        
+                                </div>
+                        </div>
+                        <div class="container">
+                                <h1 id="notes">Notes</h1>
+<ul>
+<li><a href="/index.html">index</a></li>
+<li><a href="/swipes/quotes/the only art i’ll ever study is stuff that i can steal from.html">the only art i’ll ever study is stuff that i can steal from</a></li>
+<li><a href="/archive/conium maculatum was used to kill socrates.html">conium maculatum was used to kill socrates</a></li>
+<li><a href="/resources/podcasts/to live is to suffer  to survive is to find some meaning in the suffering.html">to live is to suffer  to survive is to find some meaning in the suffering</a></li>
+<li><a href="/resources/podcasts/we have to get away from the unculture of abundance.html">we have to get away from the unculture of abundance</a></li>
+<li><a href="/resources/podcasts/the illegality of cannabis is outrageous says carl sagan.html">the illegality of cannabis is outrageous says carl sagan</a></li>
+<li><a href="/resources/podcasts/be curious read widely try new things.html">be curious read widely try new things</a></li>
+<li><a href="/resources/podcasts/i want to learn more and more to see as beautiful.html">i want to learn more and more to see as beautiful</a></li>
+<li><a href="/resources/podcasts/all writing is useless that does not contain a stimulus to activity.html">all writing is useless that does not contain a stimulus to activity</a></li>
+<li><a href="/resources/podcasts/i cannot believe in a god who wants to be praised all the time.html">i cannot believe in a god who wants to be praised all the time</a></li>
+<li><a href="/resources/podcasts/the most important decision you make is to be in a good mood.html">the most important decision you make is to be in a good mood</a></li>
+<li><a href="/resources/podcasts/not explaining science seems to me perverse when you re in love  you want to tell the world.html">not explaining science seems to me perverse when you re in love  you want to tell the world</a></li>
+<li><a href="/resources/podcasts/academia is to knowledge what prostitution is to love.html">academia is to knowledge what prostitution is to love</a></li>
+<li><a href="/resources/podcasts/Do not take payment in politeness.html">Do not take payment in politeness</a></li>
+<li><a href="/resources/podcasts/tweet from navalism  2022-03-08 20-26-45.html">tweet from navalism  2022-03-08 20-26-45</a></li>
+<li><a href="/resources/podcasts/this curious world we inhabit is more wonderful than convenient.html">this curious world we inhabit is more wonderful than convenient</a></li>
+<li><a href="/resources/podcasts/he who cannot rule himself will certainty be ruled by others.html">he who cannot rule himself will certainty be ruled by others</a></li>
+<li><a href="/resources/podcasts/and those who were seen dancing were thought.html">and those who were seen dancing were thought</a></li>
+<li><a href="/resources/podcasts/if you are ever tempted to look for outside approval.html">if you are ever tempted to look for outside approval</a></li>
+<li><a href="/resources/podcasts/neurons that fire together  wire together.html">neurons that fire together  wire together</a></li>
+<li><a href="/resources/podcasts/the best is the enemy of the good.html">the best is the enemy of the good</a></li>
+<li><a href="/resources/podcasts/there is only one thing that i dread.html">there is only one thing that i dread</a></li>
+<li><a href="/resources/podcasts/he who has a why to live can bear almost any how.html">he who has a why to live can bear almost any how</a></li>
+<li><a href="/resources/podcasts/The man who does not do his own thinking is a slave.html">The man who does not do his own thinking is a slave</a></li>
+<li><a href="/resources/podcasts/it is not a lack of love  but a lack of friendship that makes unhappy marriages.html">it is not a lack of love  but a lack of friendship that makes unhappy marriages</a></li>
+<li><a href="/resources/podcasts/if it makes you puke  you must rebuke.html">if it makes you puke  you must rebuke</a></li>
+<li><a href="/resources/podcasts/science represents a protracted attempt to contribute to a.html">science represents a protracted attempt to contribute to a</a></li>
+<li><a href="/resources/podcasts/if you wish to strive for peace of soul and pleasure.html">if you wish to strive for peace of soul and pleasure</a></li>
+<li><a href="/resources/podcasts/resolve was never stronger than in the morning.html">resolve was never stronger than in the morning</a></li>
+<li><a href="/resources/podcasts/a deep, profound desire for well-being or happiness.html">a deep, profound desire for well-being or happiness</a></li>
+<li><a href="/resources/podcasts/a will to live without rejecting anything of life.html">a will to live without rejecting anything of life</a></li>
+<li><a href="/resources/podcasts/ennui  that incurable convalescence.html">ennui  that incurable convalescence</a></li>
+<li><a href="/resources/podcasts/buying books would be a good thing if one could also.html">buying books would be a good thing if one could also</a></li>
+<li><a href="/resources/podcasts/It is through science that we prove.html">It is through science that we prove</a></li>
+<li><a href="/resources/podcasts/vulnerability comes in pretending to be someone you are not.html">vulnerability comes in pretending to be someone you are not</a></li>
+<li><a href="/resources/podcasts/a man misses something by not establishing a participative and living.html">a man misses something by not establishing a participative and living</a></li>
+<li><a href="/resources/podcasts/some of the biggest challenges faced by computers.html">some of the biggest challenges faced by computers</a></li>
+<li><a href="/resources/podcasts/the vedanta recognizes no sin it only recognizes error.html">the vedanta recognizes no sin it only recognizes error</a></li>
+<li><a href="/resources/podcasts/everything becomes a little different as soon as it is spoken out loud.html">everything becomes a little different as soon as it is spoken out loud</a></li>
+<li><a href="/resources/podcasts/in the midst of winter  i found there was  within me  an invincible summer.html">in the midst of winter  i found there was  within me  an invincible summer</a></li>
+<li><a href="/resources/podcasts/one repays a teacher badly if one always remains nothing but a pupil.html">one repays a teacher badly if one always remains nothing but a pupil</a></li>
+<li><a href="/resources/podcasts/we are what we repeatedly do.html">we are what we repeatedly do</a></li>
+<li><a href="/resources/podcasts/of all people only those are at leisure who make time for philosophy.html">of all people only those are at leisure who make time for philosophy</a></li>
+<li><a href="/resources/podcasts/love and work work and love  that s all there is.html">love and work work and love  that s all there is</a></li>
+<li><a href="/resources/podcasts/experience is not what happens to you; it is what you do with what happens to you.html">experience is not what happens to you; it is what you do with what happens to you</a></li>
+<li><a href="/resources/podcasts/hvad er ungdom en drøm hvad er kærlighed drømmens indhold.html">hvad er ungdom en drøm hvad er kærlighed drømmens indhold</a></li>
+<li><a href="/resources/podcasts/the whole is greater than the sum of the parts.html">the whole is greater than the sum of the parts</a></li>
+<li><a href="/resources/podcasts/Absence diminishes minor passions.html">Absence diminishes minor passions</a></li>
+<li><a href="/resources/podcasts/once you label me you negate me.html">once you label me you negate me</a></li>
+<li><a href="/resources/podcasts/when the soul suffers too much  it develops a taste for misfortune.html">when the soul suffers too much  it develops a taste for misfortune</a></li>
+<li><a href="/resources/podcasts/cultivate poverty like a garden herb.html">cultivate poverty like a garden herb</a></li>
+<li><a href="/swipes/fortunes/Every man’s home is his castle.html">Every man’s home is his castle</a></li>
+<li><a href="/swipes/quotes/Perhaps love is the process of my leading you.html">Perhaps love is the process of my leading you</a></li>
+<li><a href="/swipes/quotes/when you don t create things  you become defined by your tastes.html">when you don t create things  you become defined by your tastes</a></li>
+<li><a href="/swipes/quotes/Experience is simply the name we give our mistakes.html">Experience is simply the name we give our mistakes</a></li>
+<li><a href="/swipes/quotes/if you look after truth and goodness  beauty looks after herself.html">if you look after truth and goodness  beauty looks after herself</a></li>
+<li><a href="/swipes/quotes/He that diggeth a pit shall fall into it.html">He that diggeth a pit shall fall into it</a></li>
+<li><a href="/swipes/quotes/kindness eases change love quiets fear.html">kindness eases change love quiets fear</a></li>
+<li><a href="/swipes/quotes/so i stayed in bed and drank.html">so i stayed in bed and drank</a></li>
+<li><a href="/swipes/quotes/It is when I struggle to be brief that I become obscure.html">It is when I struggle to be brief that I become obscure</a></li>
+<li><a href="/swipes/quotes/the satisfactions of manifesting oneself concretely.html">the satisfactions of manifesting oneself concretely</a></li>
+<li><a href="/swipes/quotes/the things you think about determine the quality.html">the things you think about determine the quality</a></li>
+<li><a href="/swipes/quotes/people who work get bored when they don t work.html">people who work get bored when they don t work</a></li>
+<li><a href="/swipes/quotes/He felt that his whole life was some kind of dream.html">He felt that his whole life was some kind of dream</a></li>
+<li><a href="/swipes/quotes/The increasing desolation of nature.html">The increasing desolation of nature</a></li>
+<li><a href="/swipes/quotes/plans are worthless  but planning is everything.html">plans are worthless  but planning is everything</a></li>
+<li><a href="/swipes/quotes/Art is how we decorate space  music is how we decorate time.html">Art is how we decorate space  music is how we decorate time</a></li>
+<li><a href="/swipes/quotes/If we only wanted to be happy  it would be easy.html">If we only wanted to be happy  it would be easy</a></li>
+<li><a href="/swipes/quotes/This is your life and it s ending one minute at a time.html">This is your life and it s ending one minute at a time</a></li>
+<li><a href="/swipes/quotes/the illiterate of the 21st century will not be those who cannot read.html">the illiterate of the 21st century will not be those who cannot read</a></li>
+<li><a href="/swipes/quotes/The cure for anything is salt water.html">The cure for anything is salt water</a></li>
+<li><a href="/swipes/quotes/I maintain that it is the suffering of being unable to love.html">I maintain that it is the suffering of being unable to love</a></li>
+<li><a href="/swipes/quotes/with a gentleman i try to be a gentleman and a half.html">with a gentleman i try to be a gentleman and a half</a></li>
+<li><a href="/swipes/quotes/i begin to speak only when.html">i begin to speak only when</a></li>
+<li><a href="/swipes/quotes/some of them want to use you  some of them want to be used by you.html">some of them want to use you  some of them want to be used by you</a></li>
+<li><a href="/swipes/quotes/to achieve great things  two things are needed.html">to achieve great things  two things are needed</a></li>
+<li><a href="/swipes/quotes/the imitator dooms himself to hopeless mediocrity.html">the imitator dooms himself to hopeless mediocrity</a></li>
+<li><a href="/swipes/quotes/hope is a good breakfast  but it is a bad supper.html">hope is a good breakfast  but it is a bad supper</a></li>
+<li><a href="/swipes/quotes/self-confidence becomes arrogance.html">self-confidence becomes arrogance</a></li>
+<li><a href="/swipes/quotes/Adults don’t emerge They’re made.html">Adults don’t emerge They’re made</a></li>
+<li><a href="/swipes/quotes/A doctor can bury his mistakes  but an architect.html">A doctor can bury his mistakes  but an architect</a></li>
+<li><a href="/swipes/quotes/when a man is in despair  it means that he still believes in something.html">when a man is in despair  it means that he still believes in something</a></li>
+<li><a href="/swipes/quotes/Look at the sunset from the sun s point of view.html">Look at the sunset from the sun s point of view</a></li>
+<li><a href="/swipes/quotes/mankind is poised midway between the gods and the beasts.html">mankind is poised midway between the gods and the beasts</a></li>
+<li><a href="/swipes/quotes/if you re havin  ie problems  i feel bad for you.html">if you re havin  ie problems  i feel bad for you</a></li>
+<li><a href="/swipes/quotes/do nothing which is of no use.html">do nothing which is of no use</a></li>
+<li><a href="/swipes/quotes/if you are never alone  you cannot know yourself.html">if you are never alone  you cannot know yourself</a></li>
+<li><a href="/swipes/quotes/Making the best of things is a damn poor way of dealing with them.html">Making the best of things is a damn poor way of dealing with them</a></li>
+<li><a href="/swipes/quotes/if a victory is told in detail.html">if a victory is told in detail</a></li>
+<li><a href="/swipes/quotes/Perplexity is the beginning of knowledge.html">Perplexity is the beginning of knowledge</a></li>
+<li><a href="/swipes/quotes/must i hold a candle to my shames.html">must i hold a candle to my shames</a></li>
+<li><a href="/swipes/quotes/Anything worth doing is worth overdoing.html">Anything worth doing is worth overdoing</a></li>
+<li><a href="/swipes/quotes/do the best you can until you know better.html">do the best you can until you know better</a></li>
+<li><a href="/swipes/quotes/A little inaccuracy sometimes saves a ton of explanation.html">A little inaccuracy sometimes saves a ton of explanation</a></li>
+<li><a href="/swipes/quotes/i  at any rate  am convinced that he does not throw dice.html">i  at any rate  am convinced that he does not throw dice</a></li>
+<li><a href="/swipes/quotes/never appeal to a man s better nature.html">never appeal to a man s better nature</a></li>
+<li><a href="/swipes/quotes/The human phenomenon is but the sum.html">The human phenomenon is but the sum</a></li>
+<li><a href="/swipes/quotes/No one is useless in this world who lightens.html">No one is useless in this world who lightens</a></li>
+<li><a href="/swipes/quotes/Education isn t something you can finish.html">Education isn t something you can finish</a></li>
+<li><a href="/swipes/quotes/a noble person is mindful and thankful.html">a noble person is mindful and thankful</a></li>
+<li><a href="/swipes/quotes/any moment might be our last.html">any moment might be our last</a></li>
+<li><a href="/swipes/quotes/Disciplines  like nations  are a necessary evil.html">Disciplines  like nations  are a necessary evil</a></li>
+<li><a href="/swipes/quotes/Quartered in snow  silent remain.html">Quartered in snow  silent remain</a></li>
+<li><a href="/swipes/quotes/the sunlights differ  but there is only one darkness.html">the sunlights differ  but there is only one darkness</a></li>
+<li><a href="/swipes/quotes/when tempted to argue  recall these wise words.html">when tempted to argue  recall these wise words</a></li>
+<li><a href="/swipes/quotes/no man can lift you to the level you desire.html">no man can lift you to the level you desire</a></li>
+<li><a href="/swipes/quotes/be regular and orderly in your life like a bourgeois.html">be regular and orderly in your life like a bourgeois</a></li>
+<li><a href="/swipes/quotes/now i am quietly waiting for the catastrophe of my personality to seem beautiful again.html">now i am quietly waiting for the catastrophe of my personality to seem beautiful again</a></li>
+<li><a href="/swipes/quotes/success is a few simple disciplines  practiced every day.html">success is a few simple disciplines  practiced every day</a></li>
+<li><a href="/swipes/quotes/every day  the words cross my mind.html">every day  the words cross my mind</a></li>
+<li><a href="/swipes/quotes/There is a crack in everything.html">There is a crack in everything</a></li>
+<li><a href="/swipes/quotes/Nature loves courage.html">Nature loves courage</a></li>
+<li><a href="/swipes/quotes/Giving others the freedom to be stupid is one of the.html">Giving others the freedom to be stupid is one of the</a></li>
+<li><a href="/swipes/quotes/The more you use your brain  the more brain you will have to use.html">The more you use your brain  the more brain you will have to use</a></li>
+<li><a href="/swipes/quotes/i may not have gone where i intended to go  but i think i have ended up where i needed to be.html">i may not have gone where i intended to go  but i think i have ended up where i needed to be</a></li>
+<li><a href="/swipes/quotes/to love is to will the good of the other.html">to love is to will the good of the other</a></li>
+<li><a href="/swipes/quotes/People do not go to hell after death.html">People do not go to hell after death</a></li>
+<li><a href="/swipes/quotes/All happy families are alike  but every unhappy family is unhappy in its own way.html">All happy families are alike  but every unhappy family is unhappy in its own way</a></li>
+<li><a href="/swipes/quotes/Between stimulus and response there is a space.html">Between stimulus and response there is a space</a></li>
+<li><a href="/swipes/quotes/Life can only be understood backward  but it must be lived forward.html">Life can only be understood backward  but it must be lived forward</a></li>
+<li><a href="/swipes/quotes/a long habit of not thinking a thing wrong.html">a long habit of not thinking a thing wrong</a></li>
+<li><a href="/swipes/quotes/value truth over comfort  and results over effort  but effort over apathy.html">value truth over comfort  and results over effort  but effort over apathy</a></li>
+<li><a href="/swipes/quotes/There are these two young fish swimming along.html">There are these two young fish swimming along</a></li>
+<li><a href="/swipes/quotes/when learning is purposeful  creativity blossoms.html">when learning is purposeful  creativity blossoms</a></li>
+<li><a href="/swipes/quotes/whether it is to be utopia or oblivion.html">whether it is to be utopia or oblivion</a></li>
+<li><a href="/swipes/quotes/we do not learn from experience we learn from reflecting on experience.html">we do not learn from experience we learn from reflecting on experience</a></li>
+<li><a href="/swipes/quotes/if you imagine less  less will be what you undoubtedly deserve.html">if you imagine less  less will be what you undoubtedly deserve</a></li>
+<li><a href="/swipes/quotes/the best-laid plans of mice and men often go awry.html">the best-laid plans of mice and men often go awry</a></li>
+<li><a href="/swipes/quotes/has it ever struck you that life is all memory.html">has it ever struck you that life is all memory</a></li>
+<li><a href="/swipes/quotes/marriage is one long conversation  chequered by disputes.html">marriage is one long conversation  chequered by disputes</a></li>
+<li><a href="/swipes/quotes/Viewed in its development through time.html">Viewed in its development through time</a></li>
+<li><a href="/swipes/quotes/perfection is finally attained not when.html">perfection is finally attained not when</a></li>
+<li><a href="/swipes/quotes/prayer is not asking it is a longing of the soul.html">prayer is not asking it is a longing of the soul</a></li>
+<li><a href="/swipes/quotes/The computing scientist s main challenge is.html">The computing scientist s main challenge is</a></li>
+<li><a href="/swipes/quotes/I think it is undeniably true that the human brain must work in models.html">I think it is undeniably true that the human brain must work in models</a></li>
+<li><a href="/swipes/quotes/I believe in the discipline of mastering.html">I believe in the discipline of mastering</a></li>
+<li><a href="/swipes/quotes/a society grows great when old men plant trees.html">a society grows great when old men plant trees</a></li>
+<li><a href="/swipes/quotes/I was the sum total of the obstacles I d overcome.html">I was the sum total of the obstacles I d overcome</a></li>
+<li><a href="/swipes/quotes/he who fears death will never do anything worthy of a man who is alive.html">he who fears death will never do anything worthy of a man who is alive</a></li>
+<li><a href="/swipes/quotes/The map appears to us more real than the land.html">The map appears to us more real than the land</a></li>
+<li><a href="/swipes/quotes/poverty must have its satisfactions  else there would not be so many poor people.html">poverty must have its satisfactions  else there would not be so many poor people</a></li>
+<li><a href="/swipes/quotes/pay attention be astonished tell about it.html">pay attention be astonished tell about it</a></li>
+<li><a href="/swipes/quotes/Lack of Money Is The Root of All Evil.html">Lack of Money Is The Root of All Evil</a></li>
+<li><a href="/swipes/quotes/a cynic is a man who knows the price of everything  and the value of nothing.html">a cynic is a man who knows the price of everything  and the value of nothing</a></li>
+<li><a href="/swipes/quotes/o hell  to choose love by another’s eyes.html">o hell  to choose love by another’s eyes</a></li>
+<li><a href="/swipes/quotes/Experience is a hard teacher because she gives the test first  the lesson afterwards.html">Experience is a hard teacher because she gives the test first  the lesson afterwards</a></li>
+<li><a href="/swipes/quotes/the best way to predict the future is to invent it.html">the best way to predict the future is to invent it</a></li>
+<li><a href="/swipes/quotes/I am not well.html">I am not well</a></li>
+<li><a href="/swipes/quotes/Be ruled by time  the wisest counselor of all.html">Be ruled by time  the wisest counselor of all</a></li>
+<li><a href="/swipes/quotes/death is nothing to us when we exist  death is not.html">death is nothing to us when we exist  death is not</a></li>
+<li><a href="/swipes/quotes/Tell me to what you pay attention and.html">Tell me to what you pay attention and</a></li>
+<li><a href="/swipes/quotes/cynicism is a theory of everything.html">cynicism is a theory of everything</a></li>
+<li><a href="/swipes/quotes/Yes is how you get your first job.html">Yes is how you get your first job</a></li>
+<li><a href="/swipes/quotes/never tell anyone outside the family what you are thinking.html">never tell anyone outside the family what you are thinking</a></li>
+<li><a href="/swipes/quotes/theres more to life than books  you know but not much more.html">theres more to life than books  you know but not much more</a></li>
+<li><a href="/swipes/quotes/If You Are Not a Liberal at 25  You Have No Heart.html">If You Are Not a Liberal at 25  You Have No Heart</a></li>
+<li><a href="/swipes/quotes/gratitude is not only the greatest of the virtues.html">gratitude is not only the greatest of the virtues</a></li>
+<li><a href="/swipes/quotes/Remember that all models are wrong.html">Remember that all models are wrong</a></li>
+<li><a href="/swipes/quotes/I have discovered that all human evil comes from this.html">I have discovered that all human evil comes from this</a></li>
+<li><a href="/swipes/quotes/Above all  do not lie to yourself.html">Above all  do not lie to yourself</a></li>
+<li><a href="/swipes/quotes/it s easier to fool people than it is to convince them they ve been fooled.html">it s easier to fool people than it is to convince them they ve been fooled</a></li>
+<li><a href="/swipes/quotes/We should realize that.html">We should realize that</a></li>
+<li><a href="/swipes/quotes/what s a sundial in the shade.html">what s a sundial in the shade</a></li>
+<li><a href="/swipes/quotes/love without conversation is impossible.html">love without conversation is impossible</a></li>
+<li><a href="/swipes/quotes/The difference in mind between man and the higher animals.html">The difference in mind between man and the higher animals</a></li>
+<li><a href="/swipes/quotes/there are only two industries that call their customers  users.html">there are only two industries that call their customers  users</a></li>
+<li><a href="/swipes/quotes/Reality is that which.html">Reality is that which</a></li>
+<li><a href="/swipes/quotes/the traveller sees what he sees.html">the traveller sees what he sees</a></li>
+<li><a href="/swipes/quotes/It is not the mountain we conquer  but ourselves.html">It is not the mountain we conquer  but ourselves</a></li>
+<li><a href="/swipes/quotes/i arise in the morning torn between a desire to improve.html">i arise in the morning torn between a desire to improve</a></li>
+<li><a href="/swipes/quotes/the only thing to do with good advice is pass it on.html">the only thing to do with good advice is pass it on</a></li>
+<li><a href="/swipes/quotes/Tiger got to hunt  bird got to fly.html">Tiger got to hunt  bird got to fly</a></li>
+<li><a href="/swipes/quotes/that is the true season of love  when we believe.html">that is the true season of love  when we believe</a></li>
+<li><a href="/swipes/quotes/I’m no genius I’m smart in spots.html">I’m no genius I’m smart in spots</a></li>
+<li><a href="/swipes/quotes/We are born not all at once  but by bits.html">We are born not all at once  but by bits</a></li>
+<li><a href="/swipes/quotes/The unlived life is not worth examining.html">The unlived life is not worth examining</a></li>
+<li><a href="/swipes/quotes/Most geniuses especially those who lead others.html">Most geniuses especially those who lead others</a></li>
+<li><a href="/swipes/quotes/It is the human mind that creates its own difficulties and then cries for help.html">It is the human mind that creates its own difficulties and then cries for help</a></li>
+<li><a href="/swipes/quotes/live to the point of tears.html">live to the point of tears</a></li>
+<li><a href="/swipes/quotes/the nice thing about egotists is that they dont talk about other people.html">the nice thing about egotists is that they dont talk about other people</a></li>
+<li><a href="/swipes/quotes/Statistics can be made to prove anything–even the truth.html">Statistics can be made to prove anything–even the truth</a></li>
+<li><a href="/swipes/quotes/If you go looking for ducks.html">If you go looking for ducks</a></li>
+<li><a href="/swipes/quotes/Each shift into clearer vision was a gift.html">Each shift into clearer vision was a gift</a></li>
+<li><a href="/swipes/quotes/do a good deed and throw it in the river.html">do a good deed and throw it in the river</a></li>
+<li><a href="/swipes/quotes/Nothing has yet been said that’s not been said before.html">Nothing has yet been said that’s not been said before</a></li>
+<li><a href="/swipes/quotes/i m a drifter with no profound connection to my land.html">i m a drifter with no profound connection to my land</a></li>
+<li><a href="/swipes/quotes/the tragedy is not to die  but to be wasted.html">the tragedy is not to die  but to be wasted</a></li>
+<li><a href="/swipes/quotes/If the path before you is clear.html">If the path before you is clear</a></li>
+<li><a href="/swipes/quotes/medical statistics will be our standard of measurement.html">medical statistics will be our standard of measurement</a></li>
+<li><a href="/swipes/quotes/someone with one watch knows what time it is.html">someone with one watch knows what time it is</a></li>
+<li><a href="/swipes/quotes/There is only one way to be happy by means of the heart.html">There is only one way to be happy by means of the heart</a></li>
+<li><a href="/swipes/quotes/tweet from ryan holiday  2022-03-08 20-30-10.html">tweet from ryan holiday  2022-03-08 20-30-10</a></li>
+<li><a href="/swipes/quotes/I have never let my schooling interfere with my education.html">I have never let my schooling interfere with my education</a></li>
+<li><a href="/swipes/quotes/From my rotting body  flowers shall grow.html">From my rotting body  flowers shall grow</a></li>
+<li><a href="/swipes/quotes/the way sesame has oil within  the way flintstone.html">the way sesame has oil within  the way flintstone</a></li>
+<li><a href="/swipes/quotes/Knowledge is not skill Knowledge plus 10 000 times is skill.html">Knowledge is not skill Knowledge plus 10 000 times is skill</a></li>
+<li><a href="/swipes/quotes/To be in a word unborable It is the key to modern life.html">To be in a word unborable It is the key to modern life</a></li>
+<li><a href="/swipes/quotes/What is common to many is taken least care of.html">What is common to many is taken least care of</a></li>
+<li><a href="/swipes/quotes/Anyone who isn t embarrassed of who they were last year probably isn t learning enough.html">Anyone who isn t embarrassed of who they were last year probably isn t learning enough</a></li>
+<li><a href="/swipes/quotes/Opportunities multiply as they are seized.html">Opportunities multiply as they are seized</a></li>
+<li><a href="/swipes/quotes/besides the noble art of getting things done.html">besides the noble art of getting things done</a></li>
+<li><a href="/swipes/quotes/what  after all  is a halo.html">what  after all  is a halo</a></li>
+<li><a href="/swipes/quotes/the life which is unexamined is not worth living.html">the life which is unexamined is not worth living</a></li>
+<li><a href="/swipes/quotes/Misery no longer loves company.Nowadays it insists on it.html">Misery no longer loves company.Nowadays it insists on it</a></li>
+<li><a href="/swipes/quotes/that which can be destroyed by the truth should be.html">that which can be destroyed by the truth should be</a></li>
+<li><a href="/swipes/quotes/The greatest shortcoming of the human race is.html">The greatest shortcoming of the human race is</a></li>
+<li><a href="/swipes/quotes/Somebody told me it was frightening how much topsoil.html">Somebody told me it was frightening how much topsoil</a></li>
+<li><a href="/swipes/quotes/if you make people think they re thinking.html">if you make people think they re thinking</a></li>
+<li><a href="/swipes/quotes/i never allow myself to hold an opinion on anything.html">i never allow myself to hold an opinion on anything</a></li>
+<li><a href="/swipes/quotes/The unspeakable is the true domain of being.html">The unspeakable is the true domain of being</a></li>
+<li><a href="/swipes/quotes/Inaction breeds fear and doubt.html">Inaction breeds fear and doubt</a></li>
+<li><a href="/swipes/quotes/peace begins with a smile.html">peace begins with a smile</a></li>
+<li><a href="/swipes/quotes/deep down in his private heart  no man respects himself much.html">deep down in his private heart  no man respects himself much</a></li>
+<li><a href="/swipes/quotes/if i am not for myself  who will be for me.html">if i am not for myself  who will be for me</a></li>
+<li><a href="/swipes/quotes/You only think you know  as a matter of fact.html">You only think you know  as a matter of fact</a></li>
+<li><a href="/swipes/quotes/i refuse to join any club that would have me as a member.html">i refuse to join any club that would have me as a member</a></li>
+<li><a href="/swipes/quotes/your vision will become clear only when.html">your vision will become clear only when</a></li>
+</ul>
+<blockquote>
+<p><a href="/obs.html/tags/index.html">View all tags</a></p>
+</blockquote>
+                                <!-- end content -->
+                        </div>
+                        <div class="container_filler">
+                        </div>
+                        <div id="right_pane" class="right_pane active">
+                                <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
+                                <div id="right_pane_content" class="right_pane_content">
+                                        
+                                </div>
+                        </div>
+                </div>
+        </div>
+
+        <script>
+                function handle_toggle_side_bar(e){
+                        let header;
+                        let pane; 
+                        let target = e.target
+
+                        // switch out the navbar button click for a header click
+                        if (target.id == 'left_pane_toggle_nav'){
+                                target = document.getElementById('left_pane_fold_header')
+                        }
+                        else if (target.id == 'right_pane_toggle_nav'){
+                                target = document.getElementById('right_pane_fold_header')
+                        }
+
+                        // get header and pane
+                        if (target.classList.contains('fold_header')) {
+                                header = target;
+                                pane = target.parentElement;
+                        }
+                        else {
+                                pane = target;
+                                header = target.getElementsByClassName('fold_header')[0];
+                        }
+                        toggle_side_bar(pane, header, true)
+                        e.stopPropagation();
+                }
+                function handle_toggle_side_bar_button(e){
+                        document.getElementById('menu_toggle_button').click()
+                        handle_toggle_side_bar(e);
+                }
+
+                function toggle_side_bar(pane, header, save) {
+                        let active = (pane.classList.contains('active'))
+                        if (active){
+                                disable_side_bar(pane, header, save);
+                        }
+                        else {
+                                enable_side_bar(pane, header, save);
+                        }
+                }
+                function enable_side_bar(pane, header, save){
+                        pane.classList.add('active');
+                        pane.removeEventListener('click', handle_toggle_side_bar);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, true) }
+                }
+                function disable_side_bar(pane, header, save){
+                        pane.classList.remove('active');
+                        pane.addEventListener('click', handle_toggle_side_bar);
+                        header.removeEventListener('click', handle_toggle_side_bar);
+                        set_correct_header_symbol(header);
+                        if (save){ save_panel_folding_state(header, false) }
+                }
+                function set_correct_header_symbol(header){
+                        let pane = header.parentElement;
+                        let symbol = [['>', '<'],['<', '>']]
+                        symbol = symbol[Number(header.classList.contains('right_pane_fold_header'))][Number(pane.classList.contains('active'))];
+                        console.log(symbol);
+                        header.innerHTML = symbol
+                        return header;
+                }
+                function panel_folding_get_panel_name(header){
+                        return ['left', 'right'][Number(header.classList.contains('right_pane_fold_header'))]
+                }
+                function save_panel_folding_state(header, active){
+                        localStorage.setItem('pane_folding_state_'+panel_folding_get_panel_name(header), Number(active));
+                }
+                function load_panel_folding_state(panel_name){
+                        val = localStorage.getItem('pane_folding_state_'+panel_name)
+                        if (!val){ return {'exists': false, 'value': null}}
+                        return {'exists': true, 'value': Boolean(Number(val))}
+                }
+                function set_pane_folding_start(left_header, right_header){
+                        // small screen = closed
+                        let right_pane_enabled = true;
+                        let left_pane_enabled = true;
+                        let w = window.visualViewport.width
+                        if (w < 1000){
+                                left_pane_enabled = false
+                        }
+                        if (w < 800){
+                                right_pane_enabled = false
+                        }
+
+                        // get saved values if present
+                        let rval = load_panel_folding_state('right')
+                        if (rval['exists']){
+                                right_pane_enabled = rval['value']
+                        }
+                        let lval = load_panel_folding_state('left')
+                        if (lval['exists']){
+                                left_pane_enabled = lval['value']
+                        }
+
+                        // default = enabled, so we only need to disable
+                        if (!left_pane_enabled){
+                                disable_side_bar(document.getElementById('left_pane'), document.getElementById('left_pane_fold_header'))
+                        }
+                        if (!right_pane_enabled){
+                                disable_side_bar(document.getElementById('right_pane'), document.getElementById('right_pane_fold_header'))
+                        }
+                }
+
+                function init_pane_folding(header){
+                        set_correct_header_symbol(header);
+                        header.addEventListener('click', handle_toggle_side_bar);
+                }
+                
+                
+                set_pane_folding_start()
+                init_pane_folding(document.getElementById('left_pane_fold_header'));
+                init_pane_folding(document.getElementById('right_pane_fold_header'));
+
+                document.getElementById('left_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+                document.getElementById('right_pane_toggle_nav').addEventListener('click', handle_toggle_side_bar_button);
+        </script>
+
+        <script src="/obs.html/static/load_dirtree_footer.js" type="text/javascript"></script>
+
+        
+
+
+
+
+</body>
+</html>
