@@ -15,4 +15,4 @@ If you don't find something worth stealing today, you might find it tomorrow, th
 ## Quote(s)   
    
    
-- [The only art I’ll ever study is stuff that I can steal from](../swipes/quotes/the%20only%20art%20i%E2%80%99ll%20ever%20study%20is%20stuff%20that%20i%20can%20steal%20from.md)
+- [the only art i’ll ever study is stuff that i can steal from](../resources/podcasts/the%20only%20art%20i%E2%80%99ll%20ever%20study%20is%20stuff%20that%20i%20can%20steal%20from.md)

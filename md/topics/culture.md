@@ -10,7 +10,7 @@ updated: 2022-11-23 15:08:43.041000+00:00
    
 ## Sloww Hierarchy of Happiness – Culture   
    
-See also:: [hygge](/not_created.md), [niksen](/not_created.md), and [ikigai](/not_created.md)    
+See also:: [hygge](/not_created.md), [niksen](/not_created.md), and [ikigai](../archive/ikigai.md)    
    
 > Perhaps Danish happiness is not really happiness at all, but something much more valuable and durable: contentedness, being satisfied with your lot, low-level needs being met, higher expectations being kept in check.   
    

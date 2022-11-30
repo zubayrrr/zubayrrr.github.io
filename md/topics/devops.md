@@ -8,7 +8,7 @@ title: DevOps
 updated: 1665018590630
 ---
    
-Topics::  [linux](../topics/linux.md), [networking](../topics/networking.md), [SysAdmin](../devlog/sysadmin.md)   
+Topics::  [linux](../topics/linux.md), [networking](../topics/networking.md), [sysadmin](../topics/sysadmin.md)   
    
    
 ---   

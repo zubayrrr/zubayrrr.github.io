@@ -105,7 +105,7 @@ Others conceptualize hedonic adaptation as functioning similarly to a thermostat
    
 ## Sloww Hierarchy of Happiness – Culture   
    
-See also:: [hygge](/not_created.md), [niksen](/not_created.md), and [ikigai](/not_created.md)    
+See also:: [hygge](/not_created.md), [niksen](/not_created.md), and [ikigai](../../archive/ikigai.md)    
    
 > Perhaps Danish happiness is not really happiness at all, but something much more valuable and durable: contentedness, being satisfied with your lot, low-level needs being met, higher expectations being kept in check.   
    
@@ -187,4 +187,100 @@ Instead of making happiness the goal, focus on meaning and purpose.
    
 > Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose. — Helen Keller   
    
-> Our deepest happiness in life stems from fulfilling purpose. Doing the best we can, where we are, with what we’ve been given is the best way to live a life of meaning and significance. — Joshua Becker
+> Our deepest happiness in life stems from fulfilling purpose. Doing the best we can, where we are, with what we’ve been given is the best way to live a life of meaning and significance. — Joshua Becker   
+   
+Think of it like your system or process or a journey   
+   
+> When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. — James Clear, Atomic Habits   
+   
+   
+   
+The happiest people are not the ones who achieve the most. They are the ones   
+who spend more time than others in a state of flow. — Héctor García and   
+Francesc Miralles, Ikigai: The Japanese Secret to a Long and Healthy Life   
+Artists, for example, who carry the torch of their ikigai instead of retiring, have this   
+power. Art, in all its forms, is an ikigai that can bring happiness and   
+purpose to our days. Enjoying or creating beauty is free, and something all   
+human beings have access to. — Héctor García and Francesc Miralles   
+   
+   
+   
+## Sloww Hierarchy of Happiness – Spirituality    
+   
+> Happiness cannot be traveled to, owned, earned, worn or consumed. Happiness is the spiritual experience of living every minute with love, grace, and gratitude. — Denis Waitley   
+   
+> All living beings desire to be happy always, without any misery. In everyone there is observed supreme love for oneself. And happiness alone is the cause of love. In order therefore, to gain that happiness which is one’s nature and which is experienced in the state of deep sleep, where there is no mind, one should know oneself. To achieve this, the Path of Knowledge, the enquiry in the form of ‘Who am I?’, is the principal means. — [Ramana Maharshi](/not_created.md)   
+   
+> One of the ancient names for God in the yogic tradition is Satchitananda— Eternal, Conscious Bliss. God is ecstasy. God is as high as it gets. If you want to be close to [God](../../topics/god.md), learn to be joyful. If you remain spontaneously happy and centered, no matter what happens, you will find God. — Michael Singer   
+   
+> Many people may doubt that finding God is the purpose of life; but everyone can accept the idea that the purpose of life is to find happiness. I say that God is Happiness. He is Bliss. He is Love. He is Joy that will never go away from your soul. So why shouldn’t you try to acquire that Happiness? No one else can give it to you. You must continuously cultivate it yourself. — Paramahansa Yogananda   
+   
+> The joy of Being, which is the only true happiness, can not come to you through any form, possession, achievement, person, or event – through anything that happens. That joy cannot come to you – ever. It emanates form the formless dimension within you, from consciousness itself and thus is one with who you are. — Eckhart Tolle
+   
+   
+## Sloww Hierarchy of Happiness – Presence    
+   
+> Do you want to be happy? Uninterrupted happiness is uncaused. True happiness is uncaused. You cannot make me happy. You are not my happiness. You say to the awakened person, ‘Why are you happy?’ and the awakened person replies, ‘Why not?’ Happiness is our natural state. — Anthony de Mello   
+   
+> Happiness is a default state. It’s what’s there when you remove the sense that something is missing from your life. — Naval Ravikant   
+   
+> Wakefulness, happiness—call it what you wish—is the state of nondelusion, where you see things not as you are but as they are, insofar as this is possible for a human being. — Anthony de Mello   
+   
+> Don’t seek happiness. If you seek it, you won’t find it, because seeking is the antithesis of happiness. Happiness is ever elusive, but freedom from unhappiness is attainable now, by facing what is rather than making up stories about it. Unhappiness covers up your natural state of wellbeing and inner peace, the source of true happiness. — Eckhart Tolle   
+   
+> You become happy by contact with [reality](../../topics/reality.md). That’s what brings happiness, a moment-by-moment contact with reality. That’s where you’ll find God; that’s where you’ll find happiness. — Anthony de Mello   
+   
+> You are present when what you are doing is not primarily a means to an end (money, prestige, winning) but fulfilling in itself, when there is joy and aliveness in what you do. And, of course, you cannot be present unless you become friendly with the present moment. — Eckhart Tolle   
+   
+> I don’t live in either my past or my future. I’m interested only in the present. If you can concentrate always on the present, you’ll be a happy man ... Life will be a party for you, a grand festival, because life is the moment we’re living right now. — Paulo Coelho   
+   
+> Peace is happiness at rest, and happiness is peace in motion. You can convert peace to happiness any time you want, but peace is want you want most of the time ... If you’re a peaceful person, anything you do will be a happy activity. — Naval Ravikant
+   
+   
+##  Sloww Hierarchy of Happiness – Desire   
+   
+> Nothing can satisfy the ego for long. As long as it runs your life, there are two ways of being unhappy. Not getting what you want is one. Getting what you want is the other. — Eckhart Tolle   
+   
+> Desire to me is a contract that you make with yourself to be unhappy until you get what you want. — Naval Ravikant   
+   
+> Don’t seek that all that comes about should come about as you wish, but wish that everything that comes about should come about just as it does, and then you’ll have a calm and happy life. — [Epictetus](../../resources/people/epictetus.md), Enchiridion   
+   
+> On the whole, the happiest people seem to be those who have no particular cause for being happy except that they are so. — William R. Inge   
+   
+> We need to start by understanding that true happiness is not reflected in the modern world’s view of it being fun, elation or laughter. Happiness is finding peace and being OK with life exactly as it is. — Mo Gawdat   
+   
+> You can experience a life in which waves of love can rush up inside of you any time you want. It is the nature of your being. You simply have to go to the other side of the psyche. You do that by letting go of the tendency to cling. You do it by not using your mind to build false solidity. You just decide, once and for all, to take the journey by constantly letting go. — Michael Singer   
+   
+> “Nietzsche, in a rare moment of deep stillness, wrote, “For happiness, how little suffices for happiness!…the least thing precisely, the gentlest thing, the lightest thing, a lizard’s rustling, a breath, a wisk, an eye glance—little maketh up the best happiness. Be still.” ― Eckhart Tolle, A New Earth: Awakening to Your Life's Purpose   
+   
+> Happiness is the very nature of the Self; happiness and the Self are not different. There is no happiness in any object of the world. We imagine through our ignorance that we derive happiness from objects. When the mind goes out, it experiences misery. In truth, when its desires are fulfilled, it returns to its own place and enjoys the happiness that is the Self. Similarly, in the states of sleep, samadhi and fainting, and when the object desired is obtained or the object disliked is removed, the mind becomes inward-turned, and enjoys pure Self-Happiness. — [Ramana Maharshi](/not_created.md)   
+   
+> Basic needs and metaneeds are in the same hierarchical-integration, i.e., in the same continuum, in the same realm of discourse. They have the same basic characteristic of being ‘needed’ (necessary, good for the person) in the sense that their deprivation produces ‘illness’ and diminution, and that their ‘ingestion’ fosters growth toward full humanness, toward greater happiness and joy, toward psychological ‘success,’ toward more peak experiences, and in general toward living more often at the level of being. That is, they are all biologically desirable, and all foster biological success. — [Abraham Maslow](/not_created.md)   
+   
+   
+   
+## Sloww Hierarchy of Happiness – Transcendence   
+   
+What happens when life is no longer all about you?   
+   
+> ‘The self-transcendence of human existence’ ... being human always points, and is directed, to something, or someone, other than oneself—be it a meaning to fulfill or another human being to encounter. The more one forgets himself—by giving himself to a cause to serve or another person to love—the more human he is and the more he actualizes himself ... self-actualization is possible only as a side-effect of self-transcendence. — Viktor Frankl   
+   
+> There are three words that convey the secret of the art of living, the secret of all success and happiness: One With Life. Being one with life is being one with [Now](../../topics/Now.md). You then realize that you don’t live your life, but life lives you. Life is the dancer, and you are the dance. — Eckhart Tolle   
+   
+> For unenlightened people, not every day is a good day, because they feel happy only when things happen the way they want them to. For enlightened people, every single day is a good day, because they feel free knowing that nothing can take away their wisdom. — Haemin Sunim   
+   
+> As you identify less and less with the ‘[I](../../topics/self.md)’, you will be more at ease with everybody and with everything. Do you know why? Because you are no longer afraid of being hurt or not liked. You no longer desire to impress anyone. Can you imagine the relief when you don’t have to impress anybody anymore? Oh, what a relief. Happiness at last! — Anthony de Mello   
+   
+> What is called the world is only thought. When the world disappears, i.e., when there is no thought, the mind experiences happiness; and when the world appears, it goes through misery. — Ramana Maharshi   
+   
+> Once you have passed through trial by fire, and you are thoroughly convinced that you will let go no matter what, then the veils of the human mind and heart will fall away. You will stand face-to-face with what is beyond you because there is no longer a need for you. When you are done playing with the temporal and finite, you will open to the eternal and infinite. Then the word ‘happiness’ can’t describe your state. That’s where words like ecstasy, bliss, liberation, [Nirvana](/not_created.md), and freedom come in. The joy becomes overwhelming, and your cup runneth over. — Michael Singer   
+   
+> The term peak experiences is a generalization for the best moments of the human being, for the happiest moments of life, for experiences of ecstasy, rapture, bliss, of the greatest joy. I found that such experiences came from profound aesthetic experiences such as creative ecstasies, moments of mature love, perfect sexual experiences, parental love, experiences of natural childbirth, and many others. I use the term—peak experiences—as a kind of generalized and abstract concept because I discovered that all of these ecstatic experiences had some characteristics in common. — Abraham Maslow, The Farther Reaches of Human Nature   
+   
+   
+   
+   
+## Links   
+   
+   
+- [The Differences between Happiness and Meaning in Life - Scientific American Blog Network](https://blogs.scientificamerican.com/beautiful-minds/the-differences-between-happiness-and-meaning-in-life/)

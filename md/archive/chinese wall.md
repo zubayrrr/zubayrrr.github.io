@@ -8,7 +8,7 @@ title: Chinese Wall
 updated: 1652786930411
 ---
    
-Topics::  [Ethics](../archive/ethics.md)   
+Topics::  [ethics](../topics/ethics.md)   
    
    
 ---   

@@ -30,4 +30,30 @@ Instead of making happiness the goal, focus on meaning and purpose.
    
 > Many persons have a wrong idea of what constitutes true happiness. It is not attained through self-gratification but through fidelity to a worthy purpose. — Helen Keller   
    
-> Our deepest happiness in life stems from fulfilling purpose. Doing the best we can, where we are, with what we’ve been given is the best way to live a life of meaning and significance. — Joshua Becker
+> Our deepest happiness in life stems from fulfilling purpose. Doing the best we can, where we are, with what we’ve been given is the best way to live a life of meaning and significance. — Joshua Becker   
+   
+Think of it like your system or process or a journey   
+   
+> When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. — James Clear, Atomic Habits   
+   
+   
+   
+The happiest people are not the ones who achieve the most. They are the ones   
+who spend more time than others in a state of flow. — Héctor García and   
+Francesc Miralles, Ikigai: The Japanese Secret to a Long and Healthy Life   
+Artists, for example, who carry the torch of their ikigai instead of retiring, have this   
+power. Art, in all its forms, is an ikigai that can bring happiness and   
+purpose to our days. Enjoying or creating beauty is free, and something all   
+human beings have access to. — Héctor García and Francesc Miralles   
+   
+## Resources   
+   
+   
+- [Ikigai 2.0: Evolving the Ikigai Diagram for Life Purpose | Sloww](https://www.sloww.co/ikigai-2-0/)
+   
+   
+> But what is happiness except for the simple harmony between a man and the life he leads? — Albert Camus   
+   
+Purpose is intertwined with [relationships](../topics/relationships.md)—it goes beyond yourself to serve others and the world:   
+   
+>  True vocation joins self and service, as Frederick Buechner asserts when he defines vocation as ‘the place where your deep gladness meets the world’s deep need.’ — Parker Palmer, Let Your Life Speak

@@ -6,7 +6,7 @@ title: Exceptionalism
 updated: 1652786930874
 ---
    
-Topics::  [Epistemology](../archive/epistemology.md)   
+Topics::  [epistemology](../topics/epistemology.md)   
    
    
 ---   
