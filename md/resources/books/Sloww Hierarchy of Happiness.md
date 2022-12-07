@@ -4,7 +4,7 @@ created: 2022-11-23 15:05:28.473000+00:00
 id: 0817268a-4feb-408d-9607-9ed8d0ed18dc
 tags:
 - books
-- partially-read
+- read
 title: Sloww Hierarchy of Happiness
 updated: 2022-11-23 15:05:28.477000+00:00
 ---
@@ -12,8 +12,8 @@ updated: 2022-11-23 15:05:28.477000+00:00
 Title:: Sloww Hierarchy of Happiness   
 By:: [https://sloww.co](https://sloww.co)   
 Topics:: [Happiness](../../topics/Happiness.md)   
-Related:: undefined   
-Status:: `{_obsidian_pattern_tag_partially-read}`   
+Related::    
+Status:: `{_obsidian_pattern_tag_read}`   
    
    
 ---   

@@ -210,6 +210,10 @@
                     </div>
 <div class="toc">
 <ul>
+<li><a href="#features" class="anchor-link">Features</a></li>
+<li><a href="#hcl" class="anchor-link">HCL</a></li>
+<li><a href="#typical-terraform-workflow" class="anchor-link">Typical Terraform Workflow</a></li>
+<li><a href="#automated-terraform-workflow" class="anchor-link">Automated Terraform Workflow</a></li>
 <li><a href="#ansible-vs-terraform" class="anchor-link">ansible VS Terraform</a></li>
 <li><a href="#terraform-architecture" class="anchor-link">Terraform Architecture</a><ul>
 <li><a href="#core" class="anchor-link">Core</a></li>
@@ -260,44 +264,90 @@
 <li><a href="#remote-state" class="anchor-link">Remote State</a></li>
 <li><a href="#labs" class="anchor-link">Labs</a></li>
 <li><a href="#resources_1" class="anchor-link">Resources</a></li>
+<li><a href="#misc" class="anchor-link">Misc</a></li>
 </ul>
 </div>
-<p>Terraform is an open source infrastructure as code (<a href="/devlog/IaC.html">IaC</a>) software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run. To create and configure infrastructure . NOT for installing stuff on the server, just for provisioning.   </p>
+<div class="callout callout-info active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+</div>
+<div class="callout-title-name">Info
+</div>
+</div>
+<div class="callout-content">
+<p><a href="https://www.terraform.io/intro" target="_blank" class="external-link">Terraform</a>: "HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features." <br />
+</p>
+</div>
+</div>
+<p>Terraform is an open source infrastructure as code (<a href="/devlog/IaC.html">IaC</a>) software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run. To create and configure infrastructure NOT for installing stuff on the server, just for provisioning.   </p>
 <p>It is a universal <a href="/devlog/IaC.html">IaC</a> tool, works with different cloud providers and technologies.   </p>
 <p>Infrastructure as code is an IT practice that manages an application's underlying IT infrastructure through programming. This approach to resource allocation allows developers to logically manage, monitor and provision resources -- as opposed to requiring that an operations team manually configure each required resource.   </p>
 <p>Managing infrastructure (servers, network, etc) through definition files rather than manual configuration. Much like <a href="/devlog/configuration management.html">configuration management</a>, this enables automation, consistency, and is self-documenting.</p>
+<h2 id="features">Features</h2>
 <p>It uses declarative syntax(as opposed to imperative syntax) to define what the end result looks like and it will figure out how to provision the infrastructure.   </p>
 <ul>
 <li>It is also helps in automating the infrastructure as it changes over time.   </li>
 <li>To replicate the same infrastructure in different environments(Dev, Staging, Production)   </li>
 </ul>
 <p>Using Terraform, your infrastructure is idempotent. You don't need to remember the current state, you only define your desired state. Since, you use declarative syntax, you don't define the steps like you would if you were using imperative syntax.   </p>
+<h2 id="hcl">HCL</h2>
+<p>It uses a DSL(domain-specific language) called "HCL" (Hashicorp Configuration Language). A declarative language for defining infrastructure.   </p>
+<h2 id="typical-terraform-workflow">Typical Terraform Workflow</h2>
+<ol>
+<li>Write Terraform definitions: <code>.tf</code> files written in HCL that described the desired infrastructure state (and run <code>terraform init</code> at the very beginning)   </li>
+<li>Review: With command such as <code>terraform plan</code> you can get a glance at what Terraform will perform with the written definitions   </li>
+<li>Apply definitions: With the command <code>terraform apply</code> Terraform will apply the given definitions, by adding, modifying or removing the resources   </li>
+</ol>
+<p>This is a manual process. Most of the time this is automated so user submits a PR/MR to propose Terraform changes, there is a process to test these changes and once merged they are applied (<code>terraform apply</code>).   </p>
+<h2 id="automated-terraform-workflow">Automated Terraform Workflow</h2>
+<div class="callout callout-summary active" rasa="1">
+<div class="callout-title">
+<div class="callout-title-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="callout-icon"><path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2"></path><path d="M15 2H9a1 1 0 00-1 1v2a1 1 0 001 1h6a1 1 0 001-1V3a1 1 0 00-1-1z"></path><path d="M12 11h4"></path><path d="M12 16h4"></path><path d="M8 11h.01"></path><path d="M8 16h.01"></path></svg>
+</div>
+<div class="callout-title-name">Summary
+</div>
+</div>
+<div class="callout-content">
+<p><a href="https://developer.hashicorp.com/terraform/tutorials/automation/automate-terraform" target="_blank" class="external-link">Automation of Terraform can come in various forms, and to varying degrees. Some teams continue to run Terraform locally but use wrapper scripts to prepare a consistent working directory for Terraform to run in, while other teams run Terraform entirely within an orchestration tool such as Jenkins.</a> <br />
+</p>
+</div>
+</div>
+<p>There are several ways to automate Terraform workflows, depending on your specific needs and environment. Here are a few common approaches:   </p>
+<ol>
+<li>Use a continuous integration (CI) tool such as Jenkins, CircleCI, or TravisCI to automate the process of running Terraform commands. This allows you to define a set of tasks that are run automatically whenever certain events occur, such as code changes or new deployments.   </li>
+<li>Use a cloud-based automation service such as AWS CodePipeline or Azure DevOps to manage your Terraform workflows. These services provide a web-based interface for defining and executing Terraform tasks, and can integrate with other tools such as GitHub or AWS S3.   </li>
+<li>Write custom scripts or programs to automate your Terraform workflows. This approach allows you to define your own logic for running Terraform tasks and integrating with other tools or services.   </li>
+</ol>
 <h2 id="ansible-vs-terraform"><a href="/devlog/ansible.html">ansible</a> VS Terraform</h2>
 <ul>
 <li>Terraform is mainly an infrastructure provisioning tool.   </li>
 <li>Ansible is mainly used for configuring infrastructure.   </li>
 <li>Its a common practice to combine both to get the best of both.   </li>
 </ul>
+<p><a href="https://github.com/bregman-arie/devops-exercises/tree/master/topics/terraform#exercises" target="_blank" class="external-link">To be clear, CM tools can be used to provision resources so in the end goal of having infrastructure, both Terraform and something like Ansible, can achieve the same result. The difference is in the how. Ansible doesn't saves the state of resources, it doesn't know how many instances there are in your environment as opposed to Terraform. At the same time while Terraform can perform configuration management tasks, it has less modules support for that specific goal and it doesn't track the task execution state as Ansible. The differences are there and it's most of the time recommended to mix the technologies, so Terraform used for managing infrastructure and CM technologies used for configuration on top of that infrastructure.</a>   </p>
 <h2 id="terraform-architecture">Terraform Architecture</h2>
 <p>It has 2 components:   </p>
 <h3 id="core">Core</h3>
 <ul>
-<li>Takes 2 input sources   </li>
+<li>Takes 2 input sources   <ul>
 <li>Terraform Config   </li>
 <li>State(current state of the infrastructure)   </li>
+</ul>
+</li>
 <li>Core takes the input from the config and state and compares what needs to be changed and what is already there as per the config and state.   </li>
 <li>It essentially <strong>creates the execution plan</strong> that the providers use.   </li>
 </ul>
 <h3 id="providers">Providers</h3>
 <ul>
-<li>This can be providers for the specifc technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>)   </li>
+<li>This can be providers for the specific technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>)   </li>
 <li>It can also has providers for higher level technologies(<a href="/devlog/kubernetes.html">kubernetes</a>, other <a href="/not_created.html" class="nonexistent-link">PaaS</a> or even <a href="/not_created.html" class="nonexistent-link">SaaS</a>)   </li>
 <li>It has over 100 providers and over 1000 resources.   </li>
+<li><code>terraform init</code> will automatically recognize what providers are being used and it’ll initialize them for you.   </li>
 </ul>
 <h2 id="example-config-files">Example config files</h2>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655346903/wiki/lazrvzt8omhhkplp3xwt.png" />   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655346973/wiki/tcxkbpv4dyrx9yjtnufu.png" />   </p>
-<p>We only define a few attributes in the configuration file, the rest or defaults are handled by terraform. Auto-generated.   </p>
+<p>We only define a few attributes in the configuration file, the rest or defaults are handled by Terraform. Auto-generated.   </p>
 <h2 id="terraform-commands-for-different-stages">Terraform commands for different stages</h2>
 <ul>
 <li><code>refresh</code> - query infra provider to get current state.   </li>
@@ -311,11 +361,15 @@
 <li>Expose resources for specific technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>)   </li>
 <li>Responsible for understanding API of that platform.   </li>
 <li><a href="https://registry.terraform.io/browse/providers" target="_blank" class="external-link">Browse Providers | Terraform Registry</a>   </li>
-<li>Providers don't come with installation of terraform, they need to be installed separately.   </li>
+<li>Providers don't come with installation of Terraform, they need to be installed separately.   </li>
 <li>Once provider is installed using the <code>terraform init</code> command, the complete API of that provider is available.   </li>
-<li>You get 2 components from the Providers   </li>
+<li>You get 2 components from the Providers   <ul>
 <li>Resources   </li>
 <li>Data Sources   </li>
+</ul>
+</li>
+<li><a href="/devlog/Install a Terraform Provider.html">Install a Terraform Provider</a>   </li>
+<li><a href="/devlog/Terraform AWS Provider.html">Terraform AWS Provider</a>   </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
@@ -474,6 +528,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 <li><code>terraform apply -var-file terraform-dev.tfvars</code>   </li>
 </ul>
 </li>
+<li><code>variables.tf</code> - is used to DEFINE variables NOT DECLARE inside the file whereas <code>.tfvars</code> is used to PASS variables. You can still declare a default value inside <code>variables.tf</code>   </li>
+<li>Precedence → <code>.tfvars</code> → environment variables → <code>variables.tf</code>   </li>
 </ol>
 <h3 id="default-values">Default values</h3>
 <p>Default value will kick in if terraform cannot find the value in the <code>.tfvars</code> file or as a command line argument. A default value makes the variable optional.   </p>
@@ -987,7 +1043,12 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 <ul>
 <li><a href="https://jhooq.com/terraform-provisioner/" target="_blank" class="external-link">What is terraform provisioner? | Jhooq</a>   </li>
 <li><a href="https://awstip.com/all-you-need-to-know-about-terraform-provisioners-and-why-you-should-avoid-them-22b5ef8d2db2" target="_blank" class="external-link">All you need to know about Terraform provisioners and why you should avoid them. | AWS Tip</a>   </li>
-<li><a href="https://www.trendmicro.com/ru_ru/devops/22/c/terraform-tutorial-drift-detection-strategies.html" target="_blank" class="external-link">Terraform Tutorial: Drift Detection Strategies</a></li>
+<li><a href="https://www.trendmicro.com/ru_ru/devops/22/c/terraform-tutorial-drift-detection-strategies.html" target="_blank" class="external-link">Terraform Tutorial: Drift Detection Strategies</a>   </li>
+</ul>
+<h2 id="misc">Misc</h2>
+<ul>
+<li><code>versions.tf</code> - you can provide the version of your provider(AWS, GCP etc or Custom providers)   </li>
+<li><code>random_string</code> (Resource) - The resource <code>random_string</code> generates a random permutation of alphanumeric characters and optionally special characters.</li>
 </ul>
 <div class="note-footer">
 <div class="backlinks">
@@ -998,9 +1059,12 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 	<li><a class="backlink" href="/devlog/ansible.Run Docker Applications.html">ansible.run docker applications</a></li>
 	<li><a class="backlink" href="/devlog/ansible.integrate ansible with terraform.html">ansible.integrate ansible with terraform</a></li>
 	<li><a class="backlink" href="/devlog/ansible.dynamic inventory.html">ansible.dynamic inventory</a></li>
+	<li><a class="backlink" href="/devlog/Install a Terraform Provider.html">install a terraform provider</a></li>
+	<li><a class="backlink" href="/devlog/Terraform AWS Provider.html">terraform aws provider</a></li>
 	<li><a class="backlink" href="/devlog/terraform.Automate Provisioning EKS cluster.html">terraform.automate provisioning eks cluster</a></li>
 	<li><a class="backlink" href="/devlog/kubernetes.helm chart for microservices.html">kubernetes.helm chart for microservices</a></li>
 	<li><a class="backlink" href="/devlog/version control.git.html">version control.git</a></li>
+	<li><a class="backlink" href="/devlog/aws.IAM.html">aws.iam</a></li>
 	<li><a class="backlink" href="/devlog/aws.html">aws</a></li>
 	<li><a class="backlink" href="/devlog/boto.html">boto</a></li>
 	<li><a class="backlink" href="/devlog/ec2 server status check.html">ec2 server status check</a></li>
@@ -1016,13 +1080,13 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A300419183810098072858257533195707543065{level}" class="graph_div"></div>
+    <div id="A60589333714940312258120842935165121112{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B300419183810098072858257533195707543065{level}" level="{level}" note_temp_id="300419183810098072858257533195707543065" onclick="window.ObsHtmlGraph.run(this, '300419183810098072858257533195707543065', 'terraform');">
+        <button class="graph_button graph_show_button" id="B60589333714940312258120842935165121112{level}" level="{level}" note_temp_id="60589333714940312258120842935165121112" onclick="window.ObsHtmlGraph.run(this, '60589333714940312258120842935165121112', 'terraform');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C300419183810098072858257533195707543065{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C60589333714940312258120842935165121112{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1377,6 +1441,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/archive/real freedom.html"  >real freedom</a></li>
 		<li><a class="" href="/archive/red herring.html"  >red herring</a></li>
 		<li><a class="" href="/archive/reductionism.html"  >reductionism</a></li>
+		<li><a class="" href="/archive/reflective listening.html"  >reflective listening</a></li>
 		<li><a class="" href="/archive/rekhta.html"  >rekhta</a></li>
 		<li><a class="" href="/archive/repairing hubble.html"  >repairing hubble</a></li>
 		<li><a class="" href="/archive/reversible inhibition of sperm under guidance.html"  >reversible inhibition of sperm under guidance</a></li>
@@ -1489,33 +1554,59 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/AWS Sagemaker.html"  >AWS Sagemaker</a></li>
 		<li><a class="" href="/devlog/AWS Secrets Manager.html"  >AWS Secrets Manager</a></li>
 		<li><a class="" href="/devlog/AWS Step Functions.html"  >AWS Step Functions</a></li>
+		<li><a class="" href="/devlog/AWS Terraform Exercises.html"  >AWS Terraform Exercises</a></li>
 		<li><a class="" href="/devlog/Amazon VPC.html"  >Amazon VPC</a></li>
 		<li><a class="" href="/devlog/Artifact Repository.html"  >Artifact Repository</a></li>
 		<li><a class="" href="/devlog/Automate Data Backup of EC2 instances.html"  >Automate Data Backup of EC2 instances</a></li>
 		<li><a class="" href="/devlog/Automate cleanup of old Snapshots.html"  >Automate cleanup of old Snapshots</a></li>
+		<li><a class="" href="/devlog/Azure.html"  >Azure</a></li>
+		<li><a class="" href="/devlog/Azure Active Directory.html"  >Azure Active Directory</a></li>
+		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
+		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
+		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
+		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
+		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>
+		<li><a class="" href="/devlog/Azure Managed Disks.html"  >Azure Managed Disks</a></li>
+		<li><a class="" href="/devlog/Azure Monitor.html"  >Azure Monitor</a></li>
+		<li><a class="" href="/devlog/Azure Resource Group.html"  >Azure Resource Group</a></li>
+		<li><a class="" href="/devlog/Azure Resource Manager.html"  >Azure Resource Manager</a></li>
+		<li><a class="" href="/devlog/Azure Security Center.html"  >Azure Security Center</a></li>
+		<li><a class="" href="/devlog/Azure Service Fabric.html"  >Azure Service Fabric</a></li>
+		<li><a class="" href="/devlog/Azure Site Recovery.html"  >Azure Site Recovery</a></li>
+		<li><a class="" href="/devlog/Azure Storage.html"  >Azure Storage</a></li>
+		<li><a class="" href="/devlog/Azure Subscription.html"  >Azure Subscription</a></li>
+		<li><a class="" href="/devlog/Azure Virtual Machine Scale Sets.html"  >Azure Virtual Machine Scale Sets</a></li>
+		<li><a class="" href="/devlog/Azure Virtual Machines.html"  >Azure Virtual Machines</a></li>
+		<li><a class="" href="/devlog/Azure region.html"  >Azure region</a></li>
 		<li><a class="" href="/devlog/BYOD.html"  >BYOD</a></li>
 		<li><a class="" href="/devlog/BYOI.html"  >BYOI</a></li>
 		<li><a class="" href="/devlog/Bluetooth.html"  >Bluetooth</a></li>
 		<li><a class="" href="/devlog/Broadcast Domain.html"  >Broadcast Domain</a></li>
+		<li><a class="" href="/devlog/BucketAlreadyExists.html"  >BucketAlreadyExists</a></li>
 		<li><a class="" href="/devlog/C Language.html"  >C Language</a></li>
 		<li><a class="" href="/devlog/C Sharp.html"  >C Sharp</a></li>
 		<li><a class="" href="/devlog/CICD pipeline.html"  >CICD pipeline</a></li>
 		<li><a class="" href="/devlog/CMDB.html"  >CMDB</a></li>
+		<li><a class="" href="/devlog/Captive portal.html"  >Captive portal</a></li>
 		<li><a class="" href="/devlog/ChaCha20-Poly1305.html"  >ChaCha20-Poly1305</a></li>
 		<li><a class="" href="/devlog/Configuration Item.html"  >Configuration Item</a></li>
 		<li><a class="" href="/devlog/Connecting a Nodejs application to a MongoDB Docker container.html"  >Connecting a Nodejs application to a MongoDB Docker container</a></li>
 		<li><a class="" href="/devlog/Container Orchestration.html"  >Container Orchestration</a></li>
 		<li><a class="" href="/devlog/DRY.html"  >DRY</a></li>
 		<li><a class="" href="/devlog/Deployment Strategies.html"  >Deployment Strategies</a></li>
+		<li><a class="" href="/devlog/Deployment models.html"  >Deployment models</a></li>
 		<li><a class="" href="/devlog/DevOps Best Practices.html"  >DevOps Best Practices</a></li>
 		<li><a class="" href="/devlog/DevOps work-life.html"  >DevOps work-life</a></li>
 		<li><a class="" href="/devlog/Developer relations.html"  >Developer relations</a></li>
 		<li><a class="" href="/devlog/Docker repository on Nexus.html"  >Docker repository on Nexus</a></li>
 		<li><a class="" href="/devlog/Dot-Walking.html"  >Dot-Walking</a></li>
 		<li><a class="" href="/devlog/Duck typing.html"  >Duck typing</a></li>
+		<li><a class="" href="/devlog/Durable Azure Functions.html"  >Durable Azure Functions</a></li>
 		<li><a class="" href="/devlog/Dynamically Increment Application version in Jenkins Pipeline.html"  >Dynamically Increment Application version in Jenkins Pipeline</a></li>
 		<li><a class="" href="/devlog/EIGRP.html"  >EIGRP</a></li>
 		<li><a class="" href="/devlog/EKS cluster information.html"  >EKS cluster information</a></li>
+		<li><a class="" href="/devlog/ELK.html"  >ELK</a></li>
 		<li><a class="" href="/devlog/Elastic Stack.html"  >Elastic Stack</a></li>
 		<li><a class="" href="/devlog/Elasticsearch.html"  >Elasticsearch</a></li>
 		<li><a class="" href="/devlog/End-user development.html"  >End-user development</a></li>
@@ -1544,12 +1635,14 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/IdentityNow.Misc Notes.html"  >IdentityNow.Misc Notes</a></li>
 		<li><a class="" href="/devlog/Incident Management.html"  >Incident Management</a></li>
 		<li><a class="" href="/devlog/Incident metrics.html"  >Incident metrics</a></li>
+		<li><a class="" href="/devlog/Install a Terraform Provider.html"  >Install a Terraform Provider</a></li>
 		<li><a class="" href="/devlog/JBoss.html"  >JBoss</a></li>
 		<li><a class="" href="/devlog/Jenkins with-on AWS.html"  >Jenkins with-on AWS</a></li>
 		<li><a class="" href="/devlog/LKE.html"  >LKE</a></li>
 		<li><a class="" href="/devlog/Microsoft IIS.html"  >Microsoft IIS</a></li>
 		<li><a class="" href="/devlog/Modem.html"  >Modem</a></li>
 		<li><a class="" href="/devlog/Mozilla Rhino.html"  >Mozilla Rhino</a></li>
+		<li><a class="" href="/devlog/N-tier architecture.html"  >N-tier architecture</a></li>
 		<li><a class="" href="/devlog/NAT.html"  >NAT</a></li>
 		<li><a class="" href="/devlog/NFS.html"  >NFS</a></li>
 		<li><a class="" href="/devlog/NetDevOps.html"  >NetDevOps</a></li>
@@ -1576,6 +1669,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/Restore volume from a snapshot of EC2 instance.html"  >Restore volume from a snapshot of EC2 instance</a></li>
 		<li><a class="" href="/devlog/SAML.html"  >SAML</a></li>
 		<li><a class="" href="/devlog/SDLC.html"  >SDLC</a></li>
+		<li><a class="" href="/devlog/SIEM.html"  >SIEM</a></li>
 		<li><a class="" href="/devlog/SSO.html"  >SSO</a></li>
 		<li><a class="" href="/devlog/SVN.html"  >SVN</a></li>
 		<li><a class="" href="/devlog/Segregation of Duties.html"  >Segregation of Duties</a></li>
@@ -1628,9 +1722,11 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/Special Whitespace Characters.html"  >Special Whitespace Characters</a></li>
 		<li><a class="" href="/devlog/TCP.html"  >TCP</a></li>
 		<li><a class="" href="/devlog/Temporary failure in name resolution.html"  >Temporary failure in name resolution</a></li>
+		<li><a class="" href="/devlog/Terraform AWS Provider.html"  >Terraform AWS Provider</a></li>
 		<li><a class="" href="/devlog/Time-Sharing Operating Systems.html"  >Time-Sharing Operating Systems</a></li>
 		<li><a class="" href="/devlog/UML diagram.html"  >UML diagram</a></li>
 		<li><a class="" href="/devlog/Using nmap to look for open ports.html"  >Using nmap to look for open ports</a></li>
+		<li><a class="" href="/devlog/VNet peering.html"  >VNet peering</a></li>
 		<li><a class="" href="/devlog/WebSockets API.html"  >WebSockets API</a></li>
 		<li><a class="" href="/devlog/a+.html"  >a+</a></li>
 		<li><a class="" href="/devlog/access denied for user root at localhost.html"  >access denied for user root at localhost</a></li>
@@ -1887,6 +1983,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/hdmi.html"  >hdmi</a></li>
 		<li><a class="" href="/devlog/hdparam.html"  >hdparam</a></li>
 		<li><a class="" href="/devlog/head.html"  >head</a></li>
+		<li><a class="" href="/devlog/health probes in Azure.html"  >health probes in Azure</a></li>
 		<li><a class="" href="/devlog/helm.html"  >helm</a></li>
 		<li><a class="" href="/devlog/here document.html"  >here document</a></li>
 		<li><a class="" href="/devlog/hive.html"  >hive</a></li>
@@ -1922,6 +2019,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/iot.html"  >iot</a></li>
 		<li><a class="" href="/devlog/ip.html"  >ip</a></li>
 		<li><a class="" href="/devlog/ip address.html"  >ip address</a></li>
+		<li><a class="" href="/devlog/iptables.html"  >iptables</a></li>
 		<li><a class="" href="/devlog/ipv4.html"  >ipv4</a></li>
 		<li><a class="" href="/devlog/ipv4 packets.html"  >ipv4 packets</a></li>
 		<li><a class="" href="/devlog/ir.html"  >ir</a></li>
@@ -2956,6 +3054,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 <button id="folder-18" class="dir-button" onclick="toggle_dir(this.id)">topics</button>
 <div id="folder-container-18" class="dir-container requires_js " path="/topics">
 	<ul class="dir-list">
+		<li><a class="" href="/topics/Advaita Vedanta.html"  >Advaita Vedanta</a></li>
 		<li><a class="" href="/topics/Biomechanics.html"  >Biomechanics</a></li>
 		<li><a class="" href="/topics/Cloud native.html"  >Cloud native</a></li>
 		<li><a class="" href="/topics/Databases.html"  >Databases</a></li>
@@ -3101,6 +3200,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 	</ul>
 </div>
 <ul class="dir-list">
+	<li><a class="" href="/Untitled.html"  >Untitled</a></li>
 	<li><a class="" href="/index.html"  >index</a></li>
 	<li><a class="" href="/workbench.html"  >workbench</a></li>
 </ul>

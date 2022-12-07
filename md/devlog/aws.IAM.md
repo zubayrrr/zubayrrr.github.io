@@ -73,6 +73,28 @@ Example of Admin policy in JSON editor:
   - Assign that role to an AWS Service.   
   - Attach policies to that role.   
    
+## Policy VS Profile VS Role   
+   
+### Policy   
+   
+An AWS policy is a document that defines permissions for accessing AWS resources. It specifies the actions that are allowed or denied on a resource, as well as the conditions under which those actions are allowed or denied.   
+   
+AWS policies are written in the JSON policy language, which is a structured format that defines the various elements of a policy. For example, a policy may specify that a particular IAM user is allowed to perform the `s3:PutObject` action on a specific S3 bucket.   
+   
+AWS policies can be attached to IAM users, groups, and roles to control access to AWS resources. For example, you can create a policy that allows users in a specific group to read and write objects in an S3 bucket, but denies access to users in another group.   
+   
+You can also use AWS policies to define fine-grained access controls for your resources. For example, you can use a policy to allow users to upload objects to an S3 bucket only if the objects are encrypted using a specific encryption key.   
+   
+   
+   
+- Assume Policy in [Terraform](../devlog/terraform.md)   
+- Trust Relationships in the console   
+   
+A role is a bunch of policies and a policy is a bunch of permissions.   
+   
+Permission Boundaries, privilege escalation   
+   
+Instance profile is for assigning role to a specific instance.   
 ## Labs   
    
 [aws.IAM.creating IAM User and Group](/not_created.md)

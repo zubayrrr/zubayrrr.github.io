@@ -18,6 +18,7 @@ updated: 1662903158474
 - 1 private 1 public subnet in each AZ. [aws](../devlog/aws.md)   
 - It is a best practice to have all the code/configuration files in place with your application code. It may be a Jenkinsfile, Terraform, Ansible all in the same place as your application code.   
 - Principle of least privilege - limits users' access rights to only what are strictly required to do their jobs.   
+- Use SSM instead of SSH for getting access to [AWS EC2](/not_created.md)   
    
 ## Resources   
    

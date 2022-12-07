@@ -6,7 +6,10 @@ title: Terraform
 updated: 1661538846040
 ---
    
-Terraform is an open source infrastructure as code ([IaC](../devlog/IaC.md)) software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run. To create and configure infrastructure . NOT for installing stuff on the server, just for provisioning.   
+> [!info]   
+> [Terraform](https://www.terraform.io/intro): "HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features."   
+   
+Terraform is an open source infrastructure as code ([IaC](../devlog/IaC.md)) software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run. To create and configure infrastructure NOT for installing stuff on the server, just for provisioning.   
    
 It is a universal [IaC](../devlog/IaC.md) tool, works with different cloud providers and technologies.   
    
@@ -16,6 +19,8 @@ Infrastructure as code is an IT practice that manages an application's underlyin
 Managing infrastructure (servers, network, etc) through definition files rather than manual configuration. Much like [configuration management](../devlog/configuration%20management.md), this enables automation, consistency, and is self-documenting.
    
    
+## Features   
+   
 It uses declarative syntax(as opposed to imperative syntax) to define what the end result looks like and it will figure out how to provision the infrastructure.   
    
    
@@ -24,12 +29,37 @@ It uses declarative syntax(as opposed to imperative syntax) to define what the e
    
 Using Terraform, your infrastructure is idempotent. You don't need to remember the current state, you only define your desired state. Since, you use declarative syntax, you don't define the steps like you would if you were using imperative syntax.   
    
+## HCL   
+   
+It uses a DSL(domain-specific language) called "HCL" (Hashicorp Configuration Language). A declarative language for defining infrastructure.   
+   
+## Typical Terraform Workflow   
+   
+1.  Write Terraform definitions: `.tf` files written in HCL that described the desired infrastructure state (and run `terraform init` at the very beginning)   
+2.  Review: With command such as `terraform plan` you can get a glance at what Terraform will perform with the written definitions   
+3.  Apply definitions: With the command `terraform apply` Terraform will apply the given definitions, by adding, modifying or removing the resources   
+   
+This is a manual process. Most of the time this is automated so user submits a PR/MR to propose Terraform changes, there is a process to test these changes and once merged they are applied (`terraform apply`).   
+   
+## Automated Terraform Workflow   
+   
+> [!summary]    
+> [Automation of Terraform can come in various forms, and to varying degrees. Some teams continue to run Terraform locally but use wrapper scripts to prepare a consistent working directory for Terraform to run in, while other teams run Terraform entirely within an orchestration tool such as Jenkins.](https://developer.hashicorp.com/terraform/tutorials/automation/automate-terraform)   
+   
+There are several ways to automate Terraform workflows, depending on your specific needs and environment. Here are a few common approaches:   
+   
+1.  Use a continuous integration (CI) tool such as Jenkins, CircleCI, or TravisCI to automate the process of running Terraform commands. This allows you to define a set of tasks that are run automatically whenever certain events occur, such as code changes or new deployments.   
+2.  Use a cloud-based automation service such as AWS CodePipeline or Azure DevOps to manage your Terraform workflows. These services provide a web-based interface for defining and executing Terraform tasks, and can integrate with other tools such as GitHub or AWS S3.   
+3.  Write custom scripts or programs to automate your Terraform workflows. This approach allows you to define your own logic for running Terraform tasks and integrating with other tools or services.   
+   
 ## [ansible](../devlog/ansible.md) VS Terraform   
    
    
 - Terraform is mainly an infrastructure provisioning tool.   
 - Ansible is mainly used for configuring infrastructure.   
 - Its a common practice to combine both to get the best of both.   
+   
+[To be clear, CM tools can be used to provision resources so in the end goal of having infrastructure, both Terraform and something like Ansible, can achieve the same result. The difference is in the how. Ansible doesn't saves the state of resources, it doesn't know how many instances there are in your environment as opposed to Terraform. At the same time while Terraform can perform configuration management tasks, it has less modules support for that specific goal and it doesn't track the task execution state as Ansible. The differences are there and it's most of the time recommended to mix the technologies, so Terraform used for managing infrastructure and CM technologies used for configuration on top of that infrastructure.](https://github.com/bregman-arie/devops-exercises/tree/master/topics/terraform#exercises)   
    
 ## Terraform Architecture   
    
@@ -39,17 +69,18 @@ It has 2 components:
    
    
 - Takes 2 input sources   
-  - Terraform Config   
-  - State(current state of the infrastructure)   
+	- Terraform Config   
+	- State(current state of the infrastructure)   
 - Core takes the input from the config and state and compares what needs to be changed and what is already there as per the config and state.   
 - It essentially **creates the execution plan** that the providers use.   
    
 ### Providers   
    
    
-- This can be providers for the specifc technology(AWS, GCP, Azure, OpenStack, other [IaaS](../devlog/IaaS.md))   
+- This can be providers for the specific technology(AWS, GCP, Azure, OpenStack, other [IaaS](../devlog/IaaS.md))   
 - It can also has providers for higher level technologies([kubernetes](../devlog/kubernetes.md), other [PaaS](/not_created.md) or even [SaaS](/not_created.md))   
 - It has over 100 providers and over 1000 resources.   
+- `terraform init` will automatically recognize what providers are being used and it’ll initialize them for you.   
    
 ## Example config files   
    
@@ -57,7 +88,7 @@ It has 2 components:
    
 ![](https://res.cloudinary.com/zubayr/image/upload/v1655346973/wiki/tcxkbpv4dyrx9yjtnufu.png)   
    
-We only define a few attributes in the configuration file, the rest or defaults are handled by terraform. Auto-generated.   
+We only define a few attributes in the configuration file, the rest or defaults are handled by Terraform. Auto-generated.   
    
 ## Terraform commands for different stages   
    
@@ -74,11 +105,13 @@ We only define a few attributes in the configuration file, the rest or defaults 
 - Expose resources for specific technology(AWS, GCP, Azure, OpenStack, other [IaaS](../devlog/IaaS.md))   
 - Responsible for understanding API of that platform.   
 - [Browse Providers | Terraform Registry](https://registry.terraform.io/browse/providers)   
-- Providers don't come with installation of terraform, they need to be installed separately.   
+- Providers don't come with installation of Terraform, they need to be installed separately.   
 - Once provider is installed using the `terraform init` command, the complete API of that provider is available.   
 - You get 2 components from the Providers   
-  - Resources   
-  - Data Sources   
+	- Resources   
+	- Data Sources   
+- [Install a Terraform Provider](../devlog/Install%20a%20Terraform%20Provider.md)   
+- [Terraform AWS Provider](../devlog/Terraform%20AWS%20Provider.md)   
    
 ## Resources   
    
@@ -253,6 +286,8 @@ There are three ways to pass values to input variables.
    - `terraform.tfvars` - this is a file that contains the (keys)values for the variables. (If you don't pass a file name, it'll look for this file)   
    - Use the `-var-file` flag to pass the file name.   
      - `terraform apply -var-file terraform-dev.tfvars`   
+ - `variables.tf` - is used to DEFINE variables NOT DECLARE inside the file whereas `.tfvars` is used to PASS variables. You can still declare a default value inside `variables.tf`   
+ - Precedence → `.tfvars` → environment variables → `variables.tf`   
    
 ### Default values   
    
@@ -859,4 +894,10 @@ Create an S3 bucket in your AWS account. Make sure to block public access.
    
 - [What is terraform provisioner? | Jhooq](https://jhooq.com/terraform-provisioner/)   
 - [All you need to know about Terraform provisioners and why you should avoid them. | AWS Tip](https://awstip.com/all-you-need-to-know-about-terraform-provisioners-and-why-you-should-avoid-them-22b5ef8d2db2)   
-- [Terraform Tutorial: Drift Detection Strategies](https://www.trendmicro.com/ru_ru/devops/22/c/terraform-tutorial-drift-detection-strategies.html)
+- [Terraform Tutorial: Drift Detection Strategies](https://www.trendmicro.com/ru_ru/devops/22/c/terraform-tutorial-drift-detection-strategies.html)   
+   
+## Misc   
+   
+   
+- `versions.tf` - you can provide the version of your provider(AWS, GCP etc or Custom providers)   
+- `random_string` (Resource) - The resource `random_string` generates a random permutation of alphanumeric characters and optionally special characters.

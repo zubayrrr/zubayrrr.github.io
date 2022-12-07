@@ -92,7 +92,7 @@ Check [Port 22](/not_created.md) on which the server listens is open, from the c
   - If it returns saying, "Host seems down" add the `-Pn` options and run again to get if the [Port 22](/not_created.md) is open or not.   
    
 Check if there is a [firewall](../devlog/firewall.md) dropping the packets.   
-The Linux firewall is called [netfilter](/not_created.md) or [iptables](/not_created.md).   
+The Linux firewall is called [netfilter](/not_created.md) or [iptables](../devlog/iptables.md).   
 To check if there are any firewall rules by running; `sudo iptables -vnL`   
 If you suspect a firewall issue then use [ufw](../devlog/ufw.md).   
    

@@ -43,7 +43,7 @@ As suggested by the name itself, the presentation layer will present the data to
    
 ### Layer 6 Examples   
    
-**Presentation styles** - taking ones and zeros and present them in the human readable format?   
+**Presentation styles** - taking ones and zeros and present them in the human readable format   
    
    
 - [HTML](/not_created.md), [XML](/not_created.md), [PHP](/not_created.md), [languages.javascript](../devlog/languages.javascript.md)   
