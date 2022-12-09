@@ -20,11 +20,11 @@ updated: 1662909500650
    
 # The Unthought Known   
    
-This is [my](./archive/about.md) personal wiki, a commonplace book, a digital garden; notes by me, for me.   
+This is [my](./archive/about.md) personal wiki, a commonplace book, a [digital garden](./archive/Digital%20Garden.md), a [Second Brain](./archive/Second%20Brain.md); notes by me, for me.   
    
 🚧 Permanently under construction 🚧   
    
-![](https://res.cloudinary.com/zubayr/image/upload/v1667399873/wiki/bnhamrfzhgkmct7hpfd1.png)   
+<!-- ![](https://res.cloudinary.com/zubayr/image/upload/v1667399873/wiki/bnhamrfzhgkmct7hpfd1.png) -->   
    
 This wiki was made possible with:    
    
