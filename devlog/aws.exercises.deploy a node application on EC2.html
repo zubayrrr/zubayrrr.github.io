@@ -218,33 +218,50 @@
 <ul>
 <li>Install Git   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>sudo yum update -y
 sudo yum install git -y
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li><a href="https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html" target="_blank" class="external-link">Setting Up Node.js on an Amazon EC2 Instance</a>   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh <span class="p">|</span> bash
 . ~/.nvm/nvm.sh
 nvm install --lts
 </code></pre></div>
 
+
+</div>
+
 <ul>
-<li>Clone the project using <a href="/devlog/version control.git.html">version control.git</a> or you can copy it from your local machine using <a href="/devlog/scp.html">scp</a>   </li>
+<li>Clone the project using <a href="/devlog/version%20control.git.html">version control.git</a> or you can copy it from your local machine using <a href="/devlog/scp.html">scp</a>   </li>
 </ul>
 <p>We'll be using <a href="https://github.com/ryanmurakami/fieldday" target="_blank" class="external-link">ryanmurakami/fieldday</a> repo.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>git clone https://github.com/ryanmurakami/fieldday
 cd fieldday
 npm install
 npm run start
 </code></pre></div>
 
+
+</div>
+
 <p>You can now access your application running on port 3000 (if you've opened this port as a security policy of the EC2 instance) on your instance's Public IPv4 DNS:3000   </p>
 <p>such as: <code>http://ec2-3-86-99-185.compute-1.amazonaws.com:3000/</code>   </p>
 <hr />
 <h2 id="specify-instance-user-data-at-launch">Specify instance user data at launch</h2>
 <p>Under Advanced Details on instance launcher page add the user data(script)   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 touch ~/.bashrc
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh <span class="p">|</span> bash
@@ -259,6 +276,9 @@ git clone https://github.com/ryanmurakami/fieldday
 npm install
 npm run start
 </code></pre></div>
+
+
+</div>
 
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1664987819/wiki/wtqbghrzmtehpetoex4r.png" />   </p>
 <ul>
@@ -277,13 +297,13 @@ npm run start
 
 </div>
 <div class="graph requires_js ">
-    <div id="A235448656118290990823956293071237206307{level}" class="graph_div"></div>
+    <div id="A212602105366590815363133365244021442926{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B235448656118290990823956293071237206307{level}" level="{level}" note_temp_id="235448656118290990823956293071237206307" onclick="window.ObsHtmlGraph.run(this, '235448656118290990823956293071237206307', 'aws.exercises.deploy a node application on ec2');">
+        <button class="graph_button graph_show_button" id="B212602105366590815363133365244021442926{level}" level="{level}" note_temp_id="212602105366590815363133365244021442926" onclick="window.ObsHtmlGraph.run(this, '212602105366590815363133365244021442926', 'aws.exercises.deploy a node application on ec2');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C235448656118290990823956293071237206307{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C212602105366590815363133365244021442926{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -765,6 +785,7 @@ npm run start
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

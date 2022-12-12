@@ -763,6 +763,7 @@ You can trigger jobs either manually or automatically(preferable). An example of
    
 Scheduling is another way of triggering build jobs. An example would be a job set up to be triggered after a certain time(maybe after running tests or a prior job that does some housekeeping etc).   
    
+
    
 ## Let's configure an automatic trigger of a Jenkins Job on a [version control.git](../devlog/version%20control.git.md) push.   
    
@@ -862,6 +863,7 @@ It works similarly across the different package manager, build tools. There are 
    
 **To integrate this process in a build pipeline:**   
    
+
    
 ## .jar Version   
    
@@ -910,6 +912,7 @@ Alternatively, you can pass a parameter as a version value variable and use that
 Note: **Don't forget to delete the older versions from your working directory using `mvn clean package`** in your Jenkinsfile build command. Don't use just `mvn package`.
    
    
+
    
 Update the version bump of the `pom.xml` to the remote repository.   
    

@@ -213,7 +213,7 @@
 </div>
 <p>Topics::  <a href="/devlog/kubernetes.html">kubernetes</a>, <a href="/devlog/terraform.html">terraform</a>, <a href="/devlog/aws.EKS.html">aws.eks</a>   </p>
 <hr />
-<p>We've seen <a href="/devlog/aws.eks.Create EKS cluster with AWS Management Console.html">aws.eks.Create EKS cluster with AWS Management Console</a> and <a href="/devlog/aws.eks.Create EKS cluster with eksctl.html">aws.eks.Create EKS cluster with eksctl</a>, both of these setups had a lot of moving parts. They don't have any version control, team collaboration is difficult, no simple replication of infrastructure is possible and no simple clean up.   </p>
+<p>We've seen <a href="/devlog/aws.eks.Create%20EKS%20cluster%20with%20AWS%20Management%20Console.html">aws.eks.Create EKS cluster with AWS Management Console</a> and <a href="/devlog/aws.eks.Create%20EKS%20cluster%20with%20eksctl.html">aws.eks.Create EKS cluster with eksctl</a>, both of these setups had a lot of moving parts. They don't have any version control, team collaboration is difficult, no simple replication of infrastructure is possible and no simple clean up.   </p>
 <p>We can instead use <a href="/devlog/terraform.html">terraform</a> to achieved this, which is a lot more streamlined and modular. Terraform is currently the best way to provision an EKS cluster!   </p>
 <p><strong>Overview/Steps</strong>   </p>
 <ul>
@@ -227,6 +227,8 @@
 <p><strong>VPC</strong>   </p>
 <p>EkS needs very specific configuration of VPC and the subnet inside and the route tables. We can refer to a <a href="/devlog/aws.CloudFormation.html">aws.cloudformation</a> template for achieving this.   </p>
 <p>Using Terraform Module for VPC.   </p>
+<div class="lang-tf">
+
 <div class="codehilite"><pre><span></span><code><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="na">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eu-west-2&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -278,8 +280,13 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>EKS Cluster</strong>   </p>
 <p>Using the Terraform Module for EKS.   </p>
+<div class="lang-tf">
+
 <div class="codehilite"><pre><span></span><code><span class="err">provider</span><span class="w"> </span><span class="s2">&quot;kubernetes&quot;</span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="na">load_config_file</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;false&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="na">host</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">data.aws_eks_cluster.myapp-cluster.endpoint</span><span class="c1"> # endpoint of K8s cluster(API Server)</span>
@@ -322,6 +329,9 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Authenticate with K8s cluster</strong>   </p>
 <p>Configure the <a href="/devlog/kubernetes.html">kubernetes</a> provider.   </p>
 <p><strong>Deploy ngnix-App into our cluster</strong>   </p>
@@ -340,7 +350,7 @@
 <p><strong>Destroy all components</strong>   </p>
 <p><code>terraform destroy</code> <br />
 <code>terraform state list</code>   </p>
-<p>See also: <a href="/devlog/ansible.Deploying Application in K8s.html">ansible.Deploying Application in K8s</a></p>
+<p>See also: <a href="/devlog/ansible.Deploying%20Application%20in%20K8s.html">ansible.Deploying Application in K8s</a></p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -355,13 +365,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A12007080930544875480116384433792441875{level}" class="graph_div"></div>
+    <div id="A150412478673896874178772053678584806808{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B12007080930544875480116384433792441875{level}" level="{level}" note_temp_id="12007080930544875480116384433792441875" onclick="window.ObsHtmlGraph.run(this, '12007080930544875480116384433792441875', 'terraform.automate provisioning eks cluster');">
+        <button class="graph_button graph_show_button" id="B150412478673896874178772053678584806808{level}" level="{level}" note_temp_id="150412478673896874178772053678584806808" onclick="window.ObsHtmlGraph.run(this, '150412478673896874178772053678584806808', 'terraform.automate provisioning eks cluster');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C12007080930544875480116384433792441875{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C150412478673896874178772053678584806808{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -843,6 +853,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

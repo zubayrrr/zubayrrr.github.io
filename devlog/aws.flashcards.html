@@ -880,6 +880,8 @@ For example, you can make use of a role which allows EC2 service to access s3 bu
 <li>Condition: conditions to determine when the policy is applied (optional)   </li>
 </ul>
 <h2 id="explain-the-following-policy">Explain the following policy:</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>{
     &quot;Version&quot;: &quot;2012-10-17&quot;,
     &quot;Statement&quot;: [
@@ -891,6 +893,9 @@ For example, you can make use of a role which allows EC2 service to access s3 bu
     ]
 }
 </code></pre></div>
+
+
+</div>
 
 <p>This policy permits to perform any action on any resource. It happens to be the "AdministratorAccess" policy.   </p>
 <h2 id="what-security-tools-aws-iam-provides">What security tools AWS IAM provides?</h2>
@@ -1421,6 +1426,8 @@ While in AWS Fargate, you don't provision or manage the infrastructure, you simp
 <li>Delete the old bucket   </li>
 </ul>
 <p>With the AWS CLI that would be:   </p>
+<div class="lang-sh">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># Create new bucket</span>
 aws s3 mb s3://<span class="o">[</span>NEW_BUCKET_NAME<span class="o">]</span>
 <span class="c1"># Sync the content from the old bucket to the new bucket</span>
@@ -1428,6 +1435,9 @@ $ aws s3 sync s3://<span class="o">[</span>OLD_BUCKET_NAME<span class="o">]</spa
 <span class="c1"># Remove old bucket</span>
 $ aws s3 rb --force s3://<span class="o">[</span>OLD_BUCKET_NAME<span class="o">]</span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="true-or-false-the-max-object-size-a-user-can-upload-in-one-go-is-5tb">True or False? The max object size a user can upload in one go, is 5TB</h2>
 <p>True   </p>
@@ -2442,13 +2452,13 @@ It is used when you would like to identify resource uniqely across all AWS infra
 
 </div>
 <div class="graph requires_js ">
-    <div id="A193035522577194416765834986404223924046{level}" class="graph_div"></div>
+    <div id="A299427218127943419580439388690363216871{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B193035522577194416765834986404223924046{level}" level="{level}" note_temp_id="193035522577194416765834986404223924046" onclick="window.ObsHtmlGraph.run(this, '193035522577194416765834986404223924046', 'aws.flashcards');">
+        <button class="graph_button graph_show_button" id="B299427218127943419580439388690363216871{level}" level="{level}" note_temp_id="299427218127943419580439388690363216871" onclick="window.ObsHtmlGraph.run(this, '299427218127943419580439388690363216871', 'aws.flashcards');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C193035522577194416765834986404223924046{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C299427218127943419580439388690363216871{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -2930,6 +2940,7 @@ It is used when you would like to identify resource uniqely across all AWS infra
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

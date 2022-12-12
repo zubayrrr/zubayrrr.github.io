@@ -228,8 +228,13 @@
 <hr />
 <p>GNU Wget is a command-line utility for downloading files from the web. With Wget, you can download files using HTTP, HTTPS, and FTP protocols. Wget provides a number of options allowing you to download multiple files, resume downloads, limit the bandwidth, recursive downloads, download in the background, mirror a website, and much more.   </p>
 <p>The <code>wget</code> utility expressions take the following form:   </p>
+<div class="lang-sh">
+
 <div class="codehilite"><pre><span></span><code>wget <span class="o">[</span>options<span class="o">]</span> <span class="o">[</span>url<span class="o">]</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Copy   </p>
 <ul>
@@ -239,82 +244,149 @@
 <h2 id="how-to-download-a-file-with-wget">How to Download a File with <code>wget</code></h2>
 <p>In its simplest form, when used without any option, <code>wget</code> will download the resource specified in the [url] to the current directory.   </p>
 <p>In the following example, we are downloading the Linux kernel tar archive:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget https://cdn.kernel.org/pub/linux/kernel/v4.x/linux-4.17.2.tar.xz
 </code></pre></div>
+
+
+</div>
 
 <p>During the download, <code>wget</code> shows the progress bar alongside the file name, file size, download speed, and the estimated time to complete the download. Once the download is complete, you can find the downloaded file in your current working directory .   </p>
 <p>To turn off the output, use the <code>-q</code> option. <br />
 If the file already exists, <code>wget</code> will add <code>.N</code> (number) at the end of the file name.   </p>
 <h2 id="saving-the-downloaded-file-under-different-name">Saving the Downloaded File Under Different Name</h2>
 <p>To save the downloaded file under a different name, pass the <code>-O</code> option followed by the chosen name:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget -O latest-hugo.zip https://github.com/gohugoio/hugo/archive/master.zip
 </code></pre></div>
 
+
+</div>
+
 <h2 id="downloading-a-file-to-a-specific-directory">Downloading a File to a Specific Directory</h2>
 <p>By default, <code>wget</code> will save the downloaded file in the current working directory. To save the file to a specific location, use the <code>-P</code> option:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget -P /mnt/iso http://mirrors.mit.edu/centos/7/isos/x86_64/CentOS-7-x86_64-Minimal-1804.iso
 </code></pre></div>
+
+
+</div>
 
 <p>The command above tells <code>wget</code> to save the CentOS 7 iso file to the <code>/mnt/iso</code> directory.   </p>
 <h2 id="limiting-the-download-speed">Limiting the Download Speed</h2>
 <p>To limit the download speed, use the <code>--limit-rate</code> option. By default, the speed is measured in bytes/second. Append <code>k</code> for kilobytes, <code>m</code> for megabytes, and <code>g</code> for gigabytes.   </p>
 <p>The following command will download the Go binary and limit the download speed to 1MB:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">wget</span><span class="w"> </span><span class="c1">--limit-rate=1m https://dl.google.com/go/go1.10.3.linux-amd64.tar.gz</span>
 </code></pre></div>
+
+
+</div>
 
 <p>This option is useful when you don’t want <code>wget</code> to consume all the available bandwidth.   </p>
 <h2 id="resuming-a-download">Resuming a Download</h2>
 <p>You can resume a download using the <code>-c</code> option. This is useful if your connection drops during a download of a large file, and instead of starting the download from scratch, you can continue the previous one.   </p>
 <p>In the following example, we are resuming the download of the Ubuntu 18.04 iso file:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget -c http://releases.ubuntu.com/18.04/ubuntu-18.04-live-server-amd64.iso
 </code></pre></div>
+
+
+</div>
 
 <p>If the remote server does not support resuming downloads, <code>wget</code> will start the download from the beginning and overwrite the existing file.   </p>
 <h2 id="downloading-in-background">Downloading in Background</h2>
 <p>To download in the background, use the <code>-b</code> option. In the following example, we are downloading the OpenSuse iso file in the background:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">wget</span><span class="w"> </span><span class="o">-</span><span class="n">b</span><span class="w"> </span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">opensuse</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">tumbleweed</span><span class="o">/</span><span class="n">iso</span><span class="o">/</span><span class="n">openSUSE</span><span class="o">-</span><span class="n">Tumbleweed</span><span class="o">-</span><span class="n">DVD</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="n">Current</span><span class="o">.</span><span class="n">iso</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>By default, the output is redirected to <code>wget-log</code> file in the current directory. To watch the status of the download, use the <a href="https://linuxize.com/post/linux-head-command/" target="_blank" class="external-link"><code>tail</code></a> command:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>tail -f wget-log
 </code></pre></div>
 
+
+</div>
+
 <h2 id="changing-the-wget-user-agent">Changing the Wget User-Agent</h2>
 <p>Sometimes when downloading a file, the remote server may be set to block the Wget User-Agent. In situations like this, to emulate a different browser, pass the <code>-U</code> option.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget --user-agent=&quot;Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/60.0&quot; http://wget-forbidden.com/
 </code></pre></div>
+
+
+</div>
 
 <p>The command above will emulate Firefox 60 requesting the page from <code>wget-forbidden.com</code>   </p>
 <h2 id="downloading-multiple-files">Downloading Multiple Files</h2>
 <p>If you want to download multiple files at once, use the <code>-i</code> option followed by the path to a local or external file containing a list of the URLs to be downloaded. Each URL needs to be on a separate line.   </p>
 <p>The following example shows how to download the Arch Linux, Debian, and Fedora iso files using the URLs specified in the <code>linux-distros.txt</code> file:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget -i linux-distros.txt
 </code></pre></div>
 
+
+</div>
+
 <p>linux-distros.txt   </p>
+<div class="lang-txt">
+
 <div class="codehilite"><pre><span></span><code><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">mirrors</span><span class="o">.</span><span class="n">edge</span><span class="o">.</span><span class="n">kernel</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">archlinux</span><span class="o">/</span><span class="n">iso</span><span class="o">/</span><span class="mf">2018.06</span><span class="o">.</span><span class="mi">01</span><span class="o">/</span><span class="n">archlinux</span><span class="o">-</span><span class="mf">2018.06</span><span class="o">.</span><span class="mi">01</span><span class="o">-</span><span class="n">x86_64</span><span class="o">.</span><span class="n">iso</span><span class="w"></span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">cdimage</span><span class="o">.</span><span class="n">debian</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">debian</span><span class="o">-</span><span class="n">cd</span><span class="o">/</span><span class="n">current</span><span class="o">/</span><span class="n">amd64</span><span class="o">/</span><span class="n">iso</span><span class="o">-</span><span class="n">cd</span><span class="o">/</span><span class="n">debian</span><span class="o">-</span><span class="mf">9.4</span><span class="o">.</span><span class="mi">0</span><span class="o">-</span><span class="n">amd64</span><span class="o">-</span><span class="n">netinst</span><span class="o">.</span><span class="n">iso</span><span class="w"></span>
 <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">download</span><span class="o">.</span><span class="n">fedoraproject</span><span class="o">.</span><span class="n">org</span><span class="o">/</span><span class="n">pub</span><span class="o">/</span><span class="n">fedora</span><span class="o">/</span><span class="n">linux</span><span class="o">/</span><span class="n">releases</span><span class="o">/</span><span class="mi">28</span><span class="o">/</span><span class="n">Server</span><span class="o">/</span><span class="n">x86_64</span><span class="o">/</span><span class="n">iso</span><span class="o">/</span><span class="n">Fedora</span><span class="o">-</span><span class="n">Server</span><span class="o">-</span><span class="n">dvd</span><span class="o">-</span><span class="n">x86_64</span><span class="o">-</span><span class="mi">28</span><span class="o">-</span><span class="mf">1.1</span><span class="o">.</span><span class="n">iso</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Copy   </p>
 <p>If you specify <code>-</code> as a filename, URLs will be read from the standard input.   </p>
 <h2 id="downloading-via-ftp">Downloading via FTP</h2>
 <p>To download a file from a password-protected FTP server, specify the username and password as shown below:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget --ftp-user=FTP_USERNAME --ftp-password=FTP_PASSWORD ftp://ftp.example.com/filename.tar.gz
 </code></pre></div>
 
+
+</div>
+
 <h2 id="creating-a-mirror-of-a-website">Creating a Mirror of a Website</h2>
 <p>To create a mirror of a website with <code>wget</code>, use the <code>-m</code> option. This will create a complete local copy of the website by following and downloading all internal links as well as the website resources (JavaScript, CSS, Images).   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget -m https://example.com
 </code></pre></div>
 
+
+</div>
+
 <p>If you want to use the downloaded website for local browsing, you will need to pass a few extra arguments to the command above.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget -m -k -p https://example.com
 </code></pre></div>
 
+
+</div>
+
 <p>The <code>-k</code> option will cause <code>wget</code> to convert the links in the downloaded documents to make them suitable for local viewing. The <code>-p</code> option will tell <code>wget</code> to download all necessary files for displaying the HTML page.   </p>
 <p>or   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget --mirror --convert-links --adjust-extension --page-requisites --no-parent https://example.com
 
 # or
@@ -322,15 +394,28 @@ If the file already exists, <code>wget</code> will add <code>.N</code> (numb
 wget -mKEpnp https://example.com
 </code></pre></div>
 
+
+</div>
+
 <h2 id="skipping-certificate-check">Skipping Certificate Check</h2>
 <p>If you want to download a file over HTTPS from a host that has an invalid SSL certificate, use the <code>--no-check-certificate</code> option:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>wget --no-check-certificate https://domain-with-invalid-ss.com
 </code></pre></div>
 
+
+</div>
+
 <h2 id="downloading-to-the-standard-output">Downloading to the Standard Output</h2>
 <p>In the following example, <code>wget</code> will quietly ( flag <code>-q</code>) download and output the latest WordPress version to stdout ( flag <code>-O -</code>) and pipe it to the <code>tar</code> utility, which will extract the archive to the <code>/var/www</code> directory.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">wget</span><span class="w"> </span><span class="o">-</span><span class="n">q</span><span class="w"> </span><span class="o">-</span><span class="n">O</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="s2">&quot;http://wordpress.org/latest.tar.gz&quot;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">tar</span><span class="w"> </span><span class="o">-</span><span class="n">xzf</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="o">-</span><span class="n">C</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>via - <a href="https://linuxize.com/post/wget-command-examples/" target="_blank" class="external-link">Wget Command in Linux with Examples | Linuxize</a></p>
@@ -352,13 +437,13 @@ wget -mKEpnp https://example.com
 
 </div>
 <div class="graph requires_js ">
-    <div id="A82378143362583535338076349566416424924{level}" class="graph_div"></div>
+    <div id="A28536178653785452745159763646157248550{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B82378143362583535338076349566416424924{level}" level="{level}" note_temp_id="82378143362583535338076349566416424924" onclick="window.ObsHtmlGraph.run(this, '82378143362583535338076349566416424924', 'wget');">
+        <button class="graph_button graph_show_button" id="B28536178653785452745159763646157248550{level}" level="{level}" note_temp_id="28536178653785452745159763646157248550" onclick="window.ObsHtmlGraph.run(this, '28536178653785452745159763646157248550', 'wget');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C82378143362583535338076349566416424924{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C28536178653785452745159763646157248550{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -840,6 +925,7 @@ wget -mKEpnp https://example.com
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

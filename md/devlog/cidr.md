@@ -6,6 +6,7 @@ title: CIDR
 updated: 1659799487438
 ---
    
+
 ## Drawbacks of Classful Addressing   
    
    

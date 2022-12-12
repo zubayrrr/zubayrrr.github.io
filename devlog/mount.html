@@ -218,8 +218,13 @@
 <hr />
 <p>All files in a <strong>Linux</strong> filesystem are arranged in form of a big tree rooted at ‘<strong>/</strong>‘.These files can be spread out on various devices based on your partition table, initially your parent directory is mounted(i.e attached) to this tree at ‘<strong>/</strong>‘, others can be mounted manually using GUI interface(if available) or using <strong>mount</strong> command.   </p>
 <p>If you want to access a filesystem that is on another partition or disk - you’ll need to mount it or logically attach it to an existing directory of your Unix/Linux filesystem. This directory is called as mount point.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>mount -t type device dir
 </code></pre></div>
+
+
+</div>
 
 <p>The commands tells the <strong>Kernel</strong> to attach the filesystem found at <strong>device</strong> to the <strong>dir</strong>.   </p>
 <ul>
@@ -244,8 +249,13 @@
 <h2 id="examples">Examples</h2>
 <p>Running <code>mount</code> without any options will show all the currently attached filesystems along with virtual file systems such as <a href="/devlog/sysfs.html">sysfs</a>, <a href="/not_created.html" class="nonexistent-link">tmpfs</a>, <a href="/devlog/proc.html">proc</a> and so on.   </p>
 <p>Display all partitions of a specific filesystem type   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>mount -l -t ext4
 </code></pre></div>
+
+
+</div>
 
 <p>Storage drives are represented on the system as files in the <code>/dev</code> directory. Typically, files representing storage devices start with <code>sd</code> or <code>hd</code> followed by a letter. For instance, the first drive on a server is usually something like <code>/dev/sda</code>.   </p>
 <p>Partitions on these drives also have files within <code>/dev</code>, represented by appending the partition number to the end of the drive name. For example, the first partition on the drive from the previous example would be <code>/dev/sda1</code>.   </p>
@@ -255,41 +265,81 @@
 <li>Use <a href="/devlog/dmesg.html">dmesg</a> to find the name of the device.   </li>
 <li>You can also use <a href="/devlog/lsblk.html">lsblk</a> to find all block devices.   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo fdisk -l
 dmesg
 </code></pre></div>
 
+
+</div>
+
 <p>Once you have the name of the device, you can mount it on any dir that already exists.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>mkdir /home/user/Desktop/usb
 sudo mount /dev/sdb /home/user/Desktop/usb
 </code></pre></div>
 
+
+</div>
+
 <p>You can mount the same physical device on multiple mount points.   </p>
 <p>Mount usually automatically recognises the filesystem type but if it fails you can explicitly specify it using <code>-t</code> option.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo mount -t vfat /dev/sdb /home/user/Desktop/usb
 </code></pre></div>
 
+
+</div>
+
 <p>Use <a href="/devlog/umount.html">umount</a> to un-mount a mounted device.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo umount /home/user/Desktop/usb
 </code></pre></div>
 
+
+</div>
+
 <p><code>-o</code> for additional options   </p>
 <p>Mount in Read-Only mode   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo mount -o ro /dev/sdb /home/user/Destop/usb
 </code></pre></div>
 
+
+</div>
+
 <p>To remount with other options or Write permissions   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo mount -o rw,remount /dev/sdb /home/user/Destop/usb
 </code></pre></div>
 
+
+</div>
+
 <h2 id="mounting-an-iso-file">Mounting an ISO file</h2>
 <p>Start by creating a mount point   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>mkdir ~/iso-mount
 </code></pre></div>
 
+
+</div>
+
 <p>Mount ISO using mount command   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">sudo</span><span class="w"> </span><span class="nv">mount</span><span class="w"> </span><span class="o">/</span><span class="nv">path_to_iso_file</span><span class="w"> </span><span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">user</span><span class="o">/</span><span class="nv">iso</span><span class="o">-</span><span class="nv">mount</span><span class="w"> </span><span class="o">-</span><span class="nv">o</span><span class="w"> </span><span class="k">loop</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>See also: <a href="/devlog/gparted.html">gparted</a></p>
 <div class="note-footer">
@@ -308,13 +358,13 @@ sudo mount /dev/sdb /home/user/Desktop/usb
 
 </div>
 <div class="graph requires_js ">
-    <div id="A101870319867996426970272212491476628568{level}" class="graph_div"></div>
+    <div id="A163918334101762995795896704120554340952{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B101870319867996426970272212491476628568{level}" level="{level}" note_temp_id="101870319867996426970272212491476628568" onclick="window.ObsHtmlGraph.run(this, '101870319867996426970272212491476628568', 'mount');">
+        <button class="graph_button graph_show_button" id="B163918334101762995795896704120554340952{level}" level="{level}" note_temp_id="163918334101762995795896704120554340952" onclick="window.ObsHtmlGraph.run(this, '163918334101762995795896704120554340952', 'mount');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C101870319867996426970272212491476628568{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C163918334101762995795896704120554340952{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -796,6 +846,7 @@ sudo mount /dev/sdb /home/user/Desktop/usb
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

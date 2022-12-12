@@ -6,15 +6,8 @@ title: Artifact Repository
 updated: 1654593468630
 ---
    
-## Artifacts   
-   
-   
-- Artifacts are apps built into a single, shareable, portable file.   
-- Building Java applications produce a special artifact file such as a `.jar` or a `.war`.   
-- Apps built from other programming languages may result in different artifact files such as a zip or a tarball.   
-   
-See also: [Artifact Repository](../devlog/Artifact%20Repository.md)   
-   
+
+Obsidianhtml: Error: Unable to find section #artifacts:#Building-Java-Applications in build automation
    
    
 Artifact repository is nothing but a place to store artifacts. The artifact repository has to support the artifact format. There are different artifact repositories formats for different artifact types/formats.   

@@ -263,17 +263,27 @@
 </ul>
 <p>A K8s Admin configures one of this external sources in the cluster and the API Server(Control Plane component) handles all the authentication requests coming in. It uses one of the configured authentication methods(sources).   </p>
 <p><code>kube-apiserver --token-auth-file=/users.csv [other-options]</code>   </p>
+<div class="lang-csv">
+
 <div class="codehilite"><pre><span></span><code># users.csv
 05c2b1e0303d04a85521c8eb3a4a1019m, user_1, u1001
 4e02489b29e13918506ffffe3cd5ce1e, user_2, u1002
 c1b200529b999126865486bea54b77af, user_3, u1003
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-csv">
+
 <div class="codehilite"><pre><span></span><code># users-group.csv
 05c2b1e0303d04a85521c8eb3a4a1019m, user_1, u1001, group1
 4e02489b29e13918506ffffe3cd5ce1e, user_2, u1002, group2
 c1b200529b999126865486bea54b77af, user_3, u1003, group3
 </code></pre></div>
+
+
+</div>
 
 <p>As for certificates, you'll have to manually create certs for different users or you(an Admin) can configure LDAP as authentication source for the API Server.   </p>
 <h2 id="service-accounts">Service Accounts</h2>
@@ -289,6 +299,8 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <p>You can then link(bind) this SA to a Role or ClusterRole with RoleBinding and ClusterRoleBinding respectively.   </p>
 <h2 id="example-config-files">Example Config Files</h2>
 <p><strong>Role</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -300,7 +312,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;watch&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>RoleBinding</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="c1"># This role binding allows &quot;jane&quot; to read pods in the &quot;default&quot; namespace.</span><span class="w"></span>
 <span class="c1"># You need to already have a Role named &quot;pod-reader&quot; in that namespace.</span><span class="w"></span>
@@ -320,7 +337,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>ClusterRole</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -335,7 +357,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;watch&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>CluserRoleBinding</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="c1"># This cluster role binding allows anyone in the &quot;manager&quot; group to read secrets in any namespace.</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span><span class="w"></span>
@@ -350,6 +377,9 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret-reader</span><span class="w"></span>
 <span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="creating-reviewing-rbac-resources">Creating &amp; Reviewing RBAC Resources</h2>
 <p>You create these RBAC resources just like any other K8s component with <code>kubectl apply -f file.yaml</code> and view them using <code>kubectl get roles</code> or <code>kubectl describe role &lt;role-name&gt;</code>.   </p>
@@ -373,13 +403,13 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 
 </div>
 <div class="graph requires_js ">
-    <div id="A17408903528011063331710695268517494720{level}" class="graph_div"></div>
+    <div id="A30255199182567210623949989637029221408{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B17408903528011063331710695268517494720{level}" level="{level}" note_temp_id="17408903528011063331710695268517494720" onclick="window.ObsHtmlGraph.run(this, '17408903528011063331710695268517494720', 'kubernetes.authorization with rbac');">
+        <button class="graph_button graph_show_button" id="B30255199182567210623949989637029221408{level}" level="{level}" note_temp_id="30255199182567210623949989637029221408" onclick="window.ObsHtmlGraph.run(this, '30255199182567210623949989637029221408', 'kubernetes.authorization with rbac');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C17408903528011063331710695268517494720{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C30255199182567210623949989637029221408{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -861,6 +891,7 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

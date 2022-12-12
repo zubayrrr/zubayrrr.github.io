@@ -10,6 +10,7 @@ updated: 2022-11-23 14:53:54.229000+00:00
    
 ## Quotes   
    
+
    
 > Consciously or not, directly or indirectly, in the short or the long term, whatever we do, whatever we hope, whatever we dream—somehow, is related to a deep, profound desire for well-being or [happiness](../topics/Happiness.md). — Matthieu Ricard, Biochemist turned Buddhist monk who is often described as world’s happiest person
    

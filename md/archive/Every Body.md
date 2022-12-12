@@ -16,6 +16,7 @@ What is about to follow are some sobering statistics about having babies after t
    
 Most of these changes are about female fertility, because this is something scientists know a lot about. Still, a biological clock ticks in both women and men. Researchers are beginning to find that older sperm may be associated with various neurocognitive problems in children, including autism, schizophrenia, dyslexia, and lower intelligence. For this reason, and for reasons we will discuss further into the chapter, both men and women ought to be thinking about the timing of babies.   
    
+
    
 Topics::  [decision making](../topics/decision%20making.md)   
    
@@ -33,6 +34,7 @@ This is because of two age-related changes that every woman can expect across he
    
 Trying au natural—just having sex around the time of ovulation—a woman has about a 20 to 25 percent chance of conceiving during each cycle, up to about age thirty-five. So when you’re young it takes, on average, about four or five months of having sex to get pregnant. After thirty-five, the per-cycle odds of pregnancy start to drop sharply, down to 5 percent at forty, then 3 percent at forty-one, and 2 percent at forty-two. At forty, that’s an average of twenty or more months of trying, and the longer we have to spend trying, the worse our odds become. Add to this the rising rates of miscarriage in women over thirty-five—one-quarter of pregnancies after thirty-five and half of pregnancies after forty miscarry—and the post-thirty-five years can be a time of anticipation and heartbreak.   
    
+
    
 Topics::  [fertility](../topics/fertility.md)   
    
@@ -44,6 +46,7 @@ In which sperm is inserted into the female reproductive tract—has a 90 to 95 p
    
 See also: [In vitro fertilization](../archive/In%20vitro%20fertilization.md)
    
+
    
 In vitro fertilization (IVF) is a complex series of procedures used to help with fertility or prevent genetic problems and assist with the conception of a child. During IVF , mature eggs are collected (retrieved) from ovaries and fertilized by sperm in a lab.   
    

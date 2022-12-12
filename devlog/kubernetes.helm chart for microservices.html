@@ -219,7 +219,7 @@
 <p>Related::  <a href="/devlog/kubernetes.helm.html">kubernetes.helm</a>, <a href="/devlog/microservices.html">microservices</a>, <a href="/devlog/kubernetes.microservices.html">kubernetes.microservices</a>   </p>
 <hr />
 <p>Create Helm Chart for Microservice.   </p>
-<p>In <a href="/devlog/kubernetes.Deploy Microservices Application.html">kubernetes.Deploy Microservices Application</a> we saw that we've same attributes but different values across all of our 10 Deployments &amp; Services.   </p>
+<p>In <a href="/devlog/kubernetes.Deploy%20Microservices%20Application.html">kubernetes.Deploy Microservices Application</a> we saw that we've same attributes but different values across all of our 10 Deployments &amp; Services.   </p>
 <p>Let's create a single blueprint for Deployment and Service for all Microservice where we can set values for individual Microservices keeping our code DRY using Helm Charts.   </p>
 <p>We can do it in 2 ways:   </p>
 <ol>
@@ -257,20 +257,32 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <p>User-defined variable names can be in any case however, the naming convention is camelCase.   </p>
 <p><strong>Flat or Nested Values</strong>   </p>
 <p>Values may be flat or deeply nested, although Helm recommends flat structure.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">appName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span><span class="w"></span>
 <span class="nt">appReplicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-yaml">
 
 <div class="codehilite"><pre><span></span><code><span class="nt">app</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">myapp</span><span class="w"></span>
 <span class="w">  </span><span class="nt">replicas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Dynamic Environment Variables</strong>   </p>
 <p>Environment variables values as interpreted as strings. So, you've to keep them quoted using the <strong>quote</strong> function with <strong>Pipelines</strong> (<code>|</code>) which is similar to <a href="/devlog/piping.html">piping</a> in Unix or Unix-like systems.   </p>
 <p><strong>-range</strong>   </p>
 <p>Provides a "for each" style loop to iterate through or "range over" a list.   </p>
 <hr />
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># deployment.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
@@ -299,6 +311,11 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="w">          </span><span class="p p-Indicator">{{</span><span class="nv">- end</span><span class="p p-Indicator">}}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># service.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
@@ -315,7 +332,12 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="nv">.Values.containerPort</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Declaring default values that will ultimately be substituted for real values.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># for deployment.yaml</span><span class="w"></span>
 <span class="nt">appName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">appServiceName</span><span class="w"></span>
 <span class="nt">appImage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">gcr.io/google-samples/microservices-demo/appServiceName</span><span class="w"></span>
@@ -333,6 +355,9 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span><span class="w"></span>
 <span class="nt">serviceType</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterIP</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <p>For each Microservice create a file <code>&lt;microservice&gt;-values.yaml</code> and fill in all the values.   </p>
@@ -352,6 +377,8 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <h2 id="create-redis-helm-chart">Create Redis Helm Chart</h2>
 <p>Move the <code>microservice</code> dir into a <code>charts</code> dir as we create a new chart for Redis.   </p>
 <p><code>helm create redis</code>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># deployment.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
@@ -380,6 +407,11 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="w">          </span><span class="nt">emptyDir</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># service.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span><span class="w"></span>
@@ -395,6 +427,11 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="nv">.Values.containerPort</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># values.yaml</span><span class="w"></span>
 <span class="nt">appName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span><span class="w"></span>
 <span class="nt">appImage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">redis</span><span class="w"></span>
@@ -406,6 +443,9 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 
 <span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6379</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="deploying-microservices-with-helm-install">Deploying Microservices with <code>helm install</code></h2>
 <ol>
@@ -420,6 +460,8 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 </ol>
 <h2 id="helmfile">Helmfile</h2>
 <p>It is a declarative way of telling helm what charts to deploy. Similar to how <a href="/devlog/terraform.html">terraform</a> works, you can define a desired state. You can declare a definition of an entire K8s cluster in a single <code>helmfile.yaml</code>. You can define multiple helm "releases" in it and change specifications of each release depending on application or type of environment.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># helmfile.yaml</span><span class="w"></span>
 <span class="nt">repositories</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">stable</span><span class="w"></span>
@@ -441,7 +483,12 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./values/ingress.yaml</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Create a Helmfile</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">releases</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rediscart</span><span class="w"></span>
 <span class="w">    </span><span class="nt">chart</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">charts/redis</span><span class="w"></span>
@@ -501,6 +548,9 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">values/frontend-values.yaml</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Install Helmfile</strong>   </p>
 <ul>
 <li><a href="https://helmfile.readthedocs.io/en/latest/#installation" target="_blank" class="external-link">Install Helmfile package</a> .   </li>
@@ -512,11 +562,11 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 <p><code>helmfile destroy</code>   </p>
 <p><strong>Where to host Helm Charts</strong>   </p>
 <ul>
-<li>Helm Charts are <a href="/devlog/IaC.html">IaC</a> and we'll store them in a <a href="/devlog/version control.git.html">version control.git</a> repo.   </li>
+<li>Helm Charts are <a href="/devlog/IaC.html">IaC</a> and we'll store them in a <a href="/devlog/version%20control.git.html">version control.git</a> repo.   </li>
 <li>Package it along with your microservices code.   </li>
 <li>OR have a separate Git repo for just Helm Charts.   </li>
 </ul>
-<p><strong>How does this fit in the <a href="/devlog/CICD pipeline.html">CICD pipeline</a> or DevOps workflow?</strong>   </p>
+<p><strong>How does this fit in the <a href="/devlog/CICD%20pipeline.html">CICD pipeline</a> or DevOps workflow?</strong>   </p>
 <p>You as a DevOps engineer would create these charts for the developers and hand it over to the developers and they will "use" these Helm Charts.   </p>
 <hr />
 <p>You can find the finished code at <a href="https://gitlab.com/zubayrrr/online-shop-microservices-deployment" target="_blank" class="external-link">zubayrrr / online-shop-microservices-deployment</a></p>
@@ -534,13 +584,13 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 
 </div>
 <div class="graph requires_js ">
-    <div id="A84005252806743852075094358805512967138{level}" class="graph_div"></div>
+    <div id="A64227514173115735647705976855892829330{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B84005252806743852075094358805512967138{level}" level="{level}" note_temp_id="84005252806743852075094358805512967138" onclick="window.ObsHtmlGraph.run(this, '84005252806743852075094358805512967138', 'kubernetes.helm chart for microservices');">
+        <button class="graph_button graph_show_button" id="B64227514173115735647705976855892829330{level}" level="{level}" note_temp_id="64227514173115735647705976855892829330" onclick="window.ObsHtmlGraph.run(this, '64227514173115735647705976855892829330', 'kubernetes.helm chart for microservices');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C84005252806743852075094358805512967138{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C64227514173115735647705976855892829330{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1022,6 +1072,7 @@ Examples: "Release", "Files", "Values" etc. See <a href="https://helm.sh/docs/ch
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

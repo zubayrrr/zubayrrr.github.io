@@ -243,16 +243,31 @@
 <p>Each user has a crontab file which is short for crontable, where all scheduled cron jobs for that user are specified. These files are located at <code>/var/spool/cron/crontabs</code> (the exact location can differ from distros to distros).   </p>
 <p>You edit these directly with a text editor or using the <code>crontab</code> command (recommended).   </p>
 <p>To display the contents of the crontab file of the current user.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>crontab -l
 </code></pre></div>
 
+
+</div>
+
 <p>To edit the current user’s crontab file   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>crontab -e
 </code></pre></div>
 
+
+</div>
+
 <p>To task to run has to be defined through a single line that consists of six fields separated by white space. The first five fields will define when the task will run and the last field will define the command or script to be run.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>m h dom mon dow command
 </code></pre></div>
+
+
+</div>
 
 <p>If you use an <code>*</code> for a field it will represent “always” or “any value” for that field.   </p>
 <p>Minimum time limit used is minute. If you want to run a task for every 15 seconds, cron cannot be used for such a job.   </p>
@@ -260,6 +275,8 @@
 <ul>
 <li>Run a backup script everyday at 6 AM (use 24 hours format)   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">backup</span><span class="mf">.</span><span class="n">sh</span><span class="w"></span>
 
 <span class="err">#</span><span class="w"> </span><span class="n">specify</span><span class="w"> </span><span class="n">dow</span><span class="w"> </span><span class="n">as</span><span class="w"> </span><span class="n">sunday</span><span class="w"></span>
@@ -267,32 +284,55 @@
 <span class="mf">0</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">backup</span><span class="mf">.</span><span class="n">sh</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>Runs a script that monitors free disk space every minute.   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>* * * * * /root/check_space.sh
 </code></pre></div>
+
+
+</div>
 
 <p>If you want to specify a list of discreet values in a field use comma operator to separate.   </p>
 <ul>
 <li>Run a task at 4,6,10 AM   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="mf">6</span><span class="p">,</span><span class="mf">10</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">check_space</span><span class="mf">.</span><span class="n">sh</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>If you want to specify a range of values use hyphen operator.   </p>
 <ul>
 <li>Run a task on weekdays between 9 and 5 PM, once per hour. (during working days and hours)   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="mf">0</span><span class="w"> </span><span class="mf">9</span><span class="o">-</span><span class="mf">17</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1</span><span class="o">-</span><span class="mf">5</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">script</span><span class="mf">.</span><span class="n">sh</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>You can use the slash operator to specify values that will be repeated over a certain interval.   </p>
 <ul>
 <li>Run a task every 3 days at 4 and 21 hours at 10 minutes   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="mf">10</span><span class="w"> </span><span class="mf">4</span><span class="p">,</span><span class="mf">21</span><span class="w"> </span><span class="o">*/</span><span class="mf">3</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="o">/</span><span class="n">root</span><span class="o">/</span><span class="n">script</span><span class="mf">.</span><span class="n">sh</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Common cron macros   </p>
 <ul>
@@ -303,21 +343,41 @@
 <li><code>@hourly</code> - will run the task once every hour at the beginning of the hour   </li>
 <li><code>@reboot</code> - will run the task at boot time   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>*/2 * * * * date &gt;&gt; /tmp/date_and_time.txt
 </code></pre></div>
 
+
+</div>
+
 <p>Monitor cron jobs via the cron log   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">tail</span><span class="w"> </span><span class="o">-</span><span class="n">f</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="nb">log</span><span class="o">/</span><span class="n">syslog</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>To remove crontab file   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>crontab -r
 </code></pre></div>
 
+
+</div>
+
 <p>Edit/remove other user’s crontab   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo crontab -e -u userName
 sudo crontab -r -u userName
 </code></pre></div>
+
+
+</div>
 
 <h3 id="footnotes">Footnotes</h3>
 <ul>
@@ -350,13 +410,13 @@ sudo crontab -r -u userName
 
 </div>
 <div class="graph requires_js ">
-    <div id="A288891821706392475676756953630079280662{level}" class="graph_div"></div>
+    <div id="A132030287541995539694900669531253850150{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B288891821706392475676756953630079280662{level}" level="{level}" note_temp_id="288891821706392475676756953630079280662" onclick="window.ObsHtmlGraph.run(this, '288891821706392475676756953630079280662', 'crontab');">
+        <button class="graph_button graph_show_button" id="B132030287541995539694900669531253850150{level}" level="{level}" note_temp_id="132030287541995539694900669531253850150" onclick="window.ObsHtmlGraph.run(this, '132030287541995539694900669531253850150', 'crontab');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C288891821706392475676756953630079280662{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C132030287541995539694900669531253850150{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -838,6 +898,7 @@ sudo crontab -r -u userName
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

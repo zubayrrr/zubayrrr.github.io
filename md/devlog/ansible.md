@@ -647,6 +647,7 @@ Default `hosts` file location. Describe `inventory = hosts` in the `ansible.cfg`
    
 Let's say we're managing an inventory which fluctuates over time, the hosts spinning up and shutting down all the time. Maybe auto-scaling is at play, in such a case having a static list of IP address in our inventory file doesn't make sense, because ephemeral servers are assigned different IP addresses. We need a way to **dynamically** set DNS names or IP addresses.   
    
+
    
 **Overview**   
    
@@ -765,6 +766,7 @@ keyed_groups:
 
    
    
+
    
 You can use roles when your Ansible code is too complex, with a lot of tests stuff. You can group your content into roles. It can help you break your large Playbooks into smaller manageable files. To easily reuse and share them with others.   
    

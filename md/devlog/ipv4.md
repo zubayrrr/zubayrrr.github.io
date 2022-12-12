@@ -36,6 +36,7 @@ The following figure shows the component parts of an IPv4 address, `172.16.50.56
    
 ![](https://res.cloudinary.com/zubayr/image/upload/v1656592063/wiki/gapcxwmkfgyk1pocnobt.png)   
    
+
 # Classes of IP Address   
    
    

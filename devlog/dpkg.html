@@ -217,7 +217,7 @@
 Related::  [[APT]   </p>
 <hr />
 <p>dpkg is software at the package management base within the free OS Debian and its several derivatives. This software is used for installing, removing, and providing details of <strong>.deb packages</strong>.   </p>
-<p>Debian comes from Debra Lynn, <a href="/resources/people/ian murdock.html">ian murdock</a>’s spouse; deb+ian = debian   </p>
+<p>Debian comes from Debra Lynn, <a href="/resources/people/ian%20murdock.html">ian murdock</a>’s spouse; deb+ian = debian   </p>
 <p>dpkg is a low-level mechanism. A higher level mechanism, i.e., <strong>[[APT]</strong> is more widely used as compared to the dpkg tool because it can retrieve packages by remote locations and negotiate with typical package relations like dependency resolution.   </p>
 <p>The database of dpkg is located in the <strong>/var/lib/dpkg</strong> file. This <strong>"status"</strong> file includes the installed software list on our current system. Also, there are no details about repositories within this database.   </p>
 <h2 id="examples">Examples</h2>
@@ -228,25 +228,45 @@ Related::  [[APT]   </p>
 <p>Remove/Delete everything including configuration files <br />
 <code>dpkg -P apache-perl</code>   </p>
 <p>List all installed packages, along with package version and short description   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>dpkg -l
 dokg -l | less
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>via — <a href="https://www.cyberciti.biz/howto/question/linux/dpkg-cheat-sheet.php" target="_blank" class="external-link">https://www.cyberciti.biz/howto/question/linux/dpkg-cheat-sheet.php</a>   </p>
 </blockquote>
 <p>Check all the programs from a package   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>dpkg -L coreutils
 </code></pre></div>
 
+
+</div>
+
 <p>Find to which package a program belongs   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>which -a ls
 dpkg -S /bin/ls
 </code></pre></div>
 
+
+</div>
+
 <p>List all installed packages   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo dpkg --get-selections
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -263,13 +283,13 @@ dpkg -S /bin/ls
 
 </div>
 <div class="graph requires_js ">
-    <div id="A19066385023284285585243945520613251544{level}" class="graph_div"></div>
+    <div id="A118166027441181521171399741061947352947{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B19066385023284285585243945520613251544{level}" level="{level}" note_temp_id="19066385023284285585243945520613251544" onclick="window.ObsHtmlGraph.run(this, '19066385023284285585243945520613251544', 'dpkg');">
+        <button class="graph_button graph_show_button" id="B118166027441181521171399741061947352947{level}" level="{level}" note_temp_id="118166027441181521171399741061947352947" onclick="window.ObsHtmlGraph.run(this, '118166027441181521171399741061947352947', 'dpkg');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C19066385023284285585243945520613251544{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C118166027441181521171399741061947352947{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -751,6 +771,7 @@ dpkg -S /bin/ls
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

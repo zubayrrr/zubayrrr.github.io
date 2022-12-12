@@ -225,7 +225,7 @@
 <li>Scales automatically to meet your build requirements   </li>
 <li>Charged only for the build time, based on operations performed   </li>
 <li>Output artifacts are stored in a secure <a href="/devlog/aws.S3.html">aws.S3</a> bucket   </li>
-<li>The next service you will need is <a href="/devlog/AWS CodeDeploy.html">AWS CodeDeploy</a> to complete the <a href="/devlog/CICD pipeline.html">CICD pipeline</a>   </li>
+<li>The next service you will need is <a href="/devlog/AWS%20CodeDeploy.html">AWS CodeDeploy</a> to complete the <a href="/devlog/CICD%20pipeline.html">CICD pipeline</a>   </li>
 </ul>
 <h2 id="build-project">Build Project</h2>
 <p>A build project includes information about how to run a build, where to get the source code from, which build environment to use, which build commands to run and where to store the build output.   </p>
@@ -238,7 +238,7 @@
 <li>You can also setup notifications using <a href="/not_created.html" class="nonexistent-link">AWS SNS</a>   </li>
 <li>You can keep an eye on this whole process using <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a>   </li>
 </ul>
-<p>You can setup <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> events to monitor the <a href="/devlog/AWS CodeCommit.html">AWS CodeCommit</a> repository so that whenever there is a successful merge, CloudWatch will trigger a build.   </p>
+<p>You can setup <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> events to monitor the <a href="/devlog/AWS%20CodeCommit.html">AWS CodeCommit</a> repository so that whenever there is a successful merge, CloudWatch will trigger a build.   </p>
 <p>You can automate it further to keep an eye on the logs.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655461536/wiki/s5r31bu4nzwwkayxsgox.png" />   </p>
 <h2 id="buildspec-file"><code>buildspec</code> file</h2>
@@ -247,6 +247,8 @@
 <li>You can include a buildspec as part of the source code or you can define buildspec when you create a build project.   </li>
 <li>It must be named <code>buildspec.yml</code> and is located at the root of the source code.   </li>
 </ul>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># buildspecstub.yaml</span><span class="w"></span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.2</span><span class="w"></span>
 
@@ -357,6 +359,9 @@
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">path</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>— via <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html" target="_blank" class="external-link">Build specification reference for CodeBuild - AWS CodeBuild</a>****</p>
 <div class="note-footer">
 <div class="backlinks">
@@ -375,13 +380,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A318344143161539356375980090922277413932{level}" class="graph_div"></div>
+    <div id="A155206206046173590592340901674149301753{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B318344143161539356375980090922277413932{level}" level="{level}" note_temp_id="318344143161539356375980090922277413932" onclick="window.ObsHtmlGraph.run(this, '318344143161539356375980090922277413932', 'aws codebuild');">
+        <button class="graph_button graph_show_button" id="B155206206046173590592340901674149301753{level}" level="{level}" note_temp_id="155206206046173590592340901674149301753" onclick="window.ObsHtmlGraph.run(this, '155206206046173590592340901674149301753', 'aws codebuild');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C318344143161539356375980090922277413932{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C155206206046173590592340901674149301753{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -863,6 +868,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

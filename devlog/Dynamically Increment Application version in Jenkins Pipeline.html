@@ -217,6 +217,8 @@
 </div>
 <h2 id="jar-version">.jar Version</h2>
 <p>In your <code>Jenkinsfile</code> add a stage for version increment before <code>mvn package</code> builds the application so that the <code>.jar</code> is produced with the correct version.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;increment version&quot;</span><span class="o">){</span><span class="w"></span>
 <span class="w">  </span><span class="n">steps</span><span class="o">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">script</span><span class="o">{</span><span class="w"></span>
@@ -233,18 +235,26 @@
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="docker-image-version">Docker Image Version</h2>
 <p>If a new <a href="/devlog/docker.html">docker</a> image is also built as part of your pipeline, you'd also want to bump it's version as well. Add another stage to accomplish this. Usually, the application version is used for the Docker Image version as well. The variable reads from the <code>pom.xml</code>   </p>
 <p>Use the env variable created above when running <code>docker build</code> and <code>docker push</code>. <br />
 Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p>
 <h2 id="replace-new-version-in-dockerfile">Replace new version in Dockerfile</h2>
-<p>Make the version defined in Dockerfile dynamic using <a href="/devlog/regular expression.html">regular expression</a> and use <code>CMD</code> instead of <code>ENTRYPOINT</code>   </p>
+<p>Make the version defined in Dockerfile dynamic using <a href="/devlog/regular%20expression.html">regular expression</a> and use <code>CMD</code> instead of <code>ENTRYPOINT</code>   </p>
+<div class="lang-dockerfile">
+
 <div class="codehilite"><pre><span></span><code>...
 <span class="k">COPY</span><span class="w"> </span>./target/app-name-*.jar /usr/app/
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/app</span>
 
 <span class="k">CMD</span><span class="w"> </span>java -jar app-name-*.jar<span class="sb">`</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Alternatively, you can pass a parameter as a version value variable and use that etc.   </p>
 <p>Note: <strong>Don't forget to delete the older versions from your working directory using <code>mvn clean package</code></strong> in your Jenkinsfile build command. Don't use just <code>mvn package</code>.</p>
@@ -257,13 +267,13 @@ Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p
 
 </div>
 <div class="graph requires_js ">
-    <div id="A218886638026364420119218864466209266565{level}" class="graph_div"></div>
+    <div id="A5850558068961692104446181248918878766{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B218886638026364420119218864466209266565{level}" level="{level}" note_temp_id="218886638026364420119218864466209266565" onclick="window.ObsHtmlGraph.run(this, '218886638026364420119218864466209266565', 'dynamically increment application version in jenkins pipeline');">
+        <button class="graph_button graph_show_button" id="B5850558068961692104446181248918878766{level}" level="{level}" note_temp_id="5850558068961692104446181248918878766" onclick="window.ObsHtmlGraph.run(this, '5850558068961692104446181248918878766', 'dynamically increment application version in jenkins pipeline');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C218886638026364420119218864466209266565{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C5850558068961692104446181248918878766{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -745,6 +755,7 @@ Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

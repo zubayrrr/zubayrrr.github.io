@@ -280,7 +280,7 @@
 <li>60 second minimum   </li>
 <li>Use 83 seconds and get charged for only 83 s   </li>
 <li>
-<p><a href="/devlog/AWS Lambda.html">AWS Lambda</a> allows you to pay per millisecond !   </p>
+<p><a href="/devlog/AWS%20Lambda.html">AWS Lambda</a> allows you to pay per millisecond !   </p>
 </li>
 <li>
 <p>Trade "capital expense" for "variable expense"   </p>
@@ -301,7 +301,7 @@
 <ul>
 <li>Compute relates to running applications or processing things with computer power, including, virtual servers and serverless computing.   </li>
 <li>Storage relates to services like <a href="/devlog/aws.S3.html">aws.S3</a> that is used to store and retrieve data.   </li>
-<li>Databases relates to <a href="/devlog/AWS RDS.html">AWS RDS</a>, <a href="/devlog/AWS DynamoDB.html">AWS DynamoDB</a> etc.   </li>
+<li>Databases relates to <a href="/devlog/AWS%20RDS.html">AWS RDS</a>, <a href="/devlog/AWS%20DynamoDB.html">AWS DynamoDB</a> etc.   </li>
 <li>Migration &amp; Transfer relates to services that help you migrate your databases from non-AWS platforms(traditional servers) to AWS and also help you sync your data.   </li>
 <li>Networking &amp; Content Delivery refers to VPC. virtual private cloud, where all the services exist, there are also content delivery services such as CloudFront and DNS services like Route 53.   </li>
 <li>Developer Tools relates to all the tools that were made to make developer's life easier in writing software and host it on AWS, from writing code, to building and deploying to servers.   </li>
@@ -346,7 +346,7 @@
 <li>A service to store and manage encryption keys is AWS Key Management.   </li>
 <li>A service for hardware-based key storage and regulatory compliance is AWS CloudHSM.   </li>
 <li>A service to provision, manage and deploy SSL and TLS security certificates, is AWS Certificate Manager.   </li>
-<li>A service to store and retrieve secrets like passwords is <a href="/devlog/AWS Secrets Manager.html">AWS Secrets Manager</a>.   </li>
+<li>A service to store and retrieve secrets like passwords is <a href="/devlog/AWS%20Secrets%20Manager.html">AWS Secrets Manager</a>.   </li>
 </ul>
 <h3 id="infrastructure-protection">Infrastructure protection:</h3>
 <ul>
@@ -378,7 +378,7 @@
 </ul>
 <hr />
 <ul>
-<li><a href="/devlog/Amazon VPC.html">Amazon VPC</a> - Virtual Private Cloud is a way to organize your AWS resources into virtual private networks.   </li>
+<li><a href="/devlog/Amazon%20VPC.html">Amazon VPC</a> - Virtual Private Cloud is a way to organize your AWS resources into virtual private networks.   </li>
 <li>Subnets, Network ACL.   </li>
 <li><a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html" target="_blank" class="external-link">Control traffic to subnets using Network ACLs - Amazon Virtual Private Cloud</a>   </li>
 <li><a href="/not_created.html" class="nonexistent-link">CIDR Blocks</a> - CIDR blocks are used to define the (a range) IP addresses that are allowed to access your AWS resources.   </li>
@@ -401,8 +401,8 @@
 <li>A service that helps you run fault tolerant workloads for up to 90% of the time for the normal price of EC2 is Amazon EC2 Spot.   </li>
 <li>A service which can automatically add or remove computing capacity to meet your changes in computing demand is called Amazon EC2 Auto Scaling.   </li>
 <li>A service that provides an easy to use cloud platform to build an application or website is called Amazon LightSail.   </li>
-<li><a href="/devlog/containers &amp; images.html">containers &amp; images</a>   </li>
-<li>A service to run reliable, secure and scalable containers is Amazon Elastic Container or <a href="/devlog/AWS ECS.html">AWS ECS</a>.   </li>
+<li><a href="/devlog/containers%20%26%20images.html">containers &amp; images</a>   </li>
+<li>A service to run reliable, secure and scalable containers is Amazon Elastic Container or <a href="/devlog/AWS%20ECS.html">AWS ECS</a>.   </li>
 <li>A service to store manage and deploy container images is Amazon Elastic Registry or <a href="/not_created.html" class="nonexistent-link">AWS ECR</a>.   </li>
 <li>A full managed <a href="/devlog/kubernetes.html">Kubernetes</a> service is Amazon Elastic Kubernetes Service or <a href="/devlog/aws.EKS.html">aws.EKS</a>.   </li>
 <li>Serverless   </li>
@@ -437,6 +437,8 @@
 <li><code>aws ec2 help</code>   </li>
 <li><code>aws iam help</code>   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># launch ec2 instance in the specified subnet of a VPC</span>
 aws ec2 describe-subnets
 aws ec2 describe-instances <span class="c1"># -&gt; will give us ami-imageid, we will use the same one</span>
@@ -448,6 +450,9 @@ aws ec2 run-instances <span class="se">\</span>
     --security-group-ids sg-903004f8 <span class="se">\ </span><span class="c1"># reuse already created or create a new one</span>
     --subnet-id subnet-6e7f829e
 </code></pre></div>
+
+
+</div>
 
 <h2 id="create-an-ec2-instance">Create an EC2 Instance</h2>
 <p>Steps:   </p>
@@ -471,6 +476,8 @@ aws ec2 run-instances <span class="se">\</span>
 <blockquote>
 <p>Configure firewall rules   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 authorize-security-group-ingress <span class="se">\</span>
 --group-id &lt;SG id&gt; <span class="se">\</span>
 --protocol tcp <span class="se">\</span>
@@ -478,15 +485,23 @@ aws ec2 run-instances <span class="se">\</span>
 --cidr &lt;IP addr&gt;  <span class="c1"># source, check your IP address, who can access</span>
 </code></pre></div>
 
+
+</div>
+
 <p>By default security group has outbound permissions to all destinations.   </p>
 <blockquote>
 <p>Create Key pair   </p>
 </blockquote>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 create-key-pair \
 --key-name MyKPCli \
 --query &#39;KeyMaterial&#39; \ # gives unencrypted pem
 --output text &gt; MyKPCli.pem
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>Get image-id, subnet-id   </p>
@@ -498,6 +513,8 @@ aws ec2 run-instances <span class="se">\</span>
 <blockquote>
 <p>Create an EC2 instance   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 run-instances <span class="se">\</span>
     --image-id ami-xxxxxxxx <span class="se">\</span>
     --count <span class="m">1</span> <span class="se">\</span>
@@ -506,6 +523,9 @@ aws ec2 run-instances <span class="se">\</span>
     --security-group-ids &lt;SG ID&gt; <span class="se">\</span>
     --subnet-id &lt;subnet ID&gt;
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>Grab public IP so you can SSH into it   </p>
@@ -530,20 +550,35 @@ aws ec2 run-instances <span class="se">\</span>
 <p>You can chain a filter to this command to filter <strong>certain components/resource</strong>.   </p>
 <p>You can also query(s) filter attributes of a filtered <strong>component's specific attributes</strong>.   </p>
 <p><strong>Examples</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 describe-instances <span class="se">\</span>
 --filters <span class="s2">&quot;Name=instance-type, Values=t2.micro&quot;</span> <span class="se">\</span>
 --query <span class="s2">&quot;Reservations[].Instances[].InstanceId&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Even tags can also be filtered.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 describe-instances --filters <span class="s2">&quot;Name=tag:Type,Values=Web Server with Docker&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <p>OR   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 describe-instances <span class="se">\</span>
 --filters <span class="s2">&quot;Name=tag:Type,Values=Web Server with Docker&quot;</span> <span class="se">\</span>
 --query <span class="s2">&quot;Reservations[].Instances[].InstanceId&quot;</span>
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <h2 id="using-iam-command">Using IAM Command</h2>
@@ -573,10 +608,15 @@ aws ec2 run-instances <span class="se">\</span>
 <p>Go to the IAM, click on "Policies" on the left sidebar. Click a policy to open it's summary page. Copy the <strong>Policy ARN</strong>.   </p>
 <p><strong>From Cli</strong>:   </p>
 <p>You need to know the name of the policy.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam list-policies <span class="se">\</span>
 --query <span class="s1">&#39;Policies[?PolicyName==`AmazonEC2FullAccess`].{ARN:arn}&#39;</span>
 --output text
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>Assign permissions to group   </p>
@@ -586,17 +626,27 @@ aws ec2 run-instances <span class="se">\</span>
 <li><code>aws iam attach-user-policy</code>   </li>
 <li><code>aws iam attach-group-policy</code>   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam attach-group-policy <span class="se">\</span>
 --group-name MyGroupCli <span class="se">\</span>
 --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Validate policy attachment   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam list-attached-group-policies <span class="se">\</span>
 --group-name MyGroupCli
 </code></pre></div>
+
+
+</div>
 
 <h2 id="create-credentials">Create Credentials</h2>
 <p><strong>For new User</strong>   </p>
@@ -606,6 +656,8 @@ aws ec2 run-instances <span class="se">\</span>
 <blockquote>
 <p>Assign a password   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam create-login-profile <span class="se">\</span>
 --user-name MyUserCli <span class="se">\</span>
 --password myPwd123Test <span class="se">\ </span><span class="c1"># password needs to be strong</span>
@@ -613,12 +665,17 @@ aws ec2 run-instances <span class="se">\</span>
 <span class="c1"># iam:ChangePassword policy needs to be attached to allow the user to change password</span>
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Get user info   </p>
 </blockquote>
 <p><code>aws iam get-user --user-name MyUserCli</code> - <code>Account ID or ARN</code> will be required for the user login(Sign in as IAM User).   </p>
 <h2 id="create-and-assign-custom-policy">Create and Assign Custom Policy</h2>
 <p>A custom policy for a user/group needs to be defined in a <code>.json</code> file.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// changePwdPolicy.json</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
@@ -637,23 +694,41 @@ aws ec2 run-instances <span class="se">\</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Creating the policy</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam create-policy <span class="se">\</span>
 --policy-name changePwd <span class="se">\</span>
 --policy-document file://changePwdPolicy.json
 </code></pre></div>
 
+
+</div>
+
 <p>Copy the ARN of the policy from the output.   </p>
 <p><strong>Assigning policy to user group</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam attach-group-policy <span class="se">\</span>
 --group-name MyGroupCli <span class="se">\</span>
 --policy-arn &lt;copied-policy-arn&gt;
 </code></pre></div>
 
+
+</div>
+
 <h2 id="create-access-keys">Create Access keys</h2>
 <p><strong>For new User</strong>   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam create-access-key --user-name MyUserCli
 </code></pre></div>
+
+
+</div>
 
 <p>Copy the <code>AccessKeyId</code> and <code>SecretAccessKey</code> from the output in order to login as that user from the Cli (programmatic access).   </p>
 <h2 id="switch-user">Switch User</h2>
@@ -668,7 +743,7 @@ aws ec2 run-instances <span class="se">\</span>
 <p><code>aws configure set aws_access_key_id &lt;access-key&gt;</code>   </p>
 </li>
 <li>
-<p>Set bash <a href="/devlog/environment variable.html">environment variable</a>s to temporarily switch a user. It will automatically use the new credentials in that session(terminal).   </p>
+<p>Set bash <a href="/devlog/environment%20variable.html">environment variable</a>s to temporarily switch a user. It will automatically use the new credentials in that session(terminal).   </p>
 </li>
 <li>
 <p><code>export AWS_ACCESS_KEY_ID=&lt;access-key&gt;</code>   </p>
@@ -715,13 +790,13 @@ aws ec2 run-instances <span class="se">\</span>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A286081685929748346615667118890597947420{level}" class="graph_div"></div>
+    <div id="A57532555979403700320383316377047679657{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B286081685929748346615667118890597947420{level}" level="{level}" note_temp_id="286081685929748346615667118890597947420" onclick="window.ObsHtmlGraph.run(this, '286081685929748346615667118890597947420', 'aws');">
+        <button class="graph_button graph_show_button" id="B57532555979403700320383316377047679657{level}" level="{level}" note_temp_id="57532555979403700320383316377047679657" onclick="window.ObsHtmlGraph.run(this, '57532555979403700320383316377047679657', 'aws');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C286081685929748346615667118890597947420{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C57532555979403700320383316377047679657{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1203,6 +1278,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

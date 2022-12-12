@@ -38,6 +38,7 @@ The layers are:
    
 ## Layers   
    
+
    
 # Layer 1 - Network Interface Layer   
    
@@ -49,6 +50,7 @@ The layers are:
 - Layer 1 Examples:   
   - [Ethernet](../devlog/ethernet.md), Token Ring, FDDI], RS-232
    
+
    
 # Layer 2 - Internet Layer   
    
@@ -61,6 +63,7 @@ The layers are:
 - Layer 2 Examples:   
   - [ip](../devlog/ip.md), [ICMP](../devlog/icmp.md), [ARP](../devlog/ARP.md), [RARP](../devlog/RARP.md)
    
+
    
 # Layer 3 - Transport Layer   
    
@@ -74,6 +77,7 @@ It is very similar to the [transport layer - osi](/not_created.md)
   - [UDP](../devlog/udp.md)   
   - [RTP](../devlog/rtp.md)
    
+
    
 # Layer 4 - Application Layer   
    
@@ -119,6 +123,7 @@ IPv4 Packets (Packet Header) contain the following information:
    
 ## Ports and Protocols   
    
+
    
 | Port Number      | Service name           | Transport protocol | Description                                                                                                                                                                                                                  |   
 | ---------------- | ---------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |   

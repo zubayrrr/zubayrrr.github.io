@@ -219,34 +219,64 @@
 <hr />
 <p><code>scp</code> stands for Secure Copy, it allows securely copy files and directories between two hosts, using <a href="/devlog/ssh.html">ssh</a>. It is part of the <a href="/not_created.html" class="nonexistent-link">OpenSSH</a> client package.   </p>
 <h2 id="local-to-remote">Local to remote</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>scp -P <span class="m">22</span> file.txt user@hostip:~
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-bash">
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># with specific name</span>
 scp -P <span class="m">22</span> file.txt user@hostip:~/scp-copied-file.txt
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># to copy a dir use -r for recursive</span>
 scp -r -P <span class="m">22</span> dirName/ user@hostip:~
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-bash">
 
 <div class="codehilite"><pre><span></span><code><span class="c1"># -p to preserve modification and access time</span>
 scp -rp -P <span class="m">22</span> dirName/ user@hostip:~
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>The user must’ve read permissions on the target directory   </li>
 </ul>
 <h2 id="remote-to-local">Remote to local</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>scp user@hostip:/etc/passwd /home/user/Desktop/
 
 <span class="c1"># use -r to copy a dir recursively</span>
 scp -r user@hostip:~/Desktop /home/user/Desktop
 </code></pre></div>
 
+
+</div>
+
 <h2 id="remote-to-remote">Remote to remote</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>scp user1@IP1:/path_to_source user2@IP2:/path_to_destination
 </code></pre></div>
+
+
+</div>
 
 <p>See also: <a href="/devlog/sftp.html">sftp</a>, <a href="/not_created.html" class="nonexistent-link">FileZilla</a>, <a href="/not_created.html" class="nonexistent-link">WinSCP</a></p>
 <div class="note-footer">
@@ -265,13 +295,13 @@ scp -r user@hostip:~/Desktop /home/user/Desktop
 
 </div>
 <div class="graph requires_js ">
-    <div id="A209099781012283910338478197563801765070{level}" class="graph_div"></div>
+    <div id="A197874374838656430394072275782409920262{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B209099781012283910338478197563801765070{level}" level="{level}" note_temp_id="209099781012283910338478197563801765070" onclick="window.ObsHtmlGraph.run(this, '209099781012283910338478197563801765070', 'scp');">
+        <button class="graph_button graph_show_button" id="B197874374838656430394072275782409920262{level}" level="{level}" note_temp_id="197874374838656430394072275782409920262" onclick="window.ObsHtmlGraph.run(this, '197874374838656430394072275782409920262', 'scp');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C209099781012283910338478197563801765070{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C197874374838656430394072275782409920262{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -753,6 +783,7 @@ scp -r user@hostip:~/Desktop /home/user/Desktop
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

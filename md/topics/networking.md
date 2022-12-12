@@ -74,6 +74,7 @@ A router has an IP address in the networks they are attached to. This IP is also
    
 ---   
    
+
    
 OSI stands for Open Systems Interconnection, developed in 1977 by the International Organization for Standardization(ISO).   
    
@@ -115,6 +116,7 @@ The mnemonic to remember the data types in the OSI model is: "**D**on't **S**ome
    
 ---   
    
+
    
 # Layer 1 – Physical layer   
    
@@ -222,6 +224,7 @@ Devices that give physical response, hence a physical layer device.
   - Wireless Access Points   
   - [Media Converters](../devlog/media%20converters.md)
    
+
    
 # Layer 2 – Data-link Layer   
    
@@ -259,6 +262,7 @@ LLC allows a device to make a request for either less information at a time or t
 - [Switch](../devlog/switch.md)es   
 - [MAC](../devlog/mac.md) Addresses
    
+
    
 # Layer 3 – Network Layer   
    
@@ -360,6 +364,7 @@ The IP addressing is a connectionless service, thus the layer -3 provides a conn
    
 At the receiving end, it again reassembles them to the original size, thus becoming space efficient as a medium less load.
    
+
    
 # Layer 4 – Transport Layer   
    
@@ -411,6 +416,7 @@ This error detection & control method permits a receiver to rebuild the original
    
 See: [tcp vs udp](../devlog/tcp%20vs%20udp.md)
    
+
    
 # Layer 5 – Session Layer   
    
@@ -467,6 +473,7 @@ This will help in keeping the data safe and the whole data host will never compl
 - [NetBIOS](../devlog/netbios.md)   
   - Used by computers to share files over a network.
    
+
    
 # Layer 6 – Presentation Layer   
    
@@ -518,6 +525,7 @@ As suggested by the name itself, the presentation layer will present the data to
    
 - [TLS](../devlog/tls.md), [SSL](../devlog/ssl.md)
    
+
    
 # Layer 7 – Application Layer   
    
@@ -581,6 +589,7 @@ Application level services in the [OSI Model](../devlog/osi%20model.md) context 
    
 Using [wireshark](../devlog/wireshark.md) packet analyzer to pull apart network traffic and see the different layers of the OSI model.   
    
+
 ## Lab   
    
    
@@ -628,6 +637,7 @@ You can save all the captured traffic in a `.pcap` file and try to analyze the t
    
 - [7 Layers of The OSI Model (A Complete Guide)](https://www.softwaretestinghelp.com/osi-model-layers/#1_Layer_1_8211_Physical_layer)
    
+
    
 Topics::  [networking](../topics/networking.md)   
    
@@ -661,6 +671,7 @@ The layers are:
    
 ## Layers   
    
+
    
 # Layer 1 - Network Interface Layer   
    
@@ -672,6 +683,7 @@ The layers are:
 - Layer 1 Examples:   
   - [Ethernet](../devlog/ethernet.md), Token Ring, FDDI], RS-232
    
+
    
 # Layer 2 - Internet Layer   
    
@@ -684,6 +696,7 @@ The layers are:
 - Layer 2 Examples:   
   - [ip](../devlog/ip.md), [ICMP](../devlog/icmp.md), [ARP](../devlog/ARP.md), [RARP](../devlog/RARP.md)
    
+
    
 # Layer 3 - Transport Layer   
    
@@ -697,6 +710,7 @@ It is very similar to the [transport layer - osi](/not_created.md)
   - [UDP](../devlog/udp.md)   
   - [RTP](../devlog/rtp.md)
    
+
    
 # Layer 4 - Application Layer   
    
@@ -742,6 +756,7 @@ IPv4 Packets (Packet Header) contain the following information:
    
 ## Ports and Protocols   
    
+
    
 | Port Number      | Service name           | Transport protocol | Description                                                                                                                                                                                                                  |   
 | ---------------- | ---------------------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |   
@@ -816,6 +831,7 @@ Via - [50 Common Ports You Should Know - GeeksforGeeks](https://www.geeksforgeek
    
 See also: [Using nmap to look for open ports](../devlog/Using%20nmap%20to%20look%20for%20open%20ports.md)
    
+
    
 # IPv4 Addressing   
    
@@ -847,6 +863,7 @@ The following figure shows the component parts of an IPv4 address, `172.16.50.56
    
 ![](https://res.cloudinary.com/zubayr/image/upload/v1656592063/wiki/gapcxwmkfgyk1pocnobt.png)   
    
+
 # Classes of IP Address   
    
    
@@ -928,7 +945,9 @@ Some more examples:
    
 Special address ranges are never assigned by an administrator or DHCP server.
    
+
    
+
 ## Drawbacks of Classful Addressing   
    
    

@@ -12,6 +12,7 @@ AWS also refers to the IT company(subsidiary of Amazon) that created these servi
    
 ## Overview   
    
+
    
 What is the Cloud?   
    
@@ -197,6 +198,7 @@ Cloud is a collection of services that create a platform which include:
    
 ---   
    
+
    
 You use AWS Cli if you want programmatic access to your AWS resources. You can execute commands from other AWS services.   
    

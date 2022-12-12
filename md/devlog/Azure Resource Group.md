@@ -21,4 +21,4 @@ A resource group typically contains all of the resources that are required to ru
    
 Resource groups also allow you to control access to your Azure resources. You can use Azure Role-Based Access Control (RBAC) to grant users and groups access to a specific resource group, rather than granting access to individual resources. This makes it easier to manage access to your Azure resources and helps to ensure that they are used in accordance with your corporate policies.   
    
-To create a resource group, you simply specify a name and a location in Azure. You can then add and remove resources from the resource group as needed. You can manage resource groups through the [Azure Portal](/not_created.md), [Azure CLI](/not_created.md), or [Azure PowerShell](/not_created.md).
+To create a resource group, you simply specify a name and a location in Azure. You can then add and remove resources from the resource group as needed. You can manage resource groups through the [Azure Portal](/not_created.md), [Azure CLI](../devlog/Azure%20CLI.md), or [Azure PowerShell](/not_created.md).

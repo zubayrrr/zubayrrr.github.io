@@ -243,7 +243,7 @@
 <p>A collection of AWS resources running application version.   </p>
 <h2 id="manage">Manage</h2>
 <p>For updating the application, you simply upload a new version and the rest is again taken care by Elastic Beanstalk.   </p>
-<h2 id="elastic-beanstalk-vs-aws-opsworks-vs-aws-cloudformation">Elastic Beanstalk VS <a href="/devlog/AWS OpsWorks.html">AWS OpsWorks</a> VS <a href="/devlog/aws.CloudFormation.html">aws.CloudFormation</a></h2>
+<h2 id="elastic-beanstalk-vs-aws-opsworks-vs-aws-cloudformation">Elastic Beanstalk VS <a href="/devlog/AWS%20OpsWorks.html">AWS OpsWorks</a> VS <a href="/devlog/aws.CloudFormation.html">aws.CloudFormation</a></h2>
 <ul>
 <li>Elastic Beanstalk is geared towards developers and is the simplest to use but provides the least visibility of whats going on "under the hood". You can quickly deploy applications. It is great for testing. If you have a lot of dependencies and a complicated deployment process Elastic Beanstalk not be the best choice.   </li>
 <li>OpsWorks is a configuration management services that provides managed instances of <a href="/devlog/chef.html">chef</a> and <a href="/devlog/puppet.html">puppet</a>. Great for hybrid environments because if node is reachable by Chef or Puppet instances(On-prem), it can be registered with OpsWorks.   </li>
@@ -334,9 +334,9 @@
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655636968/wiki/inimde4i38hupldmjkbq.png" />   </p>
 <h2 id="elastic-beanstalk-docker-deployment">Elastic Beanstalk Docker Deployment</h2>
 <p>Single containers can be deployed on Elastic Beanstalk but are not ideal for multi-tiered architectures. Dockerfile is mandatory. Docker run file is optional.   </p>
-<p>Multi-containers on single instances with <a href="/devlog/AWS ECS.html">AWS ECS</a>. Docker run file is mandatory. There are multiple ports to communicate with. Ideal for multi-processes applications.   </p>
+<p>Multi-containers on single instances with <a href="/devlog/AWS%20ECS.html">AWS ECS</a>. Docker run file is mandatory. There are multiple ports to communicate with. Ideal for multi-processes applications.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655652299/wiki/f41dktgd9nrubg6ivlmm.png" />   </p>
-<h2 id="elastic-beanstalk-with-aws-rds">Elastic Beanstalk with <a href="/devlog/AWS RDS.html">AWS RDS</a></h2>
+<h2 id="elastic-beanstalk-with-aws-rds">Elastic Beanstalk with <a href="/devlog/AWS%20RDS.html">AWS RDS</a></h2>
 <p>You create an RDS database in your Elastic Beanstalk environment. When environment is deleted, RDS database is also deleted. It means your database is tightly coupled with your environment.   </p>
 <p>But it is possible to decouple the RDS database by creating it outside of Elastic Beanstalk. Better and safer for prod. This makes it much safer and you can connect the RDS database to multiple environments.</p>
 <div class="note-footer">
@@ -353,13 +353,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A44781609485988197373170005722649639632{level}" class="graph_div"></div>
+    <div id="A101282009719876041261805121626642948651{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B44781609485988197373170005722649639632{level}" level="{level}" note_temp_id="44781609485988197373170005722649639632" onclick="window.ObsHtmlGraph.run(this, '44781609485988197373170005722649639632', 'aws elastic beanstalk');">
+        <button class="graph_button graph_show_button" id="B101282009719876041261805121626642948651{level}" level="{level}" note_temp_id="101282009719876041261805121626642948651" onclick="window.ObsHtmlGraph.run(this, '101282009719876041261805121626642948651', 'aws elastic beanstalk');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C44781609485988197373170005722649639632{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C101282009719876041261805121626642948651{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -841,6 +841,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

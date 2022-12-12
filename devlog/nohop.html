@@ -214,7 +214,7 @@
 <p>Topics::  <a href="/topics/linux.html">linux</a>   </p>
 <hr />
 <p>When you close a terminal, logout or disconnect, any processes running in that terminal will be terminated. [[SIGHUP] signal is sent to the process and the process will be killed. This can become an issue if you're running a remote server, executing programs over SSH and if the connection drops, the session will be terminated, all the executed processes will stop, to avoid this issue, use <code>nohop</code> command which will make the process ignore all hang up signals.   </p>
-<p><a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a> will not be available to the user and <code>nohup.out</code> file is used as the default file for <a href="/devlog/stdout.html">stdout</a> and <a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a>, it is created in the current working directory or if the user doesn't have the right permissions for the current directory, the file will be created in the user's home dir. If the output of the nohup command is redirected to some other file, nohup.out file is not generated.   </p>
+<p><a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a> will not be available to the user and <code>nohup.out</code> file is used as the default file for <a href="/devlog/stdout.html">stdout</a> and <a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a>, it is created in the current working directory or if the user doesn't have the right permissions for the current directory, the file will be created in the user's home dir. If the output of the nohup command is redirected to some other file, nohup.out file is not generated.   </p>
 <p>If a process is started and its parent(bash shell) gets terminated, the process will be adopted by <a href="/not_created.html" class="nonexistent-link">init</a> or <a href="/devlog/systemd.html">systemd</a> which runs with the <a href="/devlog/pid.html">PID</a> <code>1</code> and are the first process run by the system.   </p>
 <ul>
 <li><code>nohup sleep 123 &amp;</code> will begin a <code>sleep</code> process   </li>
@@ -235,13 +235,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A305626023585984031452419201604748954415{level}" class="graph_div"></div>
+    <div id="A88604276348572754727667350589326619231{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B305626023585984031452419201604748954415{level}" level="{level}" note_temp_id="305626023585984031452419201604748954415" onclick="window.ObsHtmlGraph.run(this, '305626023585984031452419201604748954415', 'nohop');">
+        <button class="graph_button graph_show_button" id="B88604276348572754727667350589326619231{level}" level="{level}" note_temp_id="88604276348572754727667350589326619231" onclick="window.ObsHtmlGraph.run(this, '88604276348572754727667350589326619231', 'nohop');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C305626023585984031452419201604748954415{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C88604276348572754727667350589326619231{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -723,6 +723,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

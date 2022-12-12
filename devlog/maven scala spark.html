@@ -211,7 +211,7 @@
 <div class="toc">
 <ul></ul>
 </div>
-<p>Topics::  <a href="/topics/apache spark.html">apache spark</a>   </p>
+<p>Topics::  <a href="/topics/apache%20spark.html">apache spark</a>   </p>
 <hr />
 <p>Init a Scala project   </p>
 <div class="codehilite"><pre><span></span><code><span class="n">mvn</span><span class="w"> </span><span class="n">archetype</span><span class="p">:</span><span class="n">generate</span><span class="w"> </span><span class="o">-</span><span class="n">DarchetypeGroupId</span><span class="o">=</span><span class="n">net</span><span class="o">.</span><span class="n">alchim31</span><span class="o">.</span><span class="n">maven</span><span class="w"> </span><span class="o">-</span><span class="n">DarchetypeArtifactId</span><span class="o">=</span><span class="n">scala</span><span class="o">-</span><span class="n">archetype</span><span class="o">-</span><span class="n">simple</span><span class="w"> </span><span class="o">-</span><span class="n">DdownloadSources</span><span class="o">=</span><span class="bp">true</span><span class="w"></span>
@@ -219,12 +219,17 @@
 
 <p>ref: &lt;<a href="https://mvnrepository.com/artifact/net.alchim31.maven&gt;" target="_blank" class="external-link">https://mvnrepository.com/artifact/net.alchim31.maven&gt;</a>   </p>
 <p>Add Spark dependency   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>    <span class="nt">&lt;dependency&gt;</span>
       <span class="nt">&lt;groupId&gt;</span>org.apache.spark<span class="nt">&lt;/groupId&gt;</span>
       <span class="nt">&lt;artifactId&gt;</span>spark-sql_2.12<span class="nt">&lt;/artifactId&gt;</span>
       <span class="nt">&lt;version&gt;</span>3.1.1<span class="nt">&lt;/version&gt;</span>
     <span class="nt">&lt;/dependency&gt;</span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>Make sure to select JDK 8   </li>
@@ -255,13 +260,13 @@ mvn clean package # to clean and package the .jar
 
 </div>
 <div class="graph requires_js ">
-    <div id="A97373640096705111570044978542877946358{level}" class="graph_div"></div>
+    <div id="A94596030899657900699328758509049967088{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B97373640096705111570044978542877946358{level}" level="{level}" note_temp_id="97373640096705111570044978542877946358" onclick="window.ObsHtmlGraph.run(this, '97373640096705111570044978542877946358', 'maven scala spark');">
+        <button class="graph_button graph_show_button" id="B94596030899657900699328758509049967088{level}" level="{level}" note_temp_id="94596030899657900699328758509049967088" onclick="window.ObsHtmlGraph.run(this, '94596030899657900699328758509049967088', 'maven scala spark');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C97373640096705111570044978542877946358{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C94596030899657900699328758509049967088{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -743,6 +748,7 @@ mvn clean package # to clean and package the .jar
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

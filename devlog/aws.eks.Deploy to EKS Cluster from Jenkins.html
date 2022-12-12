@@ -220,7 +220,7 @@
 </div>
 <p>Related::  <a href="/devlog/jenkins.html">jenkins</a>, <a href="/devlog/kubernetes.html">kubernetes</a>   </p>
 <hr />
-<p>Lets use the cluster we created using <code>eksctl</code> in <a href="/devlog/aws.eks.Create EKS cluster with eksctl.html">aws.eks.Create EKS cluster with eksctl</a>.   </p>
+<p>Lets use the cluster we created using <code>eksctl</code> in <a href="/devlog/aws.eks.Create%20EKS%20cluster%20with%20eksctl.html">aws.eks.Create EKS cluster with eksctl</a>.   </p>
 <p><strong>Overiew</strong>   </p>
 <ul>
 <li>Install <code>kubectl</code> inside Jenkins container.   </li>
@@ -250,6 +250,8 @@
 <h2 id="create-kubeconfig">Create <code>kubeconfig</code></h2>
 <p>We don’t have an editor in Docker container so you’ll have to create the <code>kubeconfig</code> outside the container(on host) and simply copy it to the container.   </p>
 <p><code>vim config</code>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">clusters</span><span class="p">:</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">cluster</span><span class="p">:</span><span class="w"></span>
@@ -276,6 +278,9 @@
 <span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;demo-cluster&quot;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Make it available to Jenkins container at default kubeconfig location <code>~/.kube/config</code>   </p>
 <p><code>docker exec -u 0 -it &lt;container-id&gt; bash</code>    </p>
 <p><code>cd ~</code>   </p>
@@ -292,6 +297,8 @@
 <p><img alt="uploading..." src="7cu.lfga" />   </p>
 <p>and the Secret will be the actual secret key itself.   </p>
 <h2 id="configure-jenkinsfile-to-deploy-to-eks">Configure Jenkinsfile to deploy to EKS</h2>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">#!/usr/bin/env groovy</span><span class="w"></span>
 
 <span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -327,6 +334,9 @@
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Find the finished code at <a href="https://gitlab.com/zubayrrr/java-maven-app/-/tree/deploy-on-k8s" target="_blank" class="external-link">zubayrrr / java-maven-app · GitLab</a>   </p>
 <h2 id="execute-jenkins-pipeline">Execute Jenkins Pipeline</h2>
 <p>Create a new pipeline and configure the branch that you want to deploy from.</p>
@@ -345,13 +355,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A244126602354592625905745582301145564908{level}" class="graph_div"></div>
+    <div id="A11078078474505577278252658486935713299{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B244126602354592625905745582301145564908{level}" level="{level}" note_temp_id="244126602354592625905745582301145564908" onclick="window.ObsHtmlGraph.run(this, '244126602354592625905745582301145564908', 'aws.eks.deploy to eks cluster from jenkins');">
+        <button class="graph_button graph_show_button" id="B11078078474505577278252658486935713299{level}" level="{level}" note_temp_id="11078078474505577278252658486935713299" onclick="window.ObsHtmlGraph.run(this, '11078078474505577278252658486935713299', 'aws.eks.deploy to eks cluster from jenkins');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C244126602354592625905745582301145564908{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C11078078474505577278252658486935713299{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -833,6 +843,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

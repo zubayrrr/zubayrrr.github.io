@@ -86,7 +86,9 @@ Reserved for private/internal use in an organization according to IETF RFC-1918.
    
 ![](https://res.cloudinary.com/zubayr/image/upload/v1656323694/wiki/piorhozhal6mgghcyo24.png)   
    
+
    
+
 ## Drawbacks of Classful Addressing   
    
    

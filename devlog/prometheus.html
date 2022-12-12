@@ -209,7 +209,7 @@
                         </div>
                     </div>
 <p>Prometheus is a monitoring tool. It collects metrics and stores it with which we can make dashboards and alerts.   </p>
-<p>It was created to monitor highly dynamic container environments like <a href="/devlog/kubernetes.html">kubernetes</a>, <a href="/devlog/docker swarm.html">docker swarm</a> etc. It can also be used in traditional non-container infrastructure.   </p>
+<p>It was created to monitor highly dynamic container environments like <a href="/devlog/kubernetes.html">kubernetes</a>, <a href="/devlog/docker%20swarm.html">docker swarm</a> etc. It can also be used in traditional non-container infrastructure.   </p>
 <p>Typically you've many servers that run containerized applications, hundreds of different processes running on that infrastructure which are all interconnected. To get insights on this infrastructure such as errors, latency etc.   </p>
 <p>To make it easier for us to debug these system and fix them without much downtime, we'll use something like Prometheus, that will constantly monitor all the services/resources, alerts the maintainers as soon as anything goes wrong. <strong>In fact it can identify problems before they even occur</strong> and notify the maintainers so the failures can be prevented.   </p>
 <h1 id="prometheus-architecture">Prometheus Architecture</h1>
@@ -289,7 +289,7 @@ They're what gets stored in Prometheus DB component. Prometheus defines human re
 <p>For this you can use Client Libraries for different languages using which you can expose <code>/metrics</code> endpoint for metrics that are relevant to you. <br />
 <a href="https://prometheus.io/docs/instrumenting/clientlibs/" target="_blank" class="external-link">Client libraries | Prometheus</a>   </p>
 <h2 id="push-based-vs-pull-based">Push based VS Pull based</h2>
-<p>Most monitoring systems like <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> or <a href="/devlog/new relic.html">New Relic</a> etc use a Push system. Applications and servers are responsible for pushing their metric data to a centralized collection platform of that monitoring tool.   </p>
+<p>Most monitoring systems like <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> or <a href="/devlog/new%20relic.html">New Relic</a> etc use a Push system. Applications and servers are responsible for pushing their metric data to a centralized collection platform of that monitoring tool.   </p>
 <p>In large microservices based system this approach can create a bottleneck for your infrastructure as all of these microservices constantly make push request to your monitoring tool thus flooding your system.   </p>
 <p>Plus, you’ll also need to install additional software(daemons) on each of your targets to push the metrics to the monitoring server. In contrast with Prometheus which only requires a scraping endpoint.   </p>
 <p>Multiple Prometheus instances can collect/pull metrics. Using pull, Prometheus can easily detect whether a service is up and running or not.   </p>
@@ -321,13 +321,23 @@ are met.   </p>
 <p>Or use more powerful data visualization tools like <strong>Grafana</strong> to display the data which uses PromQL under the hood to get data out of Prometheus .   </p>
 <p>Example PromQL query to:   </p>
 <p>Query all HTTP status codes except <code>4xx</code> ones   </p>
+<div class="lang-sql">
+
 <div class="codehilite"><pre><span></span><code><span class="n">http_requests_total</span><span class="err">{</span><span class="n">status</span><span class="o">!~</span><span class="ss">&quot;4..&quot;</span><span class="err">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>This query does some subquery:   </p>
 <p>Returns the 5 minute rate of the <em>http_requests_total</em> metric for the past 30 minutes.   </p>
+<div class="lang-sql">
+
 <div class="codehilite"><pre><span></span><code><span class="n">rate</span><span class="p">(</span><span class="n">http_requests_total</span><span class="p">[</span><span class="mi">5</span><span class="n">m</span><span class="p">])</span><span class="w"> </span><span class="p">[</span><span class="mi">30</span><span class="n">m</span><span class="p">:]</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1656153983/wiki/qu5c4x2hrwuozqeqebxy.png" />   </p>
 <h2 id="salient-characteristics-of-prometheus">Salient Characteristics of Prometheus</h2>
@@ -354,6 +364,8 @@ are met.   </p>
 </ol>
 <p>Go to Prometheus UI &gt; Alerts to find existing alert rules Prometheus stack created for us.   </p>
 <p>Expand an alert to find the configuration of that alert rule.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">groups</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span><span class="w"></span>
 <span class="w">    </span><span class="nt">rules</span><span class="p">:</span><span class="w"></span>
@@ -365,6 +377,9 @@ are met.   </p>
 <span class="w">        </span><span class="nt">annotations</span><span class="p">:</span><span class="w"></span>
 <span class="w">          </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">High request latency</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><img alt="https://res.cloudinary.com/zubayr/image/upload/v1662774449/wiki/fqyxvdsgnf7eootxptzk.png" src="https://res.cloudinary.com/zubayr/image/upload/v1662774449/wiki/fqyxvdsgnf7eootxptzk.png" />   </p>
 <p>The syntax/attributes are defined as:   </p>
@@ -380,6 +395,8 @@ are met.   </p>
 <li>Alert when CPU usage &gt; 50%.   </li>
 <li>Alert when Pod cannot start.   </li>
 </ol>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># 1st alert</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">monitoring.coreos.com/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PrometheusRule</span><span class="w"></span>
@@ -413,6 +430,9 @@ are met.   </p>
 <span class="w">                </span><span class="nt">summary</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Kubernetes</span><span class="nv"> </span><span class="s">Pod</span><span class="nv"> </span><span class="s">is</span><span class="nv"> </span><span class="s">crash</span><span class="nv"> </span><span class="s">looping&quot;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Adding the Alert Rule to K8s</strong>   </p>
 <p>Since we’re running Prometheus as an operator on K8s, we can run a custom K8s component defined by CRDs which basically informs K8s of the new alert rule that was added and add it to the list of alert rules.   </p>
 <p>If the Prometheus stack wasn’t running as operator, we’d have to manually edit the rule file and reload Prometheus application.   </p>
@@ -445,6 +465,8 @@ are met.   </p>
 <p>You can also tell AlertManager to send certain alerts to certain receivers and you can achieve this in “route” section.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662790067/wiki/vev67ikpbargbjdxmx6m.png" />   </p>
 <p>We use the “match” attribute matches expression with certain labels.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># alertmanager.yml</span><span class="w"></span>
 
 <span class="nt">route</span><span class="p">:</span><span class="w"></span>
@@ -495,10 +517,13 @@ are met.   </p>
 <span class="w">        </span><span class="nt">send_resolved</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="labs">Labs</h2>
 <ul>
-<li><a href="/devlog/kubernetes.Prometheus Monitoring in K8s.html">kubernetes.Prometheus Monitoring in K8s</a>   </li>
-<li><a href="/devlog/prometheus.Prometheus Stack in Kubernetes.html">prometheus.Prometheus Stack in Kubernetes</a>   </li>
+<li><a href="/devlog/kubernetes.Prometheus%20Monitoring%20in%20K8s.html">kubernetes.Prometheus Monitoring in K8s</a>   </li>
+<li><a href="/devlog/prometheus.Prometheus%20Stack%20in%20Kubernetes.html">prometheus.Prometheus Stack in Kubernetes</a>   </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
@@ -524,13 +549,13 @@ are met.   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A151129213650254485754526289010208916553{level}" class="graph_div"></div>
+    <div id="A71311126956749178725875900833090057855{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B151129213650254485754526289010208916553{level}" level="{level}" note_temp_id="151129213650254485754526289010208916553" onclick="window.ObsHtmlGraph.run(this, '151129213650254485754526289010208916553', 'prometheus');">
+        <button class="graph_button graph_show_button" id="B71311126956749178725875900833090057855{level}" level="{level}" note_temp_id="71311126956749178725875900833090057855" onclick="window.ObsHtmlGraph.run(this, '71311126956749178725875900833090057855', 'prometheus');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C151129213650254485754526289010208916553{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C71311126956749178725875900833090057855{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1012,6 +1037,7 @@ are met.   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

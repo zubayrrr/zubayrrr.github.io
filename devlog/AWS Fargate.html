@@ -219,15 +219,15 @@
 <p>With Fargate you only pay for the resources required to run your containers as they are consumed which means you eliminate over provisioning and paying for servers you don’t need.   </p>
 <p>Fargate tasks (pods) run in their own kernels providing a secure and isolated compute environment, which provides an isolated workload and improved security as a consequence.   </p>
 <p>Via - <a href="https://www.hava.io/blog/what-is-aws-fargate" target="_blank" class="external-link">What is AWS Fargate?</a>   </p>
-<h2 id="aws-ecs-with-aws-fargate"><a href="/devlog/AWS ECS.html">AWS ECS</a> with <a href="/devlog/AWS Fargate.html">AWS fargate</a></h2>
+<h2 id="aws-ecs-with-aws-fargate"><a href="/devlog/AWS%20ECS.html">AWS ECS</a> with <a href="/devlog/AWS%20Fargate.html">AWS fargate</a></h2>
 <p>What if you want to delegate the management of infrastructure(virtual machines etc) also to AWS?   </p>
-<p>Container lifecycle is being managed by AWS ECS but hosting can also be managed by AWS - for which you can use <a href="/devlog/AWS Fargate.html">AWS Fargate</a>.   </p>
+<p>Container lifecycle is being managed by AWS ECS but hosting can also be managed by AWS - for which you can use <a href="/devlog/AWS%20Fargate.html">AWS Fargate</a>.   </p>
 <p>It is essentially an alternative to <a href="/devlog/aws.EC2.html">aws.EC2</a> instances. Instead of creating EC2 instances and connecting the two with ECS cluster, you can create Fargate instance and connect that to the ECS cluster.   </p>
 <p>It is a serverless way to launch containers. You take a container that you want to deploy on AWS and manage by ECS. You hand over the container to Fargate, you don't need to launch/provision any virtual machines/servers on your AWS account.   </p>
 <p>Fargate will take your container and analyze it to check how much resources your container needs to run and it'll provision a server/resources for that specific container and deploy it and run it.   </p>
 <p>It is on-demand, you don't need to provision or manage servers; you only have the infrastructure resources needed to run your containers. You only pay for the resources your containers are consuming. It scales very easily as it doesn't have fixed resources cap defined beforehand.   </p>
 <p>However, if you need access to the underlying infrastructure for whatever reasons, EC2 offers more flexibility in that domain.   </p>
-<p>Since you're using ECS for managing your containers and Fargate for managing your infrastructure needed for those containers, you can integrate your setup with other AWS services like <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> for monitoring, <a href="/devlog/aws.IAM.html">aws.IAM</a> for Users and Permissions, <a href="/devlog/AWS ELB.html">AWS ELB</a> for <a href="/not_created.html" class="nonexistent-link">load balancer</a>, <a href="/devlog/aws.VPC.html">aws.VPC</a> for networking etc.   </p>
+<p>Since you're using ECS for managing your containers and Fargate for managing your infrastructure needed for those containers, you can integrate your setup with other AWS services like <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> for monitoring, <a href="/devlog/aws.IAM.html">aws.IAM</a> for Users and Permissions, <a href="/devlog/AWS%20ELB.html">AWS ELB</a> for <a href="/not_created.html" class="nonexistent-link">load balancer</a>, <a href="/devlog/aws.VPC.html">aws.VPC</a> for networking etc.   </p>
 <p>You can use Fargate Spot, a new capability that can run interruption-tolerant ECS Tasks at up to a 70% discount off the Fargate price.   </p>
 <p><strong>Cons:</strong>   </p>
 <p>ECS + Fargate supports only one networking mode – <em>awsvpc</em> – which limits your control over the networking layer (and you might need that in some scenarios).   </p>
@@ -250,13 +250,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A207384169874391730948383039998938377381{level}" class="graph_div"></div>
+    <div id="A266056433361832102465265110408234196589{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B207384169874391730948383039998938377381{level}" level="{level}" note_temp_id="207384169874391730948383039998938377381" onclick="window.ObsHtmlGraph.run(this, '207384169874391730948383039998938377381', 'aws fargate');">
+        <button class="graph_button graph_show_button" id="B266056433361832102465265110408234196589{level}" level="{level}" note_temp_id="266056433361832102465265110408234196589" onclick="window.ObsHtmlGraph.run(this, '266056433361832102465265110408234196589', 'aws fargate');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C207384169874391730948383039998938377381{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C266056433361832102465265110408234196589{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -738,6 +738,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

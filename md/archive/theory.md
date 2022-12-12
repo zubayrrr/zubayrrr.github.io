@@ -22,6 +22,7 @@ In order for a theory to be good, it must meet three criteria:
 - Precision: It must make precise, not overly large or vague, statements about reality.   
 - Testability: It must lend itself to scientific investigation. There must be some way to show that the theory can be wrong. It is easy to collect more information consistent with one’s theory. It is braver to be a scientist: to examine situations that may prove one’s theory wrong.   
    
+
    
 Topics::  [sciences](../topics/sciences.md)   
    

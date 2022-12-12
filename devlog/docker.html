@@ -269,7 +269,7 @@ Related::  <a href="/devlog/cgroups.html">cgroups</a>   </p>
 <p>Images can exist without containers, whereas a container needs to run an image to exist. Therefore, containers are dependent on images and use them to construct a run-time environment and run an application.   </p>
 <p>The two concepts exist as essential components (or rather phases) in the process of running a Docker container. Having a running container is the final “phase” of that process, indicating it is dependent on previous steps and components. That is why docker images essentially govern and shape containers.   </p>
 <p>Container is the running environment for(of) an image. Container has application image, a port binded to it(makes it possible for it to talk to the application running inside it), Containers has virtual FS.   </p>
-<p>See also: <a href="/devlog/containers &amp; images.html">containers &amp; images</a>   </p>
+<p>See also: <a href="/devlog/containers%20%26%20images.html">containers &amp; images</a>   </p>
 <h2 id="docker-cli">Docker cli</h2>
 <ul>
 <li>Run <code>docker info</code>, <code>docker --version</code> or <code>docker version</code> to check it's version and if the client is able to communicate with the server.   </li>
@@ -497,6 +497,8 @@ Docker Image ID is a digest which contains the <a href="/not_created.html" class
 <p>Docker Compose file is basically a bunch of docker commands structured nicely so you don’t have to run each of those docker run commands one by one.   </p>
 <p><code>docker-compose</code> is a <code>yaml</code> file.   </p>
 <p>Docker compose creates a common network for all the containers mentioned inside it.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">version:&#39;3&#39;</span><span class="w"> </span><span class="c1"># version of docker-compose</span><span class="w"></span>
 <span class="nt">services</span><span class="p">:</span><span class="w"> </span><span class="c1"># here goes the containers</span><span class="w"></span>
 <span class="w">    </span><span class="nt">mongodb</span><span class="p">:</span><span class="w"> </span><span class="c1"># name of a container</span><span class="w"></span>
@@ -513,6 +515,9 @@ Docker Image ID is a digest which contains the <a href="/not_created.html" class
 <span class="w">        </span><span class="nt">environment</span><span class="p">:</span><span class="w"></span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ME_CONFIG:value</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Start Docker container using docker-compose file.   </p>
 <p><code>docker-compose -f mongo.yaml up</code>   </p>
@@ -543,10 +548,10 @@ Docker Image ID is a digest which contains the <a href="/not_created.html" class
 <p>Docker for Mac creates a Linux VM and stores data there.   </p>
 <h2 id="examples">Examples</h2>
 <ul>
-<li><a href="/devlog/running a web server in a docker container.html">Running a Web Server in a Docker Container</a>   </li>
-<li><a href="/devlog/Connecting a Nodejs application to a MongoDB Docker container.html">Connecting a Nodejs application to a MongoDB Docker container</a>   </li>
-<li><a href="/devlog/Docker repository on Nexus.html">Docker repository on Nexus</a>   </li>
-<li><a href="/devlog/Nexus as Docker container.html">Nexus as Docker container</a>   </li>
+<li><a href="/devlog/running%20a%20web%20server%20in%20a%20docker%20container.html">Running a Web Server in a Docker Container</a>   </li>
+<li><a href="/devlog/Connecting%20a%20Nodejs%20application%20to%20a%20MongoDB%20Docker%20container.html">Connecting a Nodejs application to a MongoDB Docker container</a>   </li>
+<li><a href="/devlog/Docker%20repository%20on%20Nexus.html">Docker repository on Nexus</a>   </li>
+<li><a href="/devlog/Nexus%20as%20Docker%20container.html">Nexus as Docker container</a>   </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
@@ -597,13 +602,13 @@ Docker Image ID is a digest which contains the <a href="/not_created.html" class
 
 </div>
 <div class="graph requires_js ">
-    <div id="A292835466586269668062835093296757599210{level}" class="graph_div"></div>
+    <div id="A158734543348799489039796545742806196623{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B292835466586269668062835093296757599210{level}" level="{level}" note_temp_id="292835466586269668062835093296757599210" onclick="window.ObsHtmlGraph.run(this, '292835466586269668062835093296757599210', 'docker');">
+        <button class="graph_button graph_show_button" id="B158734543348799489039796545742806196623{level}" level="{level}" note_temp_id="158734543348799489039796545742806196623" onclick="window.ObsHtmlGraph.run(this, '158734543348799489039796545742806196623', 'docker');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C292835466586269668062835093296757599210{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C158734543348799489039796545742806196623{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1085,6 +1090,7 @@ Docker Image ID is a digest which contains the <a href="/not_created.html" class
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

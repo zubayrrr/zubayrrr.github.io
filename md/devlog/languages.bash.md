@@ -10,6 +10,7 @@ Bash is a Unix shell and command language written by Brian Fox for the GNU Proje
    
 ## Bash Aliases   
    
+
    
 Topics::  [linux](../topics/linux.md)   
    
@@ -140,6 +141,7 @@ Variable is a name of a memory location where a value which can be manipulated i
    
 Use `set` command to retrieve value to get all shell variables and functions.   
    
+
    
 Topics::  [linux](../topics/linux.md)   
    
@@ -167,6 +169,7 @@ Topics::  [linux](../topics/linux.md)
 - There is also `/etc/environment` in which you can set env variables each on a new line
    
    
+
    
 Topics::  [linux](../topics/linux.md)   
    

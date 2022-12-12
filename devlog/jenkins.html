@@ -255,7 +255,7 @@
 <li><a href="#look-into" class="anchor-link">Look into</a></li>
 </ul>
 </div>
-<p>Jenkins is a continuous integration tool that allows continuous development, test and deployment of newly created code. Its a <a href="/devlog/build automation.html">build automation</a> tool.   </p>
+<p>Jenkins is a continuous integration tool that allows continuous development, test and deployment of newly created code. Its a <a href="/devlog/build%20automation.html">build automation</a> tool.   </p>
 <ul>
 <li>
 <p><strong>Easy Installation</strong> - Jenkins is a self contained java based program ready to run with packages for Windows, macOS and Linux operating systems.   </p>
@@ -273,7 +273,7 @@
 <p><strong>Distributed</strong> - Jenkins easily distributes work across multiple machines, helping to speed up builds, tests and deployments across multiple platforms.   </p>
 </li>
 </ul>
-<p>Jenkins is sort of acting as a middleman between many other tools. Such as <a href="/devlog/docker.html">docker</a>, build tools, repositories(<a href="/devlog/nexus.html">nexus</a>), deployment servers etc. Hence its needed to be integrated with all these tools, which is where it’s plugins come into the picture. For example:   </p>
+<p>Jenkins is sort of acting as a middleman between many other tools. Such as <a href="/devlog/docker.html">docker</a>, build tools, repositories(<a href="/devlog/nexus.html">nexus</a>, deployment servers etc. Hence its needed to be integrated with all these tools, which is where it’s plugins come into the picture. For example:   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1654710271/wiki/slqynckdvxzbvnqpgz0c.png" />   </p>
 <p>Jenkins can be used to run tests, build artifacts, publish artifacts, deploy artifacts, send notifications etc.   </p>
 <h2 id="how-do-you-make-jenkins-work">How do you make Jenkins work?</h2>
@@ -365,7 +365,7 @@ Note: You cannot use commands of plugins you’ve installed, only the programs y
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1654762908/wiki/tevepvm7fv4ewkdfhxfj.png" />   </p>
 <p>You can also preview a build.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1654762944/wiki/cpktacrn5nmocouewzza.png" />   </p>
-<h2 id="configuring-a-version-control-git-repository">Configuring a <a href="/devlog/version control.git.html">version control.git</a> repository</h2>
+<h2 id="configuring-a-version-control-git-repository">Configuring a <a href="/devlog/version%20control.git.html">version control.git</a> repository</h2>
 <p>Under “Source Code Management” tab   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1654763672/wiki/wpg46yorlqlkp1isdzyc.png" />   </p>
 <p>Use “Jenkins Credentials Provider“ to add credentials   </p>
@@ -379,11 +379,16 @@ Note: You cannot use commands of plugins you’ve installed, only the programs y
 <li><code>docker stop container-id</code>   </li>
 <li>Move the old Jenkins config to the new container using the existing volume (<code>jenkins_home</code>)   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">docker</span><span class="w"> </span><span class="n">run</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">8080</span><span class="p">:</span><span class="mi">8080</span><span class="w"> </span><span class="o">-</span><span class="n">p</span><span class="w"> </span><span class="mi">50000</span><span class="p">:</span><span class="mi">50000</span><span class="w"> </span><span class="o">-</span><span class="n">d</span><span class="w"> </span>\<span class="w"></span>
 <span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="n">jenkins_home</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">jenkins_home</span><span class="w"> </span>\<span class="w"></span>
 <span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span><span class="p">:</span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">run</span><span class="o">/</span><span class="n">docker</span><span class="o">.</span><span class="n">sock</span><span class="w"> </span>\<span class="w"></span>
 <span class="o">-</span><span class="n">v</span><span class="w"> </span><span class="o">$</span><span class="p">(</span><span class="n">which</span><span class="w"> </span><span class="n">docker</span><span class="p">):</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">docker</span><span class="w"> </span><span class="n">jenkins</span><span class="o">/</span><span class="n">jenkins</span><span class="p">:</span><span class="n">lts</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li><code>docker exec -it container-id bash</code>   </li>
@@ -409,10 +414,15 @@ Note: You cannot use commands of plugins you’ve installed, only the programs y
 <ul>
 <li>Before you can do this, you’ll need to register the Nexus repository’s IP and port explicitly by running <code>vim /etc/docker/daemon.conf</code> on the Nexus host.   </li>
 </ul>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;insecure-registries&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;nexus-docker-repo-ip-address:port&quot;</span><span class="p">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>Restart docker `systemctl restart docker   </li>
@@ -422,7 +432,7 @@ Note: You cannot use commands of plugins you’ve installed, only the programs y
 <li>Putting it all together will look something like   </li>
 </ul>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1654768504/wiki/yxpknd7sgvmkbysemwjj.png" />   </p>
-<p>Notice the Nexus <a href="/devlog/ip address.html">ip address</a> and port substituted for repository location/name and for <code>docker login</code> the host is mentioned.   </p>
+<p>Notice the Nexus <a href="/devlog/ip%20address.html">ip address</a> and port substituted for repository location/name and for <code>docker login</code> the host is mentioned.   </p>
 <h2 id="pipeline-jobs">Pipeline jobs</h2>
 <ul>
 <li>Pipeline jobs are more suited for <a href="/not_created.html" class="nonexistent-link">CICD pipeline</a>, you can do scripting - pipeline as code.   </li>
@@ -467,6 +477,8 @@ Note: You cannot use commands of plugins you’ve installed, only the programs y
 Whenever there is a variable inside a string, it has to use double quotes <code>""</code>.   </p>
 <h3 id="post-attribute"><code>post</code> attribute</h3>
 <p>Executes some logic after all the stages have been executed. It can have conditions with keywords like, <code>always</code> that will run regardless of the outcome of the stages. <code>success</code> will only run if all the stages have succeeded. <code>failure</code> will only run if any of the stages have failed. It basically defines build status or build state changes.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">post</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">always</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span><span class="w"></span>
@@ -480,7 +492,12 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>In Jenkinsfile, you can define conditionals for each stage.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">  </span><span class="n">stages</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -503,9 +520,14 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="environmental-variables">Environmental variables</h3>
 <p>You can use environmental variables in your Jenkinsfile which Jenkins has provided out of the box such as <code>BRANCH_NAME</code>. To find the list of available environmental variables, you can see <code>/env-vars.html</code>.   </p>
 <p>You can define your own environmental variables in Jenkinsfile. They will be available for all the stages.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">  </span><span class="n">environment</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -522,7 +544,12 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Using credentials in Jenkinsfile. You will first have to define them in Jenkins GUI and then bind them to the env variable. For which you'll need "Credentials Binding" plugin.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">  </span><span class="n">environment</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -552,9 +579,14 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>If you need the credentials only for one stage you can use a wrapper and define it inside the stage.   </p>
 <h3 id="tools-attribute"><code>tools</code> attribute</h3>
 <p>Basically provides you build tools for your pipeline to build you project. It has to be preconfigured in Jenkins.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">  </span><span class="n">tools</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -572,6 +604,9 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="parameters-attribute"><code>parameters</code> attribute</h3>
 <p>To parameterize your build.   </p>
 <p>Type of parameters:   </p>
@@ -580,6 +615,8 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <li>choice (name, choice, description)   </li>
 <li>booleanParam (name, defaultvalue, description)   </li>
 </ul>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">  </span><span class="n">parameters</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -610,8 +647,13 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Next time you run the job, it'll pull the latest changes from the Jenkinsfile and you'll be able to "Build with Parameters".   </p>
 <p>You can use external scripts inside your groovy script. You can also write groovy code inside <code>script</code> attribute in your <code>steps</code>.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// groovy script</span><span class="w"></span>
 <span class="kt">def</span><span class="w"> </span><span class="nf">build</span><span class="o">()</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">echo</span><span class="w"> </span><span class="s2">&quot;building application&quot;</span><span class="w"></span>
@@ -627,6 +669,11 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 
 <span class="k">return</span><span class="w"> </span><span class="k">this</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-groovy">
 
 <div class="codehilite"><pre><span></span><code><span class="kt">def</span><span class="w"> </span><span class="n">gv</span><span class="w"></span>
 <span class="c1">// making gv global</span><span class="w"></span>
@@ -668,9 +715,14 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>All environment variables from Jenkinsfile are available in the groovy script.   </p>
 <h3 id="input-parameters-in-jenkinsfile">Input Parameters in Jenkinsfile</h3>
 <p>User can input values for the parameters while running the job.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">  </span><span class="n">stages</span><span class="o">{</span><span class="w"></span>
@@ -695,6 +747,9 @@ Whenever there is a variable inside a string, it has to use double quotes <code>
 <span class="w">  </span><span class="o">}</span><span class="w"></span>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h3 id="multibranch-pipeline">Multibranch Pipeline</h3>
 <p>Single branch pipeline would look something like:   </p>
@@ -740,6 +795,8 @@ We also need different behaviour based on branch. For example: “If branch is m
 <li><code>src</code> folder contains helper logic(utility code etc).   </li>
 <li><code>resources</code> folder is where you'll keep your non-Groovy code(SQL scripts, external libraries, Powershell scripts, JSON files etc).   </li>
 </ul>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">#!/usr/bin/env groovy</span><span class="w"></span>
 
 <span class="c1">// vars/buildJar.groovy; functions(execution steps) are referenced by their filename</span><span class="w"></span>
@@ -750,6 +807,9 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="w">  </span><span class="n">sh</span><span class="w"> </span><span class="s2">&quot;mvn package&quot;</span><span class="w"></span>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>Commit and push the code the git repository.   </li>
@@ -762,6 +822,8 @@ We also need different behaviour based on branch. For example: “If branch is m
 <li>You'll need to import the Library in your Jenkinsfile.   </li>
 <li><code>@Library("jenkins-shared-library")_</code> you'll need to add an underscore at the end of the <code>@Library</code> call if you don't have any variable/function definitions/calls and have <code>pipeline{}</code> directly after.   </li>
 </ul>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">#!/usr/bin/env groovy</span><span class="w"></span>
 <span class="nd">@Library</span><span class="o">(</span><span class="s2">&quot;jenkins-shared-library&quot;</span><span class="o">)</span><span class="w"> </span><span class="c1">// defined in Global Pipeline Libraries</span><span class="w"></span>
 
@@ -793,10 +855,15 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>Commit/push the changes to remote repo of the Jenkinsfile.   </li>
 </ul>
 <h3 id="passing-parameters-to-methods">Passing Parameters to Methods</h3>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">#!/usr/bin/env groovy</span><span class="w"></span>
 
 <span class="kt">def</span><span class="w"> </span><span class="nf">call</span><span class="o">(</span><span class="n">String</span><span class="w"> </span><span class="n">imageName</span><span class="o">){</span><span class="w"></span>
@@ -805,10 +872,15 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>We can access global variables. We've all the environmental variables available in the Jenkinsfile also available in the Shared Library.   </p>
 <p><strong>To extract logic into Groovy classes</strong>:   </p>
 <p>We can add a function's logic to a standalone file inside the <code>src</code> folder inside a class in a <code>package</code>.   </p>
 <p>However, unlike the Shared Library, we do NOT have access to the global/environmental variables when we use separate classes. To make pipeline syntax available we use <code>script</code> keyword as parameter to the class's function.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// Docker.groovy</span><span class="w"></span>
 <span class="err">#</span><span class="o">!</span><span class="s">/usr/</span><span class="n">bin</span><span class="s">/env groovy</span>
 
@@ -840,9 +912,14 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>To call this function inside the <code>vars</code>'s groovy scripts   </p>
 <p><strong>Note</strong>: You can actually just call these class function directly to your Jenkinsfile instead of calling it in <code>vars</code> folder. But it is a best practice to call them in <code>vars</code> folder as an interface.   </p>
 <p>These are just making calls to different function in a single class.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// buildImage.groovy</span><span class="w"></span>
 <span class="err">#</span><span class="o">!</span><span class="s">/usr/</span><span class="n">bin</span><span class="s">/env groovy</span>
 
@@ -852,6 +929,11 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Docker</span><span class="o">(</span><span class="k">this</span><span class="o">).</span><span class="na">buildDockerImage</span><span class="o">(</span><span class="n">imageName</span><span class="o">)</span><span class="w"></span>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-groovy">
 
 <div class="codehilite"><pre><span></span><code><span class="c1">// dockerLogin.groovy</span><span class="w"></span>
 <span class="err">#</span><span class="o">!</span><span class="s">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">env</span><span class="w"> </span><span class="n">groovy</span><span class="w"></span>
@@ -863,6 +945,11 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// dockerPush.groovy</span><span class="w"></span>
 <span class="err">#</span><span class="o">!</span><span class="s">/usr/</span><span class="n">bin</span><span class="o">/</span><span class="n">env</span><span class="w"> </span><span class="n">groovy</span><span class="w"></span>
 
@@ -873,9 +960,14 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>You will call these function in your <code>Jenkinsfile</code>   </p>
 <p>An alternative to having a Globally imported Shared Library, we can reference the library directly in the Jenkinsfile.   </p>
 <p>Instead of using <code>@Library(jenkins-shared-library@master)...</code> use:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">library</span><span class="w"> </span><span class="nl">identifier</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;jenkins-shared-library@master&#39;</span><span class="p">,</span><span class="w"> </span><span class="nl">retriever</span><span class="p">:</span><span class="w"> </span><span class="n">modernSCM</span><span class="p">(</span><span class="w"></span>
 <span class="w">    </span><span class="o">[</span><span class="n">$class: &#39;GitSCMSource&#39;,</span>
 <span class="n">    remote: &#39;https://gitlab.com/user/shared-library.git&#39;,</span>
@@ -884,10 +976,13 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="w">  </span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="webhooks">Webhooks</h2>
 <p>You can trigger jobs either manually or automatically(preferable). An example of automatic trigger would be a git commit(any Git provider such as Gitlab or Github) triggering a job.   </p>
 <p>Scheduling is another way of triggering build jobs. An example would be a job set up to be triggered after a certain time(maybe after running tests or a prior job that does some housekeeping etc).   </p>
-<h2 id="let-s-configure-an-automatic-trigger-of-a-jenkins-job-on-a-version-control-git-push">Let's configure an automatic trigger of a Jenkins Job on a <a href="/devlog/version control.git.html">version control.git</a> push.</h2>
+<h2 id="let-s-configure-an-automatic-trigger-of-a-jenkins-job-on-a-version-control-git-push">Let's configure an automatic trigger of a Jenkins Job on a <a href="/devlog/version%20control.git.html">version control.git</a> push.</h2>
 <ol>
 <li>From "Manage Plugins" page install <code>Gitlab</code> for build triggers.   </li>
 <li>From "Manage Jenkins" page -&gt; "Configure System", find “Gitlab” section   </li>
@@ -969,6 +1064,8 @@ We also need different behaviour based on branch. For example: “If branch is m
 <p><strong>To integrate this process in a build pipeline:</strong>   </p>
 <h2 id="jar-version">.jar Version</h2>
 <p>In your <code>Jenkinsfile</code> add a stage for version increment before <code>mvn package</code> builds the application so that the <code>.jar</code> is produced with the correct version.   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;increment version&quot;</span><span class="o">){</span><span class="w"></span>
 <span class="w">  </span><span class="n">steps</span><span class="o">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">script</span><span class="o">{</span><span class="w"></span>
@@ -985,12 +1082,17 @@ We also need different behaviour based on branch. For example: “If branch is m
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="docker-image-version">Docker Image Version</h2>
 <p>If a new <a href="/devlog/docker.html">docker</a> image is also built as part of your pipeline, you'd also want to bump it's version as well. Add another stage to accomplish this. Usually, the application version is used for the Docker Image version as well. The variable reads from the <code>pom.xml</code>   </p>
 <p>Use the env variable created above when running <code>docker build</code> and <code>docker push</code>. <br />
 Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p>
 <h2 id="replace-new-version-in-dockerfile">Replace new version in Dockerfile</h2>
-<p>Make the version defined in Dockerfile dynamic using <a href="/devlog/regular expression.html">regular expression</a> and use <code>CMD</code> instead of <code>ENTRYPOINT</code>   </p>
+<p>Make the version defined in Dockerfile dynamic using <a href="/devlog/regular%20expression.html">regular expression</a> and use <code>CMD</code> instead of <code>ENTRYPOINT</code>   </p>
+<div class="lang-dockerfile">
+
 <div class="codehilite"><pre><span></span><code>...
 <span class="k">COPY</span><span class="w"> </span>./target/app-name-*.jar /usr/app/
 <span class="k">WORKDIR</span><span class="w"> </span><span class="s">/usr/app</span>
@@ -998,10 +1100,15 @@ Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p
 <span class="k">CMD</span><span class="w"> </span>java -jar app-name-*.jar<span class="sb">`</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Alternatively, you can pass a parameter as a version value variable and use that etc.   </p>
 <p>Note: <strong>Don't forget to delete the older versions from your working directory using <code>mvn clean package</code></strong> in your Jenkinsfile build command. Don't use just <code>mvn package</code>.</p>
 <p>Update the version bump of the <code>pom.xml</code> to the remote repository.   </p>
 <p>Add another stage:   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">stage</span><span class="o">(</span><span class="s2">&quot;commit version update&quot;</span><span class="o">)</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">steps</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">script</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -1020,6 +1127,9 @@ Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p
 <span class="w">  </span><span class="o">}</span><span class="w"></span>
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="ignore-jenkins-commit-for-jenkins-pipeline-trigger">Ignore Jenkins commit for Jenkins pipeline trigger</h2>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1660729401/wiki/uxjn1qhpaykw3kdin9hj.png" />   </p>
@@ -1063,13 +1173,13 @@ Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p
 
 </div>
 <div class="graph requires_js ">
-    <div id="A221786431828711717145782278188756142254{level}" class="graph_div"></div>
+    <div id="A96564883271287965177602710591852820866{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B221786431828711717145782278188756142254{level}" level="{level}" note_temp_id="221786431828711717145782278188756142254" onclick="window.ObsHtmlGraph.run(this, '221786431828711717145782278188756142254', 'jenkins');">
+        <button class="graph_button graph_show_button" id="B96564883271287965177602710591852820866{level}" level="{level}" note_temp_id="96564883271287965177602710591852820866" onclick="window.ObsHtmlGraph.run(this, '96564883271287965177602710591852820866', 'jenkins');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C221786431828711717145782278188756142254{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C96564883271287965177602710591852820866{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1551,6 +1661,7 @@ Example: <code>docker build -t username/app-name:${IMAGE_VERSION} .</code>   </p
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

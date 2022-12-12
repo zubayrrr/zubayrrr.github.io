@@ -18,5 +18,6 @@ The negative component is a function of the additional overgrazing created by on
    
 Adding together the component partial utilities, the rational herdsman concludes that the only sensible course for him to pursue is to add another animal to his herd. And another; and another. . . . But this is the conclusion reached by each and every rational herdsman sharing a commons. Therein is the tragedy. Each man is locked into a system that compels him to increase his herd without limit—in a world that is limited. Ruin is the destination toward which all men rush, each pursuing his own best interest in a society that believes in the freedom of the commons. Freedom in a commons brings ruin to all.”   
    
+
    
 > What is common to many is taken least care of, for all men have greater regard for what is their own than for what they possess in common with others. – Aristotle

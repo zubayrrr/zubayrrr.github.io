@@ -262,6 +262,8 @@
 <p>Let’s add rules for K8s dashboard to access it from a browser using a domain name.   </p>
 </li>
 </ol>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># dashboard-ingress.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span><span class="w"></span>
@@ -277,6 +279,9 @@
 <span class="w">        </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes-dashboard</span><span class="w"></span>
 <span class="w">        </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>kubectl apply -f dashboard-ingress.yaml</code> <br />
 <code>kubectl get ingress -n kubernetes-dashboard</code>   </p>
@@ -307,13 +312,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A253338675582218194703418154687891815504{level}" class="graph_div"></div>
+    <div id="A275077241164915007912404850163595999358{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B253338675582218194703418154687891815504{level}" level="{level}" note_temp_id="253338675582218194703418154687891815504" onclick="window.ObsHtmlGraph.run(this, '253338675582218194703418154687891815504', 'kubernetes.ingress');">
+        <button class="graph_button graph_show_button" id="B275077241164915007912404850163595999358{level}" level="{level}" note_temp_id="275077241164915007912404850163595999358" onclick="window.ObsHtmlGraph.run(this, '275077241164915007912404850163595999358', 'kubernetes.ingress');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C253338675582218194703418154687891815504{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C275077241164915007912404850163595999358{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -795,6 +800,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -216,6 +216,8 @@
 <p>Create a new Docker Network and start the Mongo container inside that newly created network.   </p>
 <p><code>docker network create mongo-network</code>   </p>
 <p>Running mongo container   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>docker run -d <span class="se">\</span>
   -p <span class="m">27017</span>:27017 <span class="se">\</span>
   -e <span class="nv">MONGO_INITDB_ROOT_USERNAME</span><span class="o">=</span>admin <span class="se">\</span>
@@ -225,7 +227,12 @@
   mongo
 </code></pre></div>
 
+
+</div>
+
 <p>Running mongo-express container   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>docker run -d <span class="se">\</span>
   -p <span class="m">8081</span>:8081 <span class="se">\</span>
   -e <span class="nv">ME_CONFIG_MONGODB_ADMINUSERNAME</span><span class="o">=</span>admin <span class="se">\</span>
@@ -235,6 +242,9 @@
   -e <span class="nv">ME_CONFIG_MONGODB_SERVER</span><span class="o">=</span>mongodb <span class="c1"># container name</span>
   mongo-express
 </code></pre></div>
+
+
+</div>
 
 <p>Create a new DB from the mongo express UI (alternatively you can specify init DB as env variable)   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1657832258/wiki/kjuyn47bzyftrwrfuzro.png" />   </p>
@@ -256,13 +266,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A262947680131629905491056533315747926285{level}" class="graph_div"></div>
+    <div id="A269689498203248855192340873532497904749{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B262947680131629905491056533315747926285{level}" level="{level}" note_temp_id="262947680131629905491056533315747926285" onclick="window.ObsHtmlGraph.run(this, '262947680131629905491056533315747926285', 'connecting a nodejs application to a mongodb docker container');">
+        <button class="graph_button graph_show_button" id="B269689498203248855192340873532497904749{level}" level="{level}" note_temp_id="269689498203248855192340873532497904749" onclick="window.ObsHtmlGraph.run(this, '269689498203248855192340873532497904749', 'connecting a nodejs application to a mongodb docker container');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C262947680131629905491056533315747926285{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C269689498203248855192340873532497904749{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -744,6 +754,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

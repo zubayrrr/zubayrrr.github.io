@@ -247,6 +247,8 @@
 <p>A new POST method on our REST message to create an incident record in the target instance’s incident table.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666220016/wiki/motqz6jbzmh98zploduy.png" />   </p>
 <p>Fields on the target instance’s table to be mapped with our capture fields.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;short_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${sd}&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${desc}&quot;</span><span class="p">,</span><span class="w"></span>
@@ -254,9 +256,14 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Create a Business Rule</strong> (to trigger REST call)   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666220325/wiki/zuv825nnxzysymtcvx1d.png" />   </p>
 <p>Under the “Advanced” tab we’ll be running our script that actually does the work.   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">executeRule</span><span class="p">(</span><span class="nx">current</span><span class="p">,</span><span class="w"> </span><span class="nx">previous</span><span class="w"> </span><span class="cm">/*null when async*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">sn_ws</span><span class="p">.</span><span class="nx">RESTMessageV2</span><span class="p">(</span><span class="s2">&quot;Clone Incidents to another Instance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;create_incident&quot;</span><span class="p">);</span><span class="w"></span>
@@ -273,6 +280,9 @@
 <span class="p">})(</span><span class="nx">current</span><span class="p">,</span><span class="w"> </span><span class="nx">previous</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Trigger Business Rule by creating an incident with “Application Development” for “Assignment group”.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666273012/wiki/lyqfjpzbnc3k1z2vqwrj.png" />   </p>
 <p>Go to instance #2 to check if the incident was successfully cloned.   </p>
@@ -286,6 +296,8 @@
 <p>Let’s start with creating the <strong>Client Reference</strong> field and then update the business rule logic.   </p>
 <p>(Create New Incident Form &gt; Form Layout)   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666276875/wiki/ddqltl8qywdukcvm2woz.png" />   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">executeRule</span><span class="p">(</span><span class="nx">current</span><span class="p">,</span><span class="w"> </span><span class="nx">previous</span><span class="w"> </span><span class="cm">/*null when async*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">sn_ws</span><span class="p">.</span><span class="nx">RESTMessageV2</span><span class="p">(</span><span class="s2">&quot;Clone Incidents to another Instance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;create_incident&quot;</span><span class="p">);</span><span class="w"></span>
@@ -306,9 +318,14 @@
 <span class="p">})(</span><span class="nx">current</span><span class="p">,</span><span class="w"> </span><span class="nx">previous</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>An alternative would be to make the business rule run <code>before</code> and not have <code>current.update()</code> but it might be slow as it would wait for response back from the instance #2.   </p>
 <p>Best practice is to use an <code>async</code> business rule on <strong>When to run</strong>. <strong>DO NOT USE</strong> <code>current.update();</code> inside your business rule as it’ll lead to a loop.   </p>
 <p>A more efficient way of having this functionality is to use a script include instead.   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incident_cloner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span><span class="w"></span>
 <span class="nx">incident_cloner</span><span class="p">.</span><span class="nx">prototype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">initialize</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -339,7 +356,12 @@
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Script include trigger inside business rule:   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="kd">function</span><span class="w"> </span><span class="nx">executeRule</span><span class="p">(</span><span class="nx">current</span><span class="p">,</span><span class="w"> </span><span class="nx">previous</span><span class="w"> </span><span class="cm">/*null when async*/</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="w">    </span><span class="ow">new</span><span class="w"> </span><span class="nx">incident_cloner</span><span class="p">().</span><span class="nx">triggerCreate</span><span class="p">(</span><span class="nx">current</span><span class="p">);</span><span class="w"></span>
@@ -347,11 +369,16 @@
 <span class="p">})(</span><span class="nx">current</span><span class="p">,</span><span class="w"> </span><span class="nx">previous</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Create a new incident record and it should be automatically copied to the instance #2.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666290030/wiki/mixjahdphr6mz4cnmh7f.png" />   </p>
 <p>The client reference field should also be filled. But currently you’re not using the appropriate endpoint for updating the record.   </p>
 <p>Go to REST message and create a new PUT method with the endpoint with <code>sys_id</code>   </p>
 <p>Add this function to script include   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="w">        </span><span class="nx">triggerUpdate</span><span class="w"> </span><span class="o">:</span><span class="kd">function</span><span class="p">(</span><span class="nx">incGR</span><span class="p">){</span><span class="w"></span>
 <span class="w">        </span><span class="kd">var</span><span class="w"> </span><span class="nx">req</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">sn_ws</span><span class="p">.</span><span class="nx">RESTMessageV2</span><span class="p">(</span><span class="s2">&quot;Clone Incidents to another Instance&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;update_incident&quot;</span><span class="p">);</span><span class="w"></span>
 <span class="w">    </span><span class="nx">req</span><span class="p">.</span><span class="nx">setStringParameterNoEscape</span><span class="p">(</span><span class="s2">&quot;sd&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">incGR</span><span class="p">.</span><span class="nx">short_description</span><span class="p">);</span><span class="w"></span>
@@ -368,12 +395,17 @@
 <span class="w">    </span><span class="p">},</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Duplicate the business rule to use the new function:   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666291111/wiki/qpnbydyndafzdrpyqbei.png" />   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1666291220/wiki/vs8ztptmxaexkihnic76.png" />   </p>
 <p>Okay that shit worked after a few adjustments.   </p>
 <hr />
 <p>HTTP Query Parameters for <code>update_incident</code> PUT method:   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;short_description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${sd}&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;description&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${desc}&quot;</span><span class="p">,</span><span class="w"></span>
@@ -381,7 +413,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>The script includes that actually worked:   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incident_cloner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">Class</span><span class="p">.</span><span class="nx">create</span><span class="p">();</span><span class="w"></span>
 <span class="nx">incident_cloner</span><span class="p">.</span><span class="nx">prototype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="nx">initialize</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{},</span><span class="w"></span>
@@ -425,6 +462,9 @@
 <span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;incident_cloner&#39;</span><span class="w"></span>
 <span class="p">};</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -440,13 +480,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A263802612156906577476710615390703998378{level}" class="graph_div"></div>
+    <div id="A301525279662650821054146828848092335778{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B263802612156906577476710615390703998378{level}" level="{level}" note_temp_id="263802612156906577476710615390703998378" onclick="window.ObsHtmlGraph.run(this, '263802612156906577476710615390703998378', 'servicenow.send rest calls');">
+        <button class="graph_button graph_show_button" id="B301525279662650821054146828848092335778{level}" level="{level}" note_temp_id="301525279662650821054146828848092335778" onclick="window.ObsHtmlGraph.run(this, '301525279662650821054146828848092335778', 'servicenow.send rest calls');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C263802612156906577476710615390703998378{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C301525279662650821054146828848092335778{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -928,6 +968,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

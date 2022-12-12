@@ -50,6 +50,7 @@ IAM tools **generate timely reports after most actions are taken on the platfor
    
 [What is Identity and Access Management (IAM)?](https://blog.miniorange.com/what-is-iam-identity-and-access-management-system/)   
    
+
    
 # Authentication Vs Authorization   
    

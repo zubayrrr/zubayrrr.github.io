@@ -220,7 +220,7 @@
 <p>Related::  <a href="/devlog/kubernetes.html">kubernetes</a>, <a href="/devlog/aws.ecr.html">aws.ecr</a>   </p>
 <hr />
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662727470/wiki/atvyvdxb7h7m27l5kymd.png" />   </p>
-<p>In <a href="/devlog/aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub.html">aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a> we pushed Images to DockerHub after building. Let’s do the same but with <a href="/devlog/aws.ecr.html">aws.ecr</a> instead.   </p>
+<p>In <a href="/devlog/aws.eks.Complete%20CI%E2%81%84CD%20Pipeline%20with%20EKS%20and%20DockerHub.html">aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a> we pushed Images to DockerHub after building. Let’s do the same but with <a href="/devlog/aws.ecr.html">aws.ecr</a> instead.   </p>
 <p><strong>Overview</strong>   </p>
 <ul>
 <li>Create ECR repo.   </li>
@@ -234,13 +234,20 @@
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662727966/wiki/veesvytneaawnjylufq3.png" />   </p>
 <p>Use the commands provided by clicking on “View push commands”, once you’ve the password, copy it   </p>
 <h2 id="create-secret-for-ecr">Create Secret for ECR</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">kubectl</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="n">docker</span><span class="o">-</span><span class="n">registry</span><span class="w"> </span><span class="n">aws</span><span class="o">-</span><span class="n">registry</span><span class="o">-</span><span class="n">key</span><span class="w"> </span><span class="se">\</span><span class="w"></span>
 <span class="o">--</span><span class="n">docker</span><span class="o">-</span><span class="n">server</span><span class="o">=&lt;</span><span class="n">docker</span><span class="o">-</span><span class="n">server</span><span class="o">-</span><span class="n">url</span><span class="o">&gt;</span><span class="w"></span>
 <span class="o">--</span><span class="n">docker</span><span class="o">-</span><span class="n">username</span><span class="o">=</span><span class="n">AWS</span><span class="w"> </span><span class="se">\</span><span class="w"></span>
 <span class="o">--</span><span class="n">docker</span><span class="o">-</span><span class="n">password</span><span class="o">=</span><span class="w"> </span><span class="o">&lt;</span><span class="n">password</span><span class="o">&gt;</span><span class="w"> </span><span class="p">#</span><span class="w"> </span><span class="n">aws</span><span class="w"> </span><span class="n">ecr</span><span class="w"> </span><span class="n">get</span><span class="o">-</span><span class="n">login</span><span class="o">-</span><span class="n">password</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="jenkinsfile-deployment-and-service">Jenkinsfile, Deployment and Service</h2>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">#!/usr/bin/env groovy</span><span class="w"></span>
 
 <span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -319,6 +326,11 @@
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># kubernetes/deployment.ymal</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
@@ -346,6 +358,11 @@
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># kubernetes/service.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span><span class="w"></span>
@@ -359,6 +376,9 @@
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8080</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="execute-jenkins-pipeline">Execute Jenkins Pipeline</h2>
 <p>Commit the changes and on trigger a job.</p>
@@ -376,13 +396,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A180864381592562436816927213636699675428{level}" class="graph_div"></div>
+    <div id="A191284862152318231627568278755325601951{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B180864381592562436816927213636699675428{level}" level="{level}" note_temp_id="180864381592562436816927213636699675428" onclick="window.ObsHtmlGraph.run(this, '180864381592562436816927213636699675428', 'aws.eks.complete ci⁄cd pipeline with eks and ecr');">
+        <button class="graph_button graph_show_button" id="B191284862152318231627568278755325601951{level}" level="{level}" note_temp_id="191284862152318231627568278755325601951" onclick="window.ObsHtmlGraph.run(this, '191284862152318231627568278755325601951', 'aws.eks.complete ci⁄cd pipeline with eks and ecr');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C180864381592562436816927213636699675428{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C191284862152318231627568278755325601951{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -864,6 +884,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

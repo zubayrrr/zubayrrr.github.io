@@ -229,6 +229,8 @@
 <li>Enable the plugin inside <code>ansible.cfg</code> like <code>enable_plugins = aws_ec2</code>.   </li>
 <li>Create a config file named <code>inventory_aws_ec2.yaml</code>, <code>.yaml</code>is required.   </li>
 </ul>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># inventory_aws_ec2.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_ec2</span><span class="w"></span>
@@ -236,6 +238,9 @@
 <span class="w">  </span><span class="c1"># get all hosts from specific region(s)</span><span class="w"></span>
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">eu-west-3</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li><code>ansible-inventory</code> to display or dump the configured inventory as Ansible sees it.   </li>
@@ -245,6 +250,8 @@
 <p><strong>Assign public DNS to EC2 instances</strong>   </p>
 <p>The <code>ansible-inventory ...</code> command will return a list <strong>private</strong> DNS names. We cannot use these to connect to them. We need to assign them <strong>public</strong> DNS names if we want to interact with it from outside the VPC(where the servers live).   </p>
 <p>In the <a href="/devlog/terraform.html">Terraform</a> code:   </p>
+<div class="lang-t">
+
 <div class="codehilite"><pre><span></span><code><span class="n">resource</span><span class="w"> </span><span class="s2">&quot;aws_vpc&quot;</span><span class="w"> </span><span class="s2">&quot;myapp-vpc&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">cidr_block</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">var</span><span class="o">.</span><span class="n">vpc_cidr_block</span><span class="w"></span>
 <span class="w">  </span><span class="n">enable_dns_hostnames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="bp">true</span><span class="w"></span>
@@ -254,25 +261,40 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Configure Ansible to use dynamic inventory</strong>   </p>
 <p>In the Ansible code, set the <code>hosts:</code> to either <code>all</code> or <code>aws_ec2</code>. You also need private key and user. Like:   </p>
+<div class="lang-cfg">
+
 <div class="codehilite"><pre><span></span><code><span class="na">remote_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">ec2-user</span><span class="w"></span>
 <span class="na">private_key_file</span><span class="o">=</span><span class="s">~/.ssh/id_rsa</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Run the playbook:   </p>
 <p><code>ansible-playbook -i inventory_aws_ec2.yaml deploy-app.yaml</code>   </p>
 <p>You can also make the <code>inventory_aws_ec2.yaml</code> as the default host file inside the <code>ansible.cfg</code> file. Like: <code>inventory = inventory_aws_ec2.yaml</code>.   </p>
 <p><strong>Target only specific servers</strong>   </p>
 <p>What if you wanted to target only specific servers. In the plugin configuration, you can use <code>filters</code> to filter the servers you want to use. The same filter attributes that are used by <a href="/devlog/aws.cli.html">aws.cli</a>. In our case, let's use the tag name.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">filters</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">tag:Name</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">dev*</span><span class="w"></span>
 <span class="w">  </span><span class="nt">instance-state-name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">running</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Create dynamic groups</strong>   </p>
 <p>You can group different servers in the plugin configuration file.   </p>
 <p>Example: grouped by tag.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_ec2</span><span class="w"></span>
 <span class="nt">regions</span><span class="p">:</span><span class="w"></span>
@@ -283,8 +305,13 @@
 <span class="w">  </span><span class="c1"># the values/attributes used here are from the output of `ansible-inventory ...` not the same attributes as `filters`</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>You can select the tag name and use it as the <code>hosts:</code> value in the Ansible code.   </p>
 <p>Example: group by instance type   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="nt">plugin</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">aws_ec2</span><span class="w"></span>
 <span class="nt">regions</span><span class="p">:</span><span class="w"></span>
@@ -295,6 +322,9 @@
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">instance_type</span><span class="w"></span>
 <span class="w">    </span><span class="nt">prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">instance_type</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -309,13 +339,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A11750915539240762606013981251373473568{level}" class="graph_div"></div>
+    <div id="A147337858210798594980901014280272876678{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B11750915539240762606013981251373473568{level}" level="{level}" note_temp_id="11750915539240762606013981251373473568" onclick="window.ObsHtmlGraph.run(this, '11750915539240762606013981251373473568', 'ansible.dynamic inventory');">
+        <button class="graph_button graph_show_button" id="B147337858210798594980901014280272876678{level}" level="{level}" note_temp_id="147337858210798594980901014280272876678" onclick="window.ObsHtmlGraph.run(this, '147337858210798594980901014280272876678', 'ansible.dynamic inventory');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C11750915539240762606013981251373473568{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C147337858210798594980901014280272876678{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -797,6 +827,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

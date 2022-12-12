@@ -44,6 +44,7 @@ Status:: `{_obsidian_pattern_tag_read}`
 - most things in adulthood, came to be because of what is called the strength of [weak ties](../../archive/weak%20ties.md).   
 - Many twentysomethings have limited themselves to huddling together with like-minded peers. Some are in almost constant contact with the same few people. But while the urban tribe helps us survive, it does not help us thrive.   
    
+
    
 Related::  [sociology](../../topics/sociology.md)   
    
@@ -82,6 +83,7 @@ True interconnectedness rests not on texting best friends at one a.m., but on re
 See also: [The Ben Franklin Effect](../../archive/The%20Ben%20Franklin%20Effect.md)
    
    
+
    
 If weak ties do favors for us, they start to like us. Then they become even more likely to grant us additional favors in the future.   
    
@@ -96,6 +98,7 @@ Franklin did research on his target and found out the legislator’s areas of ex
 **A WISE MAN MAKES HIS OWN LUCK**. Perhaps the single best thing we can do to make our own luck in our twenties is say yes to our weak ties or give them a reason to say yes to us.
    
    
+
    
 > Uncertainty will always be part of the taking-charge process. — Harold Geneen, businessman   
    
@@ -107,6 +110,7 @@ Twentysomethings who make choices are happier than those who tread water, they k
    
 Twentysomethings like are raised on abstract commands—“Follow your dreams!” “Reach for the stars!”—but they often don’t know much about how to get these things done. They don’t know how to get what they want or, sometimes, even what they want.   
    
+
    
 Topics::  [psychology](../topics/psychology.md)   
    
@@ -141,6 +145,7 @@ But it isn’t.
 - Rather than a way of catching up, Facebook can be one more way of keeping up. What’s worse is that now we feel the need to keep up not just with our closest friends and neighbors, but with hundreds of others whose manufactured updates continually remind us of how glorious life should be.   
 - Most twentysomethings know better than to compare their lives to celebrity microblogs, yet they treat Facebook images and posts from their peers as real. We don’t recognize that most everyone is keeping their troubles hidden. This underestimation of how much other twentysomethings are struggling makes everything feel like an upward social comparison, one where our not-so-perfect lives look low compared to the high life everyone else seems to be living.   
    
+
    
 Topics::  [psychology](../../topics/psychology.md)   
    
@@ -166,6 +171,7 @@ Stress is often a result of the tension between what is and what you believe sho
    
 - An adult life is built not out of eating, praying, and loving but out of person, place, and thing: who we are with, where we live, and what we do for a living. We start our lives with whichever of these we know something about.   
    
+
    
 > To accept life in its disjointed pieces is an adult experience of freedom, but still these pieces must lodge and embed themselves somewhere, hopefully in a place that allows them to grow and endure. — Richard Sennett, sociologist   
    
@@ -196,6 +202,7 @@ As a human resources executive told me, “I don’t expect people to say it’s
 Claiming a career or getting a good job isn’t the end; it’s the beginning. And, then, there is still a lot more to know and a lot more to do.
    
    
+
    
 Topics::  [relationships](../../topics/relationships.md)   
    
@@ -219,6 +226,7 @@ There is something scary about picking your family. It’s not romantic. It mean
 Today, we see marriage as a commitment between two individuals. Western culture is generally individualistic, prizing independence and self-fulfillment in almost all areas. We emphasize rights over duties and choice over obligation. This extends especially to marriage. With some notable exceptions, there has never been more freedom to decide whether, when, and how to partner, and with whom. There is no question that this has led to countless happy unions, as well as the experience of owning one of the most important decisions of our lives. At the same time, the foregrounding of the individual in relationships has caused us to forget about one of our greatest twentysomething opportunities: picking and creating our families.
    
    
+
    
    
 - In [psychotherapy](../../topics/psychotherapy.md), there’s a saying that “the slower you go, the faster you get there.” Sometimes the best way to help people is to slow them down long enough to examine their own thinking. Everyone has gaps in their reasoning. If you stop and shine a light on these mental ellipses, you find assumptions that drive behavior without our being aware of them.   
@@ -230,6 +238,7 @@ Today, we see marriage as a commitment between two individuals. Western culture 
 - There are things you can do to lessen the cohabitation effect. One is, obviously, don’t cohabitate before an engagement. Since this is not an entirely realistic suggestion, researchers also recommend getting clear on each person’s commitment level before you move in, and anticipating and regularly evaluating those constraints that may keep you from leaving even if you want to. There are also other ways to test a relationship besides moving in, including doing a wider variety of activities together than dating and sex. There are other ways to figure out whether you and your partner are in love, or even in like.
    
    
+
    
 One of the most valuable lessons I’ve learned as a psychotherapist was best stated by a clinician named Masud Khan: The most difficult thing to cure is the patient’s attempt at self-cure. Very few lives are perfect and, because young people are generally resilient, many bounce back from difficulties with their own solutions in place. They may be outdated, imperfect solutions, but they are solutions nonetheless—ones that usually resist dismantling.   
    
@@ -254,6 +263,7 @@ Yet these stories are the bits of identity with perhaps the greatest potential f
 Twentysomething women and men who are dating down—or working down, for that matter—usually have untold, or at least unedited, stories. These stories originated in old conversations and experiences and, so, they change only through new conversations and new experiences.
    
    
+
    
 Eli and his girlfriend needed to be “in like.” By this I mean two things: being alike in ways that matter and genuinely liking who the other person is. Often these go hand in hand. That is because the more similar two people are, the more they are able to understand each other. Each appreciates how the other acts and how he or she goes about the day, and this forestalls an incredible amount of friction. Two people who are similar are going to have the same reactions to a rainy day, a new car, a long vacation, an anniversary, a Sunday morning, and a big party.   
    
@@ -267,7 +277,9 @@ One match maker to consider is personality. Some research tells us that, especia
    
 While some Internet dating sites are nothing more than electronic bulletin boards for personals and photos, others purportedly assess your personality and pair you with similar others. These sorts of sites say they are more concerned with who you are than with what you want. This is good. The “what you want” questions bring us back to the deal breakers—hobbies, religion, politics, and other similarities that, while convenient, may not actually make us happy. The “who you are” questions are about profiling your personality. Some research suggests that couples who were matched through this sort of service tend to be happier than couples who meet in other ways, and if these matching sites are pairing people based on their personality profiles, then this makes some sense.   
    
+
    
+
    
 Topics::  [personality](../topics/personality.md)   
    
@@ -316,6 +328,7 @@ Neuroticism, or the tendency to be anxious, stressed, critical, and moody, is fa
 “The same way you make any decision. You weigh the evidence and you listen to yourself. The trick for you is going to be to listen to what matters, not to every single thing that makes you dissatisfied or anxious.”
    
    
+
    
 From MRI scans of healthy adolescents and twentysomethings, we now know that the [brain](/not_created.md) does not fully mature until sometime between the ages of twenty and thirty. In our twenties, the pleasure-seeking, emotional brain is ready to go while the forward-thinking frontal lobe is still a work in progress.   
    
@@ -344,6 +357,7 @@ It is easy to feel overwhelmed by uncertainty, to want to lie low with the urban
 > “You can’t connect the dots looking forward; you can only connect them looking backwards. So you have to trust that the dots will somehow connect in your future.”
    
    
+
    
 What happens at work every day matters. Typos matter and sick days matter, not just for the worker but for the company’s bottom line.   
    
@@ -376,6 +390,7 @@ Reappraising lessens, and even prevents, bad feelings. If Danielle could reevalu
 When Danielle called her mother, she was doing what psychologists call “borrowing an ego.” She was reaching out in a moment of need and letting someone else’s frontal lobe do the work. We all need to do that sometimes, but if we externalize our distress too much, we don’t learn to handle bad days on our own. We don’t practice soothing ourselves just when our brains are in the best position to pick up new skills. We don’t learn how to calm ourselves down, and this in and of itself undermines confidence.
    
    
+
    
 Danielle looked at some of her coworkers and was just sure they were born with self-assurance, or at least graduated with it, when, in fact, most of the people she compared herself to were older than she was or had been working longer than she had. She imagined that people at work either had confidence or they didn’t, so any little thing that went wrong on the job suggested she didn’t. Her mistakes became statements about who she was, perhaps a person not assured enough for a career in television, and not just feedback about what she needed to learn or a reflection of where she was in her career: the beginning. She feared every reprimand indicated she was not a natural, and this left her devastated. It sometimes made quitting seem like her only option.   
    
@@ -401,6 +416,7 @@ K. Anders Ericsson, a research psychologist who is probably the expert on, well,
 In most cases, it is going to take at least ten thousand hours of their time. Sometimes it seems that the challenge of the twentysomething years is to figure out what to do, and then suddenly it will just start happening. We imagine we will show up at work and instantly add value or be taken seriously. This is not the case. Knowing you want to do something isn’t the same as knowing how to do it, and even knowing how to do something isn’t the same as actually doing it well.
    
    
+
    
 Topics::  [personality](../../topics/personality.md)   
    
@@ -428,6 +444,7 @@ Being single while you’re young may be glorified in the press, but staying sin
 Sam had it all backward. The way he saw it, he couldn’t join the world until he felt like a man, but he wasn’t going to feel like a man until he joined the world. Sam imagined that the real world would just add to his problems, but if he wanted to feel less anxious and angry in his twenties—or his thirties—setting goals and making commitments was the proven way to go.
    
    
+
    
 For many, it just isn’t feasible to have children before work and love are figured out, and research consistently shows that educated moms are on the rise and good for kids. And, for the first time in history, women outnumber men in the workplace, which means that more women—and men—are balancing work and family. None of this has changed the way our bodies work. It has just changed how much we need to know about fertility.   
    
@@ -439,6 +456,7 @@ What is about to follow are some sobering statistics about having babies after t
    
 Most of these changes are about female fertility, because this is something scientists know a lot about. Still, a biological clock ticks in both women and men. Researchers are beginning to find that older sperm may be associated with various neurocognitive problems in children, including autism, schizophrenia, dyslexia, and lower intelligence. For this reason, and for reasons we will discuss further into the chapter, both men and women ought to be thinking about the timing of babies.   
    
+
    
 Topics::  [decision making](../topics/decision%20making.md)   
    
@@ -456,6 +474,7 @@ This is because of two age-related changes that every woman can expect across he
    
 Trying au natural—just having sex around the time of ovulation—a woman has about a 20 to 25 percent chance of conceiving during each cycle, up to about age thirty-five. So when you’re young it takes, on average, about four or five months of having sex to get pregnant. After thirty-five, the per-cycle odds of pregnancy start to drop sharply, down to 5 percent at forty, then 3 percent at forty-one, and 2 percent at forty-two. At forty, that’s an average of twenty or more months of trying, and the longer we have to spend trying, the worse our odds become. Add to this the rising rates of miscarriage in women over thirty-five—one-quarter of pregnancies after thirty-five and half of pregnancies after forty miscarry—and the post-thirty-five years can be a time of anticipation and heartbreak.   
    
+
    
 Topics::  [fertility](../topics/fertility.md)   
    
@@ -467,6 +486,7 @@ In which sperm is inserted into the female reproductive tract—has a 90 to 95 p
    
 See also: [In vitro fertilization](../archive/In%20vitro%20fertilization.md)
    
+
    
 In vitro fertilization (IVF) is a complex series of procedures used to help with fertility or prevent genetic problems and assist with the conception of a child. During IVF , mature eggs are collected (retrieved) from ovaries and fertilized by sperm in a lab.   
    
@@ -486,11 +506,13 @@ It changes things when Grandma and Grandpa aren’t up to babysitting, and when 
 What I can’t figure out, and what I feel like I am grieving a little, is why I spent so many years on nothing. So many years doing things and hanging out with people that don’t even rate a memory. For what? I had a good time in my twenties, but did I need to do all that for eight years? Lying there in the MRI, it was like I traded five years of partying or hanging out in coffee shops for five more years I could have had with my son if I’d grown up sooner. Why didn’t someone drop the manners and tell me I was wasting my life?
    
    
+
    
 In 1962, a twenty-three-year-old French speleologist named Michel Siffre spent two months in a cave. Siffre wanted to live beyond time, isolated from changes in light, sound, and temperature. He was interested in how people understand time in the absence of obvious markers. When Siffre emerged, he thought he had been underground only twenty-five days, about half as long as he actually had. Siffre had lost track of time. Decades and several similar studies later, we now know that the brain has difficulty keeping time across long, unpunctuated intervals. We condense unmarked time. The days and years pass, and we say, “Where did the time go?”   
    
 Our twenties can be like living beyond time. When we graduate from school, we leave behind the only lives we have ever known, ones that have been neatly packaged in semester-sized chunks with goals nestled within. Suddenly, life opens up and the syllabi are gone. There are days and weeks and months and years, but no clear way to know when or why any one thing should happen. It can be a disorienting, cavelike existence. As one twentysomething astutely put it, “The twentysomething years are a whole new way of thinking about time. There’s this big chunk of time and a whole bunch of stuff needs to happen somehow.”   
    
+
    
 Topics::  [biases](../topics/biases.md)   
    

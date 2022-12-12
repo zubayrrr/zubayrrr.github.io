@@ -11,6 +11,7 @@ Topics::  [mental models](../topics/mental%20models.md)
    
 ---   
    
+
    
 > "The map appears to us more real than the land." - D.H. Lawrence
    
@@ -51,6 +52,7 @@ Economist Elinor Ostrom wrote about being cautious with maps and models when loo
    
 This is a double problem. First, having a general map, we may assume that if a territory matches the map in a couple of respects it matches the map in all respects. Second, we may think adherence to the map is more important than taking in new information about a territory. Ostrom asserts that one of the main values of using models as maps in public policy discussions is in the thinking that is generated. They are tools for exploration, not doctrines to force conformity. They are guidebooks, not laws.   
    
+
    
 > "Remember that all models are wrong; the practical question is how wrong do they have to be to not be useful." - George Box
    
@@ -68,6 +70,7 @@ When we enter new and unfamiliar territory it’s nice to have a map on hand. Bu
    
 We do have to remember though, that a map captures a territory at a moment in time. Just because it might have done a good job at depicting what was, there is no guarantee that it depicts what is there now or what will be there in the future. The faster the rate of change in the territory, the harder it will be for a map to keep up to date.   
    
+
    
 > "Viewed in its development through time, the map details the changing thought of the human race, and few works seem to be such an excellent indicator of culture and civilization." - Norman J.W. Thrower
    

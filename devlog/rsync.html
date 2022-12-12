@@ -217,10 +217,15 @@
 <p>Topics::  <a href="/topics/linux.html">linux</a>, <a href="/topics/networking.html">networking</a>   </p>
 <hr />
 <p>The <code>rsync</code> utility expressions take the following form:   </p>
+<div class="lang-sh">
+
 <div class="codehilite"><pre><span></span><code>Local to Local:  rsync <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>SRC<span class="o">]</span>... DEST
 Local to Remote: rsync <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>SRC<span class="o">]</span>... <span class="o">[</span>USER@<span class="o">]</span>HOST:DEST
 Remote to Local: rsync <span class="o">[</span>OPTION<span class="o">]</span>... <span class="o">[</span>USER@<span class="o">]</span>HOST:SRC... <span class="o">[</span>DEST<span class="o">]</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Copy   </p>
 <ul>
@@ -241,17 +246,32 @@ Remote to Local: rsync <span class="o">[</span>OPTION<span class="o">]</span>...
 </ul>
 <h2 id="basic-rsync-usage">Basic Rsync Usage</h2>
 <p>The most basic use case of <code>rsync</code> is to copy a single file from one to another local location. Here is an example:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>rsync -a /etc/ ~/etc_backup/
 </code></pre></div>
 
+
+</div>
+
 <p>The user running the command must have read permissions on the source location and write permissions on the destination.   </p>
 <p>Omitting the filename from the destination location copies the file with the current name. If you want to save the file under a different name, specify the new name on the destination part:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>rsync -a /opt/filename.zip /tmp/newfilename.zip
 </code></pre></div>
 
+
+</div>
+
 <p>The real power of <code>rsync</code> comes when synchronizing directories. The example below shows how to create a local backup of website files:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">domain</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">public_html</span><span class="o">/</span><span class="w"> </span><span class="o">/</span><span class="k">var</span><span class="o">/</span><span class="n">www</span><span class="o">/</span><span class="n">domain</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">public_html_backup</span><span class="o">/</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>If the destination directory doesn’t exist, <code>rsync</code> will create it.   </p>
 <p>It is worth mentioning that <code>rsync</code> gives different treatment to the source directories with a trailing slash (<code>/</code>). If the source directory has a trailing slash, the command will copy only the directory contents to the destination directory. When the trailing slash is omitted, <code>rsync</code> copies the source directory inside the destination directory.   </p>
@@ -259,35 +279,70 @@ Remote to Local: rsync <span class="o">[</span>OPTION<span class="o">]</span>...
 <h2 id="using-rsync-over-the-network">Using rsync Over the Network</h2>
 <p>When using <code>rsync</code> to [transfer data remotely , it must be installed on both the source and the destination machine. The new versions of <code>rsync</code> are configured to use SSH as default remote shell.   </p>
 <p>In the following example, we are transferring a directory from a local to a remote machine:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"> </span><span class="n">remote_user</span><span class="nv">@remote_host_or_ip</span><span class="err">:</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>or   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">av</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="n">ssh</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="w"> </span><span class="n">remote_user</span><span class="nv">@remote_host_or_ip</span><span class="err">:</span><span class="o">~/</span><span class="n">etc_bacup</span><span class="o">/</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>To transfer data from a remote to a local machine, use the remote location as a source:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="n">remote_user</span><span class="nv">@remote_host_or_ip</span><span class="err">:</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>If SSH on the remote host is listening on a port other than the default 22 , specify the port using the <code>-e</code> option:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">rsync</span><span class="w"> </span><span class="o">-</span><span class="n">a</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w"> </span><span class="ss">&quot;ssh -p 2322&quot;</span><span class="w"> </span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"> </span><span class="n">remote_user</span><span class="nv">@remote_host_or_ip</span><span class="err">:</span><span class="o">/</span><span class="n">opt</span><span class="o">/</span><span class="n">media</span><span class="o">/</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>There are two options to exclude files and directories. The first option is to use the <code>--exclude</code> argument and specify the files and directories you want to exclude on the command line.   </p>
 <p>When excluding files or directories , you need to use their relative paths to the source location.   </p>
 <p>In the following example shows how exclude the <code>node_modules</code> and <code>tmp</code> directories:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>rsync -a --exclude=node_modules --exclude=tmp /src_directory/ /dst_directory/
 </code></pre></div>
 
+
+</div>
+
 <p>The second option is to use the <code>--exclude-from</code> option and specify the files and directories you want to exclude in a file.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>rsync -a --exclude-from=&#39;/exclude-file.txt&#39; /src_directory/ /dst_directory/
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-bash">
 
 <div class="codehilite"><pre><span></span><code>$ cat exclude-file.txt
 node_modules
 tmp
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>via - <a href="https://linuxize.com/post/how-to-use-rsync-for-local-and-remote-data-transfer-and-synchronization/" target="_blank" class="external-link">Rsync Command in Linux with Examples | Linuxize</a></p>
@@ -307,13 +362,13 @@ tmp
 
 </div>
 <div class="graph requires_js ">
-    <div id="A231112186611969938354810555428730756611{level}" class="graph_div"></div>
+    <div id="A335908083021084376109383627689373075647{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B231112186611969938354810555428730756611{level}" level="{level}" note_temp_id="231112186611969938354810555428730756611" onclick="window.ObsHtmlGraph.run(this, '231112186611969938354810555428730756611', 'rsync');">
+        <button class="graph_button graph_show_button" id="B335908083021084376109383627689373075647{level}" level="{level}" note_temp_id="335908083021084376109383627689373075647" onclick="window.ObsHtmlGraph.run(this, '335908083021084376109383627689373075647', 'rsync');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C231112186611969938354810555428730756611{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C335908083021084376109383627689373075647{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -795,6 +850,7 @@ tmp
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

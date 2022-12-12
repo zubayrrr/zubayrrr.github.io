@@ -234,6 +234,8 @@ when the main DHCP server is not reachable   </p>
 <h2 id="explain-subnet-mask-and-given-an-example">Explain subnet mask and given an example</h2>
 <p>A Subnet mask is a 32-bit number that masks an IP address, and divides the IP address into network address and host address. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, two host addresses are reserved for special purpose, and cannot be assigned to hosts. The "0" address is assigned a network address and "255" is assigned to a broadcast address, and they cannot be assigned to hosts.   </p>
 <p><strong>For Example</strong>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>| Address Class | No of Network Bits | No of Host Bits | Subnet mask     | CIDR notation |
 | ------------- | ------------------ | --------------- | --------------- | ------------- |
 | A             | 8                  | 24              | 255.0.0.0       | /8            |
@@ -249,6 +251,9 @@ when the main DHCP server is not reachable   </p>
 | C             | 28                 | 4               | 255.255.255.240 | /28           |
 | C             | 30                 | 2               | 255.255.255.252 | /30           |
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-is-a-private-ip-address-in-which-scenarios-system-designs-one-should-use-it">What is a private IP address? In which scenarios/system designs, one should use it?</h2>
 <p>Private IP addresses are assigned to the hosts in the same network to communicate among one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostelmates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.   </p>
@@ -538,6 +543,8 @@ Desktop virtualization   </p>
 <h2 id="explain-inheritance-and-how-to-use-it-in-python">Explain inheritance and how to use it in Python</h2>
 <h2 id="explain-and-demonstrate-class-attributes-instance-attributes">Explain and demonstrate class attributes &amp; instance attributes</h2>
 <p>In the following block of code <code>x</code> is a class attribute while <code>self.y</code> is a instance attribute   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">MyClass</span>(<span class="n">object</span>):
     <span class="nb">x</span> = <span class="mi">1</span>
 
@@ -545,8 +552,13 @@ Desktop virtualization   </p>
         <span class="nb">self</span>.<span class="n">y</span> = <span class="n">y</span>
 </code></pre></div>
 
+
+</div>
+
 <h4 id="python-exceptions">Python - Exceptions</h4>
 <h2 id="what-is-an-error-what-is-an-exception-what-types-of-exceptions-are-you-familiar-with">What is an error? What is an exception? What types of exceptions are you familiar with?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">#  Note that you generally don&#39;t need to know the compiling process but knowing where everything comes from</span><span class="w"></span>
 <span class="c1">#  and giving complete answers shows that you truly know what you are talking about.</span><span class="w"></span>
 
@@ -605,12 +617,17 @@ Desktop virtualization   </p>
 <span class="w">    </span><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="n">__main__</span><span class="p">.</span><span class="n">DividedBy2Error</span><span class="o">:</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">dont</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">divide</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="mi">2</span><span class="o">!</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="explain-exception-handling-and-how-to-use-it-in-python">Explain Exception Handling and how to use it in Python</h2>
 <p><strong>Exceptions:</strong> Errors detected during execution are called Exceptions.   </p>
 <p><strong>Handling Exception:</strong> When an error occurs, or exception as we call it, Python will normally stop and generate an error message.</br> <br />
 Exceptions can be handled using <code>try</code> and <code>except</code> statement in python.   </p>
 <p><strong>Example:</strong> Following example asks the user for input until a valid integer has been entered. </br> <br />
 If user enter a non-integer value it will raise exception and using except it will catch that exception and ask the user to enter valid integer again.   </p>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;please enter an integer value: &quot;</span><span class="p">))</span>
@@ -619,14 +636,22 @@ If user enter a non-integer value it will raise exception and using except it wi
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Ops! Please enter a valid integer value.&quot;</span><span class="p">)</span>
 </code></pre></div>
 
+
+</div>
+
 <p>For more details about errors and exceptions follow this <a href="https://docs.python.org/3/tutorial/errors.html" target="_blank" class="external-link">https://docs.python.org/3/tutorial/errors.html</a>   </p>
 <h2 id="what-is-the-result-of-running-the-following-function">What is the result of running the following function?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">true_or_false</span><span class="ss">()</span>:<span class="w"></span>
 <span class="w">    </span><span class="nv">try</span>:<span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">True</span><span class="w"></span>
 <span class="w">    </span><span class="nv">finally</span>:<span class="w"></span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nv">False</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>False   </p>
 <h4 id="python-built-in-functions">Python Built-in functions</h4>
@@ -642,6 +667,8 @@ If user enter a non-integer value it will raise exception and using except it wi
 <ul>
 <li>Example code:   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">Foo:</span>
     <span class="n">def</span> <span class="n">__init__</span>(<span class="n">self:</span> <span class="n">object</span>) -&gt;  <span class="n">None:</span>
         <span class="nb">pass</span>
@@ -652,11 +679,19 @@ If user enter a non-integer value it will raise exception and using except it wi
 <span class="nb">f</span>()
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>Result:   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>Called!
 </code></pre></div>
+
+
+</div>
 
 <h2 id="do-classes-has-the-call-method-as-well-what-for">Do classes has the <strong>call</strong> method as well? What for?</h2>
 <h2 id="what-_-is-used-for-in-python">What _ is used for in Python?</h2>
@@ -677,23 +712,38 @@ If user enter a non-integer value it will raise exception and using except it wi
 <ul>
 <li>A lambda function add 10 with any argument passed.   </li>
 </ul>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="n">x</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">10</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>An addition function   </li>
 </ul>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="n">addition</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">addition</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">))</span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>Squaring function   </li>
 </ul>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="n">square</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="o">**</span> <span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">square</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Generally it is considered a bad practice under PEP 8 to assign a lambda expresion, they are meant to be used as parameters and inside of other defined functions.   </p>
 <h4 id="properties">Properties</h4>
@@ -706,8 +756,13 @@ If user enter a non-integer value it will raise exception and using except it wi
 </ul>
 <h2 id="explain-what-is-property">Explain what is @property</h2>
 <h2 id="how-do-you-swap-values-between-two-variables">How do you swap values between two variables?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>x, y = y, x
 </code></pre></div>
+
+
+</div>
 
 <h2 id="explain-the-following-object-s-magic-variables">Explain the following object's magic variables:</h2>
 <ul>
@@ -715,6 +770,8 @@ If user enter a non-integer value it will raise exception and using except it wi
 </ul>
 <h2 id="write-a-function-to-return-the-sum-of-one-or-more-numbers-the-user-will-decide-how-many-numbers-to-use">Write a function to return the sum of one or more numbers. The user will decide how many numbers to use</h2>
 <p>First you ask the user for the amount of numbers that will be use. Use a while loop that runs until amount_of_numbers becomes 0 through subtracting amount_of_numbers by one each loop. In the while loop you want ask the user for a number which will be added a variable each time the loop runs.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">return_sum</span><span class="ss">()</span>:<span class="w"></span>
 <span class="w">    </span><span class="nv">amount_of_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">int</span><span class="ss">(</span><span class="nv">input</span><span class="ss">(</span><span class="s2">&quot;How many numbers? &quot;</span><span class="ss">))</span><span class="w"></span>
 <span class="w">    </span><span class="nv">total_sum</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
@@ -725,10 +782,18 @@ If user enter a non-integer value it will raise exception and using except it wi
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">total_sum</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="print-the-average-of-2-5-6-it-should-be-rounded-to-3-decimal-places">Print the average of [2, 5, 6]. It should be rounded to 3 decimal places</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>li = [2, 5, 6]
 print(&quot;{0:.3f}&quot;.format(sum(li)/len(li)))
 </code></pre></div>
+
+
+</div>
 
 <h4 id="python-lists">Python - Lists</h4>
 <h2 id="what-is-a-tuple-in-python-what-is-it-used-for">What is a tuple in Python? What is it used for?</h2>
@@ -749,27 +814,47 @@ x.extend([1, 2, 3])   </p>
 <ul>
 <li>One item:   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>numbers = [1, 2, 3, 4, 5]
 numbers.insert(0, 0)
 print(numbers)
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>Multiple items or list:   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>numbers_1 = [2, 3, 4, 5]
 numbers_2 = [0, 1]
 numbers_1 = numbers_2 + numbers_1
 print(numbers_1)
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-sort-list-by-the-length-of-items">How to sort list by the length of items?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sorted_li = sorted(li, key=len)
 </code></pre></div>
 
+
+</div>
+
 <p>Or without creating a new list:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>li.sort(key=len)
 </code></pre></div>
+
+
+</div>
 
 <h2 id="do-you-know-what-is-the-difference-between-list-sort-and-sorted-list">Do you know what is the difference between list.sort() and sorted(list)?</h2>
 <ul>
@@ -783,15 +868,27 @@ print(numbers_1)
 <li>list.sort() is faster than sorted(list) in case of Lists   </li>
 </ul>
 <h2 id="convert-every-string-to-an-integer-1-2-3-4-5-6">Convert every string to an integer: <code>[['1', '2', '3'], ['4', '5', '6']]</code></h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">nested_li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[[<span class="s1">&#39;1&#39;</span>,<span class="w"> </span><span class="s1">&#39;2&#39;</span>,<span class="w"> </span><span class="s1">&#39;3&#39;</span>],<span class="w"> </span>[<span class="s1">&#39;4&#39;</span>,<span class="w"> </span><span class="s1">&#39;5&#39;</span>,<span class="w"> </span><span class="s1">&#39;6&#39;</span>]]<span class="w"></span>
 [[<span class="nv">int</span><span class="ss">(</span><span class="nv">x</span><span class="ss">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">x</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">li</span>]<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">li</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">nested_li</span>]<span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-merge-two-sorted-lists-into-one-sorted-list">How to merge two sorted lists into one sorted list?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sorted(li1 + li2)
 </code></pre></div>
 
+
+</div>
+
 <p>Another way:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">j</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 <span class="n">merged_li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="w"></span>
 
@@ -806,16 +903,26 @@ print(numbers_1)
 <span class="n">merged_li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">merged_li</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">merged_li</span><span class="o">[</span><span class="n">i:</span><span class="o">]</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">merged_li</span><span class="o">[</span><span class="n">j:</span><span class="o">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-check-if-all-the-elements-in-a-given-lists-are-unique-so-1-2-3-is-unique-but-1-1-2-3-is-not-unique-because-1-exists-twice">How to check if all the elements in a given lists are unique? so [1, 2, 3] is unique but [1, 1, 2, 3] is not unique because 1 exists twice</h2>
 <p></b>   </p>
 <p>There are many ways of solving this problem:<br> <br />
 <code># Note: :list and -&gt; bool are just python typings, they are not needed for the correct execution of the algorithm. </code>   </p>
 <p>Taking advantage of sets and len:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">is_unique</span><span class="p">(</span><span class="n">l</span><span class="o">:</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="nf">set</span><span class="p">(</span><span class="n">l</span><span class="p">))</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">len</span><span class="p">(</span><span class="n">l</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>This one is can be seen used in other programming languages.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">is_unique2</span><span class="p">(</span><span class="n">l</span><span class="o">:</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">seen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span><span class="w"></span>
 
@@ -826,7 +933,12 @@ print(numbers_1)
 <span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kr">True</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Here we just count and make sure every element is just repeated once.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">is_unique3</span><span class="p">(</span><span class="n">l</span><span class="o">:</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">l</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="nf">if</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">1</span><span class="o">:</span><span class="w"></span>
@@ -834,73 +946,136 @@ print(numbers_1)
 <span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kr">True</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>This one might look more convulated but hey, one liners.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">is_unique4</span><span class="p">(</span><span class="n">l</span><span class="o">:</span><span class="n">list</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">bool</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="kr">return</span><span class="w"> </span><span class="kr">all</span><span class="p">(</span><span class="nf">map</span><span class="p">(</span><span class="n">lambda</span><span class="w"> </span><span class="n">x</span><span class="o">:</span><span class="w"> </span><span class="n">l</span><span class="p">.</span><span class="nf">count</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">l</span><span class="p">))</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p></details>   </p>
 <h2 id="you-have-the-following-function">You have the following function</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>def my_func(li = []):
     li.append(&quot;hmm&quot;)
     print(li)
 </code></pre></div>
 
+
+</div>
+
 <p>If we call it 3 times, what would be the result each call?   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">[&#39;hmm&#39;]</span><span class="w"></span>
 <span class="k">[&#39;hmm&#39;, &#39;hmm&#39;]</span><span class="w"></span>
 <span class="k">[&#39;hmm&#39;, &#39;hmm&#39;, &#39;hmm&#39;]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-iterate-over-a-list">How to iterate over a list?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">item</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">some_list</span>:<span class="w"></span>
 <span class="w">    </span><span class="nv">print</span><span class="ss">(</span><span class="nv">item</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-iterate-over-a-list-with-indexes">How to iterate over a list with indexes?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">enumerate</span><span class="p">(</span><span class="n">some_list</span><span class="p">):</span><span class="w"></span>
 <span class="w">    </span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-start-list-iteration-from-2nd-index">How to start list iteration from 2nd index?</h2>
 <p>Using range like this   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="n">some_list</span><span class="p">))</span><span class="err">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">some_list</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Another way is using slicing   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">some_list</span>[<span class="mi">1</span>:]:<span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-iterate-over-a-list-in-reverse-order">How to iterate over a list in reverse order?</h2>
 <p>Method 1   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">reversed</span><span class="ss">(</span><span class="nv">li</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">    </span>...<span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Method 2   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">n</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">len</span><span class="ss">(</span><span class="nv">li</span><span class="ss">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <span class="k">while</span><span class="w"> </span><span class="nv">n</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span>:<span class="w"></span>
 <span class="w">    </span>...<span class="w"></span>
 <span class="w">    </span><span class="nv">n</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="sort-a-list-of-lists-by-the-second-item-of-each-nested-list">Sort a list of lists by the second item of each nested list</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>li = [[1, 4], [2, 1], [3, 9], [4, 2], [4, 5]]
 
 sorted(li, key=lambda l: l[1])
 </code></pre></div>
 
+
+</div>
+
 <p>or   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>li.sort(key=lambda l: l[1)
 </code></pre></div>
 
+
+</div>
+
 <h2 id="combine-1-2-3-and-x-y-z-so-the-result-is-1-x-2-y-3-z">Combine [1, 2, 3] and ['x', 'y', 'z'] so the result is [(1, 'x'), (2, 'y'), (3, 'z')]</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>nums = [1, 2, 3]
 letters = [&#39;x&#39;, &#39;y&#39;, &#39;z&#39;]
 
 list(zip(nums, letters))
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-is-list-comprehension-is-it-better-than-a-typical-loop-why-can-you-demonstrate-how-to-use-it">What is List Comprehension? Is it better than a typical loop? Why? Can you demonstrate how to use it?</h2>
 <p>From <a href="https://docs.python.org/3/tutorial/datastructures.html#list-comprehensions" target="_blank" class="external-link">Docs</a>: "List comprehensions provide a concise way to create lists. Common applications are to make new lists where each element is the result of some operations applied to each member of another sequence or iterable, or to create a subsequence of those elements that satisfy a certain condition.".   </p>
@@ -908,6 +1083,8 @@ list(zip(nums, letters))
 <ul>
 <li>For loop:   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">number_lists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[[<span class="mi">1</span>,<span class="w"> </span><span class="mi">7</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">1</span>],<span class="w"> </span>[<span class="mi">13</span>,<span class="w"> </span><span class="mi">93</span>,<span class="w"> </span><span class="mi">23</span>,<span class="w"> </span><span class="mi">12</span>],<span class="w"> </span>[<span class="mi">123</span>,<span class="w"> </span><span class="mi">423</span>,<span class="w"> </span><span class="mi">456</span>,<span class="w"> </span><span class="mi">653</span>,<span class="w"> </span><span class="mi">124</span>]]<span class="w"></span>
 <span class="nv">odd_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[]<span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="nv">number_list</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">number_lists</span>:<span class="w"></span>
@@ -917,16 +1094,26 @@ list(zip(nums, letters))
 <span class="nv">print</span><span class="ss">(</span><span class="nv">odd_numbers</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>List comprehesion:   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">number_lists</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[[<span class="mi">1</span>,<span class="w"> </span><span class="mi">7</span>,<span class="w"> </span><span class="mi">3</span>,<span class="w"> </span><span class="mi">1</span>],<span class="w"> </span>[<span class="mi">13</span>,<span class="w"> </span><span class="mi">93</span>,<span class="w"> </span><span class="mi">23</span>,<span class="w"> </span><span class="mi">12</span>],<span class="w"> </span>[<span class="mi">123</span>,<span class="w"> </span><span class="mi">423</span>,<span class="w"> </span><span class="mi">456</span>,<span class="w"> </span><span class="mi">653</span>,<span class="w"> </span><span class="mi">124</span>]]<span class="w"></span>
 <span class="nv">odd_numbers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[<span class="nv">number</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">number_list</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">number_lists</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">number_list</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="nv">number</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span>]<span class="w"></span>
 <span class="nv">print</span><span class="ss">(</span><span class="nv">odd_numbers</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="you-have-the-following-list-name-mario-food-mushrooms-goombas-name-luigi-food-mushrooms-turtles">You have the following list: <code>[{'name': 'Mario', 'food': ['mushrooms', 'goombas']}, {'name': 'Luigi', 'food': ['mushrooms', 'turtles']}]</code></h2>
 <p>Extract all type of foods. Final output should be: {'mushrooms', 'goombas', 'turtles'}   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">brothers_menu</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="err">\</span><span class="w"></span>
 <span class="p">[{</span><span class="s">&#39;name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;Mario&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;food&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;mushrooms&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;goombas&#39;</span><span class="p">]},</span><span class="w"> </span><span class="p">{</span><span class="s">&#39;name&#39;</span><span class="o">:</span><span class="w"> </span><span class="s">&#39;Luigi&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;food&#39;</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;mushrooms&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;turtles&#39;</span><span class="p">]}]</span><span class="w"></span>
 
@@ -944,6 +1131,9 @@ list(zip(nums, letters))
 <span class="nf">set</span><span class="p">([</span><span class="n">food</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">bro</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">x</span><span class="w"> </span><span class="n">for</span><span class="w"> </span><span class="n">food</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="n">bro</span><span class="p">[</span><span class="s">&#39;food&#39;</span><span class="p">]])</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h4 id="python-dictionaries">Python - Dictionaries</h4>
 <h2 id="how-to-create-a-dictionary">How to create a dictionary?</h2>
 <p>my_dict = dict(x=1, y=2) <br />
@@ -955,18 +1145,35 @@ my_dict = dict([('x', 1), ('y', 2)])   </p>
 <p>del my_dict['some_key'] <br />
 you can also use <code>my_dict.pop('some_key')</code> which returns the value of the key.   </p>
 <h2 id="how-to-sort-a-dictionary-by-values">How to sort a dictionary by values?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>{<span class="nv">k</span>:<span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">k</span>,<span class="w"> </span><span class="nv">v</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">sorted</span><span class="ss">(</span><span class="nv">x</span>.<span class="nv">items</span><span class="ss">()</span>,<span class="w"> </span><span class="nv">key</span><span class="o">=</span><span class="nv">lambda</span><span class="w"> </span><span class="nv">item</span>:<span class="w"> </span><span class="nv">item</span>[<span class="mi">1</span>]<span class="ss">)</span>}<span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-sort-a-dictionary-by-keys">How to sort a dictionary by keys?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>dict(sorted(some_dictionary.items()))
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-merge-two-dictionaries">How to merge two dictionaries?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>some_dict1.update(some_dict2)
 </code></pre></div>
 
+
+</div>
+
 <h2 id="convert-the-string-a-b-c-to-the-dictionary-a-b-c-1">Convert the string "a.b.c" to the dictionary <code>{'a': {'b': {'c': 1}}}</code></h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="s s-Atom">output</span> <span class="o">=</span> <span class="p">{}</span>
 <span class="s s-Atom">string</span> <span class="o">=</span> <span class="s2">&quot;a.b.c&quot;</span>
 <span class="s s-Atom">path</span> <span class="o">=</span> <span class="s s-Atom">string</span><span class="p">.</span><span class="nf">split</span><span class="p">(</span><span class="s s-Atom">&#39;.&#39;</span><span class="p">)</span>
@@ -975,14 +1182,22 @@ you can also use <code>my_dict.pop('some_key')</code> which returns the value of
 <span class="nf">print</span><span class="p">(</span><span class="s s-Atom">output</span><span class="p">)</span>
 </code></pre></div>
 
+
+</div>
+
 <h5 id="common-algorithms-implementation">Common Algorithms Implementation</h5>
 <h2 id="can-you-implement-binary-search-in-python">Can you implement "binary search" in Python?</h2>
 <p><a href="coding/python/binary_search.py" target="_blank" class="external-link">Solution</a>   </p>
 <h4 id="python-files">Python Files</h4>
 <h2 id="how-to-write-to-a-file">How to write to a file?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>with open(&#39;file.txt&#39;, &#39;w&#39;) as file:
     file.write(&quot;My insightful comment&quot;)
 </code></pre></div>
+
+
+</div>
 
 <h2 id="sum-all-the-integers-in-a-given-file">Sum all the integers in a given file</h2>
 <h2 id="print-a-random-line-of-a-given-file">Print a random line of a given file</h2>
@@ -991,11 +1206,16 @@ you can also use <code>my_dict.pop('some_key')</code> which returns the value of
 <h2 id="print-the-number-of-of-words-in-a-given-file">Print the number of of words in a given file</h2>
 <h2 id="can-you-write-a-function-which-will-print-all-the-file-in-a-given-directory-including-sub-directories">Can you write a function which will print all the file in a given directory? including sub-directories</h2>
 <h2 id="write-a-dictionary-variable-to-a-file">Write a dictionary (variable) to a file</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">json</span>
 
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;file.json&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dict_var</span><span class="p">))</span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="how-to-print-current-working-directory">How to print current working directory?</h2>
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">os</span>
@@ -1303,6 +1523,8 @@ you can also use <code>my_dict.pop('some_key')</code> which returns the value of
 <h2 id="how-to-find-all-the-ip-addresses-in-a-variable-how-to-find-them-in-a-file">How to find all the IP addresses in a variable? How to find them in a file?</h2>
 <h2 id="find-the-first-repeated-character-in-a-string">Find the first repeated character in a string</h2>
 <p>While you iterate through the characters, store them in a dictionary and check for every character whether it's already in the dictionary.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">firstRepeatedCharacter</span><span class="p">(</span><span class="nf">str</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">chars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span><span class="w"></span>
 <span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="nf">str</span><span class="err">:</span><span class="w"></span>
@@ -1312,12 +1534,22 @@ you can also use <code>my_dict.pop('some_key')</code> which returns the value of
 <span class="w">            </span><span class="n">chars</span><span class="o">[</span><span class="n">ch</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-extract-the-unique-characters-from-a-string-for-example-given-the-input-itssssssameeeemarioooooo-the-output-will-be-mrtisaoe">How to extract the unique characters from a string? for example given the input "itssssssameeeemarioooooo" the output will be "mrtisaoe"</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>x = &quot;itssssssameeeemarioooooo&quot;
 y = &#39;&#39;.join(set(x))
 </code></pre></div>
 
+
+</div>
+
 <h2 id="find-all-the-permutations-of-a-given-string">Find all the permutations of a given string</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">permute_string</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
 
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nf">len</span><span class="p">(</span><span class="n">string</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">1</span><span class="err">:</span><span class="w"></span>
@@ -1334,32 +1566,55 @@ y = &#39;&#39;.join(set(x))
 <span class="k">print</span><span class="p">(</span><span class="n">permute_string</span><span class="p">(</span><span class="ss">&quot;abc&quot;</span><span class="p">))</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Short way (but probably not acceptable in interviews):   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">itertools</span> <span class="kn">import</span> <span class="n">permutations</span>
 
 <span class="p">[</span><span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="n">permutations</span><span class="p">(</span><span class="s2">&quot;abc&quot;</span><span class="p">)]</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Detailed answer can be found here: <a href="http://codingshell.com/python-all-string-permutations" target="_blank" class="external-link">http://codingshell.com/python-all-string-permutations</a>   </p>
 <h2 id="how-to-check-if-a-string-contains-a-sub-string">How to check if a string contains a sub string?</h2>
 <h2 id="find-the-frequency-of-each-character-in-string">Find the frequency of each character in string</h2>
 <h2 id="count-the-number-of-spaces-in-a-string">Count the number of spaces in a string</h2>
 <p>You can use the "count" method like this:   </p>
+<div class="lang-python">
+
 <div class="codehilite"><pre><span></span><code><span class="n">ImAString</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="given-a-string-find-the-n-most-repeated-words">Given a string, find the N most repeated words</h2>
 <h2 id="given-the-string-which-represents-a-matrix-1-2-3-n4-5-6-n7-8-9-create-rows-and-colums-variables-should-contain-integers-not-strings">Given the string (which represents a matrix) "1 2 3\n4 5 6\n7 8 9" create rows and colums variables (should contain integers, not strings)</h2>
 <h2 id="what-is-the-result-of-each-of-the-following">What is the result of each of the following?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>&gt;&gt; &#39;, &#39;.join([&quot;One&quot;, &quot;Two&quot;, &quot;Three&quot;])
 &gt;&gt; &quot; &quot;.join(&quot;welladsadgadoneadsadga&quot;.split(&quot;adsadga&quot;)[:2])
 &gt;&gt; &quot;&quot;.join([&quot;c&quot;, &quot;t&quot;, &quot;o&quot;, &quot;a&quot;, &quot;o&quot;, &quot;q&quot;, &quot;l&quot;])[0::2]
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>&gt;&gt;&gt; &#39;One, Two, Three&#39;
 &gt;&gt;&gt; &#39;well done&#39;
 &gt;&gt;&gt; &#39;cool&#39;
 </code></pre></div>
+
+
+</div>
 
 <h2 id="if-x-pizza-what-would-be-the-result-of-x-1">If <code>x = "pizza"</code>, what would be the result of <code>x[::-1]</code>?</h2>
 <p>It will reverse the string, so x would be equal to <code>azzip</code>.   </p>
@@ -1371,9 +1626,14 @@ y = &#39;&#39;.join(set(x))
 <h2 id="how-do-you-handle-argument-parsing-in-python">How do you handle argument parsing in Python?</h2>
 <h2 id="what-is-a-generator-why-using-generators">What is a generator? Why using generators?</h2>
 <h2 id="what-would-be-the-output-of-the-following-block">What would be the output of the following block?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">3</span>,<span class="w"> </span><span class="mi">3</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">   </span><span class="nv">print</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>No output :)   </p>
 <h2 id="what-is-yeild-when-would-you-use-it">What is <code>yeild</code>? When would you use it?</h2>
@@ -1409,21 +1669,33 @@ y = &#39;&#39;.join(set(x))
 <p></b>   </p>
 <p>Short answer is: It returns a None object.   </p>
 <p>We could go a bit deeper and explain the difference between   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">a</span><span class="w"> </span><span class="ss">()</span>:<span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"></span>
 
 <span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">None</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>And   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>def a ():
     pass
 
 &gt;&gt;&gt; None
 </code></pre></div>
 
+
+</div>
+
 <p>Or we could be asked this as a following question, since they both give the same result.   </p>
 <p>We could use the dis module to see what's going on:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>  2           0 LOAD_CONST               0 (&lt;code object a at 0x0000029C4D3C2DB0, file &quot;&lt;dis&gt;&quot;, line 2&gt;)
               2 LOAD_CONST               1 (&#39;a&#39;)
               4 MAKE_FUNCTION            0
@@ -1445,8 +1717,13 @@ Disassembly of &lt;code object b at 0x0000029C4D3C2ED0, file &quot;&lt;dis&gt;&q
               2 RETURN_VALUE
 </code></pre></div>
 
+
+</div>
+
 <p>An empty <code> return</code> is exactly the same as <code>return None</code> and functions without any explicit return <br />
 will always return None regardless of the operations, therefore   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>def sum(a, b):
     global c
     c = a + b
@@ -1454,16 +1731,31 @@ will always return None regardless of the operations, therefore   </p>
 &gt;&gt;&gt; None
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-to-improve-the-following-block-of-code">How to improve the following block of code?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">li</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>[]<span class="w"></span>
 <span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">    </span><span class="nv">li</span>.<span class="nv">append</span><span class="ss">(</span><span class="nv">i</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>[<span class="nv">i</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">i</span><span class="w"> </span><span class="nv">in</span><span class="w"> </span><span class="nv">range</span><span class="ss">(</span><span class="mi">1</span>,<span class="w"> </span><span class="mi">10</span><span class="ss">)</span>]<span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="given-the-following-function">Given the following function</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">is_int</span><span class="ss">(</span><span class="nv">num</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">isinstance</span><span class="ss">(</span><span class="nv">num</span>,<span class="w"> </span><span class="nv">int</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;Yes&#39;</span><span class="ss">)</span><span class="w"></span>
@@ -1471,40 +1763,63 @@ will always return None regardless of the operations, therefore   </p>
 <span class="w">        </span><span class="nv">print</span><span class="ss">(</span><span class="s1">&#39;No&#39;</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>What would be the result of is_int(2) and is_int(False)?   </p>
 <h2 id="can-you-implement-a-linked-list-in-python">Can you implement a linked list in Python?</h2>
 <p>The reason we need to implement in the first place, it's because a linked list isn't part of Python standard library.<br> <br />
 To implement a linked list, we have to implement two structures: The linked list itself and a node which is used by the linked list.   </p>
 <p>Let's start with a node. A node has some value (the data it holds) and a pointer to the next node   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">Node</span>(<span class="n">object</span>):
     <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="n">data</span>):
         <span class="nb">self</span>.<span class="n">data</span> = <span class="n">data</span>
         <span class="nb">self</span>.<span class="nb">next</span> = <span class="n">None</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Now the linked list. An empty linked list has nothing but an empty head.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">LinkedList</span>(<span class="n">object</span>):
     <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>):
         <span class="nb">self</span>.<span class="nb">head</span> = <span class="n">None</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Now we can start using the linked list   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">ll</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Linkedlist</span><span class="ss">()</span><span class="w"></span>
 <span class="nv">ll</span>.<span class="nv">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Node</span><span class="ss">(</span><span class="mi">1</span><span class="ss">)</span><span class="w"></span>
 <span class="nv">ll</span>.<span class="nv">head</span>.<span class="k">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Node</span><span class="ss">(</span><span class="mi">2</span><span class="ss">)</span><span class="w"></span>
 <span class="nv">ll</span>.<span class="nv">head</span>.<span class="k">next</span>.<span class="k">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Node</span><span class="ss">(</span><span class="mi">3</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>What we have is:   </p>
 <hr />
 <p>| 1 | -&gt; | 2 | -&gt; | 3 |   </p>
 <hr />
 <p>Usually, more methods are implemented, like a push_head() method where you insert a node at the beginning of the linked list   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">push_head</span><span class="ss">(</span><span class="nv">self</span>,<span class="w"> </span><span class="nv">value</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">    </span><span class="nv">new_node</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">Node</span><span class="ss">(</span><span class="nv">value</span><span class="ss">)</span><span class="w"></span>
 <span class="w">    </span><span class="nv">new_node</span>.<span class="k">next</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span>.<span class="nv">head</span><span class="w"></span>
 <span class="w">    </span><span class="nv">self</span>.<span class="nv">head</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">new_node</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="add-a-method-to-the-linked-list-class-to-traverse-print-every-node-s-data-the-linked-list">Add a method to the Linked List class to traverse (print every node's data) the linked list</h2>
 <p>def print_list(self): <br />
@@ -1514,6 +1829,8 @@ print(node.data) <br />
 node = node.next   </p>
 <h2 id="write-a-method-to-that-will-return-a-boolean-based-on-whether-there-is-a-loop-in-a-linked-list-or-not">Write a method to that will return a boolean based on whether there is a loop in a linked list or not</h2>
 <p>Let's use the Floyd's Cycle-Finding algorithm:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">loop_exists</span><span class="ss">(</span><span class="nv">self</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">    </span><span class="nv">one_step_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span>.<span class="nv">head</span><span class="w"></span>
 <span class="w">    </span><span class="nv">two_steps_p</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">self</span>.<span class="nv">head</span><span class="w"></span>
@@ -1524,6 +1841,9 @@ node = node.next   </p>
 <span class="w">            </span><span class="k">return</span><span class="w"> </span><span class="nv">True</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">False</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="implement-stack-in-python">Implement Stack in Python</h2>
 <h2 id="what-is-your-experience-with-writing-tests-in-python">What is your experience with writing tests in Python?</h2>
@@ -1549,38 +1869,65 @@ node = node.next   </p>
 <ul>
 <li>Decorator: you can use python decorators. In this case we're using <code>app</code>. This <code>app</code> decorator is the instance of the <code>Flask</code> class. And route it's a method of this class.   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">@app</span><span class="p">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span><span class="w"></span>
 <span class="n">def</span><span class="w"> </span><span class="n">home</span><span class="p">()</span><span class="err">:</span><span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;main website&#39;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li><code>add_url_rule</code> method: This is a method of the Flask class. We can also use it for map the URL with a function.   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">home</span><span class="ss">()</span>:<span class="w"></span>
 <span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="s1">&#39;main website&#39;</span><span class="w"></span>
 
 <span class="nv">app</span>.<span class="nv">add_url_rule</span><span class="ss">(</span><span class="s1">&#39;/&#39;</span>,<span class="w"> </span><span class="nv">view_func</span><span class="o">=</span><span class="nv">home</span><span class="ss">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="what-is-a-blueprint-in-flask">What is a blueprint in Flask?</h2>
 <h2 id="what-is-a-template">What is a template?</h2>
 <h2 id="given-x-1-2-3-what-is-the-result-of-list-zip-x">Given <code>x = [1, 2, 3]</code>, what is the result of list(zip(x))?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>[(1,), (2,), (3,)]
 </code></pre></div>
 
+
+</div>
+
 <h2 id="what-is-the-result-of-each-of-the-following_1">What is the result of each of the following:</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>list(zip(range(5), range(50), range(50)))
 list(zip(range(5), range(50), range(-2)))
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code><span class="k">[(0, 0, 0), (1, 1, 1), (2, 2, 2), (3, 3, 3), (4, 4, 4)]</span><span class="w"></span>
 <span class="k">[]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="explain-descriptors">Explain Descriptors</h2>
 <p>Read about descriptors <a href="https://docs.python.org/3/howto/descriptor.html" target="_blank" class="external-link">here</a>   </p>
 <h2 id="what-would-be-the-result-of-running-a-num2-assuming-the-following-code">What would be the result of running <code>a.num2</code> assuming the following code</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">B:</span>
     <span class="n">def</span> <span class="n">__get__</span>(<span class="nb">self</span>, <span class="n">obj</span>, <span class="n">objtype</span>=<span class="n">None</span>):
         <span class="n">reuturn</span> <span class="mi">10</span>
@@ -1590,8 +1937,13 @@ list(zip(range(5), range(50), range(-2)))
     <span class="n">num2</span> = <span class="n">Five</span>()
 </code></pre></div>
 
+
+</div>
+
 <p>10   </p>
 <h2 id="what-would-be-the-result-of-running-some_car-car-red-4-assuming-the-following-code">What would be the result of running <code>some_car = Car("Red", 4)</code> assuming the following code</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">Print:</span>
 
     <span class="n">def</span> <span class="n">__get__</span>(<span class="nb">self</span>, <span class="n">obj</span>, <span class="n">objtype</span>=<span class="n">None</span>):
@@ -1612,9 +1964,14 @@ list(zip(range(5), range(50), range(-2)))
         <span class="nb">self</span>.<span class="n">age</span> = <span class="n">age</span>
 </code></pre></div>
 
+
+</div>
+
 <p>An instance of Car class will be created and the following will be printed: "The color of the car is Red"   </p>
 <h2 id="how-can-you-spawn-multiple-processes-with-python">How can you spawn multiple processes with Python?</h2>
 <h2 id="implement-simple-calculator-for-two-numbers">Implement simple calculator for two numbers</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="k">add</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">num1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">num2</span><span class="w"></span>
 
@@ -1644,11 +2001,16 @@ list(zip(range(5), range(50), range(-2)))
 <span class="w">    </span><span class="k">print</span><span class="p">(</span><span class="n">operators</span><span class="o">[</span><span class="n">operator</span><span class="o">]</span><span class="p">(</span><span class="n">num1</span><span class="p">,</span><span class="w"> </span><span class="n">num2</span><span class="p">))</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="what-data-types-are-you-familiar-with-that-are-not-python-built-in-types-but-still-provided-by-modules-which-are-part-of-the-standard-library">What data types are you familiar with that are not Python built-in types but still provided by modules which are part of the standard library?</h2>
 <p>This is a good reference <a href="https://docs.python.org/3/library/datatypes.html" target="_blank" class="external-link">https://docs.python.org/3/library/datatypes.html</a>   </p>
 <h2 id="explain-what-is-a-decorator">Explain what is a decorator</h2>
 <p>In python, everything is an object, even functions themselves. Therefore you could pass functions as arguments <br />
 for another function eg;   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">def</span><span class="w"> </span><span class="nv">wee</span><span class="ss">(</span><span class="nv">word</span><span class="ss">)</span>:<span class="w"></span>
 <span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nv">word</span><span class="w"></span>
 
@@ -1658,6 +2020,9 @@ for another function eg;   </p>
 <span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="nv">oh</span><span class="ss">(</span><span class="nv">wee</span><span class="ss">(</span><span class="s2">&quot;Wee&quot;</span><span class="ss">))</span><span class="w"></span>
 <span class="o">&lt;&lt;&lt;</span><span class="w"> </span><span class="nv">Wee</span><span class="w"> </span><span class="nv">Ohh</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>This allows us to control the before execution of any given function and if we added another function as wrapper, <br />
 (a function receiving another function that receives a function as parameter) we could also control the after execution.   </p>
@@ -1671,6 +2036,8 @@ for another function eg;   </p>
 <p><code> <br />
 These two decorators (ntimes and timer) are usually used to display decorators functionalities, you can find them in lots of <br />
 tutorials/reviews. I first saw these examples two years ago in pyData 2017. <a href="https://www.youtube.com/watch?v=7lmCu8wz8ro&amp;t=3731s&lt;/code&gt;" target="_blank" class="external-link">https://www.youtube.com/watch?v=7lmCu8wz8ro&amp;t=3731s</code></a>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">Simple</span><span class="w"> </span><span class="nl">decorator</span><span class="p">:</span><span class="w"></span>
 
 <span class="n">def</span><span class="w"> </span><span class="n">deco</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
@@ -1688,8 +2055,13 @@ tutorials/reviews. I first saw these examples two years ago in pyData 2017. <a h
 <span class="w">    </span><span class="n">Hi</span><span class="p">,</span><span class="w"> </span><span class="n">I</span><span class="err">&#39;</span><span class="n">m</span><span class="w"> </span><span class="ow">in</span><span class="err">!</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>This is the simplest decorator version, it basically saves us from writting <code>a = deco(hello_world())</code>. <br />
 But at this point we can only control the before execution, let's take on the after:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">deco</span><span class="p">(</span><span class="n">f</span><span class="p">):</span><span class="w"></span>
 <span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span><span class="w"></span>
 <span class="w">        </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Rick Sanchez!&quot;</span><span class="p">)</span><span class="w"></span>
@@ -1708,12 +2080,17 @@ But at this point we can only control the before execution, let's take on the af
 <span class="w">    </span><span class="n">I</span><span class="s1">&#39;m in!</span>
 </code></pre></div>
 
+
+</div>
+
 <p>deco receives a function -&gt; f <br />
 wrapper receives the arguments -&gt; *args, **kwargs   </p>
 <p>wrapper returns the function plus the arguments -&gt; f(*args, **kwargs) <br />
 deco returns wrapper.   </p>
 <p>As you can see we conveniently do things before and after the execution of a given function.   </p>
 <p>For example, we could write a decorator that calculates the execution time of a function.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">time</span>
 <span class="k">def</span> <span class="nf">deco</span><span class="p">(</span><span class="n">f</span><span class="p">):</span>
     <span class="k">def</span> <span class="nf">wrapper</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -1733,7 +2110,12 @@ deco returns wrapper.   </p>
 <span class="o">&gt;&gt;&gt;</span> <span class="mf">2.0008859634399414</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Or create a decorator that executes a function n times.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">def</span><span class="w"> </span><span class="n">n_times</span><span class="p">(</span><span class="n">n</span><span class="p">):</span><span class="w"></span>
 <span class="w">    </span><span class="n">def</span><span class="w"> </span><span class="n">wrapper</span><span class="p">(</span><span class="n">f</span><span class="p">):</span><span class="w"></span>
 <span class="w">        </span><span class="n">def</span><span class="w"> </span><span class="n">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span><span class="w"> </span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span><span class="w"></span>
@@ -1755,10 +2137,15 @@ deco returns wrapper.   </p>
 <span class="w">   </span><span class="o">************</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="write-a-decorator-that-calculates-the-execution-time-of-a-function">Write a decorator that calculates the execution time of a function</h2>
 <h2 id="write-a-script-which-will-determine-if-a-given-host-is-accessible-on-a-given-port">Write a script which will determine if a given host is accessible on a given port</h2>
 <h2 id="are-you-familiar-with-dataclasses-can-you-explain-what-are-they-used-for">Are you familiar with Dataclasses? Can you explain what are they used for?</h2>
 <h2 id="you-wrote-a-class-to-represent-a-car-how-would-you-compare-two-cars-instances-if-two-cars-are-equal-if-they-have-the-same-model-and-color">You wrote a class to represent a car. How would you compare two cars instances if two cars are equal if they have the same model and color?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="k">class</span> <span class="n">Car:</span>
     <span class="n">def</span> <span class="n">__init__</span>(<span class="nb">self</span>, <span class="n">model</span>, <span class="n">color</span>):
         <span class="nb">self</span>.<span class="n">model</span> = <span class="n">model</span>
@@ -1778,6 +2165,9 @@ deco returns wrapper.   </p>
 <span class="nb">True</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="explain-context-manager">Explain Context Manager</h2>
 <h2 id="tell-me-everything-you-know-about-concurrency-in-python">Tell me everything you know about concurrency in Python</h2>
 <h2 id="explain-the-buffer-protocol">Explain the Buffer Protocol</h2>
@@ -1794,13 +2184,13 @@ deco returns wrapper.   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A305465904657953913172171893084385163690{level}" class="graph_div"></div>
+    <div id="A12821112259592649538119793410837193096{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B305465904657953913172171893084385163690{level}" level="{level}" note_temp_id="305465904657953913172171893084385163690" onclick="window.ObsHtmlGraph.run(this, '305465904657953913172171893084385163690', 'flashcards');">
+        <button class="graph_button graph_show_button" id="B12821112259592649538119793410837193096{level}" level="{level}" note_temp_id="12821112259592649538119793410837193096" onclick="window.ObsHtmlGraph.run(this, '12821112259592649538119793410837193096', 'flashcards');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C305465904657953913172171893084385163690{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C12821112259592649538119793410837193096{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -2282,6 +2672,7 @@ deco returns wrapper.   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

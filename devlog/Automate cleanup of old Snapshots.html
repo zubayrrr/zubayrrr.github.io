@@ -211,10 +211,12 @@
 <div class="toc">
 <ul></ul>
 </div>
-<p>Related::  <a href="/devlog/boto.html">boto</a>, <a href="/devlog/Automate Data Backup of EC2 instances.html">Automate Data Backup of EC2 instances</a>, <a href="/devlog/AWS EBS.html">AWS EBS</a>   </p>
+<p>Related::  <a href="/devlog/boto.html">boto</a>, <a href="/devlog/Automate%20Data%20Backup%20of%20EC2%20instances.html">Automate Data Backup of EC2 instances</a>, <a href="/devlog/AWS%20EBS.html">AWS EBS</a>   </p>
 <hr />
 <p><strong>Premise</strong>   </p>
 <p>If we have a scheduler creating a lot of snapshots everyday, we need a way of cleaning up those old snapshots. We can schedule a new job for cleaning old snapshots every week/month.   </p>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 <span class="kn">from</span> <span class="nn">operator</span> <span class="kn">import</span> <span class="n">itemgetter</span>
 
@@ -248,6 +250,9 @@
         <span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="p">)</span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -262,13 +267,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A97368058835404944936345457768954933845{level}" class="graph_div"></div>
+    <div id="A251532613415860404195297069503397938331{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B97368058835404944936345457768954933845{level}" level="{level}" note_temp_id="97368058835404944936345457768954933845" onclick="window.ObsHtmlGraph.run(this, '97368058835404944936345457768954933845', 'automate cleanup of old snapshots');">
+        <button class="graph_button graph_show_button" id="B251532613415860404195297069503397938331{level}" level="{level}" note_temp_id="251532613415860404195297069503397938331" onclick="window.ObsHtmlGraph.run(this, '251532613415860404195297069503397938331', 'automate cleanup of old snapshots');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C97368058835404944936345457768954933845{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C251532613415860404195297069503397938331{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -750,6 +755,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -220,7 +220,7 @@
 <p>Related::  <a href="/devlog/LKE.html">LKE</a>, <a href="/devlog/jenkins.html">jenkins</a>, <a href="/devlog/kubernetes.html">kubernetes</a>   </p>
 <hr />
 <p>We’re going to spin up a K8s cluster on LKE and deploy to it from Jenkins pipeline.   </p>
-<p>There isn’t going to be any platform specific authentication unlike <a href="/devlog/aws.eks.Deploy to EKS Cluster from Jenkins.html">aws.eks.Deploy to EKS Cluster from Jenkins</a>.   </p>
+<p>There isn’t going to be any platform specific authentication unlike <a href="/devlog/aws.eks.Deploy%20to%20EKS%20Cluster%20from%20Jenkins.html">aws.eks.Deploy to EKS Cluster from Jenkins</a>.   </p>
 <p>There are different ways of authenticating to a K8s cluster depending on platform.   </p>
 <p><strong>Overview</strong>   </p>
 <ul>
@@ -248,6 +248,8 @@
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662721477/wiki/k5rvyrcxwlbk5uvf93w7.png" />   </p>
 <h2 id="configure-jenkinsfile">Configure Jenkinsfile</h2>
 <p>To deploy to LKE cluster   </p>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">#!/usr/bin/env groovy</span><span class="w"></span>
 
 <span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -281,6 +283,9 @@
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Configure the pipeline with the branch from where the Jenkinsfile is being served.   </p>
 <p>Find the finished code at <a href="https://gitlab.com/zubayrrr/java-maven-app/-/tree/deploy-to-lke" target="_blank" class="external-link">Files · deploy-to-lke · zubayrrr / java-maven-app · GitLab</a></p>
 <div class="note-footer">
@@ -297,13 +302,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A293224901763622856352926278577272191283{level}" class="graph_div"></div>
+    <div id="A324084885897551934801154296010164453289{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B293224901763622856352926278577272191283{level}" level="{level}" note_temp_id="293224901763622856352926278577272191283" onclick="window.ObsHtmlGraph.run(this, '293224901763622856352926278577272191283', 'aws.eks.deploy to lke cluster from jenkins');">
+        <button class="graph_button graph_show_button" id="B324084885897551934801154296010164453289{level}" level="{level}" note_temp_id="324084885897551934801154296010164453289" onclick="window.ObsHtmlGraph.run(this, '324084885897551934801154296010164453289', 'aws.eks.deploy to lke cluster from jenkins');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C293224901763622856352926278577272191283{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C324084885897551934801154296010164453289{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -785,6 +790,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -234,6 +234,8 @@
 <code>touch config.yaml</code>   </p>
 <p>Open the file in your preferred code editor.   </p>
 <p>Both Deployment and Service for all the 11 Microservices will go inside one file or you can split them up.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
@@ -676,6 +678,9 @@
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">6379</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="spin-up-a-lke-cluster">Spin up a LKE cluster</h2>
 <p>Download <code>kubeconfig.yaml</code> and set permissions on it.   </p>
 <p><code>chmod 600 path/to/kubeconfig.yaml</code>   </p>
@@ -720,6 +725,8 @@
 <p>K8s can perform health checks using Liveness Probe. It is a simple script/program that pings the application every now and then to check if its running. You can write such a program yourself or Devs might provide it for you.   </p>
 <p><code>livenessProbe</code> is a container attribute. It takes two parameter, how often/regularly the endpoint of the application should be checked.   </p>
 <p><strong>While application is running</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">livenessProbe</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
@@ -727,7 +734,12 @@
 <span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/bin/grpc_health_probe&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-addr=:8080&quot;</span><span class="p p-Indicator">]</span><span class="w"> </span><span class="c1"># this program is coming from the container Image itself.</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>TCP Probe</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">livenessProbe</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
@@ -735,12 +747,17 @@
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;application-port&gt;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="readiness-probe">Readiness Probe</h2>
 <p>For each container.   </p>
 <p>Liveness probe only helps K8s check that the application is running successfully ONLY after the container/application starts.   </p>
 <p><strong>During application startup</strong>   </p>
 <p><strong>What about the startup process itself?</strong>   </p>
 <p>Readiness Probe lets K8s know if the application is ready to receive traffic. Without it, K8s assumes tha the app is ready to receive traffic while your application is starting up and you'll be left with a bunch of errors/warnings in your logs.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">readinessProbe</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
@@ -748,10 +765,15 @@
 <span class="w">      </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;/bin/grpc_health_probe&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;-addr=:8080&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>when you do <code>kubectl get pod</code> you can check "READY" for <code>1/1</code> if its really ready or <code>0/1</code> if it is'nt.   </p>
 <p><strong>TCP Probes</strong>   </p>
 <p><code>kubelet</code> makes probe connection at the node not in the pod.   </p>
 <p><code>kubelet</code> will attempt to open a socket on your container on the specific application port, if it succeeds in establishing a connection the container is considered to be healthy/ready/reachable.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">readinessProbe</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
@@ -759,7 +781,12 @@
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;application-port&gt;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>initialDelaySeconds</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">readinessProbe</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">initialDelaySeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"> </span><span class="c1"># tells kubelet to wait 5 seconds before performing liveness/readiness probe</span><span class="w"></span>
@@ -768,8 +795,13 @@
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;application-port&gt;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>HTTP Probes</strong>   </p>
 <p><code>kubelet</code> sends an HTTP request to specified path and port.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">livenessProbe</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">periodSeconds</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5</span><span class="w"></span>
@@ -777,6 +809,9 @@
 <span class="w">      </span><span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/url/of/health-endpoint</span><span class="w"></span>
 <span class="w">      </span><span class="nt">port</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;application-port&gt;</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="resource-requests">Resource Requests</h2>
 <p>For each container.   </p>
@@ -788,11 +823,16 @@
 <p><strong>Keep CPU request at “1” or below</strong>   </p>
 <p>CPU resources are defined in millicores. <br />
 Memory resources are defined in mebibyte.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">requests</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100m</span><span class="w"></span>
 <span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64mi</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="resource-limits">Resource Limits</h2>
 <p>What if your container/application starts consuming more than it requested? If not limited, that container can consume all the Node’s resources other Pods running on the same Node will not have enough resources.   </p>
@@ -801,6 +841,8 @@ Memory resources are defined in mebibyte.   </p>
 <li>Container never goes above a certain value.   </li>
 <li>Container is only allowed to go up to the limit and not beyond.   </li>
 </ul>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">containers</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">requests</span><span class="p">:</span><span class="w"></span>
 <span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">100m</span><span class="w"></span>
@@ -809,6 +851,9 @@ Memory resources are defined in mebibyte.   </p>
 <span class="w">        </span><span class="nt">cpu</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">200m</span><span class="w"></span>
 <span class="w">        </span><span class="nt">memory</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128Mi</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Some Microservices may require more resources than others. In which case, you can check with the Devs and fix the values for those services respectively.   </p>
 <h2 id="dont-expose-a-nodeport">DON’T expose a NodePort</h2>
@@ -874,13 +919,13 @@ Memory resources are defined in mebibyte.   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A177502845731385132812012243174566575002{level}" class="graph_div"></div>
+    <div id="A176210349645568142696838723260838663204{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B177502845731385132812012243174566575002{level}" level="{level}" note_temp_id="177502845731385132812012243174566575002" onclick="window.ObsHtmlGraph.run(this, '177502845731385132812012243174566575002', 'kubernetes.deploy microservices application');">
+        <button class="graph_button graph_show_button" id="B176210349645568142696838723260838663204{level}" level="{level}" note_temp_id="176210349645568142696838723260838663204" onclick="window.ObsHtmlGraph.run(this, '176210349645568142696838723260838663204', 'kubernetes.deploy microservices application');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C177502845731385132812012243174566575002{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C176210349645568142696838723260838663204{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1362,6 +1407,7 @@ Memory resources are defined in mebibyte.   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

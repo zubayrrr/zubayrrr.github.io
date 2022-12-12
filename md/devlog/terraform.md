@@ -13,6 +13,7 @@ Terraform is an open source infrastructure as code ([IaC](../devlog/IaC.md)) sof
    
 It is a universal [IaC](../devlog/IaC.md) tool, works with different cloud providers and technologies.   
    
+
    
 Infrastructure as code is an IT practice that manages an application's underlying IT infrastructure through programming. This approach to resource allocation allows developers to logically manage, monitor and provision resources -- as opposed to requiring that an operations team manually configure each required resource.   
    
@@ -382,6 +383,7 @@ resource "aws_subnut" "dev-subnet-1" {
    
 ---   
    
+
    
 In this lab, we'll do:   
    
@@ -765,6 +767,7 @@ We can create our own modules but for the most common use cases, Terraform and o
    
 - [Browse Modules | Terraform Registry](https://registry.terraform.io/browse/modules)   
    
+
    
 It is a common practice to have different files for variables, outputs, providers respectively.   
    

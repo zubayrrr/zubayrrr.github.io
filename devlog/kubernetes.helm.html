@@ -250,6 +250,8 @@
 <p>Instead of deploying, individual YAML files on each cluster, you can package them up into your own Chart that will have all the necessary YAML files that Deployment needs and you can deploy it in different environments using one command making deployment process easier.   </p>
 <h2 id="helm-chart-structure">Helm Chart Structure</h2>
 <p><strong>Directory Structure</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>myChart/  <span class="c1"># name of the chart</span>
     Chart.yaml <span class="c1"># meta info about the chart</span>
     values.yaml <span class="c1"># values for the template files, default values that you can overwrite</span>
@@ -258,6 +260,9 @@
     ...
     <span class="c1"># optionally, you can have Readme, License files</span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>helm install &lt;chartname&gt;</code>   </p>
 <h2 id="values-injection">Values Injection</h2>
@@ -329,6 +334,8 @@
 <li>We want Helm Chart to use the StorageClass of Lindode’s Cloud Storage.   </li>
 </ul>
 <p>Create <code>values.yaml</code> to overwrite the default paramters.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># values-mongodb.yaml</span><span class="w"></span>
 <span class="nt">architecture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">replicaset</span><span class="w"> </span>
 <span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
@@ -337,6 +344,9 @@
 <span class="nt">auth</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">rootPassword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret-root-pwd</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>helm install mongodb --values path/to/values-mongodb.yaml bitnami/mongodb</code>   </p>
 <blockquote>
@@ -348,6 +358,8 @@
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662085841/wiki/cng9dynsyeksij6tynlm.png" />   </p>
 <h2 id="deploy-mongo-express">Deploy <code>mongo-express</code></h2>
 <p><code>mongo-express</code> is going to be only 1 Pod. We’ll create our own configuration file instead of using Helm Chart.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -393,6 +405,9 @@
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f mongo-express.yaml</code>   </p>
 <p><code>kubectl get pod</code>   </p>
 <p><code>kubectl get logs &lt;pod-name&gt;</code>   </p>
@@ -405,14 +420,29 @@
 </ol>
 <p><strong>Deploy Ingress Controller</strong>   </p>
 <p>Use Helm Chart for Ingress Controller. We’ll use <code>ngnix-ingress</code> controller.   </p>
+<div class="lang-fallback">
+
 <div class="codehilite"><pre><span></span><code>helm repo add nginx-stable https://helm.nginx.com/stable
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-fallback">
 
 <div class="codehilite"><pre><span></span><code>helm repo update
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-fallback">
+
 <div class="codehilite"><pre><span></span><code>helm install ngnix-ingress nginx-stable/nginx-ingress --set controller.publishService.enabled=true
 </code></pre></div>
+
+
+</div>
 
 <p>— Via <a href="https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/" target="_blank" class="external-link">Installation with Helm | NGINX Ingress Controller</a>   </p>
 <p><code>kubectl get pod</code> to check if <code>ngnix-ingress</code> package was installed.   </p>
@@ -421,6 +451,8 @@
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662088338/wiki/nqvcokukqo2owdt0eadn.png" />   </p>
 <p><code>kubectl get svc</code> to check if ingress service was created.   </p>
 <p>The LoadBalancer service type of the Ingress will also have an external IP which will be basically the same as the NodeBalancer’s.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># ingress.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extensions/v1beta1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span><span class="w"></span>
@@ -438,6 +470,9 @@
 <span class="w">              </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-express-service</span><span class="w"></span>
 <span class="w">              </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>kubectl apply -f ingress.yaml</code>   </p>
 <p><code>kubectl get ingress</code>   </p>
@@ -465,13 +500,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A185231151487523436249557721847167194030{level}" class="graph_div"></div>
+    <div id="A44134589185110446511850379888637801884{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B185231151487523436249557721847167194030{level}" level="{level}" note_temp_id="185231151487523436249557721847167194030" onclick="window.ObsHtmlGraph.run(this, '185231151487523436249557721847167194030', 'kubernetes.helm');">
+        <button class="graph_button graph_show_button" id="B44134589185110446511850379888637801884{level}" level="{level}" note_temp_id="44134589185110446511850379888637801884" onclick="window.ObsHtmlGraph.run(this, '44134589185110446511850379888637801884', 'kubernetes.helm');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C185231151487523436249557721847167194030{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C44134589185110446511850379888637801884{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -953,6 +988,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

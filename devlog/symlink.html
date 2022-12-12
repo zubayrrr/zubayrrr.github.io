@@ -216,9 +216,9 @@
 <p>Topics::  <a href="/topics/linux.html">linux</a>   </p>
 <hr />
 <ul>
-<li>They're similar to shortcuts in Windows but work differently from <a href="/devlog/hard link.html">hard link</a>s   </li>
+<li>They're similar to shortcuts in Windows but work differently from <a href="/devlog/hard%20link.html">hard link</a>s   </li>
 <li>It is a special file type that points to or contains a reference to another file or directory.   </li>
-<li><a href="/devlog/hard link.html">hard link</a> references the files's <a href="/devlog/inode.html">inode</a>, symlink references another file.   </li>
+<li><a href="/devlog/hard%20link.html">hard link</a> references the files's <a href="/devlog/inode.html">inode</a>, symlink references another file.   </li>
 <li>If you delete the file that is being pointed by the symlink, the symlink breaks and becomes useless.   </li>
 <li>symlink has its own <a href="/devlog/inode.html">inode</a> structure   </li>
 <li>symlink only contains the path to the original directory not its contents.   </li>
@@ -228,11 +228,11 @@
 <ul>
 <li><code>ln -s /etc/passwd ./pswd</code> -s to create a symlink, check with <code>ls -l pswd</code>   </li>
 <li><code>ps aux &gt; processes.txt</code>   </li>
-<li>To create a <a href="/devlog/hard link.html">hard link</a>: <code>ln processes.txt p.txt</code>   </li>
+<li>To create a <a href="/devlog/hard%20link.html">hard link</a>: <code>ln processes.txt p.txt</code>   </li>
 <li>To create a symlink: <code>ln -s processes.txt symlink_p.txt</code>   </li>
 <li>To check <code>ls -li</code>   </li>
 <li>If we were to change the location of <code>processes.txt</code>, <code>p.txt</code> will not be effected but <code>symlink_p.txt</code> will be broken.   </li>
-<li>You can create a symlink to a dir(altough you cannot create a <a href="/devlog/hard link.html">hard link</a> to a dir)   </li>
+<li>You can create a symlink to a dir(altough you cannot create a <a href="/devlog/hard%20link.html">hard link</a> to a dir)   </li>
 <li><code>ln -s /etc/ symlink_etc</code></li>
 </ul>
 <div class="note-footer">
@@ -252,13 +252,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A297534635542007615915731803661697128661{level}" class="graph_div"></div>
+    <div id="A3592357412634610957644890787333880117{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B297534635542007615915731803661697128661{level}" level="{level}" note_temp_id="297534635542007615915731803661697128661" onclick="window.ObsHtmlGraph.run(this, '297534635542007615915731803661697128661', 'symlink');">
+        <button class="graph_button graph_show_button" id="B3592357412634610957644890787333880117{level}" level="{level}" note_temp_id="3592357412634610957644890787333880117" onclick="window.ObsHtmlGraph.run(this, '3592357412634610957644890787333880117', 'symlink');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C297534635542007615915731803661697128661{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C3592357412634610957644890787333880117{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -740,6 +740,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

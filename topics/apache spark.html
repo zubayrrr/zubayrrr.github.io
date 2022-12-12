@@ -302,7 +302,7 @@
 </ul>
 <p>Spark   </p>
 <ul>
-<li>Spark processes data 100 times faster than MapReduce as it is done in-memory (like <a href="/devlog/tez.html">Tez</a>).   </li>
+<li>Spark processes data 100 times faster than MapReduce as it is done in-memory (like <a href="/devlog/tez.html">Tez</a>.   </li>
 <li>Performs both batch processing and real-time processing of data, most use cases are around real-time processing.   </li>
 <li>Spark hs fewer lines of code as it is implemented in <a href="/devlog/scala.html">scala</a>.   </li>
 <li>Spark supports authentication via a shared secret. It can also run on <a href="/devlog/yarn.html">yarn</a> leveraging the capability of <a href="/not_created.html" class="nonexistent-link">Kerberos</a>.   </li>
@@ -324,21 +324,21 @@
 <p>Spark is not part of <a href="/devlog/hadoop.html">hadoop</a>, it interacts with Hadoop and HDFS well but it is it's own thing.   </p>
 <h2 id="components-of-apache-spark">Components of Apache Spark</h2>
 <p><img alt="" src="https://raw.githubusercontent.com/zubayrrr/twiki/main/bin/image.cct1xwxfey9.png" />   </p>
-<p><a href="/devlog/spark core.html">Spark Core</a>   </p>
+<p><a href="/devlog/spark%20core.html">Spark Core</a>   </p>
 <ul>
 <li>Contains <a href="/devlog/rdd.html">rdd</a>s; core engine that takes care of processing   </li>
 </ul>
 <p>See also: <a href="/devlog/dag.html">DAG</a>   </p>
-<p><a href="/devlog/spark sql.html">Spark SQL</a>   </p>
+<p><a href="/devlog/spark%20sql.html">Spark SQL</a>   </p>
 <ul>
 <li>For working with structured data or data that can be structurized.   </li>
 <li>Has internal features such as Dataframes, datasets used to process structued data in much faster way.   </li>
 </ul>
-<p><a href="/devlog/spark streaming.html">Spark Streaming</a>   </p>
+<p><a href="/devlog/spark%20streaming.html">Spark Streaming</a>   </p>
 <ul>
 <li>Allows you to create Spark Streaming applications which not only works on data that is being streamed/generated in but also transform the data and analyze it as it comes in.   </li>
 </ul>
-<p><a href="/devlog/spark mllib.html">Spark MLlib</a>   </p>
+<p><a href="/devlog/spark%20mllib.html">Spark MLlib</a>   </p>
 <ul>
 <li>For building machine learning algorithms, predictive analytics, perscriptive, descriptive, preemptive, recommendation systems.   </li>
 </ul>
@@ -392,11 +392,11 @@
 <p>If you're processing data using Spark applications in a Spark platform(whether standalone or in a hadoop cluster), for every step you do as part of your application, it creates an <a href="/devlog/rdd.html">rdd</a>, it becomes part of your DAG. The DAG scheduler is already aware of what steps are involved in DAG hence it comes up with a plan for executing the all the steps within the DAG. <span class="underline">If only and only if an action is invoked.</span>   </p>
 <p>Check &lt;<a href="https://data-flair.training/blogs/dag-in-apache-spark/&gt;" target="_blank" class="external-link">https://data-flair.training/blogs/dag-in-apache-spark/&gt;</a>   </p>
 <p><img alt="" src="https://raw.githubusercontent.com/zubayrrr/twiki/main/bin/image.muzlc82nhqb.png" />   </p>
-<p>See also: <a href="/devlog/spark cluster managers.html">Spark Cluster Managers</a>   </p>
+<p>See also: <a href="/devlog/spark%20cluster%20managers.html">Spark Cluster Managers</a>   </p>
 <h2 id="spark-data-slicing">Spark Data Slicing</h2>
 <p><img alt="" src="https://raw.githubusercontent.com/zubayrrr/twiki/main/bin/image.4ylqh1r70re.png" />   </p>
 <p>in contrast with Slicing in <a href="/devlog/hadoop.html">hadoop</a>   </p>
-<p>Slicing in <a href="/devlog/hadoop.html">hadoop</a> vs <a href="/devlog/slicing in spark.html">Slicing in Spark</a> <br />
+<p>Slicing in <a href="/devlog/hadoop.html">hadoop</a> vs <a href="/devlog/slicing%20in%20spark.html">Slicing in Spark</a> <br />
 <img alt="" src="https://raw.githubusercontent.com/zubayrrr/twiki/main/bin/image.83j55a3bdv5.png" />   </p>
 <hr />
 <h2 id="dataframe"><a href="/devlog/dataframe.html">DataFrame</a></h2>
@@ -530,13 +530,13 @@ In order to compute a join, Spark scans the entire DFs from the entire clusters 
 
 </div>
 <div class="graph requires_js ">
-    <div id="A49573385743531314382331015989642645241{level}" class="graph_div"></div>
+    <div id="A302954990410987755633611394164201887068{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B49573385743531314382331015989642645241{level}" level="{level}" note_temp_id="49573385743531314382331015989642645241" onclick="window.ObsHtmlGraph.run(this, '49573385743531314382331015989642645241', 'apache spark');">
+        <button class="graph_button graph_show_button" id="B302954990410987755633611394164201887068{level}" level="{level}" note_temp_id="302954990410987755633611394164201887068" onclick="window.ObsHtmlGraph.run(this, '302954990410987755633611394164201887068', 'apache spark');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C49573385743531314382331015989642645241{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C302954990410987755633611394164201887068{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1018,6 +1018,7 @@ In order to compute a join, Spark scans the entire DFs from the entire clusters 
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

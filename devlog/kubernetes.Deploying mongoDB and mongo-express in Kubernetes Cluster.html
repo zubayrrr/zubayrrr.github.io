@@ -222,8 +222,8 @@
 <ul>
 <li>We'll create a MongoDB Pod and in order to talk to that pod, we'll need a <a href="/devlog/kubernetes.services.html">kubernetes.services</a>, specifically an internal service(no external requests are allowed, only components in the same cluster can talk to it).   </li>
 <li>We'll create mongo-express deployment.   </li>
-<li>we'll need DB Url of MongoDB so mongo-express can connect to it. (<a href="/devlog/kubernetes.ConfigMap and Secret.html">kubernetes.ConfigMap and Secret</a>)   </li>
-<li>DB User and DB PW for authentication. (<a href="/devlog/kubernetes.ConfigMap and Secret.html">kubernetes.ConfigMap and Secret</a>)   </li>
+<li>we'll need DB Url of MongoDB so mongo-express can connect to it. (<a href="/devlog/kubernetes.ConfigMap%20and%20Secret.html">kubernetes.ConfigMap and Secret</a>   </li>
+<li>DB User and DB PW for authentication. (<a href="/devlog/kubernetes.ConfigMap%20and%20Secret.html">kubernetes.ConfigMap and Secret</a>   </li>
 <li>We'll pass these values as env variables in deployment configuration file. Both ConfigMap and Secrets will be referenced for values.   </li>
 <li>Create an external service to make mongo-express available from the web and talk to the pod.   </li>
 </ul>
@@ -233,6 +233,8 @@
 <p><code>minikube start</code>   </p>
 <p><code>kubectl get all</code>   </p>
 <h2 id="create-mongodb-deployment">Create MongoDB deployment</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># mongo.yml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">deployment</span><span class="w"></span>
@@ -268,11 +270,16 @@
 <span class="w">                  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-root-password</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f mongo.yml</code> <br />
 <code>kubectl get all</code> <br />
 <code>kubectl get pod --watch</code>   </p>
 <h2 id="create-secret">Create Secret</h2>
 <p>For <code>MONGO_INITDB_ROOT_USERNAME</code> &amp; <code>MONGO_INITDB_ROOT_PASSWORD</code>. <strong>They should be created before the Deployment</strong>(the order matters).   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># mongo-secret.yml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span><span class="w"></span>
@@ -284,6 +291,9 @@
 <span class="w">  </span><span class="nt">mongo-root-password</span><span class="p">:</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>To encode values in base64:   </p>
 <p><code>echo -n 'username' | base64</code> <br />
 <code>echo -n 'password' | base64</code>   </p>
@@ -292,6 +302,8 @@
 <code>kubectl get secret</code>   </p>
 <h2 id="create-internal-service">Create internal service</h2>
 <p>We can either create it in a separate file or use the multi document in one file - feature of yaml and define it inside the <code>mongo.yml</code> after <code>---</code>. Internal service is default. AKA ClusterIP.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">___</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span><span class="w"></span>
@@ -306,11 +318,16 @@
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">27017</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f mongo.yml</code> to create the service. <br />
 <code>kubectl get service</code> <br />
 <code>kubectl describe service mongodb-service</code> to confirm if it's connected to the correct pod.   </p>
 <hr />
 <p><strong>Deployment for mongo-express</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># mongo-express.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
@@ -351,10 +368,15 @@
 <span class="w">                    </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">database_url</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f mongo-express.yml</code> <br />
 <code>kubectl get pod</code>   </p>
 <h2 id="create-configmap">Create ConfigMap</h2>
 <p><strong>ConfigMap must already exist in the K8s cluster when referencing it.</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="l l-Scalar l-Scalar-Plain">mongo-configmap.yaml</span><span class="w"></span>
 <span class="l l-Scalar l-Scalar-Plain">apiVersion</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ConfigMap</span><span class="w"></span>
@@ -364,9 +386,14 @@
 <span class="w">  </span><span class="nt">database_url</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongodb-service</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f mongo-configmap.yaml</code>   </p>
 <h2 id="create-external-service">Create external service</h2>
 <p>To make a service an external service you add a <code>type: LoadBalancer</code> and <code>nodePort: 30000</code> (port for external IP, the port you put into browser), even though internal service also acts as a LoadBalancer. It assigns service an external IP address to accept external requests.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Service</span><span class="w"></span>
@@ -382,6 +409,9 @@
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081</span><span class="w"></span>
 <span class="w">      </span><span class="nt">nodePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30000</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>kubectl apply -f mongo-express.yaml</code> <br />
 <code>kubectl get service</code>   </p>
@@ -400,13 +430,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A207083092028855530016384338668978069238{level}" class="graph_div"></div>
+    <div id="A182927409078461845934639147979197020086{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B207083092028855530016384338668978069238{level}" level="{level}" note_temp_id="207083092028855530016384338668978069238" onclick="window.ObsHtmlGraph.run(this, '207083092028855530016384338668978069238', 'kubernetes.deploying mongodb and mongo-express in kubernetes cluster');">
+        <button class="graph_button graph_show_button" id="B182927409078461845934639147979197020086{level}" level="{level}" note_temp_id="182927409078461845934639147979197020086" onclick="window.ObsHtmlGraph.run(this, '182927409078461845934639147979197020086', 'kubernetes.deploying mongodb and mongo-express in kubernetes cluster');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C207083092028855530016384338668978069238{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C182927409078461845934639147979197020086{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -888,6 +918,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

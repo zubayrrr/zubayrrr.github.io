@@ -248,7 +248,7 @@
 <li>Also install the <a href="/devlog/languages.python.html">languages.Python</a> module i.e, <a href="/devlog/boto.html">boto</a> and <code>botocore</code> for AWS.   </li>
 <li>Check if <code>pip3</code> is installed.   </li>
 <li><code>pip3 install boto3 botocore</code>   </li>
-<li>Configure AWS credentials on the Ansible server for <a href="/devlog/ansible.dynamic inventory.html">ansible.dynamic inventory</a>.   </li>
+<li>Configure AWS credentials on the Ansible server for <a href="/devlog/ansible.dynamic%20inventory.html">ansible.dynamic inventory</a>.   </li>
 <li><code>~/.aws/credentials</code>   </li>
 </ul>
 <p><strong>Create 2 EC2</strong>   </p>
@@ -274,6 +274,8 @@
 </li>
 <li>We’re using <a href="https://github.com/jenkinsci/ssh-steps-plugin" target="_blank" class="external-link">ssh-steps-plugin: Jenkins pipeline steps which provides SSH facilities such as command execution or file transfer for continuous delivery.</a>.   </li>
 </ul>
+<div class="lang-groovy">
+
 <div class="codehilite"><pre><span></span><code><span class="n">pipeline</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">agent</span><span class="w"> </span><span class="n">any</span><span class="w"></span>
 <span class="w">    </span><span class="n">environment</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
@@ -316,6 +318,11 @@
 <span class="o">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/usr/bin/env bash</span>
 
 <span class="c1"># prepare-ansible-server.sh</span>
@@ -326,6 +333,9 @@ apt install ansible -y
 apt install python3-pip -y
 pip3 install boto3 botocore
 </code></pre></div>
+
+
+</div>
 
 <p><strong>Create Jenkins Pipeline</strong>   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1661513949/wiki/jwejfe9vgpjcmpj3wewr.png" />   </p>
@@ -344,13 +354,13 @@ pip3 install boto3 botocore
 
 </div>
 <div class="graph requires_js ">
-    <div id="A8763365934208154356191843191375533358{level}" class="graph_div"></div>
+    <div id="A134057174258510450580115165408683549975{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B8763365934208154356191843191375533358{level}" level="{level}" note_temp_id="8763365934208154356191843191375533358" onclick="window.ObsHtmlGraph.run(this, '8763365934208154356191843191375533358', 'ansible.run ansible from jenkins pipeline');">
+        <button class="graph_button graph_show_button" id="B134057174258510450580115165408683549975{level}" level="{level}" note_temp_id="134057174258510450580115165408683549975" onclick="window.ObsHtmlGraph.run(this, '134057174258510450580115165408683549975', 'ansible.run ansible from jenkins pipeline');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C8763365934208154356191843191375533358{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C134057174258510450580115165408683549975{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -832,6 +842,7 @@ pip3 install boto3 botocore
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

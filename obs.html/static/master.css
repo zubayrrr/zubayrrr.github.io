@@ -739,6 +739,91 @@ a.inline-tag:hover {
     content: '#';
 }
 
+.query {
+    border-top: 2px solid rgba(var(--normal-text-color),0.3);
+    border-bottom: 2px solid rgba(var(--normal-text-color),0.3);
+    background-color: rgba(var(--normal-text-color),0.05);
+
+    overflow-y: scroll;
+    scrollbar-width: auto;
+
+    padding-right: 2rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+
+    width: max-content;
+    min-width: 30%;
+    max-width: calc(100% - 3rem);
+    max-height: 500px;
+}
+.match-document {
+    margin: 1rem;
+    border-bottom: 1px solid rgba(var(--normal-text-color),0.2);
+}
+.match-document:last-of-type {
+    border-bottom: 0px;
+}
+
+.match-document-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    cursor:pointer;
+}
+.match-document a:visited,
+.match-document a:link,
+.match-document a:hover {
+    color: var(--normal-text-color);
+    text-decoration: none;
+} 
+
+.matches {
+    margin-bottom: 1rem;
+}
+.match-row {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted rgba(var(--normal-text-color),0.3);
+}
+.match-row {
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px dotted rgba(var(--normal-text-color),0.3);
+}
+.match-row:last-of-type {
+    border-bottom: 0px;
+}
+
+.tag-box {
+    display: flex;
+}
+
+
+.match-row.tag {
+    flex: auto;
+    background-color: var(--bg-note);
+    padding: 0.5rem;
+    min-width: unset;
+    border-radius: 0.5rem;
+    border: 0px;
+    text-align: center;
+    width: fit-content;
+    max-width: max-content;
+    margin: 0.2rem;
+}
+
+.match-row.keyword {
+    border: 2px solid rgba(255, 255, 0, 0.5);
+}
+.match-row .match {
+    border-bottom: 2px solid rgb(255, 255, 0);
+}
+.match-row.keyword .match  {
+    border: 0px;
+}
+
+.match-row.tag .match {
+    background-color: unset;
+}
 
 
 @-webkit-keyframes yellow-fade {
@@ -807,6 +892,32 @@ ul.tag-list {
     margin-left: 0px;
     padding-left: 0px;
 }
+
+audio {
+    background-color: unset;
+}
+
+.ad-cite {
+    background-color: var(--bg-accent);
+    padding: 1rem;
+    padding-left: 1.5rem;
+}
+.admonition-title-icon {
+    display: inline;
+}
+.admonition-title-icon svg {
+    width: 16px;
+}
+.ad-cite-title {
+    padding-bottom: 0.5rem;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+.ad-cite-title-content {
+    display: inline;
+    margin-left: 4px;
+}
+
 
 /*  ----------------------------------------- /GLOBAL ------------------------------------------------ */
 
@@ -2143,6 +2254,12 @@ blockquote {
 }
 
 
+.theme-obs-dark .match-row .match {
+    border-bottom: 2px solid rgba(255, 255, 0, 0.5);
+}
+.theme-obs-dark .match-row.keyword .match  {
+    border: 0px;
+}
 
 /*  ----------------------------------------- /THEME ------------------------------------------------ */
 

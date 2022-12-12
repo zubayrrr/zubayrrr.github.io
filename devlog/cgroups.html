@@ -216,6 +216,8 @@
 <p>The cgroups works by dividing resources into groups and then assigning tasks to those groups.   </p>
 <p>Docker uses cgroups to limit the system resources.   </p>
 <p>When you install Docker binary on a linux box like ubuntu it will install cgroup related packages and create subsystem directories. You can list all the subsystems that you can manage using cgroups via the <code>lscgroup</code> command.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>$ lscgroup
 cpuset:/
 cpu:/
@@ -227,6 +229,9 @@ blkio:/
 perf_event:/
 hugetlb:/
 </code></pre></div>
+
+
+</div>
 
 <p>If <code>lscgroup</code> is not installed, then you can install it using sudo apt-get install cgroup-bin command.   </p>
 <p>Via - <a href="https://shekhargulati.com/2019/01/03/how-docker-uses-cgroups-to-set-resource-limits/" target="_blank" class="external-link">How Docker uses cgroups to set resource limits? – Shekhar Gulati</a></p>
@@ -245,13 +250,13 @@ hugetlb:/
 
 </div>
 <div class="graph requires_js ">
-    <div id="A227704961842754390169190773022703782899{level}" class="graph_div"></div>
+    <div id="A232378343277350345467537454015549935488{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B227704961842754390169190773022703782899{level}" level="{level}" note_temp_id="227704961842754390169190773022703782899" onclick="window.ObsHtmlGraph.run(this, '227704961842754390169190773022703782899', 'cgroups');">
+        <button class="graph_button graph_show_button" id="B232378343277350345467537454015549935488{level}" level="{level}" note_temp_id="232378343277350345467537454015549935488" onclick="window.ObsHtmlGraph.run(this, '232378343277350345467537454015549935488', 'cgroups');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C227704961842754390169190773022703782899{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C232378343277350345467537454015549935488{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -733,6 +738,7 @@ hugetlb:/
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

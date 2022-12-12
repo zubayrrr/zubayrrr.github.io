@@ -212,6 +212,8 @@
 <ul></ul>
 </div>
 <p>Sometimes I'm too lazy to open the vault in the terminal and do a commit for a single file, so I've made this very simple template that will commit the current file with a custom commit message.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="cp">&lt;%</span><span class="o">*</span> 
 <span class="n">tp</span><span class="o">.</span><span class="n">user</span><span class="o">.</span><span class="n">git_add</span><span class="p">({</span><span class="ss">file</span><span class="p">:</span> <span class="n">tp</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">path</span><span class="p">()})</span> 
 <span class="n">const</span> <span class="n">msg</span> <span class="o">=</span> <span class="n">await</span> <span class="n">tp</span><span class="o">.</span><span class="n">system</span><span class="o">.</span><span class="n">prompt</span><span class="p">(</span><span class="s2">&quot;Commit message&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="kp">true</span><span class="p">)</span>
@@ -220,6 +222,9 @@
 <span class="p">}</span>
 <span class="cp">-%&gt;</span><span class="x"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>It's nothing special as you can see, but quite handy at times, and also shows how one can use arguments with 'system command functions'   </p>
 <p>I've left the <code>git add</code> outside of the if condition as it makes things a bit more flexible, e.g committing several files, but in this case I'll probably not use the template.   </p>
@@ -242,13 +247,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A333738947187929357045424687339379181637{level}" class="graph_div"></div>
+    <div id="A62814616252692970589818923765925680992{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B333738947187929357045424687339379181637{level}" level="{level}" note_temp_id="333738947187929357045424687339379181637" onclick="window.ObsHtmlGraph.run(this, '333738947187929357045424687339379181637', 'git commit current file');">
+        <button class="graph_button graph_show_button" id="B62814616252692970589818923765925680992{level}" level="{level}" note_temp_id="62814616252692970589818923765925680992" onclick="window.ObsHtmlGraph.run(this, '62814616252692970589818923765925680992', 'git commit current file');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C333738947187929357045424687339379181637{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C62814616252692970589818923765925680992{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -730,6 +735,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

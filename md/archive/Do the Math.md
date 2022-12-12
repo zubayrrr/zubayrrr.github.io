@@ -10,6 +10,7 @@ In 1962, a twenty-three-year-old French speleologist named Michel Siffre spent t
    
 Our twenties can be like living beyond time. When we graduate from school, we leave behind the only lives we have ever known, ones that have been neatly packaged in semester-sized chunks with goals nestled within. Suddenly, life opens up and the syllabi are gone. There are days and weeks and months and years, but no clear way to know when or why any one thing should happen. It can be a disorienting, cavelike existence. As one twentysomething astutely put it, “The twentysomething years are a whole new way of thinking about time. There’s this big chunk of time and a whole bunch of stuff needs to happen somehow.”   
    
+
    
 Topics::  [biases](../topics/biases.md)   
    

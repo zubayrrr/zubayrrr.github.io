@@ -218,7 +218,7 @@
 </ul>
 </div>
 <p>Elastic <a href="/devlog/kubernetes.html">Kubernetes</a> Service   </p>
-<p>It is an alternative to <a href="/devlog/AWS ECS.html">AWS ECS</a>.   </p>
+<p>It is an alternative to <a href="/devlog/AWS%20ECS.html">AWS ECS</a>.   </p>
 <p>EKS is a service that provides and manages a <a href="/devlog/kubernetes.html">Kubernetes</a> control plane on its own. You have no access to the master nodes on EKS since they’re under a special AWS account.   </p>
 <p>To run a Kubernetes workload, EKS establishes the control plane and Kubernetes API in your managed AWS infrastructure and you’re good to go.   </p>
 <p>At this point, you can deploy workloads using native K8s tools like kubectl, Kubernetes Dashboard, Helm, and Terraform.   </p>
@@ -252,7 +252,7 @@
 <p>You have the option of "semi-managed" EC2 instances for your cluster. EKS with Nodegroup. The Nodegroup will handle some of the heavy lifting for you. Basically make it easier for you to configure new worker nodes for your cluster. <br />
 For example: Worker nodes managed by nodegroup will get all the processes necessary installed on them(like container runtime, K8s processes) transform them into Worker Nodes.   </p>
 <p>It is a good practice to use Nodegroups.   </p>
-<p>You still need to configure things like <a href="/devlog/AWS ASG.html">AWS ASG</a>. Even this can be delegated to AWS you can again combine <a href="/devlog/AWS Fargate.html">AWS Fargate</a> for your EKS cluster.   </p>
+<p>You still need to configure things like <a href="/devlog/AWS%20ASG.html">AWS ASG</a>. Even this can be delegated to AWS you can again combine <a href="/devlog/AWS%20Fargate.html">AWS Fargate</a> for your EKS cluster.   </p>
 <p>Fully managed worker nodes with Fargate and Fully managed control plane(master nodes) with EKS.   </p>
 <p>You can also use EC2 and Fargate in the same EKS cluster.   </p>
 <h2 id="setting-up-eks-cluster">Setting up EKS Cluster</h2>
@@ -268,13 +268,13 @@ For example: Worker nodes managed by nodegroup will get all the processes necess
 </ul>
 <h2 id="labs">Labs</h2>
 <ul>
-<li><a href="/devlog/aws.eks.Create EKS cluster with AWS Management Console.html">aws.eks.Create EKS cluster with AWS Management Console</a>   </li>
-<li><a href="/devlog/aws.eks.Create EKS cluster with eksctl.html">aws.eks.Create EKS cluster with eksctl</a>   </li>
-<li><a href="/devlog/aws.eks.Create EKS Cluster with Fargate.html">aws.eks.Create EKS Cluster with Fargate</a>   </li>
-<li><a href="/devlog/aws.eks.Deploy to EKS Cluster from Jenkins.html">aws.eks.Deploy to EKS Cluster from Jenkins</a>   </li>
-<li><a href="/devlog/aws.eks.Deploy to LKE Cluster from Jenkins.html">aws.eks.Deploy to LKE Cluster from Jenkins</a>   </li>
-<li><a href="/devlog/aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub.html">aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a>   </li>
-<li><a href="/devlog/aws.eks.Complete CI⁄CD Pipeline with EKS and ECR.html">aws.eks.Complete CI⁄CD Pipeline with EKS and ECR</a>   </li>
+<li><a href="/devlog/aws.eks.Create%20EKS%20cluster%20with%20AWS%20Management%20Console.html">aws.eks.Create EKS cluster with AWS Management Console</a>   </li>
+<li><a href="/devlog/aws.eks.Create%20EKS%20cluster%20with%20eksctl.html">aws.eks.Create EKS cluster with eksctl</a>   </li>
+<li><a href="/devlog/aws.eks.Create%20EKS%20Cluster%20with%20Fargate.html">aws.eks.Create EKS Cluster with Fargate</a>   </li>
+<li><a href="/devlog/aws.eks.Deploy%20to%20EKS%20Cluster%20from%20Jenkins.html">aws.eks.Deploy to EKS Cluster from Jenkins</a>   </li>
+<li><a href="/devlog/aws.eks.Deploy%20to%20LKE%20Cluster%20from%20Jenkins.html">aws.eks.Deploy to LKE Cluster from Jenkins</a>   </li>
+<li><a href="/devlog/aws.eks.Complete%20CI%E2%81%84CD%20Pipeline%20with%20EKS%20and%20DockerHub.html">aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a>   </li>
+<li><a href="/devlog/aws.eks.Complete%20CI%E2%81%84CD%20Pipeline%20with%20EKS%20and%20ECR.html">aws.eks.Complete CI⁄CD Pipeline with EKS and ECR</a>   </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
@@ -302,13 +302,13 @@ For example: Worker nodes managed by nodegroup will get all the processes necess
 
 </div>
 <div class="graph requires_js ">
-    <div id="A196688899557635346326998392567908534124{level}" class="graph_div"></div>
+    <div id="A297731869943715988133774301196656372207{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B196688899557635346326998392567908534124{level}" level="{level}" note_temp_id="196688899557635346326998392567908534124" onclick="window.ObsHtmlGraph.run(this, '196688899557635346326998392567908534124', 'aws.eks');">
+        <button class="graph_button graph_show_button" id="B297731869943715988133774301196656372207{level}" level="{level}" note_temp_id="297731869943715988133774301196656372207" onclick="window.ObsHtmlGraph.run(this, '297731869943715988133774301196656372207', 'aws.eks');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C196688899557635346326998392567908534124{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C297731869943715988133774301196656372207{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -790,6 +790,7 @@ For example: Worker nodes managed by nodegroup will get all the processes necess
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

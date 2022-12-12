@@ -221,60 +221,115 @@
 <ul>
 <li>You can check it with the <a href="https://linuxhandbook.com/free-command/" target="_blank" class="external-link">free command in Linux</a>.   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>free -h
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>The free command gives you the size of the swap space but it doesn’t tell you if it’s a real swap partition or a swap file. The swapon command is better in this regard.   </li>
 </ul>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">swapon</span><span class="w"> </span><span class="o">--</span><span class="k">show</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="step-1-make-a-new-swap-file">Step 1: Make a new swap file</h3>
 <p>First thing first, create a file with the size of swap space you want. Let’s say that I want to add 1 GB of swap space to my system. Use the fallocate command to create a file of size 1 GB.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo fallocate -l 1G /swapfile
 </code></pre></div>
 
+
+</div>
+
 <p>It is recommended to allow only root to read and write to the swap file. You’ll even see warning like “insecure permissions 0644, 0600 suggested” when you try to use this file for swap area.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo chmod 600 /swapfile
 </code></pre></div>
+
+
+</div>
 
 <p>Do note that the name of the swap file could be anything. If you need multiple swap spaces, you can give it any appropriate name like swap_file_1, swap_file_2 etc. It’s just a file with a predefined size.   </p>
 <h3 id="step-2-mark-the-new-file-as-swap-space">Step 2: Mark the new file as swap space</h3>
 <p>Your need to tell the Linux system that this file will be used as swap space. You can do that with <a href="http://man7.org/linux/man-pages/man8/mkswap.8.html" target="_blank" class="external-link">mkswap</a> tool.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo mkswap /swapfile
 </code></pre></div>
 
+
+</div>
+
 <p>You should see an output like this:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>Setting up swapspace version 1, size = 1024 MiB (1073737728 bytes)
 no label, UUID=7e1faacb-ea93-4c49-a53d-fb40f3ce016a
 </code></pre></div>
 
+
+</div>
+
 <h3 id="step-3-enable-the-swap-file">Step 3: Enable the swap file</h3>
 <p>Now your system knows that the file swapfile can be used as swap space. But it is not done yet. You need to enable the swap file so that your system can start using this file as swap.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo swapon /swapfile
 </code></pre></div>
 
+
+</div>
+
 <p>Now if you check the swap space, you should see that your Linux system recognizes and uses it as the swap area:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">swapon</span><span class="w"> </span><span class="o">--</span><span class="k">show</span><span class="w"></span>
 <span class="nv">NAME</span><span class="w">       </span><span class="nv">TYPE</span><span class="w">   </span><span class="nv">SIZE</span><span class="w"> </span><span class="nv">USED</span><span class="w"> </span><span class="nv">PRIO</span><span class="w"></span>
 <span class="o">/</span><span class="nv">swapfile</span><span class="w">  </span><span class="nv">file</span><span class="w"> </span><span class="mi">1024</span><span class="nv">M</span><span class="w">   </span><span class="mi">0</span><span class="nv">B</span><span class="w">   </span><span class="o">-</span><span class="mi">2</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="step-4-make-the-changes-permanent">Step 4: Make the changes permanent</h3>
 <p>Whatever you have done so far is temporary. Reboot your system and all the changes will disappear.   </p>
 <p>You can make the changes permanent by adding the newly created swap file to /etc/fstab file.   </p>
 <p>It’s always a good idea to make a backup before you make any changes to the /etc/fstab file.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo cp /etc/fstab /etc/fstab.back
 </code></pre></div>
 
+
+</div>
+
 <p>Now you can add the following line to the end of /etc/fstab file:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>/swapfile none swap sw 0 0
 </code></pre></div>
 
+
+</div>
+
 <p>You can do it manually using a <a href="https://itsfoss.com/command-line-text-editors-linux/" target="_blank" class="external-link">command line text editor</a> or you just use the following command:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>echo &#39;/swapfile none swap sw 0 0&#39; | sudo tee -a /etc/fstab
 </code></pre></div>
+
+
+</div>
 
 <p>Now you have everything in place. Your swap file will be used even after you reboot your Linux system.</p>
 <div class="note-footer">
@@ -294,13 +349,13 @@ no label, UUID=7e1faacb-ea93-4c49-a53d-fb40f3ce016a
 
 </div>
 <div class="graph requires_js ">
-    <div id="A109417939259378849604408927215315412704{level}" class="graph_div"></div>
+    <div id="A57353101314713377847171037066564100173{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B109417939259378849604408927215315412704{level}" level="{level}" note_temp_id="109417939259378849604408927215315412704" onclick="window.ObsHtmlGraph.run(this, '109417939259378849604408927215315412704', 'create and use swap file on linux');">
+        <button class="graph_button graph_show_button" id="B57353101314713377847171037066564100173{level}" level="{level}" note_temp_id="57353101314713377847171037066564100173" onclick="window.ObsHtmlGraph.run(this, '57353101314713377847171037066564100173', 'create and use swap file on linux');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C109417939259378849604408927215315412704{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C57353101314713377847171037066564100173{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -782,6 +837,7 @@ no label, UUID=7e1faacb-ea93-4c49-a53d-fb40f3ce016a
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -214,6 +214,8 @@
 <p>Topics::  <a href="/topics/linux.html">linux</a>   </p>
 <hr />
 <p>Dropping packets from a list of IPs   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="nv">DROPPED_IPS</span><span class="o">=</span><span class="s2">&quot;8.8.8.8 1.1.1.1 10.10.10.1&quot;</span>
@@ -224,7 +226,12 @@
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Supply list of IPs from a txt file   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">for</span> ip <span class="k">in</span> <span class="k">$(</span>cat ips.txt<span class="k">)</span>
@@ -233,6 +240,9 @@
   iptables -I INPUT -s <span class="nv">$ip</span> -j DROP
 <span class="k">done</span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -250,13 +260,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A124259202660375582637810539457343450709{level}" class="graph_div"></div>
+    <div id="A216233181603615462287796264090121666101{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B124259202660375582637810539457343450709{level}" level="{level}" note_temp_id="124259202660375582637810539457343450709" onclick="window.ObsHtmlGraph.run(this, '124259202660375582637810539457343450709', 'dropping a list of ip addresses using a for loop');">
+        <button class="graph_button graph_show_button" id="B216233181603615462287796264090121666101{level}" level="{level}" note_temp_id="216233181603615462287796264090121666101" onclick="window.ObsHtmlGraph.run(this, '216233181603615462287796264090121666101', 'dropping a list of ip addresses using a for loop');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C124259202660375582637810539457343450709{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C216233181603615462287796264090121666101{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -738,6 +748,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

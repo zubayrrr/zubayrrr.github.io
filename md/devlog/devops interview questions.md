@@ -18,6 +18,7 @@ updated: 1656161299068
    
 2. **Explain different ways in which** [prometheus](../devlog/prometheus.md) **can get metrics?**   
    
+
 ## Getting metrics   
    
 How does Prometheus collect metrics from the targets?   
@@ -137,6 +138,7 @@ spec:
    
 11. **What is helm?**   
    
+
    
 Helm is a Kubernetes deployment tool for automating creation, packaging, configuration, and deployment of applications and services to Kubernetes clusters.   
    
@@ -368,40 +370,8 @@ We could also use custom [AWS AMI](../devlog/AWS%20AMI.md) images too but is lim
    
 26. **What build tools are you familiar with?**   
    
-## Building Java Applications   
-   
-   
-- Install IntelliJ IDEA.   
-- Install Java(or use IDEA to Download SDK).   
-- Setup JDK, SDK (make sure Java executable is added to [path](/not_created.md) or `%PATH%`, respectively.)   
-- Set `JAVA_HOME` as an [environment variable](../devlog/environment%20variable.md) (Maven prerequisite).   
-- Use SCM to clone(`git clone`) your Java application's repository.   
-   
-   
-- Build a [maven](../devlog/maven.md) project.   
-   
-   
-  - Open source code of your Java application in IntelliJ IDEA.   
-  - Wait for IDEA to index the source code.   
-  - IDEA will automatically detect the `pom.xml` and resolve all the dependencies.   
-  - Run the application(preview in the "Run" tab).   
-  - Download [Maven](https://maven.apache.org) and add it's `/bin`'s path to `$PATH` or `%PATH%`.   
-  - Use `mvn` commands and profit!   
-  - After building, `.jar` or `.war` files can be found in the `./target` folder.   
-   
-   
-- Build a [gradle](../devlog/Gradle.md) project.   
-   
-   
-  - Open source code of your Java application in IntelliJ IDEA   
-  - If it has a gradle wrapper(folder) inside the repo, you don't need to install gradle   
-  - Make sure the JVM configured is compatible with gradle wrapper's version.(`JAVA_HOME`)   
-  - Run the application to check if everything is working fine   
-  - Build with `./gradlew build`   
-  - After building, `.jar` or `.war` files can be found in the `./build` folder.   
-   
-To run a `.jar`: `java -jar name-of-the-app-SNAPSHOT.jar`   
-   
+
+Obsidianhtml: Error: Unable to find section # Building-Java-Applications:# Publishing-build-artifacts in build automation
    
    
 26. **Ingress and Egress**   
@@ -429,6 +399,7 @@ Eg: Allowing or denying ports for certain traffic([ssh](../devlog/ssh.md), [http
    
 28. **What is bastion host or gateway server and what roles do they play?**   
    
+
    
 A Bastion Host/Server is used to manage access to an internal or private network from an external network. It is also known as a Gateway Server or a Jump Box or a Jump Server.   
    
@@ -481,6 +452,7 @@ Code deployment should be taken care by [helm](../devlog/helm.md).
    
 32. **Explain Load Balancers in AWS.**   
    
+
    
 What is a Load Balancer? A load balancer acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures that no one server is overworked, which could degrade performance.   
    
@@ -551,6 +523,7 @@ The most common load balancing methodologies include:
 Via - [Load Balancer | Types of Load Balancers | Benefits of Load balancer](https://www.appviewx.com/education-center/load-balancer-and-types/)
    
    
+
    
 Elastic Load Balancing supports the following types of load balancers: Application Load Balancers, Network Load Balancers, and Classic Load Balancers. Amazon ECS services can use these types of load balancer. Application Load Balancers are used to route HTTP/HTTPS (or Layer 7) traffic. Network Load Balancers and Classic Load Balancers are used to route [TCP](../devlog/TCP.md) (or Layer 4) traffic.   
    
@@ -581,6 +554,7 @@ Elastic Load Balancing supports the following types of load balancers: Applicati
    
 33. **Have you used sonarqube?**   
    
+
    
 SonarQube® is an automatic code review tool to detect bugs, vulnerabilities, and code smells in your code. It can integrate with your existing workflow to enable continuous code inspection across your project branches and pull requests.   
    

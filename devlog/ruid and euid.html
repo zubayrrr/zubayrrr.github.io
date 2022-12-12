@@ -221,7 +221,7 @@
 </div>
 <p>Topics::  <a href="/topics/linux.html">linux</a>   </p>
 <hr />
-<p>A Linux process is nothing but running instance of a program. For example, when you start Firefox to browse Internet, you can create a new process. In Linux, each process is given a unique number called as a process identification (<a href="/devlog/pid.html">PID</a>). Linux kernel makes sure that each process gets a unique PID. /sbin/<a href="/not_created.html" class="nonexistent-link">init</a> or /lib/systemd/<a href="/devlog/systemd.html">systemd</a> on modern Linux distros always has a PID of 1 because it is eternally the first process on the Linux based system. The <code>ps</code> command used to list the currently running processes and their PIDs on Linux.   </p>
+<p>A Linux process is nothing but running instance of a program. For example, when you start Firefox to browse Internet, you can create a new process. In Linux, each process is given a unique number called as a process identification (<a href="/devlog/pid.html">PID</a>. Linux kernel makes sure that each process gets a unique PID. /sbin/<a href="/not_created.html" class="nonexistent-link">init</a> or /lib/systemd/<a href="/devlog/systemd.html">systemd</a> on modern Linux distros always has a PID of 1 because it is eternally the first process on the Linux based system. The <code>ps</code> command used to list the currently running processes and their PIDs on Linux.   </p>
 <p>Linux list processes by user names <br />
 The procedure to view process created by the specific user in Linux is as follows:   </p>
 <p>Open the terminal window or app   </p>
@@ -249,12 +249,12 @@ RUID - The user who initially logs in and never changes   </p>
 <h2 id="user-account-monitoring">User Account Monitoring</h2>
 <h3 id="whoami"><a href="#whoami" class="anchor-link" class="anchor-link">whoami</a></h3>
 <ul>
-<li>Prints out the <a href="/devlog/ruid and euid.html">RUID and EUID</a>, the username of the current user when this command is invoked.   </li>
+<li>Prints out the <a href="/devlog/ruid%20and%20euid.html">RUID and EUID</a>, the username of the current user when this command is invoked.   </li>
 <li>It is similar as running the <a href="/devlog/id.html">id</a> command with the options <code>-un</code>.   </li>
 </ul>
 <h3 id="who"><a href="#who" class="anchor-link" class="anchor-link">who</a></h3>
 <ul>
-<li>It displays the <a href="/devlog/ruid and euid.html">RUID and EUID</a>, the user that initially logged in(the current shell).   </li>
+<li>It displays the <a href="/devlog/ruid%20and%20euid.html">RUID and EUID</a>, the user that initially logged in(the current shell).   </li>
 <li><code>who</code> parses and displays the contents of the file <code>/var/run/utmp</code>, that logs the current users on the system.   </li>
 <li><code>/var/log/wtmp</code> - its kinda like history for the <code>/var/run/utmp</code> file, it maintains the logs for all the logged in users and logged out users (in the past)   </li>
 <li><code>who -H</code> -H Prints a line of column headings.   </li>
@@ -265,7 +265,7 @@ RUID - The user who initially logs in and never changes   </p>
 </ul>
 <h3 id="id"><a href="/devlog/id.html">id</a></h3>
 <ul>
-<li>Prints <a href="/devlog/ruid and euid.html">RUID and EUID</a> and its <a href="/devlog/groups.html">groups</a>   </li>
+<li>Prints <a href="/devlog/ruid%20and%20euid.html">RUID and EUID</a> and its <a href="/devlog/groups.html">groups</a>   </li>
 </ul>
 <h3 id="last"><a href="#last" class="anchor-link" class="anchor-link">last</a></h3>
 <p><code>last</code> command in Linux is used to display the list of all the users logged in and out since the file <code>/var/log/wtmp</code> was created. One or more usernames can be given as an argument to display their login in (and out) time and their host-name.   </p>
@@ -294,13 +294,13 @@ RUID - The user who initially logs in and never changes   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A141210436146425004929741398584947475057{level}" class="graph_div"></div>
+    <div id="A340269585802572108812073796195453468140{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B141210436146425004929741398584947475057{level}" level="{level}" note_temp_id="141210436146425004929741398584947475057" onclick="window.ObsHtmlGraph.run(this, '141210436146425004929741398584947475057', 'ruid and euid');">
+        <button class="graph_button graph_show_button" id="B340269585802572108812073796195453468140{level}" level="{level}" note_temp_id="340269585802572108812073796195453468140" onclick="window.ObsHtmlGraph.run(this, '340269585802572108812073796195453468140', 'ruid and euid');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C141210436146425004929741398584947475057{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C340269585802572108812073796195453468140{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -782,6 +782,7 @@ RUID - The user who initially logs in and never changes   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

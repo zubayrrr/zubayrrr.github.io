@@ -321,7 +321,7 @@
 <p>A pod is a collection of containers sharing a network, acting as the basic unit of deployment. All containers in a pod are scheduled on the same node.   </p>
 </blockquote>
 <p>An abstraction over a container - a pod creates a layer on top of a container. Usually, only one application is running per pod. You don't directly create pods. You create deployments.   </p>
-<p>Kubernetes offers a virtual network out of the box. Each pod gets its own IP Address. Which they can use to communicate with each other. It is an internal <a href="/devlog/ip address.html">IP Address</a>.   </p>
+<p>Kubernetes offers a virtual network out of the box. Each pod gets its own IP Address. Which they can use to communicate with each other. It is an internal <a href="/devlog/ip%20address.html">IP Address</a>.   </p>
 <p>They're ephemeral, meaning they are not persistent, they can die if the application crashes or if you run out of resources. A new one will be created automatically with new IP Address. To help with this, <a href="/not_created.html" class="nonexistent-link">kubernetes.sevices</a> is used.   </p>
 <h3 id="service-and-ingress">Service and Ingress</h3>
 <ul>
@@ -513,7 +513,7 @@
 <p>Referencing ConfigMap   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655128847/wiki/odygjn3izkrd8gotfhlq.png" />   </p>
 <h3 id="creating-an-external-service">Creating an External Service</h3>
-<p>It is very similar to a typical Service. Internal service also acts like a load balancer but an External Service acts like loan balancer by accepting external request by assigning the service an external <a href="/devlog/ip address.html">IP Address</a>.   </p>
+<p>It is very similar to a typical Service. Internal service also acts like a load balancer but an External Service acts like loan balancer by accepting external request by assigning the service an external <a href="/devlog/ip%20address.html">IP Address</a>.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655129162/wiki/gpts0wcs1wrdij7txbfc.png" /></p>
 <p>Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster. Any number of namespaces are supported within a cluster, each logically separated from others but with the ability to communicate with each other. Namespaces cannot be nested within each other.   </p>
 <p>Any resource that exists within Kubernetes exists either in the default namespace or a namespace that is created by the cluster operator. Only nodes and persistent storage volumes exist outside of the namespace; these low-level resources are always visible to every namespace in the cluster.   </p>
@@ -527,7 +527,7 @@
 <ol>
 <li><code>kube-public</code>   </li>
 </ol>
-<p>It has publicly accessible data. A <a href="/devlog/kubernetes.ConfigMap and Secret.html">kubernetes.ConfigMap and Secret</a> which contains cluster information(accessible even without authentication).   </p>
+<p>It has publicly accessible data. A <a href="/devlog/kubernetes.ConfigMap%20and%20Secret.html">kubernetes.ConfigMap and Secret</a> which contains cluster information(accessible even without authentication).   </p>
 <p>Run <code>kubectl cluster-info</code> to get this information.   </p>
 <ol>
 <li><code>kube-node-lease</code>   </li>
@@ -546,7 +546,7 @@
 <ul>
 <li>A namespace for your DBses and required resources.   </li>
 <li>A namespace for monitoring, where you can deploy <a href="/devlog/prometheus.html">Prometheus</a> and all the stuff it needs.   </li>
-<li>A namespace for <a href="/devlog/Elastic Stack.html">elastic stack</a>, where the <a href="/devlog/Elasticsearch.html">ElasticSearch</a>, <a href="/devlog/kibana.html">kibana</a> resources go.   </li>
+<li>A namespace for <a href="/devlog/Elastic%20Stack.html">elastic stack</a>, where the <a href="/devlog/Elasticsearch.html">ElasticSearch</a>, <a href="/devlog/kibana.html">kibana</a> resources go.   </li>
 <li>A namespace for ngnix-ingress resources.   </li>
 </ul>
 <p>They should be avoided if the project is not that large or doesn’t have that many users(as per official guide) but you can do it anyway instead of throwing everything in the default namespace and it may result in difficulty managing it as you’d have no overview of all your different resources.   </p>
@@ -716,6 +716,8 @@ Eg: Persistent Volumes, Nodes.   </p>
 <p>Let’s add rules for K8s dashboard to access it from a browser using a domain name.   </p>
 </li>
 </ol>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># dashboard-ingress.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">networking.k8s.io/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span><span class="w"></span>
@@ -731,6 +733,9 @@ Eg: Persistent Volumes, Nodes.   </p>
 <span class="w">        </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes-dashboard</span><span class="w"></span>
 <span class="w">        </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>kubectl apply -f dashboard-ingress.yaml</code> <br />
 <code>kubectl get ingress -n kubernetes-dashboard</code>   </p>
@@ -859,6 +864,8 @@ Volume types:   </p>
 <p>ConfigMap and Secret are used for external configuration of individual values or files that Pod/container can read.   </p>
 <h2 id="configmap-and-secret-for-mounting-files">ConfigMap and Secret for mounting files</h2>
 <p>Create files that can be mounted onto the Pod and the container there after.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">#config-file.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">va</span><span class="w"></span>
@@ -873,6 +880,11 @@ Volume types:   </p>
 <span class="w">        </span><span class="no">listener 9001</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># secret-file.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
@@ -885,6 +897,11 @@ Volume types:   </p>
 <span class="w">        </span><span class="no">contents of the file - base64 encoded</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># secret-certificate.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span><span class="w"> </span>
@@ -896,6 +913,9 @@ Volume types:   </p>
 <span class="w">        </span><span class="no">base-64-encoded value of PEM certificate</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="mosquitto-demo">Mosquitto Demo</h2>
 <ul>
 <li>Overwrite <code>mosquitto.conf</code>.   </li>
@@ -904,6 +924,8 @@ Volume types:   </p>
 <p>A ConfigMap and a Secret file for mosquitto Pod.   </p>
 <p><strong>Mosquitto Pod without any Volumes</strong>   </p>
 <p>No files mounted, starts without any persistence.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># mosquitto-without-volumes.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
@@ -929,12 +951,17 @@ Volume types:   </p>
 <span class="w">                            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1883</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl -f mosquitto-without-volumes.yaml</code> <br />
 <code>kubectl get pod</code> <br />
 <code>kubectl exec -it &lt;pod-name&gt; -- /bin/sh</code>   </p>
 <p><strong>Overwrite mosquitto conf</strong>   </p>
 <p>Make sure Secret and ConfigMap have been created.   </p>
 <p>A new mosquitto deployment that uses ConfigMap and Secret volumes(overwrite).   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># mosquitto-with-volumes.yaml</span><span class="w"></span>
 <span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
@@ -972,6 +999,9 @@ Volume types:   </p>
 <span class="w">                        </span><span class="l l-Scalar l-Scalar-Plain">secret</span><span class="p p-Indicator">:</span><span class="w"> </span>
 <span class="w">                            </span><span class="nt">secretName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mosquitto-secret-file</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>Volumes mounted into the Pod.   </li>
@@ -1085,6 +1115,8 @@ Volume types:   </p>
 <p>Instead of deploying, individual YAML files on each cluster, you can package them up into your own Chart that will have all the necessary YAML files that Deployment needs and you can deploy it in different environments using one command making deployment process easier.   </p>
 <h2 id="helm-chart-structure">Helm Chart Structure</h2>
 <p><strong>Directory Structure</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>myChart/  <span class="c1"># name of the chart</span>
     Chart.yaml <span class="c1"># meta info about the chart</span>
     values.yaml <span class="c1"># values for the template files, default values that you can overwrite</span>
@@ -1093,6 +1125,9 @@ Volume types:   </p>
     ...
     <span class="c1"># optionally, you can have Readme, License files</span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>helm install &lt;chartname&gt;</code>   </p>
 <h2 id="values-injection">Values Injection</h2>
@@ -1164,6 +1199,8 @@ Volume types:   </p>
 <li>We want Helm Chart to use the StorageClass of Lindode’s Cloud Storage.   </li>
 </ul>
 <p>Create <code>values.yaml</code> to overwrite the default paramters.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># values-mongodb.yaml</span><span class="w"></span>
 <span class="nt">architecture</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">replicaset</span><span class="w"> </span>
 <span class="nt">replicaCount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
@@ -1172,6 +1209,9 @@ Volume types:   </p>
 <span class="nt">auth</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">rootPassword</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret-root-pwd</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>helm install mongodb --values path/to/values-mongodb.yaml bitnami/mongodb</code>   </p>
 <blockquote>
@@ -1183,6 +1223,8 @@ Volume types:   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662085841/wiki/cng9dynsyeksij6tynlm.png" />   </p>
 <h2 id="deploy-mongo-express">Deploy <code>mongo-express</code></h2>
 <p><code>mongo-express</code> is going to be only 1 Pod. We’ll create our own configuration file instead of using Helm Chart.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -1228,6 +1270,9 @@ Volume types:   </p>
 <span class="w">      </span><span class="nt">targetPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f mongo-express.yaml</code>   </p>
 <p><code>kubectl get pod</code>   </p>
 <p><code>kubectl get logs &lt;pod-name&gt;</code>   </p>
@@ -1240,14 +1285,29 @@ Volume types:   </p>
 </ol>
 <p><strong>Deploy Ingress Controller</strong>   </p>
 <p>Use Helm Chart for Ingress Controller. We’ll use <code>ngnix-ingress</code> controller.   </p>
+<div class="lang-fallback">
+
 <div class="codehilite"><pre><span></span><code>helm repo add nginx-stable https://helm.nginx.com/stable
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-fallback">
 
 <div class="codehilite"><pre><span></span><code>helm repo update
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-fallback">
+
 <div class="codehilite"><pre><span></span><code>helm install ngnix-ingress nginx-stable/nginx-ingress --set controller.publishService.enabled=true
 </code></pre></div>
+
+
+</div>
 
 <p>— Via <a href="https://docs.nginx.com/nginx-ingress-controller/installation/installation-with-helm/" target="_blank" class="external-link">Installation with Helm | NGINX Ingress Controller</a>   </p>
 <p><code>kubectl get pod</code> to check if <code>ngnix-ingress</code> package was installed.   </p>
@@ -1256,6 +1316,8 @@ Volume types:   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662088338/wiki/nqvcokukqo2owdt0eadn.png" />   </p>
 <p><code>kubectl get svc</code> to check if ingress service was created.   </p>
 <p>The LoadBalancer service type of the Ingress will also have an external IP which will be basically the same as the NodeBalancer’s.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># ingress.yaml</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">extensions/v1beta1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Ingress</span><span class="w"></span>
@@ -1273,6 +1335,9 @@ Volume types:   </p>
 <span class="w">              </span><span class="nt">serviceName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mongo-express-service</span><span class="w"></span>
 <span class="w">              </span><span class="nt">servicePort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">8081</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><code>kubectl apply -f ingress.yaml</code>   </p>
 <p><code>kubectl get ingress</code>   </p>
@@ -1350,17 +1415,27 @@ Volume types:   </p>
 </ul>
 <p>A K8s Admin configures one of this external sources in the cluster and the API Server(Control Plane component) handles all the authentication requests coming in. It uses one of the configured authentication methods(sources).   </p>
 <p><code>kube-apiserver --token-auth-file=/users.csv [other-options]</code>   </p>
+<div class="lang-csv">
+
 <div class="codehilite"><pre><span></span><code># users.csv
 05c2b1e0303d04a85521c8eb3a4a1019m, user_1, u1001
 4e02489b29e13918506ffffe3cd5ce1e, user_2, u1002
 c1b200529b999126865486bea54b77af, user_3, u1003
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-csv">
+
 <div class="codehilite"><pre><span></span><code># users-group.csv
 05c2b1e0303d04a85521c8eb3a4a1019m, user_1, u1001, group1
 4e02489b29e13918506ffffe3cd5ce1e, user_2, u1002, group2
 c1b200529b999126865486bea54b77af, user_3, u1003, group3
 </code></pre></div>
+
+
+</div>
 
 <p>As for certificates, you'll have to manually create certs for different users or you(an Admin) can configure LDAP as authentication source for the API Server.   </p>
 <h2 id="service-accounts">Service Accounts</h2>
@@ -1376,6 +1451,8 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <p>You can then link(bind) this SA to a Role or ClusterRole with RoleBinding and ClusterRoleBinding respectively.   </p>
 <h2 id="example-config-files">Example Config Files</h2>
 <p><strong>Role</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Role</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -1387,7 +1464,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;watch&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>RoleBinding</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="c1"># This role binding allows &quot;jane&quot; to read pods in the &quot;default&quot; namespace.</span><span class="w"></span>
 <span class="c1"># You need to already have a Role named &quot;pod-reader&quot; in that namespace.</span><span class="w"></span>
@@ -1407,7 +1489,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>ClusterRole</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRole</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -1422,7 +1509,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">    </span><span class="nt">verbs</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="s">&quot;get&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;list&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;watch&quot;</span><span class="p p-Indicator">]</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>CluserRoleBinding</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io/v1</span><span class="w"></span>
 <span class="c1"># This cluster role binding allows anyone in the &quot;manager&quot; group to read secrets in any namespace.</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ClusterRoleBinding</span><span class="w"></span>
@@ -1437,6 +1529,9 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">secret-reader</span><span class="w"></span>
 <span class="w">  </span><span class="nt">apiGroup</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rbac.authorization.k8s.io</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="creating-reviewing-rbac-resources">Creating &amp; Reviewing RBAC Resources</h2>
 <p>You create these RBAC resources just like any other K8s component with <code>kubectl apply -f file.yaml</code> and view them using <code>kubectl get roles</code> or <code>kubectl describe role &lt;role-name&gt;</code>.   </p>
@@ -1505,12 +1600,12 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 <h2 id="crds">CRDs</h2>
 <h2 id="labs_1">Labs</h2>
 <ul>
-<li><a href="/devlog/kubernetes.Deploying mongoDB and mongo-express in Kubernetes Cluster.html">kubernetes.Deploying mongoDB and mongo-express in Kubernetes Cluster</a>   </li>
-<li><a href="/devlog/kubernetes.Install a Stateful App using Helm.html">kubernetes.Install a Stateful App using Helm</a>   </li>
-<li><a href="/devlog/kubernetes.Deploying Images from private Docker repository.html">kubernetes.Deploying Images from private Docker repository</a>   </li>
+<li><a href="/devlog/kubernetes.Deploying%20mongoDB%20and%20mongo-express%20in%20Kubernetes%20Cluster.html">kubernetes.Deploying mongoDB and mongo-express in Kubernetes Cluster</a>   </li>
+<li><a href="/devlog/kubernetes.Install%20a%20Stateful%20App%20using%20Helm.html">kubernetes.Install a Stateful App using Helm</a>   </li>
+<li><a href="/devlog/kubernetes.Deploying%20Images%20from%20private%20Docker%20repository.html">kubernetes.Deploying Images from private Docker repository</a>   </li>
 <li><a href="/not_created.html" class="nonexistent-link">kubernetes.Install Prometheus Stack in Kubernetes</a>   </li>
-<li><a href="/devlog/kubernetes.Deploy Microservices Application.html">kubernetes.Deploy Microservices Application</a>   </li>
-<li><a href="/devlog/kubernetes.helm chart for microservices.html">kubernetes.helm chart for microservices</a>   </li>
+<li><a href="/devlog/kubernetes.Deploy%20Microservices%20Application.html">kubernetes.Deploy Microservices Application</a>   </li>
+<li><a href="/devlog/kubernetes.helm%20chart%20for%20microservices.html">kubernetes.helm chart for microservices</a>   </li>
 </ul>
 <h2 id="sidecar-containers">Sidecar containers</h2>
 <ul>
@@ -1573,13 +1668,13 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 
 </div>
 <div class="graph requires_js ">
-    <div id="A274951105380173454782190045675599116329{level}" class="graph_div"></div>
+    <div id="A200762161552394904002855367748930180683{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B274951105380173454782190045675599116329{level}" level="{level}" note_temp_id="274951105380173454782190045675599116329" onclick="window.ObsHtmlGraph.run(this, '274951105380173454782190045675599116329', 'kubernetes');">
+        <button class="graph_button graph_show_button" id="B200762161552394904002855367748930180683{level}" level="{level}" note_temp_id="200762161552394904002855367748930180683" onclick="window.ObsHtmlGraph.run(this, '200762161552394904002855367748930180683', 'kubernetes');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C274951105380173454782190045675599116329{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C200762161552394904002855367748930180683{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -2061,6 +2156,7 @@ c1b200529b999126865486bea54b77af, user_3, u1003, group3
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

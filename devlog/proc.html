@@ -221,22 +221,47 @@
 <p>The <strong>/proc</strong> directory is present on all <strong>Linux</strong> systems, regardless of flavor or architecture.   </p>
 <p><strong>/proc</strong> directory is <strong>NOT</strong> a real <strong>File System</strong>, in the sense of the term. It is a <strong>Virtual File System</strong>. Contained within the <strong>procfs</strong> are information about processes and other system information. It is mapped to <strong>/proc</strong> and mounted at <strong>boot</strong> time.   </p>
 <h2 id="examples">Examples</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>ls -l /proc
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>cat /proc/meminfo
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code># directories only
 ls -l /proc | grep &#39;^d&#39;
 </code></pre></div>
 
+
+</div>
+
 <p><a href="/devlog/process.html">process</a>es have entries created in the /proc file system with their PIDs   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>ps -aux
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>ls -ltr /proc/7494
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>— via <a href="https://www.geeksforgeeks.org/proc-file-system-linux/" target="_blank" class="external-link">proc file system in Linux - GeeksforGeeks</a> <br />
@@ -260,13 +285,13 @@ ls -l /proc | grep &#39;^d&#39;
 
 </div>
 <div class="graph requires_js ">
-    <div id="A152811807637730743104036591431404724936{level}" class="graph_div"></div>
+    <div id="A113414818950038649889945715994011047717{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B152811807637730743104036591431404724936{level}" level="{level}" note_temp_id="152811807637730743104036591431404724936" onclick="window.ObsHtmlGraph.run(this, '152811807637730743104036591431404724936', 'proc');">
+        <button class="graph_button graph_show_button" id="B113414818950038649889945715994011047717{level}" level="{level}" note_temp_id="113414818950038649889945715994011047717" onclick="window.ObsHtmlGraph.run(this, '113414818950038649889945715994011047717', 'proc');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C152811807637730743104036591431404724936{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C113414818950038649889945715994011047717{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -748,6 +773,7 @@ ls -l /proc | grep &#39;^d&#39;
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -11,5 +11,6 @@ Topics::  [mental models](../topics/mental%20models.md)
    
 ---   
    
+
    
 > I’m no genius. I’m smart in spots—but I stay around those spots. - Thomas Watson

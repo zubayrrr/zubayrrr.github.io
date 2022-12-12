@@ -216,8 +216,13 @@
 <p>Topics::  <a href="/topics/linux.html">linux</a>   </p>
 <hr />
 <p>lscpu is a command-line utility to display information about the CPU architecture. It reads the CPU architecture information from <strong>sysfs</strong> and <strong>/proc/cpuinfo</strong> files and prints in the terminal. The information includes the number of CPUs, threads, cores, sockets, and Non-Uniform Memory Access (NUMA) nodes. It also displays CPU caches and cache sharing, family, model, bogoMIPS, byte order, and stepping.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">lscpu</span><span class="w"> </span><span class="o">-[</span><span class="n">options</span><span class="o">]</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Some available options in lscpu command are:   </p>
 <ul>
@@ -228,15 +233,30 @@
 <li><strong>-p</strong>: print CPU information in parsable format   </li>
 </ul>
 <h2 id="examples">Examples</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>lscpu | grep -i mhz
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>lscpu -J
 </code></pre></div>
 
+
+</div>
+
 <p>You can use <code>-e</code> or <code>--extended</code> option to print the CPU information in an extended human-readable format.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>lscpu -e
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -251,13 +271,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A261616136984549959536594669655924685496{level}" class="graph_div"></div>
+    <div id="A217423863216454938151893155946266743584{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B261616136984549959536594669655924685496{level}" level="{level}" note_temp_id="261616136984549959536594669655924685496" onclick="window.ObsHtmlGraph.run(this, '261616136984549959536594669655924685496', 'lscpu');">
+        <button class="graph_button graph_show_button" id="B217423863216454938151893155946266743584{level}" level="{level}" note_temp_id="217423863216454938151893155946266743584" onclick="window.ObsHtmlGraph.run(this, '217423863216454938151893155946266743584', 'lscpu');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C261616136984549959536594669655924685496{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C217423863216454938151893155946266743584{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -739,6 +759,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

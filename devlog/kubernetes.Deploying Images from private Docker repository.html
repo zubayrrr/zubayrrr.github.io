@@ -240,6 +240,8 @@
 <p><code>minikube ssh</code>   </p>
 <p>Copy paste the command <code>aws ecr get-login</code> generated inside <code>minikube</code>.   </p>
 <h2 id="create-secret">Create Secret</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Secret</span><span class="w"> </span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"> </span>
@@ -249,20 +251,35 @@
 <span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">kubernetes.io/dockerconfigjson</span><span class="w"> </span>
 </code></pre></div>
 
+
+</div>
+
 <p>To create secret and set it as values for the attributes. Use this method if you don’t wanna manually encode the values and paste them inside <code>secret-config.yaml</code> and then apply the changes.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>kubectl create secret generic my-registry-key <span class="se">\</span>
 --from-file<span class="o">=</span>.dockerconfigjson<span class="o">=</span>.docker/config.json <span class="se">\</span>
 --type<span class="o">=</span>kubernetes.io/dockerconfigjson 
 </code></pre></div>
 
+
+</div>
+
 <p>There’s another of setting up <code>docker login</code> and creating a secret in just one step:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">kubectl</span><span class="w"> </span><span class="n">create</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="n">docker</span><span class="o">-</span><span class="n">registry</span><span class="w"> </span><span class="n">my</span><span class="o">-</span><span class="n">registry</span><span class="o">-</span><span class="n">key</span><span class="o">-</span><span class="n">two</span><span class="w"> </span><span class="se">\</span><span class="w"></span>
 <span class="o">--</span><span class="n">docker</span><span class="o">-</span><span class="n">server</span><span class="o">=</span><span class="nl">https:</span><span class="c1">//&lt;docker-regsistry&gt;.com \</span>
 <span class="c1">--docker-username=AWS \ </span>
 <span class="o">--</span><span class="n">docker</span><span class="o">-</span><span class="n">password</span><span class="o">=&lt;</span><span class="n">password</span><span class="w"> </span><span class="n">aws</span><span class="w"> </span><span class="n">ecr</span><span class="w"> </span><span class="n">get</span><span class="o">-</span><span class="n">login</span><span class="w"> </span><span class="n">generated</span><span class="o">&gt;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="create-deployment">Create Deployment</h2>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"> </span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -289,6 +306,9 @@
 <span class="w">                    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3000</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><code>kubectl apply -f path/to/my-app-deployment.yaml</code>   </p>
 <blockquote>
 <p>Note: Secret has to be in same namespace as Deployment</p>
@@ -307,13 +327,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A60209601504021058231449754239268012694{level}" class="graph_div"></div>
+    <div id="A24101505148540730248904664071567741784{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B60209601504021058231449754239268012694{level}" level="{level}" note_temp_id="60209601504021058231449754239268012694" onclick="window.ObsHtmlGraph.run(this, '60209601504021058231449754239268012694', 'kubernetes.deploying images from private docker repository');">
+        <button class="graph_button graph_show_button" id="B24101505148540730248904664071567741784{level}" level="{level}" note_temp_id="24101505148540730248904664071567741784" onclick="window.ObsHtmlGraph.run(this, '24101505148540730248904664071567741784', 'kubernetes.deploying images from private docker repository');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C60209601504021058231449754239268012694{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C24101505148540730248904664071567741784{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -795,6 +815,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

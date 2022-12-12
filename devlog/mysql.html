@@ -218,6 +218,8 @@
 </ul>
 </div>
 <h2 id="remove-all-those-previous-dangling-mysql-packages">Remove all those previous dangling MySQL packages</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>sudo service mysql stop  <span class="c1">#or mysqld</span>
 sudo killall -9 mysql
 sudo killall -9 mysqld
@@ -236,7 +238,12 @@ sudo apt autoclean
 sudo apt remove dbconfig-mysql
 </code></pre></div>
 
+
+</div>
+
 <h2 id="install-mysql-server">Install MySQL Server</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>sudo apt update
 sudo apt upgrade
 sudo apt install mysql-server
@@ -245,24 +252,47 @@ mysql --version <span class="c1"># check your mysql version</span>
 sudo mysql_secure_installation
 </code></pre></div>
 
+
+</div>
+
 <h2 id="test-mysql-check-if-its-running">Test MySQL &amp; Check if it’s Running</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>systemctl status mysql.service
 
 sudo mysql -u root <span class="c1"># Log in to your MySQL Server</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="troubleshooting">Troubleshooting</h2>
 <p>If it <code>sudo mysql_secure_installation</code> throws an error when setting up password such as:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>...<span class="w"> </span><span class="nv">Failed</span><span class="o">!</span><span class="w"> </span><span class="nv">Error</span>:<span class="w"> </span><span class="nv">SET</span><span class="w"> </span><span class="nv">PASSWORD</span><span class="w"> </span><span class="nv">has</span><span class="w"> </span><span class="nv">no</span><span class="w"> </span><span class="nv">significance</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">user</span><span class="w"> </span><span class="s1">&#39;root&#39;</span>@<span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="nv">as</span><span class="w"> </span><span class="nv">the</span><span class="w"> </span><span class="nv">authentication</span><span class="w"> </span><span class="nv">method</span><span class="w"> </span><span class="nv">used</span><span class="w"> </span><span class="nv">doesn</span><span class="err">&#39;t store authentication data in the MySQL server. Please consider using ALTER USER instead if you want to change authentication parameters.</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Do   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>sudo mysql
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-sql">
 
 <div class="codehilite"><pre><span></span><code><span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="k">ALTER</span><span class="w"> </span><span class="k">USER</span><span class="w"> </span><span class="s1">&#39;root&#39;</span><span class="o">@</span><span class="s1">&#39;localhost&#39;</span><span class="w"> </span><span class="n">IDENTIFIED</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">mysql_native_password</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="s1">&#39;your_password&#39;</span><span class="p">;</span><span class="w"></span>
 <span class="n">mysql</span><span class="o">&gt;</span><span class="w"> </span><span class="n">exit</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>and then proceed with <code>sudo mysql_secure_installation</code>   </p>
 <h2 id="mysql-workbench">MySQL Workbench</h2>
@@ -292,13 +322,13 @@ sudo mysql -u root <span class="c1"># Log in to your MySQL Server</span>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A153807894613262186125964339098707934437{level}" class="graph_div"></div>
+    <div id="A126107821809080937261056603868361588445{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B153807894613262186125964339098707934437{level}" level="{level}" note_temp_id="153807894613262186125964339098707934437" onclick="window.ObsHtmlGraph.run(this, '153807894613262186125964339098707934437', 'mysql');">
+        <button class="graph_button graph_show_button" id="B126107821809080937261056603868361588445{level}" level="{level}" note_temp_id="126107821809080937261056603868361588445" onclick="window.ObsHtmlGraph.run(this, '126107821809080937261056603868361588445', 'mysql');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C153807894613262186125964339098707934437{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C126107821809080937261056603868361588445{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -780,6 +810,7 @@ sudo mysql -u root <span class="c1"># Log in to your MySQL Server</span>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

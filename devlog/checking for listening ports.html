@@ -221,8 +221,13 @@
 <hr />
 <h2 id="the-below-examples-are-to-display-ports-open-on-the-current-or-host-system-localhost">The below examples are to display ports open on the current or host system(localhost).</h2>
 <p>Display all open ports using <a href="/devlog/netstat.html">netstat</a>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo netstat -tupan
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li><code>-t</code> for TCP ports   </li>
@@ -233,6 +238,8 @@
 </ul>
 <p>Under the “Local Address” if it shows <code>0.0.0.0</code> as an IP Address, it means the process is listening on all IP Addresses of the host.   </p>
 <h2 id="filtering-with-grep">Filtering with <a href="/devlog/grep.html">grep</a></h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo netstat -tupan | grep :22
 
 #or
@@ -240,32 +247,62 @@
 sudo netstat -tupan | grep sshd
 </code></pre></div>
 
+
+</div>
+
 <h2 id="using-ss">Using <a href="/devlog/ss.html">ss</a></h2>
 <p>Display all listening ports   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>ss -tupan
 </code></pre></div>
 
+
+</div>
+
 <h2 id="using-lsof">Using <a href="/devlog/lsof.html">lsof</a></h2>
 <p>Display listening ports using <a href="/devlog/lsof.html">lsof</a>,   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo lsof -iTCP -sTCP:LISTEN
 </code></pre></div>
 
+
+</div>
+
 <p><code>-iTCP</code> <code>-sTCP:LISTEN</code> shows only the files that opened TCP ports that are listening.   </p>
 <p>Add <code>-nP</code> to display both port and host names in numeric format   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo lsof -iTCP -sTCP:LISTEN -nP
 </code></pre></div>
 
+
+</div>
+
 <p>Filter by specific port number   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo lsof -iTCP:22 -sTCP:LISTEN -nP
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <h2 id="to-check-for-ports-open-on-other-machines">To check for ports open on other machines</h2>
 <p>Scan for open ports on that machine using <a href="/devlog/telnet.html">telnet</a> or <a href="/devlog/nmap.html">nmap</a>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>telnet ip_address port
 </code></pre></div>
 
+
+</div>
+
 <p>You’ll need an active network connection with that machine on which you’re trying to scan for ports.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">sudo</span><span class="w"> </span><span class="nv">nmap</span><span class="w"> </span><span class="nv">ip_address</span><span class="w"></span>
 
 #<span class="w"> </span><span class="nv">scan</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="nv">specific</span><span class="w"> </span><span class="nv">port</span><span class="w"></span>
@@ -276,6 +313,9 @@ sudo netstat -tupan | grep sshd
 
 <span class="nv">nmap</span><span class="w"> </span><span class="o">-</span><span class="nv">p</span><span class="w"> </span><span class="mi">80</span><span class="w"> </span><span class="nv">linux</span>.<span class="nv">com</span><span class="w"> </span><span class="o">-</span><span class="nv">sV</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -290,13 +330,13 @@ sudo netstat -tupan | grep sshd
 
 </div>
 <div class="graph requires_js ">
-    <div id="A94568419495521967135443017334977192169{level}" class="graph_div"></div>
+    <div id="A81559941271811304994081705116893696121{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B94568419495521967135443017334977192169{level}" level="{level}" note_temp_id="94568419495521967135443017334977192169" onclick="window.ObsHtmlGraph.run(this, '94568419495521967135443017334977192169', 'checking for listening ports');">
+        <button class="graph_button graph_show_button" id="B81559941271811304994081705116893696121{level}" level="{level}" note_temp_id="81559941271811304994081705116893696121" onclick="window.ObsHtmlGraph.run(this, '81559941271811304994081705116893696121', 'checking for listening ports');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C94568419495521967135443017334977192169{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C81559941271811304994081705116893696121{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -778,6 +818,7 @@ sudo netstat -tupan | grep sshd
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

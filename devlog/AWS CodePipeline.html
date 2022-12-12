@@ -227,19 +227,19 @@
 <li>Configurable   </li>
 <li>You can create, configure and modify all stages of your software release process with ease. You can implement automated testing and customize the deployment process.   </li>
 </ul>
-<p>CodeCommit is not the only repository you can use with <a href="/devlog/AWS CodePipeline.html">AWS CodePipeline</a>, such as <a href="/devlog/aws.S3.html">aws.S3</a>, Github, Bitbucket and Github Enterprise.   </p>
+<p>CodeCommit is not the only repository you can use with <a href="/devlog/AWS%20CodePipeline.html">AWS CodePipeline</a>, such as <a href="/devlog/aws.S3.html">aws.S3</a>, Github, Bitbucket and Github Enterprise.   </p>
 <ul>
 <li>You need an <a href="/devlog/aws.IAM.html">aws.IAM</a> user with right policies attached to it.   </li>
 </ul>
 <p>Create Pipeline   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655279967/wiki/cavxaueres9g0y82ejum.png" />   </p>
-<p>Unlike <a href="/devlog/AWS CodeDeploy.html">AWS CodeDeploy</a> it supports <a href="/devlog/AWS CodeCommit.html">AWS CodeCommit</a> so you can choose your Source as such.   </p>
+<p>Unlike <a href="/devlog/AWS%20CodeDeploy.html">AWS CodeDeploy</a> it supports <a href="/devlog/AWS%20CodeCommit.html">AWS CodeCommit</a> so you can choose your Source as such.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655280066/wiki/ofw8mz5jopulafyhazzk.png" />   </p>
 <p>You can use <a href="/devlog/aws.S3.html">aws.S3</a> as a source too with change detection options.   </p>
 <p>You can add a build stage if your application requires compiling or you can skip to deploy stage.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655540479/wiki/ehjwkvx8qcvu0dxznclg.png" />   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655280123/wiki/kduzm8nljigeq2dupxos.png" />   </p>
-<h2 id="code-pipeline-with-aws-codebuild">Code Pipeline with <a href="/devlog/AWS CodeBuild.html">AWS CodeBuild</a></h2>
+<h2 id="code-pipeline-with-aws-codebuild">Code Pipeline with <a href="/devlog/AWS%20CodeBuild.html">AWS CodeBuild</a></h2>
 <p>CodeBuild can be used in both build and test stages of a pipeline. You can add CodeBuild build action to a pipeline as well as CodeBuild test action.   </p>
 <h2 id="versioning">Versioning</h2>
 <p>CodePipeline uses the ETag to manage and understand the flow so far for that execution of the pipeline. CodePipeline can have multiple executions at the same time. So, it needs to have a way to identify when version of the artifact is tied to which execution.   </p>
@@ -255,11 +255,11 @@
 <ul>
 <li>Setup approvers in <a href="/devlog/aws.IAM.html">aws.IAM</a> via managed policy: <strong>AWSCodePipelineApproverAccess</strong> (from Action Provider in a stage)   </li>
 </ul>
-<h2 id="codepipeline-with-aws-eventbridge">CodePipeline with <a href="/devlog/AWS EventBridge.html">AWS EventBridge</a></h2>
+<h2 id="codepipeline-with-aws-eventbridge">CodePipeline with <a href="/devlog/AWS%20EventBridge.html">AWS EventBridge</a></h2>
 <ul>
 <li>Events can come from multiple stages within the pipeline.   </li>
 <li>EventBridge can watch over events and trigger <a href="/not_created.html" class="nonexistent-link">AWS SNS</a> topic based on it.   </li>
-<li>EventBridge can work with <a href="/devlog/AWS Lambda.html">AWS Lambda</a> at source stage. It can work with SNS at the build or deploy stages.   </li>
+<li>EventBridge can work with <a href="/devlog/AWS%20Lambda.html">AWS Lambda</a> at source stage. It can work with SNS at the build or deploy stages.   </li>
 </ul>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655544508/wiki/rvmsyahweeycgtzonaav.png" /></p>
 <div class="note-footer">
@@ -280,13 +280,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A99315778666977969188697942296209201761{level}" class="graph_div"></div>
+    <div id="A317767037351639863280105772831693029553{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B99315778666977969188697942296209201761{level}" level="{level}" note_temp_id="99315778666977969188697942296209201761" onclick="window.ObsHtmlGraph.run(this, '99315778666977969188697942296209201761', 'aws codepipeline');">
+        <button class="graph_button graph_show_button" id="B317767037351639863280105772831693029553{level}" level="{level}" note_temp_id="317767037351639863280105772831693029553" onclick="window.ObsHtmlGraph.run(this, '317767037351639863280105772831693029553', 'aws codepipeline');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C99315778666977969188697942296209201761{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C317767037351639863280105772831693029553{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -768,6 +768,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

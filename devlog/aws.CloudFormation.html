@@ -225,7 +225,7 @@
 <ul>
 <li>Changing the AMI of our instances.   </li>
 <li>Updating a <a href="/devlog/aws.CloudWatch.html">aws.CloudWatch</a> alarm.   </li>
-<li>Updating <a href="/devlog/AWS Auto Scaling Group.html">AWS Auto Scaling Group</a> groups   </li>
+<li>Updating <a href="/devlog/AWS%20Auto%20Scaling%20Group.html">AWS Auto Scaling Group</a> groups   </li>
 </ul>
 <p><strong>Updating stack steps:</strong>   </p>
 <ul>
@@ -258,6 +258,8 @@
 <li>The resources object is the only required object in a template.   </li>
 </ul>
 <p><strong>Template Skeleton</strong>   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;AWSTemplateFormatVersion&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;version date&quot;</span><span class="p">,</span><span class="w"></span>
 
@@ -296,6 +298,9 @@
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>Maintain the integrity of templates using version control and drift detection. It is vital that a template stored in another Region matches the template it would be replacing. CloudFormation templates are a valuable disaster recovery tool. Storing templates in a second Region is a common disaster recovery practice.   </p>
 <h2 id="cloudformation-intrinsic-functions">CloudFormation Intrinsic Functions</h2>
@@ -381,13 +386,13 @@ Eg: A function to retrieve public IP Address of an EC2 instance <strong>at runti
 
 </div>
 <div class="graph requires_js ">
-    <div id="A276555617900499206409158090774923736776{level}" class="graph_div"></div>
+    <div id="A234363885558381973724421683781096666816{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B276555617900499206409158090774923736776{level}" level="{level}" note_temp_id="276555617900499206409158090774923736776" onclick="window.ObsHtmlGraph.run(this, '276555617900499206409158090774923736776', 'aws.cloudformation');">
+        <button class="graph_button graph_show_button" id="B234363885558381973724421683781096666816{level}" level="{level}" note_temp_id="234363885558381973724421683781096666816" onclick="window.ObsHtmlGraph.run(this, '234363885558381973724421683781096666816', 'aws.cloudformation');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C276555617900499206409158090774923736776{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C234363885558381973724421683781096666816{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -869,6 +874,7 @@ Eg: A function to retrieve public IP Address of an EC2 instance <strong>at runti
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

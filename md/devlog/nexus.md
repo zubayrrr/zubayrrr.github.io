@@ -74,6 +74,7 @@ You'll probably not use Nexus manually - it'll be part of your [build automation
   - Create role for the newly created users   
   - ![](https://res.cloudinary.com/zubayr/image/upload/v1654646774/wiki/cyzetrxf13ts8xzfwhfb.png)   
    
+
 ## Configuring Gradle for publishing to Nexus   
    
 An example `build.gradle` will look something like this:   
@@ -82,6 +83,7 @@ An example `build.gradle` will look something like this:
    
 All that’s left is building `./gradlew build` and then `./gradlew publish`.
    
+
 ## Configuring Maven for publishing to Nexus   
    
 An example `pom.xml` will look something like this:   

@@ -230,6 +230,8 @@
 <li><a href="https://gitlab.com/zubayrrr/ansible-learn/-/blob/master/deploy-docker-new-user.yaml" target="_blank" class="external-link">View the finished Ansible code on GitLab</a>   </li>
 </ul>
 <p><strong><code>local-exec</code> and <code>null_resource</code> in Terraform</strong>   </p>
+<div class="lang-t">
+
 <div class="codehilite"><pre><span></span><code><span class="o">/*</span><span class="w"></span>
 <span class="n">provisioner</span><span class="w"> </span><span class="s2">&quot;local-exec&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">working_dir</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;../ansible&quot;</span><span class="w"></span>
@@ -251,7 +253,12 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Ensure EC2 has successfully initialized</strong>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Wait for ssh connection</span><span class="w"></span>
 <span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">all</span><span class="w"></span>
@@ -268,6 +275,9 @@
 <span class="w">        </span><span class="nt">ansible_connection</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local</span><span class="w"></span>
 <span class="w">        </span><span class="nt">ansible_python_interpreter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/usr/bin/python</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -282,13 +292,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A294664422682359008483516252006285526230{level}" class="graph_div"></div>
+    <div id="A5081795188963523945666210492311174719{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B294664422682359008483516252006285526230{level}" level="{level}" note_temp_id="294664422682359008483516252006285526230" onclick="window.ObsHtmlGraph.run(this, '294664422682359008483516252006285526230', 'ansible.integrate ansible with terraform');">
+        <button class="graph_button graph_show_button" id="B5081795188963523945666210492311174719{level}" level="{level}" note_temp_id="5081795188963523945666210492311174719" onclick="window.ObsHtmlGraph.run(this, '5081795188963523945666210492311174719', 'ansible.integrate ansible with terraform');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C294664422682359008483516252006285526230{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C5081795188963523945666210492311174719{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -770,6 +780,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

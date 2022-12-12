@@ -214,8 +214,13 @@
 <p>Topics::  <a href="/devlog/windows.html">Windows</a>   </p>
 <hr />
 <p>the DOSKEY command can be used to define macros, which are analogous to aliases.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>doskey macroName=macroDefinition
 </code></pre></div>
+
+
+</div>
 
 <p>Macro parameters are referenced in the definition via <code>$</code> prefixed positions: <code>$1</code> through <code>$9</code> and <code>$*</code> for all.   </p>
 <p>See the <a href="https://technet.microsoft.com/en-us/library/bb490894.aspx" target="_blank" class="external-link">doskey technet documentation</a>, or type <code>doskey /?</code> or <code>help doskey</code> from the command line for more information.   </p>
@@ -229,12 +234,22 @@
 <p>Obviously you can create batch scripts instead of macros, and make sure the script locations are in your PATH. But then you must prefix each script with CALL if you want to use the script within another script.   </p>
 <p>You could create simple variable "macros" for long and oft used commands, but syntax is a bit awkward to type, since you need to expand the "macro" when you want to use it.   </p>
 <p>Definition:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>set &quot;cdMe=cd a_very_long_path&quot;
 </code></pre></div>
 
+
+</div>
+
 <p>Usage (from command line or script)   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nf">%cd</span><span class="n">Me</span><span class="o">%</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks" style="display:none"></div>
 
@@ -244,13 +259,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A78844632875758068087897373965923861548{level}" class="graph_div"></div>
+    <div id="A14812788906326529214791315607202145497{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B78844632875758068087897373965923861548{level}" level="{level}" note_temp_id="78844632875758068087897373965923861548" onclick="window.ObsHtmlGraph.run(this, '78844632875758068087897373965923861548', 'doskey');">
+        <button class="graph_button graph_show_button" id="B14812788906326529214791315607202145497{level}" level="{level}" note_temp_id="14812788906326529214791315607202145497" onclick="window.ObsHtmlGraph.run(this, '14812788906326529214791315607202145497', 'doskey');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C78844632875758068087897373965923861548{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C14812788906326529214791315607202145497{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -732,6 +747,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

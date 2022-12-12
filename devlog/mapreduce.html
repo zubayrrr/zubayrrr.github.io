@@ -219,7 +219,7 @@
 <p><strong>"Can we read parts(<em>slices</em>) of the file at the same time on different systems?"</strong>   </p>
 <ul>
 <li>For certain types of problems the answer is "Yes"   </li>
-<li>Slice data and spread across multiple HDDs on multiple servers (<a href="/devlog/hdfs.html">hdfs</a>)   </li>
+<li>Slice data and spread across multiple HDDs on multiple servers (<a href="/devlog/hdfs.html">hdfs</a>   </li>
 <li>Obtain performance from reading slices at the same time   </li>
 <li>Moving computation to data, if possible(cheaper than moving data to computation)   </li>
 <li>Allows scalable software that can hide (most) execution details from the user   </li>
@@ -258,8 +258,8 @@
 <p><img alt="" src="https://raw.githubusercontent.com/zubayrrr/twiki/main/bin/image.w1uoldg3if.png" />   </p>
 <h3 id="summary">Summary</h3>
 <ul>
-<li><a href="/devlog/hadoop.html">hadoop</a> provides a MapReduce engine as part of the core components (<a href="/devlog/hdfs.html">hdfs</a>, <a href="/devlog/yarn.html">yarn</a> and <a href="/devlog/mapreduce.html">mapreduce</a>)   </li>
-<li>Hadoop MapReduce can be used directly or by higher level applications(e.g. <a href="/devlog/hive.html">hive</a>)   </li>
+<li><a href="/devlog/hadoop.html">hadoop</a> provides a MapReduce engine as part of the core components (<a href="/devlog/hdfs.html">hdfs</a>, <a href="/devlog/yarn.html">yarn</a> and <a href="/devlog/mapreduce.html">mapreduce</a>   </li>
+<li>Hadoop MapReduce can be used directly or by higher level applications(e.g. <a href="/devlog/hive.html">hive</a>   </li>
 <li>Original MapReduce was somewhat slow because intermediate results are written to disk.   </li>
 <li>Current MapReduce uses <a href="/devlog/tez.html">Tez</a> acceleration to keep intermediate results in memory (very fast)   </li>
 <li>Operate on "Bigger than Database" amounts of data.   </li>
@@ -376,12 +376,12 @@ Check the results that was created and the checksum of the file <br />
 </ul>
 <p><code>hdfs dfs -rm -r -skipTrash Tera*</code>   </p>
 <h3 id="miscellaneous-notes">Miscellaneous notes</h3>
-<p><a href="/devlog/hadoop.html">hadoop</a> and <a href="/topics/apache spark.html">apache spark</a> usually work with "INPUT DIRECTORIES" not files. Note that the argument given to word count in the above example was a directory NOT the "words.txt" file. We can add more files to the input directory and <code>wordcount</code> will ingest all the files in finds.   </p>
+<p><a href="/devlog/hadoop.html">hadoop</a> and <a href="/topics/apache%20spark.html">apache spark</a> usually work with "INPUT DIRECTORIES" not files. Note that the argument given to word count in the above example was a directory NOT the "words.txt" file. We can add more files to the input directory and <code>wordcount</code> will ingest all the files in finds.   </p>
 <h2 id="simulating-map-and-reduce-using-python-and-bash-scripts">Simulating Map and Reduce using Python and Bash scripts</h2>
 <p>Source: &lt;<a href="https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&gt;" target="_blank" class="external-link">https://www.michael-noll.com/tutorials/writing-an-hadoop-mapreduce-program-in-python/&gt;</a>   </p>
 <p>There are several methods to program a Hadoop MapReduce. The most direct and lowest level is using the Java Hadoop API or the C++ Pipes library.   </p>
 <p>Many users prefer the flexibility of the Streams Interface that allows a variety of programming language to be used.   </p>
-<p>This method will work with any program that can read and write TEXT DATA to <a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a> and <a href="/devlog/stdout.html">stdout</a>.   </p>
+<p>This method will work with any program that can read and write TEXT DATA to <a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a> and <a href="/devlog/stdout.html">stdout</a>.   </p>
 <h3 id="developing-a-hadoop-streaming-word-counting-application">Developing a Hadoop Streaming word counting application.</h3>
 <ul>
 <li>pymapper.py - a python word count mapper   </li>
@@ -533,7 +533,7 @@ Check the results that was created and the checksum of the file <br />
 <div class="codehilite"><pre><span></span><code>echo &quot;see spot run run spot run see the cat&quot; | ./pymapper.py | ./shuffle.sh | ./pyreducer.py
 </code></pre></div>
 
-<p>See also: <a href="/devlog/tez.html">Tez</a>, <a href="/topics/apache spark.html">apache spark</a></p>
+<p>See also: <a href="/devlog/tez.html">Tez</a>, <a href="/topics/apache%20spark.html">apache spark</a></p>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -560,13 +560,13 @@ Check the results that was created and the checksum of the file <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A311281719304157310746446214418212192287{level}" class="graph_div"></div>
+    <div id="A309402649969574838311156340451371972513{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B311281719304157310746446214418212192287{level}" level="{level}" note_temp_id="311281719304157310746446214418212192287" onclick="window.ObsHtmlGraph.run(this, '311281719304157310746446214418212192287', 'mapreduce');">
+        <button class="graph_button graph_show_button" id="B309402649969574838311156340451371972513{level}" level="{level}" note_temp_id="309402649969574838311156340451371972513" onclick="window.ObsHtmlGraph.run(this, '309402649969574838311156340451371972513', 'mapreduce');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C311281719304157310746446214418212192287{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C309402649969574838311156340451371972513{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1048,6 +1048,7 @@ Check the results that was created and the checksum of the file <br />
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

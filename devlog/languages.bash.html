@@ -263,31 +263,51 @@
 <li>Aliases for commands   </li>
 <li>Nicknames for your pipelines   </li>
 <li>To get started you need a file in your user's <code>Home</code> dir named <code>.bash_aliases</code>   </li>
-<li>Write the command inside the <code>.bash_aliases</code> file after writing <code>alias aliasName='command1 -opt args | command2 -opt args ...'</code> or alias for command that don't accept <a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a> can be acheived by <code>alias aliasName='xargs command -opt args...'</code>   </li>
+<li>Write the command inside the <code>.bash_aliases</code> file after writing <code>alias aliasName='command1 -opt args | command2 -opt args ...'</code> or alias for command that don't accept <a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a> can be acheived by <code>alias aliasName='xargs command -opt args...'</code>   </li>
 <li>Example:   </li>
 </ul>
 <p><code>alias getdates='date | tee /home/user/date.txt | cut -d " " -f 1 | tee /home/user/day.txt | xargs echo hello'</code>   </p>
 <ul>
-<li>You can also build piplines using multiple aliases, the first command in an alias should accept <a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a>   </li>
+<li>You can also build piplines using multiple aliases, the first command in an alias should accept <a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a>   </li>
 <li>Terminal will have to be rebooted after creating an alias.   </li>
 </ul>
 <h2 id="list-all-aliases">List all aliases</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">alias</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="escape-an-alias-run-the-original-command">Escape an alias / run the original command</h2>
 <p>Use <code>\</code> to escape an alias   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="se">\l</span>s
 </code></pre></div>
 
+
+</div>
+
 <h2 id="create-an-alias">Create an alias</h2>
 <p>This will create an alias for the existing session. To make aliases persist in all of your user session, create them inside in your <code>~/.zshrc</code>, <code>~/.bashrc</code>, <code>~/.bash_profile</code> (and reload the shell or run <code>source ~/.zshrc</code>).   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">&quot;ls -ltr&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="remove-an-alias">Remove an alias</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">unalias</span> ls
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <h2 id="introduction">Introduction</h2>
@@ -309,7 +329,7 @@ Basically, to indicate what program will run the file whether bash, python, php 
 <p><code>#!/usr/bin/python3</code> will be the first line of the script(with the python code)   </p>
 <h2 id="comments">Comments</h2>
 <p>Bash will ignore everything written after the <code>#</code> symbol. The only exception being The Shebang <br />
-Bash doesn't support multi line commenting. See <a href="/devlog/here document.html">here document</a>   </p>
+Bash doesn't support multi line commenting. See <a href="/devlog/here%20document.html">here document</a>   </p>
 <h2 id="running-bash-scripts">Running Bash Scripts</h2>
 <ul>
 <li>Make it executable   </li>
@@ -379,7 +399,7 @@ Bash doesn't support multi line commenting. See <a href="/devlog/here document.h
 <li>They're contained exclusively within the shell in which they were set or defined.   </li>
 <li>Displayed using <code>set</code>   </li>
 <li>Running <code>set</code> command will display shell functions as well as to display all available variables.   </li>
-<li>To display only shell and <a href="/devlog/environment variable.html">environment variable</a> - specify set to operate in <a href="/devlog/posix.html">POSIX</a> mode   </li>
+<li>To display only shell and <a href="/devlog/environment%20variable.html">environment variable</a> - specify set to operate in <a href="/devlog/posix.html">POSIX</a> mode   </li>
 <li><code>set -o posix</code></li>
 </ul>
 <h2 id="constants">Constants</h2>
@@ -395,11 +415,16 @@ Bash doesn't support multi line commenting. See <a href="/devlog/here document.h
 </li>
 <li>complete the script   </li>
 </ol>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>mkdir -p new_dir
 <span class="nb">echo</span> <span class="s2">&quot;yay! first script&quot;</span> &gt; new_dir/file.txt
 ls -l new_dir
 cat new_dir/file.txt
 </code></pre></div>
+
+
+</div>
 
 <ol>
 <li>Save and exit   </li>
@@ -438,6 +463,8 @@ cat new_dir/file.txt
 <code>"$*"</code> is the string representation of all positional arguments: <code>$1</code> <code>$2</code> <code>$3</code> ... <br />
 <code>$?</code> is the most recent foreground command exit status   </p>
 <h2 id="if-elif-and-else-statements">If, Elif and Else Statements</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="k">if</span> <span class="o">[</span>some condition is true<span class="o">]</span>
 <span class="k">then</span>
     // execute this code
@@ -449,9 +476,12 @@ cat new_dir/file.txt
 <span class="k">fi</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="vs"><code>[]</code> vs <code>[[]]</code></h2>
 <p><code>[]</code> is the old way used for testing conditions.   </p>
-<p><code>[[]]</code> is the new way of testing conditions and is considered to be safer. Double square brackets prevent word splitting or string variables that contain spaces, you don't need to double qoute string variables even though its a good practice. It also have features like <a href="/devlog/regular expression.html">regular expression</a> matching.   </p>
+<p><code>[[]]</code> is the new way of testing conditions and is considered to be safer. Double square brackets prevent word splitting or string variables that contain spaces, you don't need to double qoute string variables even though its a good practice. It also have features like <a href="/devlog/regular%20expression.html">regular expression</a> matching.   </p>
 <h2 id="testing-conditions-for-numbers">Testing Conditions For Numbers</h2>
 <p>Run <code>man test</code> to list all available testing (comparison operators for integer comparison)   </p>
 <h2 id="multiple-conditions-and-nested-if-statements">Multiple Conditions and Nested If Statements</h2>
@@ -460,20 +490,35 @@ cat new_dir/file.txt
 <code>||</code> is the OR operator   </p>
 <h2 id="command-subsitution">Command Subsitution</h2>
 <p>In the following example, the <code>date</code> command was executed and the output is stored inside the variable <code>now</code>.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">now</span><span class="o">=</span><span class="sb">`</span>date<span class="sb">`</span>
 </code></pre></div>
 
+
+</div>
+
 <p>If the output is going to be a string, it is recommended to enclose it inside double quotes.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">now</span><span class="o">=</span><span class="s2">&quot;`date`&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <p>The other way of doing command subsitution is:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">user</span><span class="o">=</span><span class="sb">`</span><span class="k">$(</span>who<span class="k">)</span><span class="sb">`</span>
 
 <span class="c1"># this is same as:</span>
 
 <span class="nv">user</span><span class="o">=</span><span class="s2">&quot;`who`&quot;</span>
 </code></pre></div>
+
+
+</div>
 
 <p>You can substitute the entire command line, which can be multiple commands piped together.   </p>
 <p><code>ps -ef | grep bash</code>   </p>
@@ -489,21 +534,33 @@ cat new_dir/file.txt
 </li>
 </ul>
 <p>One of the approach to check for substring inside a string is to surround the substring with asterisk <code>*</code> to make it match all the characters.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">str1</span><span class="o">=</span><span class="s2">&quot;Linux is amazing&quot;</span>
 <span class="k">if</span> <span class="o">[[</span> <span class="s2">&quot;str1&quot;</span> <span class="o">==</span> *<span class="s2">&quot;Linux&quot;</span>*<span class="o">]]</span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li><code>-n</code> returns true if the string length is NON zero and <code>-z</code> returns true if the string length is zero.   </li>
 </ul>
 <h2 id="for-loop">For Loop</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="k">for</span> item <span class="k">in</span> LIST
 <span class="k">do</span>
   commands
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="examples">Examples</h3>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">for</span> os <span class="k">in</span> Ubuntu CentOS <span class="s2">&quot;MX Linux&quot;</span> Kali Manjaro
@@ -512,7 +569,12 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <hr />
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 <span class="k">for</span> num <span class="k">in</span> <span class="o">{</span><span class="m">3</span>..7<span class="o">}</span>
 <span class="k">do</span>
@@ -520,8 +582,13 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <hr />
 <p>Defining increment for a range   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">for</span> num <span class="k">in</span> <span class="o">{</span><span class="m">10</span>..100..5<span class="o">}</span>
@@ -530,8 +597,13 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <hr />
 <p>Going through the current directory, displaying the contents of the files   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">for</span> item <span class="k">in</span> ./*
@@ -546,8 +618,13 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <hr />
 <p>Rename all files in the current directory ending in <code>.txt</code> extension by adding a string at the start of the file name   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">for</span> file <span class="k">in</span> *.txt
@@ -556,7 +633,12 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="for-loops">For Loops</h3>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">for</span> <span class="o">((</span><span class="nv">i</span><span class="o">=</span><span class="m">0</span><span class="p">;</span>i&lt;<span class="o">=</span><span class="m">50</span><span class="p">;</span>i++<span class="o">))</span>
@@ -565,15 +647,25 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="while-loops">While Loops</h2>
 <p>It is used to execute a set of commands as long as the given condition evaluates to true.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="k">while</span> CONDITION
 <span class="k">do</span>
   COMMANDS
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Use <code>:</code> to always return true   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="k">while</span> :
 <span class="k">do</span>
   <span class="nv">output</span><span class="o">=</span><span class="s2">&quot;</span><span class="k">$(</span>pgrep -l <span class="nv">$1</span><span class="k">)</span><span class="s2">&quot;</span>
@@ -587,7 +679,12 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="examples_1">Examples</h3>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="nv">i</span><span class="o">=</span><span class="m">0</span>
@@ -599,10 +696,15 @@ cat new_dir/file.txt
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="case-statements">Case Statements</h2>
 <p>The case construct allows us to test string and numbers and is infact a simpler form of bash if, elif, else statement.   </p>
 <p>Case is similar to Switch statements in other programming languages.   </p>
 <p>It is not a loop, it doesn't execute a block of code <code>n</code> number of times. Instead, bash shell checks the conditions and controls the flow of the program.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="k">case</span> EXPRESSION <span class="k">in</span>
   PATTERN_1<span class="o">)</span>
     STATEMENTS
@@ -622,7 +724,12 @@ cat new_dir/file.txt
 <span class="k">esac</span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="examples_2">Examples</h3>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="nb">echo</span> -n <span class="s2">&quot;Enter your favourite pet: &quot;</span>
@@ -643,7 +750,12 @@ cat new_dir/file.txt
 <span class="k">esac</span>
 </code></pre></div>
 
+
+</div>
+
 <hr />
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">if</span> <span class="o">[[</span> <span class="nv">$#</span> -ne <span class="m">2</span> <span class="o">]]</span>
@@ -670,8 +782,13 @@ cat new_dir/file.txt
 <span class="k">esac</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="functions">Functions</h2>
 <p>There are two different formats for declaring a function.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">function</span> print_something <span class="o">()</span> <span class="o">{</span>
@@ -679,15 +796,25 @@ cat new_dir/file.txt
 <span class="o">}</span>
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>display_something <span class="o">()</span> <span class="o">{</span>
   <span class="nb">echo</span> <span class="s2">&quot;Hello world!&quot;</span>
 <span class="o">}</span>
 </code></pre></div>
 
+
+</div>
+
 <p>To call a function just write it's name without any paranethesis <code>display_something</code>   </p>
 <h3 id="arguments">Arguments</h3>
 <p>In bash you cannot pass arguments through the paranthesis, they're only for decoration. <br />
 To pass any information to the function use arguments like they're passed to a command.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 create_files <span class="o">()</span> <span class="o">{</span>
@@ -702,9 +829,14 @@ create_files <span class="o">()</span> <span class="o">{</span>
 create_files file1.txt file2.txt
 </code></pre></div>
 
+
+</div>
+
 <h3 id="returns">Returns</h3>
 <p>Bash doesn't allow you to return a value of a function, doing so using the return keyword, we're setting the status of the command executed or of the function. $? contains the status of previously run command or function.   </p>
 <p>Typically, a value of <code>0</code> means everything went successfully and a non zero value means something did not went succesfully.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 create_files <span class="o">()</span> <span class="o">{</span>
@@ -717,7 +849,12 @@ create_files <span class="o">()</span> <span class="o">{</span>
 create_files file1.txt
 </code></pre></div>
 
+
+</div>
+
 <p>To get a real "return" value like in other programming languages, you can try command substitution.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">function</span> lines_in_file <span class="o">()</span> <span class="o">{</span>
@@ -728,10 +865,15 @@ create_files file1.txt
 <span class="nb">echo</span> <span class="nv">$n</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="variable-scope-in-functions">Variable Scope in Functions</h2>
 <p>Scope refers to which part of a script the variable is "visible". In bash, all variables by default are global; they're visible everywhere inside a script.   </p>
 <p>If you want to define a local variable within the function body, use the <code>local</code> keyword before declaring variable. <br />
 It is considered a good practice to use local variables in order to contain everything inside a function.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="nv">var1</span><span class="o">=</span><span class="s2">&quot;AA&quot;</span>
@@ -746,16 +888,26 @@ func1
 <span class="nb">echo</span> <span class="s2">&quot;After calling func1: var1=</span><span class="nv">$var1</span><span class="s2"> and var2=v</span><span class="nv">$var2</span><span class="s2">&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="select">Select</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="k">select</span> ITEM <span class="k">in</span> LIST
 <span class="k">do</span>
   commands
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>ITEM is a user defined variable and the LIST is a series of strings, numbers or output of commands.   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="k">select</span> COUNTRY <span class="k">in</span> Germany India <span class="s2">&quot;United Kingdom&quot;</span>
@@ -765,7 +917,12 @@ func1
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Use <code>PS3</code> to define a prompt   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="nv">PS3</span><span class="o">=</span><span class="s2">&quot;Choose your country: &quot;</span>
@@ -776,14 +933,17 @@ func1
 <span class="k">done</span>
 </code></pre></div>
 
+
+</div>
+
 <ul>
 <li>You can use <code>select</code> with <code>case</code> and <code>if</code> statements   </li>
 </ul>
 <h2 id="examples_3">Examples</h2>
 <ul>
-<li><a href="/devlog/connection testing.html">connection testing</a>   </li>
-<li><a href="/devlog/dropping a list of ip addresses using a for loop.html">Dropping a List of IP addresses Using a For Loop</a>   </li>
-<li><a href="/devlog/system administration script using menus.html">System Administration Script using Menus</a>   </li>
+<li><a href="/devlog/connection%20testing.html">connection testing</a>   </li>
+<li><a href="/devlog/dropping%20a%20list%20of%20ip%20addresses%20using%20a%20for%20loop.html">Dropping a List of IP addresses Using a For Loop</a>   </li>
+<li><a href="/devlog/system%20administration%20script%20using%20menus.html">System Administration Script using Menus</a>   </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
@@ -807,13 +967,13 @@ func1
 
 </div>
 <div class="graph requires_js ">
-    <div id="A240994038139133149780452788927857971984{level}" class="graph_div"></div>
+    <div id="A321960397477980013811227392348938798203{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B240994038139133149780452788927857971984{level}" level="{level}" note_temp_id="240994038139133149780452788927857971984" onclick="window.ObsHtmlGraph.run(this, '240994038139133149780452788927857971984', 'languages.bash');">
+        <button class="graph_button graph_show_button" id="B321960397477980013811227392348938798203{level}" level="{level}" note_temp_id="321960397477980013811227392348938798203" onclick="window.ObsHtmlGraph.run(this, '321960397477980013811227392348938798203', 'languages.bash');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C240994038139133149780452788927857971984{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C321960397477980013811227392348938798203{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1295,6 +1455,7 @@ func1
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

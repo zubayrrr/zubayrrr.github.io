@@ -216,6 +216,8 @@
 <p><strong>Premise</strong>   </p>
 <p>We have a lot of <a href="/devlog/aws.EC2.html">aws.EC2</a> instances created with <a href="/devlog/terraform.html">Terraform</a> with Autoscaling configured. Instances get created and deleted all the time. Since, EC2 instances need some time to initialize, we want to know what is the status of our EC2 instances.   </p>
 <p>Instances are grouped as "Reservations"   </p>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="kn">import</span> <span class="nn">boto3</span>
 <span class="kn">import</span> <span class="nn">schedule</span>
 
@@ -240,6 +242,9 @@
 <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">schedule</span><span class="o">.</span><span class="n">run_pending</span><span class="p">()</span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -254,13 +259,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A278006148266267368719197370057570467821{level}" class="graph_div"></div>
+    <div id="A125586414886677940548609127995018304603{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B278006148266267368719197370057570467821{level}" level="{level}" note_temp_id="278006148266267368719197370057570467821" onclick="window.ObsHtmlGraph.run(this, '278006148266267368719197370057570467821', 'ec2 server status check');">
+        <button class="graph_button graph_show_button" id="B125586414886677940548609127995018304603{level}" level="{level}" note_temp_id="125586414886677940548609127995018304603" onclick="window.ObsHtmlGraph.run(this, '125586414886677940548609127995018304603', 'ec2 server status check');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C278006148266267368719197370057570467821{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C125586414886677940548609127995018304603{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -742,6 +747,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

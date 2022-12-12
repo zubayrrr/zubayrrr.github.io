@@ -222,31 +222,51 @@
 <li>Aliases for commands   </li>
 <li>Nicknames for your pipelines   </li>
 <li>To get started you need a file in your user's <code>Home</code> dir named <code>.bash_aliases</code>   </li>
-<li>Write the command inside the <code>.bash_aliases</code> file after writing <code>alias aliasName='command1 -opt args | command2 -opt args ...'</code> or alias for command that don't accept <a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a> can be acheived by <code>alias aliasName='xargs command -opt args...'</code>   </li>
+<li>Write the command inside the <code>.bash_aliases</code> file after writing <code>alias aliasName='command1 -opt args | command2 -opt args ...'</code> or alias for command that don't accept <a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a> can be acheived by <code>alias aliasName='xargs command -opt args...'</code>   </li>
 <li>Example:   </li>
 </ul>
 <p><code>alias getdates='date | tee /home/user/date.txt | cut -d " " -f 1 | tee /home/user/day.txt | xargs echo hello'</code>   </p>
 <ul>
-<li>You can also build piplines using multiple aliases, the first command in an alias should accept <a href="/devlog/redirecting stdin &amp; stderr.html">Redirecting stdin &amp; stderr</a>   </li>
+<li>You can also build piplines using multiple aliases, the first command in an alias should accept <a href="/devlog/redirecting%20stdin%20%26%20stderr.html">Redirecting stdin &amp; stderr</a>   </li>
 <li>Terminal will have to be rebooted after creating an alias.   </li>
 </ul>
 <h2 id="list-all-aliases">List all aliases</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">alias</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="escape-an-alias-run-the-original-command">Escape an alias / run the original command</h2>
 <p>Use <code>\</code> to escape an alias   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="se">\l</span>s
 </code></pre></div>
 
+
+</div>
+
 <h2 id="create-an-alias">Create an alias</h2>
 <p>This will create an alias for the existing session. To make aliases persist in all of your user session, create them inside in your <code>~/.zshrc</code>, <code>~/.bashrc</code>, <code>~/.bash_profile</code> (and reload the shell or run <code>source ~/.zshrc</code>).   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">alias</span> <span class="nv">ls</span><span class="o">=</span><span class="s2">&quot;ls -ltr&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="remove-an-alias">Remove an alias</h2>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">unalias</span> ls
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -265,13 +285,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A152789866472821533124634889073562179034{level}" class="graph_div"></div>
+    <div id="A22153697690898897227081776877465283114{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B152789866472821533124634889073562179034{level}" level="{level}" note_temp_id="152789866472821533124634889073562179034" onclick="window.ObsHtmlGraph.run(this, '152789866472821533124634889073562179034', 'aliases');">
+        <button class="graph_button graph_show_button" id="B22153697690898897227081776877465283114{level}" level="{level}" note_temp_id="22153697690898897227081776877465283114" onclick="window.ObsHtmlGraph.run(this, '22153697690898897227081776877465283114', 'aliases');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C152789866472821533124634889073562179034{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C22153697690898897227081776877465283114{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -753,6 +773,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -18,6 +18,6 @@ With Azure VMs, you can create and configure virtual machines quickly and easily
    
 Azure VMs are available in several different pricing tiers, including pay-as-you-go and reserved instances. Pay-as-you-go VMs are charged on an hourly basis, and you can scale them up or down as needed. Reserved instances are more cost-effective, but require you to commit to a one- or three-year term.   
    
-To create an Azure VM, you can use the [Azure Portal](/not_created.md), [Azure CLI](/not_created.md), or [Azure PowerShell](/not_created.md). You can choose from a range of predefined VM sizes, or you can create a custom VM configuration. You can also attach data disks to your VMs for additional storage, and you can use [Azure managed disks](../devlog/Azure%20Managed%20Disks.md) for improved reliability and performance.   
+To create an Azure VM, you can use the [Azure Portal](/not_created.md), [Azure CLI](../devlog/Azure%20CLI.md), or [Azure PowerShell](/not_created.md). You can choose from a range of predefined VM sizes, or you can create a custom VM configuration. You can also attach data disks to your VMs for additional storage, and you can use [Azure managed disks](../devlog/Azure%20Managed%20Disks.md) for improved reliability and performance.   
    
 Once the VM is running, you can connect to it remotely and manage it just like a physical server. You can also use Azure tools and services, such as [Azure Monitor](../devlog/Azure%20Monitor.md), to monitor and manage your VMs.

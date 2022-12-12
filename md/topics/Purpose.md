@@ -37,6 +37,7 @@ Think of it like your system or process or a journey
 > When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. — James Clear, Atomic Habits   
    
    
+
    
 The happiest people are not the ones who achieve the most. They are the ones   
 who spend more time than others in a state of flow. — Héctor García and   

@@ -24,6 +24,7 @@ Status:: `{_obsidian_pattern_tag_read}`
    
 By “external,” I mean factors that are outside yourself. We’ll be taking a look at [money](../../topics/money.md), [simplicity](../../topics/simplicity.md), [relationships](../../topics/relationships.md), and [culture](../../topics/culture.md).   
    
+
 ## Sloww Hierarchy of Happiness — Money   
    
 Happiness can be “bought” up to a point (aim for the ever-elusive enough)   
@@ -62,6 +63,7 @@ Others conceptualize hedonic adaptation as functioning similarly to a thermostat
    
    
    
+
 ## Sloww Hierarchy of Happiness — Simplicity   
    
 **Simplicity of possessions**   
@@ -92,6 +94,7 @@ Others conceptualize hedonic adaptation as functioning similarly to a thermostat
    
    
    
+
 ## Sloww Hierarchy of Happiness – Relationships   
    
 > The first is that social connections are really good for us, and that loneliness kills. It turns out that people who are more socially connected to family, to friends, to community, are happier, they’re physically healthier, and they live longer than people who are less well connected ... And we know that you can be lonely in a crowd and you can be lonely in a marriage, so the second big lesson that we learned is that it’s not just the number of friends you have, and it’s not whether or not you’re in a committed relationship, but it’s the quality of your close relationships that matters ... And the third big lesson that we learned about relationships and our health is that good relationships don’t just protect our bodies, they protect our brains.   
@@ -103,6 +106,7 @@ Others conceptualize hedonic adaptation as functioning similarly to a thermostat
    
    
    
+
 ## Sloww Hierarchy of Happiness – Culture   
    
 See also:: [hygge](/not_created.md), [niksen](/not_created.md), and [ikigai](../../archive/ikigai.md)    
@@ -165,6 +169,7 @@ Practice until it becomes second nature.
    
 > Individuals who understand what brings them joy and happiness tend to have what we like to call the Right Outlook. They are engulfed in activities and communities that allow them to immerse themselves in a rewarding and gratifying environment.   
    
+
 ## Sloww Hierarchy of Happiness – Purpose   
    
 **Happiness is a byproduct of finding meaning and purpose**   
@@ -194,6 +199,7 @@ Think of it like your system or process or a journey
 > When you fall in love with the process rather than the product, you don’t have to wait to give yourself permission to be happy. You can be satisfied anytime your system is running. — James Clear, Atomic Habits   
    
    
+
    
 The happiest people are not the ones who achieve the most. They are the ones   
 who spend more time than others in a state of flow. — Héctor García and   
@@ -205,6 +211,7 @@ human beings have access to. — Héctor García and Francesc Miralles
    
    
    
+
 ## Sloww Hierarchy of Happiness – Spirituality    
    
 > Happiness cannot be traveled to, owned, earned, worn or consumed. Happiness is the spiritual experience of living every minute with love, grace, and gratitude. — Denis Waitley   
@@ -218,6 +225,7 @@ human beings have access to. — Héctor García and Francesc Miralles
 > The joy of Being, which is the only true happiness, can not come to you through any form, possession, achievement, person, or event – through anything that happens. That joy cannot come to you – ever. It emanates form the formless dimension within you, from consciousness itself and thus is one with who you are. — Eckhart Tolle
    
    
+
 ## Sloww Hierarchy of Happiness – Presence    
    
 > Do you want to be happy? Uninterrupted happiness is uncaused. True happiness is uncaused. You cannot make me happy. You are not my happiness. You say to the awakened person, ‘Why are you happy?’ and the awakened person replies, ‘Why not?’ Happiness is our natural state. — Anthony de Mello   
@@ -237,6 +245,7 @@ human beings have access to. — Héctor García and Francesc Miralles
 > Peace is happiness at rest, and happiness is peace in motion. You can convert peace to happiness any time you want, but peace is want you want most of the time ... If you’re a peaceful person, anything you do will be a happy activity. — Naval Ravikant
    
    
+
 ##  Sloww Hierarchy of Happiness – Desire   
    
 > Nothing can satisfy the ego for long. As long as it runs your life, there are two ways of being unhappy. Not getting what you want is one. Getting what you want is the other. — Eckhart Tolle   
@@ -259,6 +268,7 @@ human beings have access to. — Héctor García and Francesc Miralles
    
    
    
+
 ## Sloww Hierarchy of Happiness – Transcendence   
    
 What happens when life is no longer all about you?   

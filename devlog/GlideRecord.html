@@ -236,8 +236,10 @@
 </ul>
 </li>
 </ul>
-<p>You can use GlideRecord in a <a href="/devlog/ServiceNow.Client Scripts.html">ServiceNow.Client Scripts</a> but it is deprecated and not recommended.   </p>
+<p>You can use GlideRecord in a <a href="/devlog/ServiceNow.Client%20Scripts.html">ServiceNow.Client Scripts</a> but it is deprecated and not recommended.   </p>
 <h2 id="example">Example</h2>
+<div class="lang-javascript">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// print a list of all priority 1 incidents to the screen</span><span class="w"></span>
 
 
@@ -256,11 +258,14 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>See also: <a href="/devlog/Dot-Walking.html">Dot-Walking</a>   </p>
 <hr />
 <h2 id="gliderecord-api-diagram">GlideRecord API Diagram</h2>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1668012318/wiki/hsutdooc3poqedjdzrcg.png" />   </p>
-<p>See also: <a href="/devlog/UML diagram.html">UML diagram</a>   </p>
+<p>See also: <a href="/devlog/UML%20diagram.html">UML diagram</a>   </p>
 <h2 id="common-gliderecord-methods">Common GlideRecord methods</h2>
 <ul>
 <li>query()   </li>
@@ -284,6 +289,8 @@
 <li>Chain Methods   </li>
 </ol>
 <p>Add GlideRecord methods onto the current GlideRecord object.   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="kd">var</span><span class="w"> </span><span class="nx">onCond1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">orCond1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;hardware&#39;</span><span class="p">);</span><span class="w"></span>
@@ -291,6 +298,9 @@
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addNotNullQuery</span><span class="p">(</span><span class="s1">&#39;short_description&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>addQuery()   </li>
@@ -307,24 +317,39 @@
 </ul>
 <p>Build query using condition builder, copy the query and add to <code>addEncodedQuery()</code>   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1668014530/wiki/uolbctnt7xqftnt9yww1.png" />   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addEncodedQuery</span><span class="p">(</span><span class="s2">&quot;&lt;copied-query&gt;&quot;</span><span class="p">)</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="addquery">addQuery()</h2>
 <ul>
 <li>Accepts 2 or 3 arguments   </li>
 </ul>
 <p><strong>2 Arguments</strong>   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;&lt;field_name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;field_value&gt;&#39;</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>3 Arguments</strong>   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;&lt;field_name&gt;&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;&lt;operator&gt;&#39;</span><span class="w"> </span><span class="s1">&#39;&lt;field_value&gt;&#39;</span><span class="p">)</span><span class="w"> </span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="next">next()</h2>
 <p>After we run the <code>query()</code> on a GlideRecord object, we receive an iterable object. A list of the records are inside the instantiated GlideRecord object(such as <code>incidentGR</code>) that you can iterate over using <code>next()</code>.   </p>
@@ -335,11 +360,16 @@
 </ul>
 <h2 id="get">get()</h2>
 <p>Instead of writing multiple lines to just a specific record, you can <code>get()</code> method as a shortcut which is commonly used with the <code>sys_id</code> of the record.   </p>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">gr</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="c1">//gr.get(&#39;&lt;sys_id&gt;&#39;) // or</span><span class="w"></span>
 <span class="nx">gr</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;INC0000001&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">gr</span><span class="p">.</span><span class="nx">short_description</span><span class="p">);</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="crud">CRUD</h2>
 <p><strong>Create</strong>   </p>
@@ -350,12 +380,17 @@
 <li>Set field values   </li>
 <li>insert()   </li>
 </ol>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">newRecord</span><span class="p">();</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">short_description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Test 123&#39;</span><span class="p">;</span><span class="w"> </span><span class="c1">// along with other fields</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">insert</span><span class="p">();</span><span class="w"> </span><span class="c1">// record isn&#39;t saved until this is executed</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><strong>Read</strong>   </p>
 <ol>
@@ -365,6 +400,8 @@
 <li>next()   </li>
 <li>Print or copy variables   </li>
 </ol>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span><span class="w"></span>
@@ -373,6 +410,9 @@
 <span class="w">    </span><span class="nx">gs</span><span class="p">.</span><span class="nx">print</span><span class="p">(</span><span class="nx">incidentGR</span><span class="p">.</span><span class="nx">number</span><span class="p">)</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><strong>Update</strong>   </p>
 <ol>
@@ -383,6 +423,8 @@
 <li>Set field values   </li>
 <li>update()   </li>
 </ol>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;priority&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;1&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span><span class="w"></span>
@@ -393,6 +435,9 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Delete</strong>   </p>
 <ol>
 <li>Build GlideRecord   </li>
@@ -401,6 +446,8 @@
 <li>next()   </li>
 <li>deleteRecord()   </li>
 </ol>
+<div class="lang-js">
+
 <div class="codehilite"><pre><span></span><code><span class="kd">var</span><span class="w"> </span><span class="nx">incidentGR</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">GlideRecord</span><span class="p">(</span><span class="s1">&#39;incident&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">addQuery</span><span class="p">(</span><span class="s1">&#39;number&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;INC0000001&#39;</span><span class="p">);</span><span class="w"></span>
 <span class="nx">incidentGR</span><span class="p">.</span><span class="nx">query</span><span class="p">();</span><span class="w"></span>
@@ -409,6 +456,9 @@
 <span class="w">    </span><span class="nx">incidentGR</span><span class="p">.</span><span class="nx">deleteRecord</span><span class="p">();</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <p>See also:: <a href="/devlog/GlideRecordSecure.html">GlideRecordSecure</a>, <a href="/devlog/GlideAggregate.html">GlideAggregate</a></p>
@@ -431,13 +481,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A3482757844062865231904349590265457390{level}" class="graph_div"></div>
+    <div id="A43411478508314744116873671359857579612{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B3482757844062865231904349590265457390{level}" level="{level}" note_temp_id="3482757844062865231904349590265457390" onclick="window.ObsHtmlGraph.run(this, '3482757844062865231904349590265457390', 'gliderecord');">
+        <button class="graph_button graph_show_button" id="B43411478508314744116873671359857579612{level}" level="{level}" note_temp_id="43411478508314744116873671359857579612" onclick="window.ObsHtmlGraph.run(this, '43411478508314744116873671359857579612', 'gliderecord');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C3482757844062865231904349590265457390{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C43411478508314744116873671359857579612{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -919,6 +969,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -234,24 +234,41 @@
 <li>systemd starts with PID 1 and takes over and continues to mount the filesystem and starts services.   </li>
 </ul>
 <p>The first service is <code>systemd</code>, in the process list it called as <code>init</code> for backwards compatibility.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>ps -ef | less
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>systemd starts services in parallel unlike <a href="/not_created.html" class="nonexistent-link">sysvinit</a> which initialises services sequentially.   </li>
 </ul>
 <p>To display how long boot process took   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>systemd-analyze
 </code></pre></div>
 
+
+</div>
+
 <p>To print all running units by the time it took for them to initialise   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>systemd-analyze blame
 </code></pre></div>
+
+
+</div>
 
 <h2 id="service-unit">service/unit</h2>
 <p>In <code>systemd</code>, the target of most actions are “units”, which are resources that <code>systemd</code> knows how to manage. Units are categorized by the type of resource they represent and they are defined with files known as unit files. The type of each unit can be inferred from the suffix on the end of the file.   </p>
 <p>Although it is technically correct to classify a unit as a service, in systemd, units tend to be more abstract and often comprised of resource pools, filesystem mounts, network protocols, devices, and native Linux services.   </p>
 <p>Units are defined in a file known as a Unit file. Systemd can manage unit files from any location, but their main location is <code>/etc/systemd/system</code> directory. Unit files in this directory are mainly user-provided. Compared to other locations, the systemd manager will assign higher precedence to unit files within the above directory.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="nv">sudo</span><span class="w"> </span><span class="nv">systemctl</span><span class="w"> </span><span class="nv">list</span><span class="o">-</span><span class="nv">units</span><span class="w"></span>
 
 #<span class="w"> </span><span class="nv">or</span><span class="w"></span>
@@ -262,6 +279,9 @@
 
 <span class="nv">sudo</span><span class="w"> </span><span class="nv">systemctl</span><span class="w"> </span><span class="nv">list</span><span class="o">-</span><span class="nv">unit</span><span class="o">-</span><span class="nv">files</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>The following are the unit files found in systemd.   </p>
 <ul>
@@ -280,6 +300,8 @@
 <p><code>systemctl</code> is a Linux command-line utility used to control and manage systemd and services. You can think of Systemctl as a control interface for Systemd init service, allowing you to communicate with systemd and perform operations.   </p>
 <p>Systemctl is a successor of Init.d system; it contains libraries, daemons, and utilities you can use to manage services in the Linux system.   </p>
 <p>To start a <code>systemd</code> service, executing instructions in the service’s unit file, use the <code>start</code> command. If you are running as a non-root user, you will have to use <code>sudo</code> since this will affect the state of the operating system:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo systemctl start application.service
 
 # or you can skip .service
@@ -287,36 +309,64 @@
 sudo systemctl start application
 </code></pre></div>
 
+
+</div>
+
 <p>To stop/restart   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo systemctl stop application
 sudo systemctl restart application
 </code></pre></div>
 
+
+</div>
+
 <p>restart vs reload   </p>
 <p><code>restart</code> will terminate the service in question and restart it; <code>reload</code> will only reload the configuration file of the service. Not all services might support <code>reload</code> in which case you can use <code>reload-or-restart</code>   </p>
 <p>To check status   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo systemctl status application
 </code></pre></div>
+
+
+</div>
 
 <p>To enable or disable   </p>
 <p><code>enable</code> will enable a service to start automatically at boot time vice versa for <code>disable</code> <br />
 check with <code>is-enabled</code> (these settings only take place at boot time and won’t effect current session)   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo systemctl enable application
 </code></pre></div>
 
+
+</div>
+
 <p>To see a unit’s dependency tree   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>systemctl list-dependencies sshd.service
 </code></pre></div>
+
+
+</div>
 
 <p>Masking   </p>
 <p><code>systemd</code> also has the ability to mark a unit as <em>completely</em> unstartable, automatically or manually, by linking it to <code>/dev/null</code>. This is called masking the unit, and is possible with the <code>mask</code> command:   </p>
 <p>This will prevent the Nginx service from being started, automatically or manually, for as long as it is masked.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo systemctl mask nginx.service
 
 # to unmask
 
 sudo systemctl unmask nginx.service
 </code></pre></div>
+
+
+</div>
 
 <h2 id="references">References</h2>
 <ul>
@@ -341,13 +391,13 @@ sudo systemctl unmask nginx.service
 
 </div>
 <div class="graph requires_js ">
-    <div id="A38841971152801142346222778002285883475{level}" class="graph_div"></div>
+    <div id="A197598180934258986070304356560091469675{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B38841971152801142346222778002285883475{level}" level="{level}" note_temp_id="38841971152801142346222778002285883475" onclick="window.ObsHtmlGraph.run(this, '38841971152801142346222778002285883475', 'systemd');">
+        <button class="graph_button graph_show_button" id="B197598180934258986070304356560091469675{level}" level="{level}" note_temp_id="197598180934258986070304356560091469675" onclick="window.ObsHtmlGraph.run(this, '197598180934258986070304356560091469675', 'systemd');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C38841971152801142346222778002285883475{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C197598180934258986070304356560091469675{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -829,6 +879,7 @@ sudo systemctl unmask nginx.service
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -257,7 +257,7 @@
 <h3 id="connecting-to-ssh-server">Connecting to ssh server</h3>
 <ul>
 <li>Using <a href="/devlog/ping.html">ping</a> to test connection between either ssh server or client   </li>
-<li><code>ping IPAddr</code> see: <a href="/devlog/troubleshooting for connectivity issues.html">Troubleshooting for connectivity issues</a>   </li>
+<li><code>ping IPAddr</code> see: <a href="/devlog/troubleshooting%20for%20connectivity%20issues.html">Troubleshooting for connectivity issues</a>   </li>
 <li>Connecting using a client(OpenSSH)   </li>
 <li><code>ssh username@serverIPAddr</code> or <code>ssh -l username IPAddr</code>   </li>
 <li>The username used should exist on the server, not on the client   </li>
@@ -284,8 +284,8 @@
 <h3 id="troubleshooting-ssh_1">Troubleshooting <a href="/devlog/ssh.html">ssh</a></h3>
 <p>The first to check is that the ssh daemon is running on the server machine: <br />
 <code>systemctl status ssh</code>   </p>
-<p>If you get a <code>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</code> message on the client when trying to connect/autheticate ssh server, double check that you're connecting to the right server. This message will be displayed if the <a href="/devlog/ip address.html">ip address</a> or <a href="/devlog/mac.html">MAC</a> Address have been changed. If it is the right server, you can get rid of the message by removing the server key from the <code>/.ssh/known_host</code> file.   </p>
-<p>Check <a href="/not_created.html" class="nonexistent-link">Port 22</a> on which the server listens is open, from the client scan the Port 22 on the server. Use <a href="/devlog/telnet  protocol.html">telnet  protocol</a>) or <a href="/devlog/nmap.html">Nmap</a> for this.   </p>
+<p>If you get a <code>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</code> message on the client when trying to connect/autheticate ssh server, double check that you're connecting to the right server. This message will be displayed if the <a href="/devlog/ip%20address.html">ip address</a> or <a href="/devlog/mac.html">MAC</a> Address have been changed. If it is the right server, you can get rid of the message by removing the server key from the <code>/.ssh/known_host</code> file.   </p>
+<p>Check <a href="/not_created.html" class="nonexistent-link">Port 22</a> on which the server listens is open, from the client scan the Port 22 on the server. Use <a href="/devlog/telnet%20%20protocol.html">telnet  protocol</a> or <a href="/devlog/nmap.html">Nmap</a> for this.   </p>
 <ul>
 <li><code>telnet IPAddr PortNumber(22)</code>   </li>
 <li><code>nmap -p 22 IPAddr</code>   </li>
@@ -332,13 +332,13 @@ If you suspect a firewall issue then use <a href="/devlog/ufw.html">ufw</a>.   <
 
 </div>
 <div class="graph requires_js ">
-    <div id="A188389309817824064477245147577964734954{level}" class="graph_div"></div>
+    <div id="A209628198624015311441227700391071683791{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B188389309817824064477245147577964734954{level}" level="{level}" note_temp_id="188389309817824064477245147577964734954" onclick="window.ObsHtmlGraph.run(this, '188389309817824064477245147577964734954', 'ssh');">
+        <button class="graph_button graph_show_button" id="B209628198624015311441227700391071683791{level}" level="{level}" note_temp_id="209628198624015311441227700391071683791" onclick="window.ObsHtmlGraph.run(this, '209628198624015311441227700391071683791', 'ssh');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C188389309817824064477245147577964734954{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C209628198624015311441227700391071683791{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -820,6 +820,7 @@ If you suspect a firewall issue then use <a href="/devlog/ufw.html">ufw</a>.   <
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

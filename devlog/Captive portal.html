@@ -214,13 +214,23 @@
 <p>Topics:: <a href="/topics/networking.html">Networking</a>, <a href="/topics/linux.html">Linux</a>   </p>
 <hr />
 <p>If Captive Portal doesn’t pop up on it’s own:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>route -n
 </code></pre></div>
 
+
+</div>
+
 <p>Captive Portal isn’t popping up on a Linux machine that has docker installed.   </p>
 <p>You might need to delete these devices docker installs such as <code>docker0</code> and other starting with <code>br-</code>   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>sudo ip link delete &lt;device&gt;
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks" style="display:none"></div>
 
@@ -233,13 +243,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A20938150638272349517264167799707813312{level}" class="graph_div"></div>
+    <div id="A205911279447696372844108105177624048872{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B20938150638272349517264167799707813312{level}" level="{level}" note_temp_id="20938150638272349517264167799707813312" onclick="window.ObsHtmlGraph.run(this, '20938150638272349517264167799707813312', 'captive portal');">
+        <button class="graph_button graph_show_button" id="B205911279447696372844108105177624048872{level}" level="{level}" note_temp_id="205911279447696372844108105177624048872" onclick="window.ObsHtmlGraph.run(this, '205911279447696372844108105177624048872', 'captive portal');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C20938150638272349517264167799707813312{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C205911279447696372844108105177624048872{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -721,6 +731,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -17,6 +17,7 @@ Status:: `{_obsidian_pattern_tag_partially-read}`
    
 ---   
    
+
    
 "In life and business, the person with the fewest blind spots wins. Removing blind spots means we see, interact with, and move closer to understanding reality. We think better. And thinking better is about finding simple processes that help us work through problems from multiple dimensions and perspectives, allowing us to better choose solutions that fit what matters to us. The skill for finding the right solutions for the right problems is one form of wisdom."   
    
@@ -36,6 +37,7 @@ The biggest barrier to learning from contact with reality is ourselves. It’s h
    
 > Or as The World Alive sang in Trapped "It's hard to know myself trapped in my own head."   
    
+
    
 > There are these two young fish swimming along and they happen to meet an older fish swimming the other way, who nods at them and says “Morning, boys. How’s the water?” And the two young fish swim on for a bit, and then eventually one of them looks over at the other and goes “What the hell is water?”   
    
@@ -66,6 +68,7 @@ The majority of the time, we don’t even perceive what conflicts with our belie
    
 We also tend to undervalue the elementary ideas and overvalue the complicated ones. The problem is then that we reject the simple to make sure what we offer can’t be contributed by someone else. But simple ideas are of great value because they can help us prevent complex problems.   
    
+
    
 > "Most geniuses—especially those who lead others—prosper not by deconstructing intricate complexities but by exploiting unrecognized simplicities. " - Andy Benoit
    
@@ -80,6 +83,7 @@ But we are not passive participants in our decisions. The world does not act on 
    
 [Ego](../../topics/Ego.md), of course, is more than the enemy. It’s also our friend. If we had a perfect view of the world and made decisions rationally, we would never attempt to do the amazing things that make us human. Ego propels us. Why, without ego, would we even attempt to travel to Mars? After all, it’s never been done before. We’d never start a business because most of them fail. We need to learn to understand when ego serves us and when it hinders us. Wrapping ego up in outcomes instead of in ourselves makes it easier to update our views.   
    
+
    
 Topics::  [decision making](../topics/decision%20making.md), [wisdom](../topics/wisdom.md), [knowledge](../topics/knowledge.md), [learning](../topics/learning.md)   
    
@@ -125,6 +129,7 @@ What successful people do is file away a massive, but finite, amount of fundamen
    
 It’s not just knowing the mental models that is important. First you must learn them, but then you must use them. Each decision presents an opportunity to comb through your repertoire and try one out, so you can also learn how to use them. This will slow you down at first, and you won’t always choose the right models, but you will get better and more efficient at using mental models as time progresses.   
    
+
    
 > "I think it is undeniably true that the human brain must work in models. The trick is to have your brain work better than the other person’s brain because it understands the most fundamental models: ones that will do most work per unit. If you get into the mental habit of relating what you’re reading to the basic structure of the underlying ideas being demonstrated, you gradually accumulate some wisdom." - [Charlie Munger](../resources/people/Charlie%20Munger.md)
    
@@ -146,20 +151,24 @@ The larger and more relevant the sample size, the more reliable the model based 
    
 A group of blind people approach a strange animal, called an elephant. None of them are aware of its shape and form. So they decide to understand it by touch. The first person, whose hand touches the trunk, says, “This creature is like a thick snake.” For the second person, whose hand finds an ear, it seems like a type of fan. The third person, whose hand is on a leg, says the elephant is a pillar like a tree-trunk. The fourth blind man who places his hand on the side says, “An elephant is a wall.” The fifth, who feels its tail, describes it as a rope. The last touches its tusk, and states the elephant is something that is hard and smooth, like a spear.   
    
+
    
 > "I think it is undeniably true that the human brain must work in models. The trick is to have your brain work better than the other person’s brain because it understands the most fundamental models: ones that will do most work per unit. If you get into the mental habit of relating what you’re reading to the basic structure of the underlying ideas being demonstrated, you gradually accumulate some wisdom." - [Charlie Munger](../resources/people/Charlie%20Munger.md)
    
    
+
    
 > "Disciplines, like nations, are a necessary evil that enable human beings of bounded rationality to simplify their goals and reduce their choices to calculable limits. But parochialism is everywhere, and the world badly needs international and interdisciplinary travelers to carry new knowledge from one enclave to another." - Herbert Simon
 
    
+
    
 Topics::  [mental models](../../topics/mental%20models.md)   
    
    
 ---   
    
+
    
 > "The map appears to us more real than the land." - D.H. Lawrence
    
@@ -200,6 +209,7 @@ Economist Elinor Ostrom wrote about being cautious with maps and models when loo
    
 This is a double problem. First, having a general map, we may assume that if a territory matches the map in a couple of respects it matches the map in all respects. Second, we may think adherence to the map is more important than taking in new information about a territory. Ostrom asserts that one of the main values of using models as maps in public policy discussions is in the thinking that is generated. They are tools for exploration, not doctrines to force conformity. They are guidebooks, not laws.   
    
+
    
 > "Remember that all models are wrong; the practical question is how wrong do they have to be to not be useful." - George Box
    
@@ -217,6 +227,7 @@ When we enter new and unfamiliar territory it’s nice to have a map on hand. Bu
    
 We do have to remember though, that a map captures a territory at a moment in time. Just because it might have done a good job at depicting what was, there is no guarantee that it depicts what is there now or what will be there in the future. The faster the rate of change in the territory, the harder it will be for a map to keep up to date.   
    
+
    
 > "Viewed in its development through time, the map details the changing thought of the human race, and few works seem to be such an excellent indicator of culture and civilization." - Norman J.W. Thrower
    
@@ -249,12 +260,14 @@ While navigating the world based on terrain is a useful goal, it’s not always 
    
 See also: [The Tragedy of the Commons](../../archive/The%20Tragedy%20of%20the%20Commons.md), [Strong Opinions  Weakly Held](../../archive/Strong%20Opinions%20%20Weakly%20Held.md)
    
+
    
 Topics::  [mental models](../../topics/mental%20models.md)   
    
    
 ---   
    
+
    
 > I’m no genius. I’m smart in spots—but I stay around those spots. - Thomas Watson
 

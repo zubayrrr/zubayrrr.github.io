@@ -219,23 +219,43 @@
 <p><strong>Note:</strong> When no flags are specified, <code>–acdgkmnru</code> is presumed.   </p>
 <h2 id="examples">Examples</h2>
 <p><strong>Command to display information of the hard drive:</strong> It is one of the most significant features as it unveils details of the hard disk drive, you need to use -I option and hard disk drive here.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>hdparm -I /dev/sda
 hdparm -i /dev/sda
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Command to display all the options:</strong>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>hdparm -h
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Command to test hard disk drive speed:</strong>   </p>
 <p><code>--direct</code> option will bypass the page cache causing the reads to go directly from the drive to the hdparm command buffer; its a raw <a href="/devlog/io.html">input output</a>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>hdparm -t /dev/vdb
 hdparm -t --direct /dev/sda
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Command to measure hard disk cache read speed:</strong>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>hdparm -T /dev/vdb
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -250,13 +270,13 @@ hdparm -t --direct /dev/sda
 
 </div>
 <div class="graph requires_js ">
-    <div id="A318065338619305713065612214218199031589{level}" class="graph_div"></div>
+    <div id="A19963513316162359191796772803808230389{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B318065338619305713065612214218199031589{level}" level="{level}" note_temp_id="318065338619305713065612214218199031589" onclick="window.ObsHtmlGraph.run(this, '318065338619305713065612214218199031589', 'hdparam');">
+        <button class="graph_button graph_show_button" id="B19963513316162359191796772803808230389{level}" level="{level}" note_temp_id="19963513316162359191796772803808230389" onclick="window.ObsHtmlGraph.run(this, '19963513316162359191796772803808230389', 'hdparam');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C318065338619305713065612214218199031589{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C19963513316162359191796772803808230389{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -738,6 +758,7 @@ hdparm -t --direct /dev/sda
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

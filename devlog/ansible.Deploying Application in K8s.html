@@ -230,6 +230,8 @@
 <li><code>pip3 install openshift --user</code>   </li>
 <li><code>pip3 install PyYAML --user</code>   </li>
 </ul>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy app in new namespace</span><span class="w"></span>
 <span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"> </span><span class="c1"># we&#39;re connecting to a K8s cluster even though we&#39;re running Playbook locally.</span><span class="w"></span>
@@ -251,6 +253,9 @@
 <span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Make sure <code>inventory = hosts</code> in the <code>ansible.cfg</code> file.   </p>
 <p>Run the playbook.   </p>
 <p>Check if namespace was created by first <code>export KUBECONFIG=~/path/to/kubeconfig</code> - should be same as defined in the play.   </p>
@@ -258,6 +263,8 @@
 <p><strong>Deploy an Ngnix app</strong>   </p>
 <p><strong>Environment variable for kubeconfig</strong>   </p>
 <p><code>export K8S_AUTH_KUBECONFIG=~/path/to/kubeconfig</code>   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deploy app in new namespace</span><span class="w"></span>
 <span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">localhost</span><span class="w"></span>
@@ -274,6 +281,9 @@
 <span class="w">        </span><span class="nt">state</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">present</span><span class="w"></span>
 <span class="w">        </span><span class="nt">namespace</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-app</span><span class="w"> </span><span class="c1"># so you don&#39;t have to hard code the value inside kubeconfig</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>To verify:   </p>
 <ul>
@@ -295,13 +305,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A189341248509231357247772074054073264671{level}" class="graph_div"></div>
+    <div id="A204763327599086429773052141218617918567{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B189341248509231357247772074054073264671{level}" level="{level}" note_temp_id="189341248509231357247772074054073264671" onclick="window.ObsHtmlGraph.run(this, '189341248509231357247772074054073264671', 'ansible.deploying application in k8s');">
+        <button class="graph_button graph_show_button" id="B204763327599086429773052141218617918567{level}" level="{level}" note_temp_id="204763327599086429773052141218617918567" onclick="window.ObsHtmlGraph.run(this, '204763327599086429773052141218617918567', 'ansible.deploying application in k8s');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C189341248509231357247772074054073264671{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C204763327599086429773052141218617918567{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -783,6 +793,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

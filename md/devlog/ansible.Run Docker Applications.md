@@ -22,6 +22,7 @@ Steps:
    
 We'll achieve instantiating of EC2 instance using Terraform, except for the `user_data`, which'll install Docker and configure it, we're going to have Ansible do that part of the setup.   
    
+
    
 In this lab, we'll do:   
    

@@ -153,6 +153,7 @@ The main strategy for succeeding within office politics will be this: triangulat
    
 Whether or not it is actually in the target’s best interest to buy product is supremely irrelevant; you must persuade them to buy product, the consequences be damned.   
    
+
    
 > Do not take payment in politeness — Baltasar Gracian
    

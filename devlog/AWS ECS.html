@@ -216,7 +216,7 @@
 </div>
 <p>Amazon Elastic Container Service (ECS) is a cloud-based and fully-managed container orchestration service. It lets you run your applications in the cloud without having to configure and maintain the infrastructure.   </p>
 <p>To ensure capacity demands are optimally met and maintain peak performance, you can set ECS to continuously evaluate and monitor memory and CPU processes. This data can help you determine an optimal deployment strategy for each container. Additionally, you can leverage ECS to scale containers and release updates as needed.   </p>
-<p>ECS supports integration with several useful AWS services and features, including Identity and Access Management (<a href="/devlog/aws.IAM.html">aws.IAM</a>) roles, Elastic Block Store (<a href="/devlog/AWS EBS.html">AWS EBS</a>) volumes, and AWS Elastic Load Balancing (<a href="/devlog/AWS ELB.html">AWS ELB</a>).   </p>
+<p>ECS supports integration with several useful AWS services and features, including Identity and Access Management (<a href="/devlog/aws.IAM.html">aws.IAM</a> roles, Elastic Block Store (<a href="/devlog/AWS%20EBS.html">AWS EBS</a> volumes, and AWS Elastic Load Balancing (<a href="/devlog/AWS%20ELB.html">AWS ELB</a>.   </p>
 <p>It manages the entire lifecycle of a container, whether you need to spin some up, reschedule, restart, load balance. It has got you covered.   </p>
 <h2 id="ecs-cluster">ECS Cluster</h2>
 <p>To get started you need to create an ECS cluster. That will contain all the services that are needed to manage the individual containers.   </p>
@@ -234,7 +234,7 @@ You can take advantage of spot instances that reduce cloud costs by up to 90%.  
 <p>You’re the one responsible for security patches and network security of the instances, as well as their scalability in the cluster (but thankfully, you can use Kubernetes autoscaling for that).   </p>
 <p>You'd still need to manage the EC2 instances like creating them, joining them with your ECS cluster, when a new container is scheduled; you have to make sure that you've enough resources for it). You also have to manage the server's OS, updates, patches etc. So the only pain is managing the virtual machines themselves.   </p>
 <p><strong>Cost:</strong> You’re charged for the EC2 instances run within your cluster and VPC networking.   </p>
-<p>See: <a href="/devlog/AWS Fargate.html">AWS Fargate</a>   </p>
+<p>See: <a href="/devlog/AWS%20Fargate.html">AWS Fargate</a>   </p>
 <h2 id="resources">Resources</h2>
 <ul>
 <li><a href="https://cloud.netapp.com/blog/aws-cvo-blg-aws-ecs-in-depth-architecture-and-deployment-options" target="_blank" class="external-link">AWS ECS in Depth: Architecture and Deployment Options</a></li>
@@ -258,13 +258,13 @@ You can take advantage of spot instances that reduce cloud costs by up to 90%.  
 
 </div>
 <div class="graph requires_js ">
-    <div id="A37089324373715093151690118457970103965{level}" class="graph_div"></div>
+    <div id="A264164193567778273361323442757153098507{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B37089324373715093151690118457970103965{level}" level="{level}" note_temp_id="37089324373715093151690118457970103965" onclick="window.ObsHtmlGraph.run(this, '37089324373715093151690118457970103965', 'aws ecs');">
+        <button class="graph_button graph_show_button" id="B264164193567778273361323442757153098507{level}" level="{level}" note_temp_id="264164193567778273361323442757153098507" onclick="window.ObsHtmlGraph.run(this, '264164193567778273361323442757153098507', 'aws ecs');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C37089324373715093151690118457970103965{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C264164193567778273361323442757153098507{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -746,6 +746,7 @@ You can take advantage of spot instances that reduce cloud costs by up to 90%.  
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

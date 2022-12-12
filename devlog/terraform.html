@@ -279,10 +279,10 @@
 </p>
 </div>
 </div>
-<p>Terraform is an open source infrastructure as code (<a href="/devlog/IaC.html">IaC</a>) software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run. To create and configure infrastructure NOT for installing stuff on the server, just for provisioning.   </p>
+<p>Terraform is an open source infrastructure as code (<a href="/devlog/IaC.html">IaC</a> software tool that allows DevOps engineers to programmatically provision the physical resources an application requires to run. To create and configure infrastructure NOT for installing stuff on the server, just for provisioning.   </p>
 <p>It is a universal <a href="/devlog/IaC.html">IaC</a> tool, works with different cloud providers and technologies.   </p>
 <p>Infrastructure as code is an IT practice that manages an application's underlying IT infrastructure through programming. This approach to resource allocation allows developers to logically manage, monitor and provision resources -- as opposed to requiring that an operations team manually configure each required resource.   </p>
-<p>Managing infrastructure (servers, network, etc) through definition files rather than manual configuration. Much like <a href="/devlog/configuration management.html">configuration management</a>, this enables automation, consistency, and is self-documenting.</p>
+<p>Managing infrastructure (servers, network, etc) through definition files rather than manual configuration. Much like <a href="/devlog/configuration%20management.html">configuration management</a>, this enables automation, consistency, and is self-documenting.</p>
 <h2 id="features">Features</h2>
 <p>It uses declarative syntax(as opposed to imperative syntax) to define what the end result looks like and it will figure out how to provision the infrastructure.   </p>
 <ul>
@@ -339,7 +339,7 @@
 </ul>
 <h3 id="providers">Providers</h3>
 <ul>
-<li>This can be providers for the specific technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>)   </li>
+<li>This can be providers for the specific technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>   </li>
 <li>It can also has providers for higher level technologies(<a href="/devlog/kubernetes.html">kubernetes</a>, other <a href="/not_created.html" class="nonexistent-link">PaaS</a> or even <a href="/not_created.html" class="nonexistent-link">SaaS</a>)   </li>
 <li>It has over 100 providers and over 1000 resources.   </li>
 <li><code>terraform init</code> will automatically recognize what providers are being used and it’ll initialize them for you.   </li>
@@ -358,7 +358,7 @@
 <h2 id="providers_1">Providers</h2>
 <ul>
 <li>They're basically a piece of code that knows how to talk to a specific technology. To connect to it and start using. Interact.   </li>
-<li>Expose resources for specific technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>)   </li>
+<li>Expose resources for specific technology(AWS, GCP, Azure, OpenStack, other <a href="/devlog/IaaS.html">IaaS</a>   </li>
 <li>Responsible for understanding API of that platform.   </li>
 <li><a href="https://registry.terraform.io/browse/providers" target="_blank" class="external-link">Browse Providers | Terraform Registry</a>   </li>
 <li>Providers don't come with installation of Terraform, they need to be installed separately.   </li>
@@ -368,8 +368,8 @@
 <li>Data Sources   </li>
 </ul>
 </li>
-<li><a href="/devlog/Install a Terraform Provider.html">Install a Terraform Provider</a>   </li>
-<li><a href="/devlog/Terraform AWS Provider.html">Terraform AWS Provider</a>   </li>
+<li><a href="/devlog/Install%20a%20Terraform%20Provider.html">Install a Terraform Provider</a>   </li>
+<li><a href="/devlog/Terraform%20AWS%20Provider.html">Terraform AWS Provider</a>   </li>
 </ul>
 <h2 id="resources">Resources</h2>
 <ul>
@@ -394,6 +394,8 @@
 </ul>
 <h2 id="examples">Examples</h2>
 <h3 id="creating-an-ec2-instance-with-terraform">Creating an EC2 instance with Terraform</h3>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">provider</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="err">regio</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="err">access_key</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;AKIAJX7X7X7X7X7X7X7X&quot;</span><span class="w"></span>
@@ -424,9 +426,14 @@
 <span class="w">  </span><span class="err">availabili</span><span class="kc">t</span><span class="err">y_zo</span><span class="kc">ne</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;us-east-1a&quot;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="changing-resources">Changing resources</h3>
 <p>Adding names using <code>tags:</code> keyword and using the reserved <code>Name</code> attribute for defining a name. <br />
 To remove something, you'd simply remove it from the config file.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">provider</span><span class="w"> </span><span class="s2">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="err">regio</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;us-east-1&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="err">access_key</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;AKIAJX7X7X7X7X7X7X7X&quot;</span><span class="w"></span>
@@ -464,6 +471,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="w">  </span><span class="err">availabili</span><span class="kc">t</span><span class="err">y_zo</span><span class="kc">ne</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;us-east-1a&quot;</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h3 id="removing-destroying-resources">Removing/Destroying resources</h3>
 <ol>
 <li>Remove the resource from Terraform config file and <code>terraform apply</code>. (Recommended)   </li>
@@ -482,6 +492,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 </ul>
 <h2 id="output">Output</h2>
 <p>We can define what value we want Terraform to spit at the end of applying of the configuration from the resources. Output values are like function's return values.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">ou</span><span class="kc">t</span><span class="err">pu</span><span class="kc">t</span><span class="w"> </span><span class="s2">&quot;dev-vpc-id&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="err">value</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">aws_vpc.developme</span><span class="kc">nt</span><span class="err">_vpc.id</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -491,8 +503,13 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="variables">Variables</h2>
 <p>You use variables inside of the configuration file. variables = input variables. If you don't want to hard code values you can pass them as parameters. Define and reference it. Input variables are like function arguments. They're defined using <code>variable</code> keyword. Makes it easier to replicate, parameterize, and reuse the same configuration over different environments. You'd have different <code>.tfvars</code> files for different environments.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">variable</span><span class="w"> </span><span class="s2">&quot;subnet_cidr_block&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="err">descrip</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;CIDR block for the subnet&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="err">de</span><span class="kc">fault</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;10.0.30.0/24&quot;</span><span class="w"></span>
@@ -508,6 +525,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>There are three ways to pass values to input variables.   </p>
 <ol>
@@ -536,6 +556,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 <h3 id="type-constraints">Type constraints</h3>
 <p><code>type</code> specifies what value types the variable can accept.   </p>
 <p>Using <code>list</code>:   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">variable</span><span class="w"> </span><span class="s2">&quot;cidr_blocks&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="err">descrip</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;CIDR blocks list&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">lis</span><span class="kc">t</span><span class="err">(s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g)</span><span class="w"></span>
@@ -551,7 +573,12 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>You can also use objects or lists of objects. You can also validate the type of the value for the objects as well.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// terraform-dev.tfvars</span><span class="w"></span>
 
 <span class="err">cidr_blocks</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -559,6 +586,11 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="w">  </span><span class="p">{</span><span class="err">cidr_block</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;10.0.20.0/24, name = &quot;</span><span class="err">dev_sub</span><span class="kc">net</span><span class="err">&quot;}</span>
 <span class="err">]</span>
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-json">
 
 <div class="codehilite"><pre><span></span><code><span class="err">variable</span><span class="w"> </span><span class="s2">&quot;cidr_blocks&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="err">descrip</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;CIDR blocks list and Name tag&quot;</span><span class="w"></span>
@@ -576,6 +608,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="environment-variables">Environment Variables</h2>
 <p>Environment variables are defined by the providers for you to use.   </p>
 <ol>
@@ -592,6 +627,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 <li>Define the variable - <code>export TF_VAR_my_custom_variable="my_custom_value"</code>   </li>
 <li>To use it, reference it without the <code>TF_VAR_</code> prefix.   </li>
 </ul>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">variable</span><span class="w"> </span><span class="s2">&quot;my_custom_variable&quot;</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
 <span class="err">resource</span><span class="w"> </span><span class="s2">&quot;aws_subnut&quot;</span><span class="w"> </span><span class="s2">&quot;dev-subnet-1&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -603,6 +640,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <p>In this lab, we'll do:   </p>
@@ -633,6 +673,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 <li>And also to SSH into that EC2 server.   </li>
 </ol>
 <h2 id="create-vpc-and-subnet">Create VPC and Subnet</h2>
+<div class="lang-terraform">
+
 <div class="codehilite"><pre><span></span><code><span class="kr">provider</span><span class="w"> </span><span class="nv">&quot;aws&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="na">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;eu-central-1&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
@@ -841,6 +883,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>You can find the cleaner version of this on <a href="https://gitlab.com/zubayrrr/terraform-learn/-/blob/feature/deploy-to-ec2/main.tf" target="_blank" class="external-link">main.tf · feature/deploy-to-ec2 · zubayrrr · GitLab</a></p>
 <hr />
 <p>When you need to execute some sort of commands/shell scripts on the virtual servers that you have provisioned using Terraform. You can do so using <code>user_data</code> attribute but this method doesn't return any output. If anything goes wrong, you'd have to check directly from the machine by <a href="/devlog/ssh.html">ssh</a>ing into it.   </p>
@@ -873,6 +918,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 <li>invokes a local executable after a resource is created.   </li>
 <li>is invoked on the machine running TF, not on the resource!   </li>
 </ul>
+<div class="lang-terraform">
+
 <div class="codehilite"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;null_resource&quot;</span><span class="w"> </span><span class="nv">&quot;configure-vm&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
 <span class="w">  </span><span class="nb">connection</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -899,10 +946,15 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Note that you can not pass any arguments to the script or command, so the best way is to use file provisioner to copy the files to the resources and then invoke them with the remote-exec provisioner like I did above for my script that installs minikube on the azure-vm.   </p>
 <p>An other thing to pay attention to is that by default, provisioners that fail will also cause the Terraform apply to fail. To avoid that, the on_failure can be used.   </p>
 </blockquote>
+<div class="lang-terraform">
+
 <div class="codehilite"><pre><span></span><code><span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;null_resource&quot;</span><span class="w"> </span><span class="nv">&quot;configure-vm&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="p">.........</span><span class="w"></span>
 <span class="w">    </span><span class="p">..........</span><span class="w"></span>
@@ -920,6 +972,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="w">  </span><span class="p">}</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>In this example, I am using inline; which is a series of command, the <code>on_failure</code> will apply only to the final command in the list !   </p>
 <h3 id="local-exec-provisioner"><code>local-exec</code> provisioner</h3>
@@ -971,6 +1026,8 @@ To remove something, you'd simply remove it from the config file.   </p>
 <li>To reference a module in another module or in the main <code>main.tf</code> is using <code>module</code> keyword.   </li>
 <li>define all the variables that you're going to use in the modules; first inside <code>variables.tf</code> and set the values using <code>terraform.tfvars</code>, and reference them as attribute names for the module from <code>terraform.tfvars</code>. The variable in the module can be hardcoded or it can be referenced from <code>.tfvars</code> or it can be referenced from a resource object.   </li>
 </ul>
+<div class="lang-terraform">
+
 <div class="codehilite"><pre><span></span><code><span class="err">module</span><span class="w"> </span><span class="s2">&quot;myapp-subnet&quot;</span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="na">source</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;./modules/subnet&quot;</span><span class="c1"> # relative-path-to-module</span>
 <span class="w">  </span><span class="na">avail_zone</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">var.avail_zone</span><span class="w"></span>
@@ -979,15 +1036,25 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="module-output">Module Output</h2>
 <p>When you're trying to reference a resource name for a value that isn't part of the module you're working in, the child module resource can only be access from module definition.   </p>
 <p>To access the resource of a child module, you need to expose/export resource attributes to parent module. You can do this using <code>outputs.tf</code>   </p>
+<div class="lang-terraform">
+
 <div class="codehilite"><pre><span></span><code><span class="kr">output</span><span class="w"> </span><span class="nv">&quot;subnet&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="na">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">aws_subnet.myapp-subnet-1</span><span class="c1"> # will output the whole subnet object</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>This "subnet" object can now be referenced in any other resource in a parent module.   </p>
+<div class="lang-terraform">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># parent main.tf</span>
 
 <span class="kr">resource</span><span class="w"> </span><span class="nc">&quot;aws_instance&quot;</span><span class="w"> </span><span class="nv">&quot;myapp-server&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -996,6 +1063,9 @@ To remove something, you'd simply remove it from the config file.   </p>
 <span class="w">  </span><span class="na">subnet_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">module.myapp-subnet.subnet.id</span><span class="c1"> # subnet = outputted object</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><strong>To apply configuration</strong> you need to run <code>terraform init</code> whenever a module has been changed or added before you run <code>terraform plan</code> &amp; <code>terraform apply</code>.   </p>
 <ul>
@@ -1022,6 +1092,8 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 <p><strong>Configure remote state</strong>   </p>
 <p>In <code>main.tf</code>'s <code>terraform{}</code> block we can define metadata.   </p>
 <p>Example using <a href="/devlog/aws.S3.html">aws.s3</a>   </p>
+<div class="lang-tf">
+
 <div class="codehilite"><pre><span></span><code><span class="nb">terraform</span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="na">required_version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;&gt;=0.12&quot;</span><span class="w"></span>
 <span class="w">  </span><span class="err">backend</span><span class="w"> </span><span class="s2">&quot;s3&quot;</span><span class="p">{</span><span class="w"></span>
@@ -1032,12 +1104,15 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Create an S3 bucket in your AWS account. Make sure to block public access.   </p>
 <h2 id="labs">Labs</h2>
 <ul>
-<li><a href="/devlog/terraform.Automate Provisioning EC2.html">terraform.Automate Provisioning EC2</a>   </li>
-<li><a href="/devlog/terraform.Automate Provisioning EKS cluster.html">terraform.Automate Provisioning EKS cluster</a>   </li>
-<li><a href="/devlog/terraform.ci∕cd with Terraform.html">terraform.ci∕cd with Terraform</a>   </li>
+<li><a href="/devlog/terraform.Automate%20Provisioning%20EC2.html">terraform.Automate Provisioning EC2</a>   </li>
+<li><a href="/devlog/terraform.Automate%20Provisioning%20EKS%20cluster.html">terraform.Automate Provisioning EKS cluster</a>   </li>
+<li><a href="/devlog/terraform.ci%E2%88%95cd%20with%20Terraform.html">terraform.ci∕cd with Terraform</a>   </li>
 </ul>
 <h2 id="resources_1">Resources</h2>
 <ul>
@@ -1080,13 +1155,13 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A60589333714940312258120842935165121112{level}" class="graph_div"></div>
+    <div id="A12366162728404843967464719171825685584{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B60589333714940312258120842935165121112{level}" level="{level}" note_temp_id="60589333714940312258120842935165121112" onclick="window.ObsHtmlGraph.run(this, '60589333714940312258120842935165121112', 'terraform');">
+        <button class="graph_button graph_show_button" id="B12366162728404843967464719171825685584{level}" level="{level}" note_temp_id="12366162728404843967464719171825685584" onclick="window.ObsHtmlGraph.run(this, '12366162728404843967464719171825685584', 'terraform');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C60589333714940312258120842935165121112{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C12366162728404843967464719171825685584{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1568,6 +1643,7 @@ It will have all the logs of failures of <code>terraform apply</code>.   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

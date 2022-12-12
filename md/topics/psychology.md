@@ -140,6 +140,7 @@ John Locke, a 17th-century British philosopher, espoused the concept of tabula r
    
 Most modern psychologists consider this debate over. The simple answer is that both nature and nurture impact a person’s behavior and level of success. This means that making sense of what people do and why they do it is ultimately accomplished only by investigating and understanding the relative contributions of innate biological influences and learned environmental influences   
    
+
    
 Topics::  [sciences](../topics/sciences.md)   
    
@@ -157,6 +158,7 @@ In order for a theory to be good, it must meet three criteria:
 - Precision: It must make precise, not overly large or vague, statements about reality.   
 - Testability: It must lend itself to scientific investigation. There must be some way to show that the theory can be wrong. It is easy to collect more information consistent with one’s theory. It is braver to be a scientist: to examine situations that may prove one’s theory wrong.   
    
+
    
 Topics::  [sciences](../topics/sciences.md)   
    
@@ -199,6 +201,7 @@ A z-factor is something affecting the hypothesis that I am unaware of or not acc
    
 ---   
    
+
    
 Topics::  [sciences](../topics/sciences.md)   
    
@@ -222,6 +225,7 @@ For Popper, science should attempt to disprove a theory, rather than attempt to 
    
 Generally, two types of statistical analyses are used in psychology, descriptive and inferential:   
    
+
    
 Statistics is concerned with the rules of data collection and analysis.   
    
@@ -274,6 +278,7 @@ effect is related to the presence of the placebo. A fascinating phenomenon is on
    
 ---   
    
+
    
 Most scientists today hold the position that the mind and the brain are one and the same. Scientists taking this position, known as [monism](/not_created.md), believe that in order to achieve the most full understanding of mental processes and behavior, we have to include the brain and the body in that formulation, acknowledging the very reality that we have brains and bodies in which mental processes and behavior “live.”   
    
@@ -286,6 +291,7 @@ This idea seems to insult our closely guarded and esteemed sense of free will, s
    
 We can’t escape our brains and genes, so biology and psychology are stuck with each other. But this relationship doesn’t have to be contentious as long as we adopt the monist stance.   
    
+
    
 The human nervous system consists of two large divisions: the central nervous system (CNS) and the peripheral nervous system (PNS). The CNS includes the brain and spinal cord. The PNS includes the nerves outside the CNS; they are in the rest (the periphery) of the body. The basic building blocks of the nervous system are nerves, neurons, and neu- rotransmitters and glial cells.   
    

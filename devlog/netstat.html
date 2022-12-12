@@ -222,12 +222,19 @@
 <p>Netstat is part of a package named net-tools.   </p>
 <h2 id="display-routing-table">Display Routing table:</h2>
 <p>Netstat command shows the routing table detail on the terminal. If you wish to see the routing table, use the –nr flag with Netstat; it shows the kernel routing table in the same way that route does. Use the below command:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>netstat -nr
 </code></pre></div>
+
+
+</div>
 
 <p>Instead of using symbolic address names, the -nr option allows Netstat to print addresses divided by dots   </p>
 <h2 id="display-interface-statistics">Display interface statistics:</h2>
 <p>Using the ‘-i’ flag or option with Netstat will show statistics for the currently configured network interfaces.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>netstat -i
 
 #or
@@ -235,16 +242,29 @@
 netstat -ai
 </code></pre></div>
 
+
+</div>
+
 <p>If the “–a” flag is also used with “-i”, the command prints all of the kernel interfaces.   </p>
 <h2 id="display-network-connection">Display Network connection:</h2>
 <p>To view active or passive sockets, Netstat has a range of options. Active <a href="/devlog/TCP.html">TCP</a>, <a href="/devlog/udp.html">UDP</a>, <a href="/not_created.html" class="nonexistent-link">RAW</a>, and Unix socket connections are specified by the –t, –u, –w, and –x options, respectively.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>netstat -ta
 </code></pre></div>
 
+
+</div>
+
 <h2 id="display-network-services">Display Network Services:</h2>
 <p>Run the following command to see a list of networks, their current states, and their associated ports:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>netstat -pnltu
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -264,13 +284,13 @@ netstat -ai
 
 </div>
 <div class="graph requires_js ">
-    <div id="A157753747689607396800994584681882263296{level}" class="graph_div"></div>
+    <div id="A27266242280708720578606235653561282560{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B157753747689607396800994584681882263296{level}" level="{level}" note_temp_id="157753747689607396800994584681882263296" onclick="window.ObsHtmlGraph.run(this, '157753747689607396800994584681882263296', 'netstat');">
+        <button class="graph_button graph_show_button" id="B27266242280708720578606235653561282560{level}" level="{level}" note_temp_id="27266242280708720578606235653561282560" onclick="window.ObsHtmlGraph.run(this, '27266242280708720578606235653561282560', 'netstat');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C157753747689607396800994584681882263296{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C27266242280708720578606235653561282560{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -752,6 +772,7 @@ netstat -ai
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

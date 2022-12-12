@@ -213,7 +213,6 @@
 <li><a href="#getting-metrics" class="anchor-link">Getting metrics</a></li>
 <li><a href="#helm-chart" class="anchor-link">Helm Chart</a></li>
 <li><a href="#resources" class="anchor-link">Resources</a></li>
-<li><a href="#building-java-applications" class="anchor-link">Building Java Applications</a></li>
 <li><a href="#types-of-load-balancers-based-on-functions" class="anchor-link">Types of Load Balancers – Based on Functions</a></li>
 <li><a href="#types-of-load-balancers-based-on-configurations" class="anchor-link">Types of Load Balancers – Based on Configurations</a></li>
 <li><a href="#load-balancing-methods" class="anchor-link">Load Balancing Methods</a></li>
@@ -225,7 +224,7 @@
 <p><strong>EC2 instance is running out of disk space. What actions will you take to mitigate the issue?</strong>   </p>
 </li>
 <li>
-<p><a href="/devlog/aws.EC2.html">aws.EC2</a> disk space typically refers to <a href="/devlog/AWS EBS.html">AWS EBS</a> volume.   </p>
+<p><a href="/devlog/aws.EC2.html">aws.EC2</a> disk space typically refers to <a href="/devlog/AWS%20EBS.html">AWS EBS</a> volume.   </p>
 </li>
 <li>We'll first check if its a root volume or any other volume   </li>
 <li>/root - OS   </li>
@@ -263,7 +262,7 @@
 <li><strong>What is Kubernetes kOps?</strong>   </li>
 </ol>
 <p><a href="/devlog/kubernetes.html">kubernetes</a> <a href="/devlog/kOps.html">kOps</a> is an automation tool used to setup Kubernetes cluster. It is an alternative to <code>kubeadmin</code>.   </p>
-<p>kOps can help you spin a test cluster or a small dev cluster quickly. It is not something that will help you setup managed Kubernetes cluster(<a href="/devlog/aws.EKS.html">aws.EKS</a>). It can create, destroy, upgrade, maintain production-grade, high availability clusters and also provision necessary cloud infrastructure(only recommended if you cannot afford managed service).   </p>
+<p>kOps can help you spin a test cluster or a small dev cluster quickly. It is not something that will help you setup managed Kubernetes cluster(<a href="/devlog/aws.EKS.html">aws.EKS</a>. It can create, destroy, upgrade, maintain production-grade, high availability clusters and also provision necessary cloud infrastructure(only recommended if you cannot afford managed service).   </p>
 <p>It supports many cloud providers.   </p>
 <ol>
 <li><strong>What is instance fleet in AWS?</strong>   </li>
@@ -275,16 +274,16 @@
 <li>Specify the instance types that work best for your applications.   </li>
 <li>Specify how EC2 should distribute your fleet capacity within each purchasing options.   </li>
 </ul>
-<p>The instance fleet configuration for <a href="/devlog/AWS EMR.html">AWS EMR</a> lets you select wide variety of provisioning options for Amazon EC2 instances and helps you develop a flexible and elastic resourcing strategy for each node type in your cluster.   </p>
+<p>The instance fleet configuration for <a href="/devlog/AWS%20EMR.html">AWS EMR</a> lets you select wide variety of provisioning options for Amazon EC2 instances and helps you develop a flexible and elastic resourcing strategy for each node type in your cluster.   </p>
 <ol>
 <li><strong>How do you pass “message” for your git commit</strong>   </li>
 </ol>
-<p>Use the flag <code>-m [message]</code> for your <a href="/devlog/version control.git.html">version control.git</a> commit. Although you can commit without passing a message.   </p>
+<p>Use the flag <code>-m [message]</code> for your <a href="/devlog/version%20control.git.html">version control.git</a> commit. Although you can commit without passing a message.   </p>
 <p><code>git commit -m "🔥 commit message"</code>   </p>
 <ol>
 <li><strong>What application server are you familiar with?</strong>   </li>
 </ol>
-<p><a href="/devlog/web server &amp; application server.html">web server &amp; application server</a>   </p>
+<p><a href="/devlog/web%20server%20%26%20application%20server.html">web server &amp; application server</a>   </p>
 <p>For Java applications, we have <a href="/devlog/tomcat.html">tomcat</a> but there are different application servers for applications based on different technologies.   </p>
 <ol>
 <li><strong>How to check logs of a Docker container/filter last 200 lines from the logs.</strong>   </li>
@@ -298,7 +297,7 @@
 <ol>
 <li><strong>Horizontal Scaling VS Vertical Scaling</strong>   </li>
 </ol>
-<p><strong>Horizontal scaling</strong> means scaling by adding more machines to your pool of resources (also described as “scaling out”); something like <a href="/devlog/AWS Auto Scaling Group.html">AWS Auto Scaling Group</a>, creating replicas(think <a href="/devlog/kubernetes.html">kubernetes</a>). If you are hosting an application on a server and find that it no longer has the capacity or capabilities to handle traffic, adding a server may be your solution.   </p>
+<p><strong>Horizontal scaling</strong> means scaling by adding more machines to your pool of resources (also described as “scaling out”); something like <a href="/devlog/AWS%20Auto%20Scaling%20Group.html">AWS Auto Scaling Group</a>, creating replicas(think <a href="/devlog/kubernetes.html">kubernetes</a>). If you are hosting an application on a server and find that it no longer has the capacity or capabilities to handle traffic, adding a server may be your solution.   </p>
 <p>Whereas <strong>vertical scaling</strong> refers to scaling by adding more power (e.g. CPU, RAM) to an existing machine (also described as “scaling up”). For instance, if your server requires more processing power, vertical scaling would mean upgrading the CPUs. You can also vertically scale the memory, storage, or network speed.   </p>
 <p>See: <a href="https://www.cloudzero.com/blog/horizontal-vs-vertical-scaling" target="_blank" class="external-link">Horizontal Vs. Vertical Scaling: How Do They Compare?</a>   </p>
 <ol>
@@ -306,6 +305,8 @@
 </ol>
 <p>A ReplicationController is responsible for running the specified number of pod copies(replicas) across the cluster.   </p>
 <p>ReplicationController is not auto scale.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ReplicationController</span><span class="w"></span>
 <span class="nt">metadata</span><span class="p">:</span><span class="w"></span>
@@ -326,6 +327,9 @@
 <span class="w">          </span><span class="nt">ports</span><span class="p">:</span><span class="w"></span>
 <span class="w">            </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">containerPort</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ol>
 <li><strong>What is helm?</strong>   </li>
@@ -367,6 +371,8 @@
 <li><strong>Which HTTP responses would you monitor and for which would you trigger alerts?</strong>   </li>
 </ol>
 <p>Example of API endpoints:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>/this-is-an-endpoint
 /another/endpoint
 /some/other/endpoint
@@ -374,6 +380,9 @@
 /accounts
 /cart/items
 </code></pre></div>
+
+
+</div>
 
 <p>HTTP response status codes indicate whether a specific HTTP request has been successfully completed. Responses are grouped in five classes:   </p>
 <ul>
@@ -455,6 +464,8 @@
 </ul>
 <p>Policy evaluation logic   </p>
 <p>Example   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"> </span><span class="c1">// version is fixed</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -485,13 +496,16 @@
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Example via - <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html" target="_blank" class="external-link">Policy evaluation logic - AWS Identity and Access Management</a>   </p>
 <ol>
 <li><strong>What role does <code>pv</code> and <code>pvc</code> play in Kubernetes?</strong>   </li>
 </ol>
 <p>PV stands for PersistentVolume <br />
 PVC stands for PersistentVolumeClaim   </p>
-<p>Pod gets it's storage using PVC which would in turn get hold of PV which will utilize an NFS or <a href="/devlog/AWS EBS.html">AWS EBS</a> volume.   </p>
+<p>Pod gets it's storage using PVC which would in turn get hold of PV which will utilize an NFS or <a href="/devlog/AWS%20EBS.html">AWS EBS</a> volume.   </p>
 <p>PVC will define what kind of volume and the storage amount it needs and it will search of PVs(which you'd have provisioned) and choose from those.   </p>
 <p>PV can exist independently from a Pod, you don't need to have a Pod for a PV to be created.   </p>
 <ol>
@@ -500,7 +514,7 @@ PVC stands for PersistentVolumeClaim   </p>
 <p>Since DB username and password are considered secrets, they cannot be saved in plaintext on a repository along with the Terraform code.   </p>
 <p>You can use Hashicorp's Vault, store your secrets on your Vault.   </p>
 <p>Integrate it with Terraform. In your <code>main.tf</code> you can reference it as a Data Block. Mention Vault provider in the Provider section.   </p>
-<p>You can also use other secret stores/managers like <a href="/devlog/AWS Secrets Manager.html">AWS Secrets Manager</a> etc. Or you can also use environment variables.   </p>
+<p>You can also use other secret stores/managers like <a href="/devlog/AWS%20Secrets%20Manager.html">AWS Secrets Manager</a> etc. Or you can also use environment variables.   </p>
 <ol>
 <li><strong>Have you support any DBs?</strong>   </li>
 </ol>
@@ -512,10 +526,10 @@ PVC stands for PersistentVolumeClaim   </p>
 <li>Cassandra   </li>
 <li>NoSQL/Document/Schemaless DB   </li>
 <li><a href="/devlog/mongoDB.html">mongoDB</a>   </li>
-<li><a href="/devlog/AWS DynamoDB.html">AWS DynamoDB</a>   </li>
+<li><a href="/devlog/AWS%20DynamoDB.html">AWS DynamoDB</a>   </li>
 <li>Relational DB   </li>
 <li><a href="/devlog/mysql.html">mysql</a>   </li>
-<li><a href="/devlog/AWS Aurora.html">AWS Aurora</a>   </li>
+<li><a href="/devlog/AWS%20Aurora.html">AWS Aurora</a>   </li>
 <li>
 <p><a href="/devlog/PostgreSQL.html">PostgreSQL</a>   </p>
 </li>
@@ -525,7 +539,7 @@ PVC stands for PersistentVolumeClaim   </p>
 </ul>
 <p>HashiCorp's <a href="/devlog/Packer.html">Packer</a> is the solution. Packer is an open source tool that enables you to create identical machine images for multiple platforms from a single source template which can be written in JSON. You can use it in your multi-cloud setup or On-prem infra too.   </p>
 <p>A common use case is creating "Golden Images" that teams across an organization can use in cloud infrastructure.   </p>
-<p>We could also use custom <a href="/devlog/AWS AMI.html">AWS AMI</a> images too but is limited to Cloud.   </p>
+<p>We could also use custom <a href="/devlog/AWS%20AMI.html">AWS AMI</a> images too but is limited to Cloud.   </p>
 <ol>
 <li>
 <p><strong>Differentiate Managed, Customer Managed and Inline IAM policies.</strong>   </p>
@@ -541,42 +555,7 @@ PVC stands for PersistentVolumeClaim   </p>
 <p><strong>What build tools are you familiar with?</strong>   </p>
 </li>
 </ol>
-<h2 id="building-java-applications">Building Java Applications</h2>
-<ul>
-<li>Install IntelliJ IDEA.   </li>
-<li>Install Java(or use IDEA to Download SDK).   </li>
-<li>Setup JDK, SDK (make sure Java executable is added to <a href="/not_created.html" class="nonexistent-link">path</a> or <code>%PATH%</code>, respectively.)   </li>
-<li>Set <code>JAVA_HOME</code> as an <a href="/devlog/environment variable.html">environment variable</a> (Maven prerequisite).   </li>
-<li>
-<p>Use SCM to clone(<code>git clone</code>) your Java application's repository.   </p>
-</li>
-<li>
-<p>Build a <a href="/devlog/maven.html">maven</a> project.   </p>
-</li>
-<li>
-<p>Open source code of your Java application in IntelliJ IDEA.   </p>
-</li>
-<li>Wait for IDEA to index the source code.   </li>
-<li>IDEA will automatically detect the <code>pom.xml</code> and resolve all the dependencies.   </li>
-<li>Run the application(preview in the "Run" tab).   </li>
-<li>Download <a href="https://maven.apache.org" target="_blank" class="external-link">Maven</a> and add it's <code>/bin</code>'s path to <code>$PATH</code> or <code>%PATH%</code>.   </li>
-<li>Use <code>mvn</code> commands and profit!   </li>
-<li>
-<p>After building, <code>.jar</code> or <code>.war</code> files can be found in the <code>./target</code> folder.   </p>
-</li>
-<li>
-<p>Build a <a href="/devlog/Gradle.html">gradle</a> project.   </p>
-</li>
-<li>
-<p>Open source code of your Java application in IntelliJ IDEA   </p>
-</li>
-<li>If it has a gradle wrapper(folder) inside the repo, you don't need to install gradle   </li>
-<li>Make sure the JVM configured is compatible with gradle wrapper's version.(<code>JAVA_HOME</code>)   </li>
-<li>Run the application to check if everything is working fine   </li>
-<li>Build with <code>./gradlew build</code>   </li>
-<li>After building, <code>.jar</code> or <code>.war</code> files can be found in the <code>./build</code> folder.   </li>
-</ul>
-<p>To run a <code>.jar</code>: <code>java -jar name-of-the-app-SNAPSHOT.jar</code>   </p>
+<p>Obsidianhtml: Error: Unable to find section # Building-Java-Applications:# Publishing-build-artifacts in build automation</p>
 <ol>
 <li><strong>Ingress and Egress</strong>   </li>
 </ol>
@@ -584,8 +563,8 @@ PVC stands for PersistentVolumeClaim   </p>
 <p>In IT they refer to:   </p>
 <p>Ingress: Incoming/Inbound traffic <br />
 Egress: Outgoing/Outbound traffic   </p>
-<p>They're mostly associated with security groups(<a href="/devlog/firewall.html">firewall</a>). They're also associated with VPCs and subnets where we control the incoming traffic from the internet and routing the traffic between subnets.   </p>
-<p>Eg: Allowing or denying ports for certain traffic(<a href="/devlog/ssh.html">ssh</a>, <a href="/devlog/http.html">http</a>). In prod, you'd usually lock it in the VPC IP Range.   </p>
+<p>They're mostly associated with security groups(<a href="/devlog/firewall.html">firewall</a>. They're also associated with VPCs and subnets where we control the incoming traffic from the internet and routing the traffic between subnets.   </p>
+<p>Eg: Allowing or denying ports for certain traffic(<a href="/devlog/ssh.html">ssh</a>, <a href="/devlog/http.html">http</a>. In prod, you'd usually lock it in the VPC IP Range.   </p>
 <ol>
 <li>
 <p><strong>Differentiate Docker Image and Docker Layer.</strong>   </p>
@@ -610,7 +589,7 @@ Egress: Outgoing/Outbound traffic   </p>
 <ol>
 <li><strong>How do you troubleshoot an Auto Scaling Group that is facing issues provisioning new nodes(it is using spot instances)?</strong>   </li>
 </ol>
-<p>Having an <a href="/devlog/AWS Auto Scaling Group.html">AWS Auto Scaling Group</a> full of only spot instances is not a good idea unless the application can bear a little bit of downtime or have a back up ASG.   </p>
+<p>Having an <a href="/devlog/AWS%20Auto%20Scaling%20Group.html">AWS Auto Scaling Group</a> full of only spot instances is not a good idea unless the application can bear a little bit of downtime or have a back up ASG.   </p>
 <p>There could be two of many causes for this:   </p>
 <ul>
 <li>Increase in spot price   </li>
@@ -635,7 +614,7 @@ Egress: Outgoing/Outbound traffic   </p>
 <p><a href="/devlog/NFS.html">NFS</a> allows <code>ReadWriteMany</code>.   </p>
 </li>
 <li>
-<p><a href="/devlog/AWS EBS.html">AWS EBS</a> only allows <code>ReadWriteOnce</code>.   </p>
+<p><a href="/devlog/AWS%20EBS.html">AWS EBS</a> only allows <code>ReadWriteOnce</code>.   </p>
 </li>
 <li>
 <p><strong>How to setup K8s in AWS?</strong>   </p>
@@ -653,9 +632,9 @@ Egress: Outgoing/Outbound traffic   </p>
 <h2 id="types-of-load-balancers-based-on-functions">Types of Load Balancers – Based on Functions</h2>
 <p>Several load balancing techniques are there for addressing the specific network issues:   </p>
 <p><strong>Network Load Balancer / Layer 4 (L4) Load Balancer:</strong>   </p>
-<p>Based on the network variables like <a href="/devlog/ip address.html">IP address</a> and destination ports, Network Load balancing is the distribution of traffic at the transport level through the routing decisions. Such load balancing is TCP i.e. level 4, and does not consider any parameter at the application level like the type of content, cookie data, headers, locations, application behavior etc. Performing network addressing translations without inspecting the content of discrete packets, Network Load Balancing cares only about the network layer information and directs the traffic on this basis only.   </p>
+<p>Based on the network variables like <a href="/devlog/ip%20address.html">IP address</a> and destination ports, Network Load balancing is the distribution of traffic at the transport level through the routing decisions. Such load balancing is TCP i.e. level 4, and does not consider any parameter at the application level like the type of content, cookie data, headers, locations, application behavior etc. Performing network addressing translations without inspecting the content of discrete packets, Network Load Balancing cares only about the network layer information and directs the traffic on this basis only.   </p>
 <p><strong>Application Load Balancer / Layer 7 (L7) Load Balancer:</strong>   </p>
-<p>Ranking highest in the <a href="/devlog/osi model.html">OSI model</a>, Layer 7 load balancer distributes the requests based on multiple parameters at the application level. A much wider range of data is evaluated by the L7 load balancer including the HTTP headers and SSL sessions and distributes the server load based on the decision arising from a combination of several variables. This way application load balancers control the server traffic based on the individual usage and behavior.   </p>
+<p>Ranking highest in the <a href="/devlog/osi%20model.html">OSI model</a>, Layer 7 load balancer distributes the requests based on multiple parameters at the application level. A much wider range of data is evaluated by the L7 load balancer including the HTTP headers and SSL sessions and distributes the server load based on the decision arising from a combination of several variables. This way application load balancers control the server traffic based on the individual usage and behavior.   </p>
 <p><strong>Global Server Load Balancer/Multi-site Load Balancer:</strong>   </p>
 <p>With the increasing number of applications being hosted in cloud data centers, located at varied geographies, the GSLB extends the capabilities of general L4 and L7 across various data centers facilitating the efficient global load distribution, without degrading the experience for end users. In addition to the efficient traffic balancing, multi-site load balancers also help in quick recovery and seamless business operations, in case of server disaster or disaster at any data center, as other data centers at any part of the world can be used for business continuity.   </p>
 <h2 id="types-of-load-balancers-based-on-configurations">Types of Load Balancers – Based on Configurations</h2>
@@ -749,6 +728,8 @@ Egress: Outgoing/Outbound traffic   </p>
 <p>In <a href="/devlog/terraform.html">terraform</a> you can define a <code>validation</code> block and specify a condition for the variable.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1656067537/wiki/heqtzp8ccvxdlfsaqsbx.png" />   </p>
 <p>Scenario: String may not contain a /.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="err">variable</span><span class="w"> </span><span class="s2">&quot;string_may_not_contain&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="kc">t</span><span class="err">ype</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">s</span><span class="kc">tr</span><span class="err">i</span><span class="kc">n</span><span class="err">g</span><span class="w"></span>
 <span class="w">  </span><span class="err">de</span><span class="kc">fault</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"></span>
@@ -760,6 +741,9 @@ Egress: Outgoing/Outbound traffic   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Example via - <a href="https://dev.to/drewmullen/terraform-variable-validation-with-samples-1ank" target="_blank" class="external-link">Terraform: Variable validation with samples</a>   </p>
 <ol>
 <li><strong>Explain/Differentiate <code>CMD</code> and <code>ENTRYPOINT</code> in Docker.</strong>   </li>
@@ -768,19 +752,29 @@ Egress: Outgoing/Outbound traffic   </p>
 <p>CMD commands are ignored by Daemon when there are parameters stated within the docker run command.   </p>
 <p>CMD. Sets default parameters that can be overridden from the Docker Command Line Interface (CLI) when a container is running.   </p>
 <p>You can pass input from CMD to ENTRYPOINT.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># CMD</span>
 FROM ubuntu:latest
 CMD<span class="o">[</span><span class="s2">&quot;echo&quot;</span>, <span class="s2">&quot;Hello World!&quot;</span><span class="o">]</span>
 </code></pre></div>
 
+
+</div>
+
 <p>ENTRYPOINT   </p>
 <p>It is a directive or instruction that is used to specify the executable which should run when a container is started from a Docker image. It has two forms, the first one is the ‘exec’ form and the second one is the ‘shell’ form. If there is no entrypoint or CMD specified in the Docker image, it starts and exits at the same time that means container stops automatically so, we must have to specify entrypoint or CMD so that when we will start the container it should execute or it'll stop.   </p>
 <p>We can override the ENTRYPOINT instruction while starting the container using the ‘–entrypoint’ flag. Also if we have multiple ENTRYPOINT instructions mentioned in Dockerfile then the last ENTRYPOINT will have an effect.   </p>
 <p>You can run shell scripts using ENTRYPOINT and pass it's output to CMD   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>FROM ubuntu
 RUN apt-get update <span class="o">&amp;&amp;</span> apt-get install -y nginx
 ENTRYPOINT <span class="o">[</span><span class="s2">&quot;nginx&quot;</span>, <span class="s2">&quot;-g&quot;</span>, <span class="s2">&quot;daemon off;&quot;</span><span class="o">]</span>
 </code></pre></div>
+
+
+</div>
 
 <p>Both run during docker container runtime. Using either one of them is best practice but they can be combined too.   </p>
 <ol>
@@ -799,7 +793,7 @@ ENTRYPOINT <span class="o">[</span><span class="s2">&quot;nginx&quot;</span>, <s
 <li>Disk space EBS volume could be full and and OS might be running out of all disk space.   </li>
 <li>Run <a href="/devlog/free.html">free</a> command to check if any swap memory is left or not, you might want to increase it.   </li>
 </ul>
-<p>See: <a href="/devlog/create and use swap file on linux.html">create and use swap file on linux</a>   </p>
+<p>See: <a href="/devlog/create%20and%20use%20swap%20file%20on%20linux.html">create and use swap file on linux</a>   </p>
 <ol>
 <li>
 <p><strong>How to control of deployment of pods on nodes that are going to be used explicitly for those pods?</strong>   </p>
@@ -818,10 +812,15 @@ ENTRYPOINT <span class="o">[</span><span class="s2">&quot;nginx&quot;</span>, <s
 </li>
 </ol>
 <p>In our <code>ansible.conf</code> we can define different <code>ansible_user</code> and <code>ansible_port</code> in the hostfile.   </p>
+<div class="lang-conf">
+
 <div class="codehilite"><pre><span></span><code><span class="k">[webservers]</span><span class="w"></span>
 <span class="na">10.4.20.90 ansible_port</span><span class="o">=</span><span class="s">4000 ansible_user=roger</span><span class="w"></span>
 <span class="na">39.12.3.23 ansible_port</span><span class="o">=</span><span class="s">8001 ansible_user=liam</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ol>
 <li><strong>What is Terraform state lock?</strong>   </li>
@@ -844,10 +843,15 @@ Whenever a pipeline job fails: <br />
 <li><strong>How to ignore a certain part of our ansible playbook that might fail and cause our playbook to exit?</strong>   </li>
 </ol>
 <p>We can achieve this using <code>ignore_errors</code> sub arguments.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Do not count this as a failure</span><span class="w"></span>
 <span class="w">  </span><span class="nt">ansible.builtin.command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/bin/false</span><span class="w"></span>
 <span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">ignore_errors</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">yes</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ol>
 <li><strong>When making a change to existing code what is a <code>git</code> best practice?</strong>   </li>
@@ -861,6 +865,8 @@ Whenever a pipeline job fails: <br />
 <ul>
 <li>Firstly, we'd make sure what we're using, IAM role or access keys.   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="ch">#!/bin/bash</span>
 
 <span class="c1"># assign path-to-logs to a variable</span>
@@ -872,6 +878,9 @@ Whenever a pipeline job fails: <br />
 <span class="c1"># use cron job to execute the script at a particular time</span>
 </code></pre></div>
 
+
+</div>
+
 <ol>
 <li><strong>What is a package in Python?</strong>   </li>
 </ol>
@@ -879,6 +888,8 @@ Whenever a pipeline job fails: <br />
 <p>Modules can have other modules inside them.   </p>
 <p>Package(1) -&gt; Modules(x) -&gt; Fns(x)   </p>
 <p>Example module:   </p>
+<div class="lang-py">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">#the os module provides an operating system interface from Python</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="c1">#prints the name of the operating system</span>
@@ -886,6 +897,9 @@ Whenever a pipeline job fails: <br />
 <span class="c1">#prints the absolute path for the module</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">())</span>
 </code></pre></div>
+
+
+</div>
 
 <ol>
 <li><strong>What are your day to day responsibilities as a DevOps engineer?</strong>   </li>
@@ -918,13 +932,13 @@ Whenever a pipeline job fails: <br />
 
 </div>
 <div class="graph requires_js ">
-    <div id="A203786373667261396994524172178886249720{level}" class="graph_div"></div>
+    <div id="A63323233772795759837314217879702563947{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B203786373667261396994524172178886249720{level}" level="{level}" note_temp_id="203786373667261396994524172178886249720" onclick="window.ObsHtmlGraph.run(this, '203786373667261396994524172178886249720', 'devops interview questions');">
+        <button class="graph_button graph_show_button" id="B63323233772795759837314217879702563947{level}" level="{level}" note_temp_id="63323233772795759837314217879702563947" onclick="window.ObsHtmlGraph.run(this, '63323233772795759837314217879702563947', 'devops interview questions');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C203786373667261396994524172178886249720{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C63323233772795759837314217879702563947{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1406,6 +1420,7 @@ Whenever a pipeline job fails: <br />
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -52,6 +52,7 @@ What successful people do is file away a massive, but finite, amount of fundamen
    
 It’s not just knowing the mental models that is important. First you must learn them, but then you must use them. Each decision presents an opportunity to comb through your repertoire and try one out, so you can also learn how to use them. This will slow you down at first, and you won’t always choose the right models, but you will get better and more efficient at using mental models as time progresses.   
    
+
    
 > "I think it is undeniably true that the human brain must work in models. The trick is to have your brain work better than the other person’s brain because it understands the most fundamental models: ones that will do most work per unit. If you get into the mental habit of relating what you’re reading to the basic structure of the underlying ideas being demonstrated, you gradually accumulate some wisdom." - [Charlie Munger](../resources/people/Charlie%20Munger.md)
    

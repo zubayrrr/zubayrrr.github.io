@@ -223,12 +223,19 @@
 <ul>
 <li>Create a <code>hosts</code> file   </li>
 </ul>
+<div class="lang-ini">
+
 <div class="codehilite"><pre><span></span><code><span class="na">&lt;ip-address&gt; ansible_ssh_private_key</span><span class="o">=</span><span class="s">~/.ssh/id_rsa ansible_user=root</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <ul>
 <li>Create a <code>deploy-nexus.yml</code> Playbook   </li>
 </ul>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Update repo &amp; install java and net-tools</span><span class="w"></span>
 <span class="w">  </span><span class="nt">hosts</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;ip-address&gt;</span><span class="w"></span>
 <span class="w">  </span><span class="nt">tasks</span><span class="p">:</span><span class="w"></span>
@@ -331,6 +338,9 @@
 <span class="w">      </span><span class="nt">register</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">app_status</span><span class="w"></span>
 <span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">debug</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">msg={{app_status.stdout_lines}}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -345,13 +355,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A216123082160090824703061012353004726013{level}" class="graph_div"></div>
+    <div id="A284416480483486703749185166898007200206{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B216123082160090824703061012353004726013{level}" level="{level}" note_temp_id="216123082160090824703061012353004726013" onclick="window.ObsHtmlGraph.run(this, '216123082160090824703061012353004726013', 'ansible.deploy nexus');">
+        <button class="graph_button graph_show_button" id="B284416480483486703749185166898007200206{level}" level="{level}" note_temp_id="284416480483486703749185166898007200206" onclick="window.ObsHtmlGraph.run(this, '284416480483486703749185166898007200206', 'ansible.deploy nexus');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C216123082160090824703061012353004726013{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C284416480483486703749185166898007200206{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -833,6 +843,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

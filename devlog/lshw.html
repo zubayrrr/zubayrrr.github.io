@@ -218,8 +218,13 @@ Related::  [[inxi]   </p>
 <hr />
 <p><em>lshw(list hardware)</em> is a small Linux/Unix tool which is used to generate the detailed information of the system’s hardware configuration from various files in the <em>/proc</em> directory. <em>lshw</em> can also report exact memory configuration, firmware version, mainboard configuration, CPU version and speed, cache memory configuration, bus speed, etc on DMI-capable x86 or IA-64(Itanium family of 64 microprocessors) system and some PowerPC machine. This command needs root permission to show full information else partial information will be displayed.   </p>
 <p><strong>Syntax:</strong>   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>lshw <span class="o">[</span>-format<span class="o">]</span> <span class="o">[</span>-options ...<span class="o">]</span>
 </code></pre></div>
+
+
+</div>
 
 <p><strong>Where format can be:</strong>   </p>
 <ul>
@@ -229,21 +234,46 @@ Related::  [[inxi]   </p>
 <li><em>-businfo</em>: Output bus information.   </li>
 </ul>
 <h2 id="examples">Examples</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo lshw | less
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>sudo lshw -json | less
 </code></pre></div>
 
+
+</div>
+
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo lshw -html &gt; hw.html
 </code></pre></div>
+
+
+</div>
+
+<div class="lang-general">
 
 <div class="codehilite"><pre><span></span><code>sudo lshw -short
 </code></pre></div>
 
+
+</div>
+
 <p>Single line displaying each disk   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>lshw -C disk -short
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -258,13 +288,13 @@ Related::  [[inxi]   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A200548954079958924179640768172606596461{level}" class="graph_div"></div>
+    <div id="A154805742297389790969466029623358474099{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B200548954079958924179640768172606596461{level}" level="{level}" note_temp_id="200548954079958924179640768172606596461" onclick="window.ObsHtmlGraph.run(this, '200548954079958924179640768172606596461', 'lshw');">
+        <button class="graph_button graph_show_button" id="B154805742297389790969466029623358474099{level}" level="{level}" note_temp_id="154805742297389790969466029623358474099" onclick="window.ObsHtmlGraph.run(this, '154805742297389790969466029623358474099', 'lshw');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C200548954079958924179640768172606596461{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C154805742297389790969466029623358474099{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -746,6 +776,7 @@ Related::  [[inxi]   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

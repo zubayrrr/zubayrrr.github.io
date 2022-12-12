@@ -18,7 +18,9 @@ One match maker to consider is personality. Some research tells us that, especia
    
 While some Internet dating sites are nothing more than electronic bulletin boards for personals and photos, others purportedly assess your personality and pair you with similar others. These sorts of sites say they are more concerned with who you are than with what you want. This is good. The “what you want” questions bring us back to the deal breakers—hobbies, religion, politics, and other similarities that, while convenient, may not actually make us happy. The “who you are” questions are about profiling your personality. Some research suggests that couples who were matched through this sort of service tend to be happier than couples who meet in other ways, and if these matching sites are pairing people based on their personality profiles, then this makes some sense.   
    
+
    
+
    
 Topics::  [personality](../topics/personality.md)   
    

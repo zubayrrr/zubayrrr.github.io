@@ -124,6 +124,7 @@ A K8s cluster is made up of multiple master nodes. Each master node runs its own
    
 ---   
    
+
    
 Minikube is a tool that lets you run Kubernetes locally. Minikube runs a single-node Kubernetes cluster on your personal computer so that you can try out Kubernetes, or for daily development work.   
    
@@ -135,6 +136,7 @@ It is a one node cluster, master and worker process run on one node. It comes wi
 - [minikube start | minikube](https://minikube.sigs.k8s.io/docs/start/)
    
    
+
    
 `Kubectl` is the Kubernetes command line tool that allows you to run commands against Kubernetes clusters. For example, you can use it to create, delete, list, and inspect Kubernetes objects. It is basically a client for the Kubernetes API Server.   
    
@@ -204,6 +206,7 @@ It is a one node cluster, master and worker process run on one node. It comes wi
 `kubectl delete deployment deployment-name`
    
    
+
    
 ### Kubernetes deployment configuration file   
    
@@ -286,6 +289,7 @@ It is very similar to a typical Service. Internal service also acts like a load 
 ![](https://res.cloudinary.com/zubayr/image/upload/v1655129162/wiki/gpts0wcs1wrdij7txbfc.png)
    
    
+
    
 Namespaces are a way to organize clusters into virtual sub-clusters — they can be helpful when different teams or projects share a Kubernetes cluster. Any number of namespaces are supported within a cluster, each logically separated from others but with the ability to communicate with each other. Namespaces cannot be nested within each other.   
    
@@ -410,6 +414,7 @@ Install `kubectx` which will install `kubens` as well.
 `kubens my-namespace` will switch the active NS to `my-namespace`
    
    
+
    
 **Overview**   
    
@@ -537,6 +542,7 @@ When we create a LoadBalancer service, NodePort and ClusterIP services are creat
 ![](https://res.cloudinary.com/zubayr/image/upload/v1661969796/wiki/unynv7pruo4tadoagwju.png)
    
    
+
    
 ## [kubernetes.services](/not_created.md) vs Ingress   
    
@@ -651,6 +657,7 @@ So far, we’ve only seen Ingress configuration for `http` requests but we can c
 - Secret component must be in the same namespace as the Ingress component.
    
    
+
    
 There are 3 components to Kubernetes storage:   
    
@@ -800,6 +807,7 @@ It starts off empty, emptyDir volume is created when a Pod that references it st
 If the container crashes and the Pod itself doesn't really die, it doesn't remove the contents of emptyDir, it'll still be there when the container restarts.
    
    
+
    
 **When to use ConfigMap and Secret Volumes**   
    
@@ -954,6 +962,7 @@ metadata:
 Secret dir and secret file will be created.
    
    
+
    
 StatefulSet is a Kubernetes component that is used specifically for stateful applications.   
    
@@ -1044,6 +1053,7 @@ Stateful applications are not perfect candidates for containerized environments 
 - managing and back up.
    
    
+
    
 Running Kubernetes on the cloud and benefits of using managed Kubernetes service.   
    
@@ -1069,6 +1079,7 @@ For a Managed K8s Cluster on a cloud, let's say LKE(Linode Kubernetes Engine)
 - Less effort and time.
    
    
+
    
 **Overview**   
    
@@ -1166,6 +1177,7 @@ In the newer Helm v3, they removed the Tiller and it’s a simple Helm binary wi
    
 ## Labs   
    
+
    
 **Overview**   
    
@@ -1389,6 +1401,7 @@ The data will persist even if you delete the Pods and if you create them again, 
 
    
    
+
    
 **Overview**   
    
@@ -1444,6 +1457,7 @@ Check [OperatorHub.io | The registry for Kubernetes Operators](https://operatorh
 There’s also Operator SDK that allows developers to create Operators themselves.
    
    
+
    
 **Overview**   
    
@@ -1644,6 +1658,7 @@ We've two different levels of security in K8s.
 ![](https://res.cloudinary.com/zubayr/image/upload/v1662243285/wiki/wb6baytfe6kb2ebz88rz.png)
    
    
+
    
 Introduction to [microservices](../devlog/microservices.md) in [kubernetes](../devlog/kubernetes.md).   
    

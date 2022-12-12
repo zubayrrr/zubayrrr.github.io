@@ -246,6 +246,8 @@
 <li><code>aws ec2 help</code>   </li>
 <li><code>aws iam help</code>   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># launch ec2 instance in the specified subnet of a VPC</span>
 aws ec2 describe-subnets
 aws ec2 describe-instances <span class="c1"># -&gt; will give us ami-imageid, we will use the same one</span>
@@ -257,6 +259,9 @@ aws ec2 run-instances <span class="se">\</span>
     --security-group-ids sg-903004f8 <span class="se">\ </span><span class="c1"># reuse already created or create a new one</span>
     --subnet-id subnet-6e7f829e
 </code></pre></div>
+
+
+</div>
 
 <h2 id="create-an-ec2-instance">Create an EC2 Instance</h2>
 <p>Steps:   </p>
@@ -280,6 +285,8 @@ aws ec2 run-instances <span class="se">\</span>
 <blockquote>
 <p>Configure firewall rules   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 authorize-security-group-ingress <span class="se">\</span>
 --group-id &lt;SG id&gt; <span class="se">\</span>
 --protocol tcp <span class="se">\</span>
@@ -287,15 +294,23 @@ aws ec2 run-instances <span class="se">\</span>
 --cidr &lt;IP addr&gt;  <span class="c1"># source, check your IP address, who can access</span>
 </code></pre></div>
 
+
+</div>
+
 <p>By default security group has outbound permissions to all destinations.   </p>
 <blockquote>
 <p>Create Key pair   </p>
 </blockquote>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 create-key-pair \
 --key-name MyKPCli \
 --query &#39;KeyMaterial&#39; \ # gives unencrypted pem
 --output text &gt; MyKPCli.pem
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>Get image-id, subnet-id   </p>
@@ -307,6 +322,8 @@ aws ec2 run-instances <span class="se">\</span>
 <blockquote>
 <p>Create an EC2 instance   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 run-instances <span class="se">\</span>
     --image-id ami-xxxxxxxx <span class="se">\</span>
     --count <span class="m">1</span> <span class="se">\</span>
@@ -315,6 +332,9 @@ aws ec2 run-instances <span class="se">\</span>
     --security-group-ids &lt;SG ID&gt; <span class="se">\</span>
     --subnet-id &lt;subnet ID&gt;
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>Grab public IP so you can SSH into it   </p>
@@ -339,20 +359,35 @@ aws ec2 run-instances <span class="se">\</span>
 <p>You can chain a filter to this command to filter <strong>certain components/resource</strong>.   </p>
 <p>You can also query(s) filter attributes of a filtered <strong>component's specific attributes</strong>.   </p>
 <p><strong>Examples</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 describe-instances <span class="se">\</span>
 --filters <span class="s2">&quot;Name=instance-type, Values=t2.micro&quot;</span> <span class="se">\</span>
 --query <span class="s2">&quot;Reservations[].Instances[].InstanceId&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <p>Even tags can also be filtered.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 describe-instances --filters <span class="s2">&quot;Name=tag:Type,Values=Web Server with Docker&quot;</span>
 </code></pre></div>
 
+
+</div>
+
 <p>OR   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws ec2 describe-instances <span class="se">\</span>
 --filters <span class="s2">&quot;Name=tag:Type,Values=Web Server with Docker&quot;</span> <span class="se">\</span>
 --query <span class="s2">&quot;Reservations[].Instances[].InstanceId&quot;</span>
 </code></pre></div>
+
+
+</div>
 
 <hr />
 <h2 id="using-iam-command">Using IAM Command</h2>
@@ -382,10 +417,15 @@ aws ec2 run-instances <span class="se">\</span>
 <p>Go to the IAM, click on "Policies" on the left sidebar. Click a policy to open it's summary page. Copy the <strong>Policy ARN</strong>.   </p>
 <p><strong>From Cli</strong>:   </p>
 <p>You need to know the name of the policy.   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam list-policies <span class="se">\</span>
 --query <span class="s1">&#39;Policies[?PolicyName==`AmazonEC2FullAccess`].{ARN:arn}&#39;</span>
 --output text
 </code></pre></div>
+
+
+</div>
 
 <blockquote>
 <p>Assign permissions to group   </p>
@@ -395,17 +435,27 @@ aws ec2 run-instances <span class="se">\</span>
 <li><code>aws iam attach-user-policy</code>   </li>
 <li><code>aws iam attach-group-policy</code>   </li>
 </ul>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam attach-group-policy <span class="se">\</span>
 --group-name MyGroupCli <span class="se">\</span>
 --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Validate policy attachment   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam list-attached-group-policies <span class="se">\</span>
 --group-name MyGroupCli
 </code></pre></div>
+
+
+</div>
 
 <h2 id="create-credentials">Create Credentials</h2>
 <p><strong>For new User</strong>   </p>
@@ -415,6 +465,8 @@ aws ec2 run-instances <span class="se">\</span>
 <blockquote>
 <p>Assign a password   </p>
 </blockquote>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam create-login-profile <span class="se">\</span>
 --user-name MyUserCli <span class="se">\</span>
 --password myPwd123Test <span class="se">\ </span><span class="c1"># password needs to be strong</span>
@@ -422,12 +474,17 @@ aws ec2 run-instances <span class="se">\</span>
 <span class="c1"># iam:ChangePassword policy needs to be attached to allow the user to change password</span>
 </code></pre></div>
 
+
+</div>
+
 <blockquote>
 <p>Get user info   </p>
 </blockquote>
 <p><code>aws iam get-user --user-name MyUserCli</code> - <code>Account ID or ARN</code> will be required for the user login(Sign in as IAM User).   </p>
 <h2 id="create-and-assign-custom-policy">Create and Assign Custom Policy</h2>
 <p>A custom policy for a user/group needs to be defined in a <code>.json</code> file.   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="c1">// changePwdPolicy.json</span><span class="w"></span>
 <span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
@@ -446,23 +503,41 @@ aws ec2 run-instances <span class="se">\</span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><strong>Creating the policy</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam create-policy <span class="se">\</span>
 --policy-name changePwd <span class="se">\</span>
 --policy-document file://changePwdPolicy.json
 </code></pre></div>
 
+
+</div>
+
 <p>Copy the ARN of the policy from the output.   </p>
 <p><strong>Assigning policy to user group</strong>:   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam attach-group-policy <span class="se">\</span>
 --group-name MyGroupCli <span class="se">\</span>
 --policy-arn &lt;copied-policy-arn&gt;
 </code></pre></div>
 
+
+</div>
+
 <h2 id="create-access-keys">Create Access keys</h2>
 <p><strong>For new User</strong>   </p>
+<div class="lang-bash">
+
 <div class="codehilite"><pre><span></span><code>aws iam create-access-key --user-name MyUserCli
 </code></pre></div>
+
+
+</div>
 
 <p>Copy the <code>AccessKeyId</code> and <code>SecretAccessKey</code> from the output in order to login as that user from the Cli (programmatic access).   </p>
 <h2 id="switch-user">Switch User</h2>
@@ -477,7 +552,7 @@ aws ec2 run-instances <span class="se">\</span>
 <p><code>aws configure set aws_access_key_id &lt;access-key&gt;</code>   </p>
 </li>
 <li>
-<p>Set bash <a href="/devlog/environment variable.html">environment variable</a>s to temporarily switch a user. It will automatically use the new credentials in that session(terminal).   </p>
+<p>Set bash <a href="/devlog/environment%20variable.html">environment variable</a>s to temporarily switch a user. It will automatically use the new credentials in that session(terminal).   </p>
 </li>
 <li>
 <p><code>export AWS_ACCESS_KEY_ID=&lt;access-key&gt;</code>   </p>
@@ -511,13 +586,13 @@ aws ec2 run-instances <span class="se">\</span>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A192443112125398672389499084154635706537{level}" class="graph_div"></div>
+    <div id="A268285457403869823335847692189678900831{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B192443112125398672389499084154635706537{level}" level="{level}" note_temp_id="192443112125398672389499084154635706537" onclick="window.ObsHtmlGraph.run(this, '192443112125398672389499084154635706537', 'aws.cli');">
+        <button class="graph_button graph_show_button" id="B268285457403869823335847692189678900831{level}" level="{level}" note_temp_id="268285457403869823335847692189678900831" onclick="window.ObsHtmlGraph.run(this, '268285457403869823335847692189678900831', 'aws.cli');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C192443112125398672389499084154635706537{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C268285457403869823335847692189678900831{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -999,6 +1074,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

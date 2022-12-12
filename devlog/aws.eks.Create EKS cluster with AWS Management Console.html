@@ -340,6 +340,8 @@
 <li>Create custom policy and attach a Node Group IAM Role.   </li>
 </ol>
 <p>Custom policy that has:   </p>
+<div class="lang-json">
+
 <div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
@@ -359,6 +361,9 @@
 <span class="w">  </span><span class="p">]</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662482617/wiki/kdel1sdey6zkaahaqnuv.png" />   </p>
 <p>Create the Policy (Managed Policy) and attach it to the existing Node Group IAM Role.   </p>
@@ -391,6 +396,8 @@
 <p>Autoscaler is setup, whenever you add more Pods, it’ll scale up and scales down when not need. It saves cost. But the trade off is that provisioning a new EC2 instance takes time.   </p>
 <h2 id="deploy-application-into-cluster">Deploy application into cluster</h2>
 <p>We’re going to deploy an Ngnix Deployment.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="nn">---</span><span class="w"></span>
 <span class="nt">apiVersion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">apps/v1</span><span class="w"></span>
 <span class="nt">kind</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Deployment</span><span class="w"></span>
@@ -429,6 +436,9 @@
 <span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LoadBalancer</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1662592492/wiki/onkc1ywsk4vep2ot2syz.png" />   </p>
 <p>AWS LoadBalancer needs at least 1 EC2 instances in at least 2 AZs.   </p>
 <p>Find the finished code: <a href="https://gitlab.com/zubayrrr/bootcamp-kubernetes/-/tree/master/eks-cluster-autoscaler" target="_blank" class="external-link">eks-cluster-autoscaler · zubayrrr / bootcamp-kubernetes</a></p>
@@ -449,13 +459,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A175338057781747655700845669951391337182{level}" class="graph_div"></div>
+    <div id="A48653234737969476376772521894514876131{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B175338057781747655700845669951391337182{level}" level="{level}" note_temp_id="175338057781747655700845669951391337182" onclick="window.ObsHtmlGraph.run(this, '175338057781747655700845669951391337182', 'aws.eks.create eks cluster with aws management console');">
+        <button class="graph_button graph_show_button" id="B48653234737969476376772521894514876131{level}" level="{level}" note_temp_id="48653234737969476376772521894514876131" onclick="window.ObsHtmlGraph.run(this, '48653234737969476376772521894514876131', 'aws.eks.create eks cluster with aws management console');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C175338057781747655700845669951391337182{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C48653234737969476376772521894514876131{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -937,6 +947,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -301,6 +301,8 @@
 <h2 id="where-can-you-find-publicly-available-providers">Where can you find publicly available providers?</h2>
 <p>In the <a href="https://registry.terraform.io/browse/providers" target="_blank" class="external-link">Terraform Registry</a>   </p>
 <h2 id="what-are-the-names-of-the-providers-in-this-case">What are the names of the providers in this case?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>terraform {
     required_providers {
       aws = {
@@ -314,8 +316,13 @@
   }
 </code></pre></div>
 
+
+</div>
+
 <p>azurerm and aws   </p>
 <h2 id="true-or-false-applying-the-following-terraform-configuration-will-fail-since-no-source-or-version-specific-for-aws-provider">True or False? Applying the following Terraform configuration will fail since no source or version specific for 'aws' provider</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>terraform {
     required_providers {
       aws = {}
@@ -323,9 +330,14 @@
   }
 </code></pre></div>
 
+
+</div>
+
 <p>False. It will look for "aws" provider in the public Terraform registry and will take the latest version.   </p>
 <h2 id="write-a-configuration-of-a-terraform-provider-any-type-you-would-like">Write a configuration of a Terraform provider (any type you would like)</h2>
 <p>AWS is one of the most popular providers in Terraform. Here is an example of how to configure it to use one specific region and specifying a specific version of the provider   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">terraform</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">required_providers</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">    </span><span class="n">aws</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
@@ -340,6 +352,9 @@
 <span class="w">  </span><span class="n">region</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;us-west-2&quot;</span><span class="w"></span>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="where-terraform-installs-providers-from-by-default">Where Terraform installs providers from by default?</h2>
 <p>By default Terraform providers are installed from Terraform Registry   </p>
@@ -392,6 +407,8 @@ It is also common in the community to use a tool called <code>terragrunt</code> 
 <li>Identify that aws instance in console   </li>
 <li>Refer to it's configuration and write Terraform code which will look something like:   </li>
 </ol>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>resource &quot;aws_instance&quot; &quot;tf_aws_instance&quot; {
   ami           = data.aws_ami.ubuntu.id
   instance_type = &quot;t3.micro&quot;
@@ -401,6 +418,9 @@ It is also common in the community to use a tool called <code>terragrunt</code> 
   }
 }
 </code></pre></div>
+
+
+</div>
 
 <ol>
 <li>Run terraform command <code>terraform import aws_instance.tf_aws_instance i-12345678</code>   </li>
@@ -425,6 +445,8 @@ tuple([<TYPE>, ...])   </p>
 <h2 id="what-are-input-variables-in-terraform-why-one-should-use-them">What are Input Variables in Terraform? Why one should use them?</h2>
 <p>Input variables serve as parameters to the module in Terraform. They allow you for example to define once the value of a variable and use that variable in different places in the module so next time you would want to change the value, you will change it in one place instead of changing the value in different places in the module.   </p>
 <h2 id="how-to-define-variables">How to define variables?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">variable</span><span class="w"> </span><span class="s2">&quot;app_id&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string</span><span class="w"></span>
 <span class="w">  </span><span class="n">description</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;The id of application&quot;</span><span class="w"></span>
@@ -432,10 +454,15 @@ tuple([<TYPE>, ...])   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Usually they are defined in their own file (vars.tf for example).   </p>
 <h2 id="how-variables-are-used-in-modules">How variables are used in modules?</h2>
 <p>They are referenced with <code>var.VARIABLE_NAME</code>   </p>
 <p>vars.tf:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">variable</span><span class="w"> </span><span class="s2">&quot;memory&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">string</span><span class="w"></span>
 <span class="w">  </span><span class="n">default</span><span class="w"> </span><span class="s2">&quot;8192&quot;</span><span class="w"></span>
@@ -447,7 +474,12 @@ tuple([<TYPE>, ...])   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>main.tf:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">resource</span><span class="w"> </span><span class="s2">&quot;libvirt_domain&quot;</span><span class="w"> </span><span class="s2">&quot;vm1&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">   </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;vm1&quot;</span><span class="w"></span>
 <span class="w">   </span><span class="n">memory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">var</span><span class="o">.</span><span class="n">memory</span><span class="w"></span>
@@ -455,8 +487,13 @@ tuple([<TYPE>, ...])   </p>
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="how-would-you-enforce-users-that-use-your-variables-to-provide-values-with-certain-constraints-for-example-a-number-greater-than-1">How would you enforce users that use your variables to provide values with certain constraints? For example, a number greater than 1</h2>
 <p>Using <code>validation</code> block   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">variable</span><span class="w"> </span><span class="s2">&quot;some_var&quot;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 <span class="w">  </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">number</span><span class="w"></span>
 
@@ -467,6 +504,9 @@ tuple([<TYPE>, ...])   </p>
 
 <span class="p">}</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-is-the-effect-of-setting-variable-as-sensitive">What is the effect of setting variable as "sensitive"?</h2>
 <p>It doesn't show its value when you run <code>terraform apply</code> or <code>terraform plan</code> but eventually it's still recorded in the state file.   </p>
@@ -487,10 +527,15 @@ tuple([<TYPE>, ...])   </p>
 </ul>
 <h2 id="what-other-way-is-there-to-define-lots-of-variables-in-more-simplified-way">What other way is there to define lots of variables in more "simplified" way?</h2>
 <p>Using <code>.tfvars</code> file which contains variable consists of simple variable names assignments this way:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>x = 2
 y = &quot;mario&quot;
 z = &quot;luigi&quot;
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-s-terraform-state">What's Terraform State?</h2>
 <p><a href="https://www.terraform.io/language/state" target="_blank" class="external-link">Terraform.io</a>: "Terraform must store state about your managed infrastructure and configuration. This state is used by Terraform to map real world resources to your configuration, keep track of metadata, and to improve performance for large infrastructures."   </p>
@@ -558,13 +603,13 @@ z = &quot;luigi&quot;
 
 </div>
 <div class="graph requires_js ">
-    <div id="A86244206656126893147520719603514616408{level}" class="graph_div"></div>
+    <div id="A255739620784807014972479983302515097117{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B86244206656126893147520719603514616408{level}" level="{level}" note_temp_id="86244206656126893147520719603514616408" onclick="window.ObsHtmlGraph.run(this, '86244206656126893147520719603514616408', 'terraform.flashcards');">
+        <button class="graph_button graph_show_button" id="B255739620784807014972479983302515097117{level}" level="{level}" note_temp_id="255739620784807014972479983302515097117" onclick="window.ObsHtmlGraph.run(this, '255739620784807014972479983302515097117', 'terraform.flashcards');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C86244206656126893147520719603514616408{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C255739620784807014972479983302515097117{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -1046,6 +1091,7 @@ z = &quot;luigi&quot;
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -222,7 +222,7 @@
 <li><a href="#resources" class="anchor-link">Resources</a></li>
 </ul>
 </div>
-<p>It is a service offered by Amazon that is used for the purpose of deployment. It helps in the automation of the application deployment of Amazon EC2 instances, on premise instances, <a href="/devlog/serverless.html">serverless</a> Lambda functions, and <a href="/devlog/AWS ECS.html">AWS ECS</a> services.   </p>
+<p>It is a service offered by Amazon that is used for the purpose of deployment. It helps in the automation of the application deployment of Amazon EC2 instances, on premise instances, <a href="/devlog/serverless.html">serverless</a> Lambda functions, and <a href="/devlog/AWS%20ECS.html">AWS ECS</a> services.   </p>
 <p>You can also deploy to hundreds to <a href="/devlog/aws.EC2.html">aws.EC2</a> instances across multiple regions(EC2 Placement Group).   </p>
 <h2 id="get-started">Get started</h2>
 <p>Provision an IAM user with access to CodeDeploy, attach CodeDeploy policy to the user or to the group or create a role for your <a href="/devlog/aws.EC2.html">aws.EC2</a>   </p>
@@ -230,7 +230,7 @@
 <p>Also create a role for AWS CodeDeploy   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655276831/wiki/kr76xkzjndcvvdrkrzjx.png" />   </p>
 <p>Make sure your roles have necessary policies attached.   </p>
-<p>Before creating any instances, make sure you create a <a href="/devlog/load balancer.html">load balancer</a> for your EC2 Instances.   </p>
+<p>Before creating any instances, make sure you create a <a href="/devlog/load%20balancer.html">load balancer</a> for your EC2 Instances.   </p>
 <ul>
 <li>We deploy <strong>Revisions</strong>   </li>
 <li>How to deploy and rate of deployment is informed by <strong>Deployment Configuration</strong>   </li>
@@ -242,19 +242,19 @@
 <p>It is simply a name identifier used to reference your deployment settings.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655279039/wiki/hxyajjgibg8e0p40uyjp.png" />   </p>
 <h3 id="deployment-group">Deployment group</h3>
-<p>It is the instance or instances where you want to target and deploy your code(these can be anything like <a href="/devlog/aws.EC2.html">aws.EC2</a>, <a href="/devlog/AWS Lambda.html">AWS Lambda</a>, On-prem)   </p>
+<p>It is the instance or instances where you want to target and deploy your code(these can be anything like <a href="/devlog/aws.EC2.html">aws.EC2</a>, <a href="/devlog/AWS%20Lambda.html">AWS Lambda</a>, On-prem)   </p>
 <p>Set of individual instances targeted for a deployment.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655279075/wiki/wniwxneyipowixraaycf.png" />   </p>
-<p>Use <a href="/devlog/AWS Route53.html">AWS Route53</a> to point your domain to the load balancer.   </p>
+<p>Use <a href="/devlog/AWS%20Route53.html">AWS Route53</a> to point your domain to the load balancer.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655279389/wiki/mccbiihnndd3o8uhi9fs.png" />   </p>
 <h3 id="deployment-configuration">Deployment Configuration</h3>
 <p>It is a set of rules, success and failure conditions used by CodeDeploy for deployment.   </p>
 <p>It uses minimum healthy host value to determine what percentage of instances need to be up all the time from the configuration file.   </p>
 <p>To add automation we can bring in:   </p>
 <ul>
-<li><a href="/devlog/AWS EventBridge.html">AWS EventBridge</a> - monitor deployment   </li>
+<li><a href="/devlog/AWS%20EventBridge.html">AWS EventBridge</a> - monitor deployment   </li>
 <li><a href="/not_created.html" class="nonexistent-link">AWS SNS</a> - subscribe to SNS topic for notifications(email)   </li>
-<li><a href="/devlog/AWS Lambda.html">AWS Lambda</a> - to get instant/immediate updates on deployment (Slack)   </li>
+<li><a href="/devlog/AWS%20Lambda.html">AWS Lambda</a> - to get instant/immediate updates on deployment (Slack)   </li>
 </ul>
 <p>We can automate redeployment or rollback based on the result of our deployment.   </p>
 <p>Default deployment options are:   </p>
@@ -265,7 +265,9 @@
 </ul>
 <h3 id="appspec-yml-file"><code>appspec.yml</code> file</h3>
 <p><code>appspec.yml</code> is the file that has all the instructions for the deployment process.   </p>
-<p>It is used to manage each deployment as a series of lifecycle event hooks (much like <a href="/devlog/AWS Auto Scaling Group.html">AWS Auto Scaling Group</a>). These event hooks are defined in the file.   </p>
+<p>It is used to manage each deployment as a series of lifecycle event hooks (much like <a href="/devlog/AWS%20Auto%20Scaling%20Group.html">AWS Auto Scaling Group</a>. These event hooks are defined in the file.   </p>
+<div class="lang-yaml">
+
 <div class="codehilite"><pre><span></span><code><span class="c1"># appspecstub.yaml</span><span class="w"></span>
 <span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.0</span><span class="w"></span>
 <span class="nt">os</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linux</span><span class="w"></span>
@@ -291,6 +293,9 @@
 <span class="w">      </span><span class="nt">timeout</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span><span class="w"></span>
 <span class="w">      </span><span class="nt">runas</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">root</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h3 id="revision">Revision</h3>
 <p>A revision refers to the bundle (zip, tar files) containing the current group of files you want to deploy. It could be an update, bug fixes, deployment for the first time.   </p>
@@ -318,13 +323,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A13626401188316158322210920071973639230{level}" class="graph_div"></div>
+    <div id="A53875878043278350511267217441536465510{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B13626401188316158322210920071973639230{level}" level="{level}" note_temp_id="13626401188316158322210920071973639230" onclick="window.ObsHtmlGraph.run(this, '13626401188316158322210920071973639230', 'aws codedeploy');">
+        <button class="graph_button graph_show_button" id="B53875878043278350511267217441536465510{level}" level="{level}" note_temp_id="53875878043278350511267217441536465510" onclick="window.ObsHtmlGraph.run(this, '53875878043278350511267217441536465510', 'aws codedeploy');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C13626401188316158322210920071973639230{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C53875878043278350511267217441536465510{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -806,6 +811,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

@@ -214,13 +214,23 @@
 <p>Topics::  <a href="/topics/linux.html">linux</a>   </p>
 <hr />
 <p><code>umount</code> Un<a href="/devlog/mount.html">mount</a>s a previously mounted file system, directory, or file.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo umount /dev/sdb
 </code></pre></div>
 
+
+</div>
+
 <p>You cannot use the <strong>umount</strong> command on a device in use. A device is in use if any file is open for any reason or if a user's current directory is on that device. <br />
 To overcome this use the <code>-l</code> (lazy) option. This causes <code>umount</code> to wait until the file system is able to be safely unmounted.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>sudo umount -l /dev/sdb
 </code></pre></div>
+
+
+</div>
 <div class="note-footer">
 <div class="backlinks">
 <h2>Backlinks</h2>
@@ -237,13 +247,13 @@ To overcome this use the <code>-l</code> (lazy) option. This causes <code>umo
 
 </div>
 <div class="graph requires_js ">
-    <div id="A337094194143459775324223195548188381858{level}" class="graph_div"></div>
+    <div id="A322843646593368429443531916063636988194{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B337094194143459775324223195548188381858{level}" level="{level}" note_temp_id="337094194143459775324223195548188381858" onclick="window.ObsHtmlGraph.run(this, '337094194143459775324223195548188381858', 'umount');">
+        <button class="graph_button graph_show_button" id="B322843646593368429443531916063636988194{level}" level="{level}" note_temp_id="322843646593368429443531916063636988194" onclick="window.ObsHtmlGraph.run(this, '322843646593368429443531916063636988194', 'umount');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C337094194143459775324223195548188381858{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C322843646593368429443531916063636988194{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -725,6 +735,7 @@ To overcome this use the <code>-l</code> (lazy) option. This causes <code>umo
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

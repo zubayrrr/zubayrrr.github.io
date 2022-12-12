@@ -649,13 +649,20 @@ A CI/CD pipeline (using Tekton for example) can run multiple containers in one P
 <p>"CrashLoopBackOff" means the Pod is starting, crashing, starting...and so it repeats itself.<br> <br />
 There are many different reasons to get this error - lack of permissions, init-container misconfiguration, persistent volume connection issue, etc.   </p>
 <p>One of the ways to check why it happened it to run <code>kubectl describe po &lt;POD_NAME&gt;</code> and having a look at the exit code   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="w"> </span><span class="nv">Last</span><span class="w"> </span><span class="nv">State</span>:<span class="w">     </span><span class="nv">Terminated</span><span class="w"></span>
 <span class="w">   </span><span class="nv">Reason</span>:<span class="w">       </span><span class="nv">Error</span><span class="w"></span>
 <span class="w">   </span><span class="k">Exit</span><span class="w"> </span><span class="nv">Code</span>:<span class="w">    </span><span class="mi">100</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Another way to check what's going on, is to run <code>kubectl logs &lt;POD_NAME&gt;</code>. This will provide us with the logs from the containers running in that Pod.   </p>
 <h2 id="explain-the-purpose-of-the-following-lines">Explain the purpose of the following lines</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">livenessProbe</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">exec</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">command</span><span class="o">:</span><span class="w"></span>
@@ -665,15 +672,23 @@ There are many different reasons to get this error - lack of permissions, init-c
 <span class="w">  </span><span class="n">periodSeconds</span><span class="o">:</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>These lines make use of <code>liveness probe</code>. It's used to restart a container when it reaches a non-desired state.<br> <br />
 In this case, if the command <code>cat /appStatus</code> fails, Kubernetes will kill the container and will apply the restart policy. The <code>initialDelaySeconds: 10</code> means that Kubelet will wait 10 seconds before running the command/probe for the first time. From that point on, it will run it every 5 seconds, as defined with <code>periodSeconds</code>   </p>
 <h2 id="explain-the-purpose-of-the-following-lines_1">Explain the purpose of the following lines</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">readinessProbe</span><span class="o">:</span><span class="w"></span>
 <span class="w">      </span><span class="n">tcpSocket</span><span class="o">:</span><span class="w"></span>
 <span class="w">        </span><span class="n">port</span><span class="o">:</span><span class="w"> </span><span class="mi">2017</span><span class="w"></span>
 <span class="w">      </span><span class="n">initialDelaySeconds</span><span class="o">:</span><span class="w"> </span><span class="mi">15</span><span class="w"></span>
 <span class="w">      </span><span class="n">periodSeconds</span><span class="o">:</span><span class="w"> </span><span class="mi">20</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>They define a readiness probe where the Pod will not be marked as "Ready" before it will be possible to connect to port 2017 of the container. The first check/probe will start after 15 seconds from the moment the container started to run and will continue to run the check/probe every 20 seconds until it will manage to connect to the defined port.   </p>
 <h2 id="what-does-the-errimagepull-status-of-a-pod-means">What does the "ErrImagePull" status of a Pod means?</h2>
@@ -711,6 +726,8 @@ Deployments can scale the number of replica pods, enable rollout of updated code
 <h2 id="how-to-create-a-deployment">How to create a deployment?</code></h2>
 <p><code>kubectl create deployment my_first_deployment --image=nginx:alpine</code>   </p>
 <p>OR   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>cat &lt;&lt; EOF | kubectl create -f -
 apiVersion: v1
 kind: Pod
@@ -722,6 +739,9 @@ spec:
     image: nginx:alpine
 EOF
 </code></pre></div>
+
+
+</div>
 
 <h2 id="how-to-verify-a-deployment-was-created">How to verify a deployment was created?</code></h2>
 <p><code>kubectl get deployments</code>   </p>
@@ -780,18 +800,30 @@ Another way is using the deployment configuration file: <code>kubectl delete -f 
 <p><code>kubctl describe service &lt;SERVICE_NAME&gt;</code>   </p>
 <p>It's more common to use <code>kubectl describe svc ...</code>   </p>
 <h2 id="what-the-following-command-does">What the following command does?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>kubectl expose rs some-replicaset --name=replicaset-svc --target-port=2017 --type=NodePort
 </code></pre></div>
 
+
+</div>
+
 <p>It exposes a ReplicaSet by creating a service called 'replicaset-svc'. The exposed port is 2017 (this is the port used by the application) and the service type is NodePort which means it will be reachable externally.   </p>
 <h2 id="true-or-false-the-target-port-in-the-case-of-running-the-following-command-will-be-exposed-only-on-one-of-the-kubernetes-cluster-nodes-but-it-will-routed-to-all-the-pods">True or False? the target port, in the case of running the following command, will be exposed only on one of the Kubernetes cluster nodes but it will routed to all the pods</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code>kubectl expose rs some-replicaset --name=replicaset-svc --target-port=2017 --type=NodePort
 </code></pre></div>
+
+
+</div>
 
 <p>False. It will be exposed on every node of the cluster and will be routed to one of the Pods (which belong to the ReplicaSet)   </p>
 <h2 id="how-to-verify-that-a-certain-service-configured-to-forward-the-requests-to-a-given-pod">How to verify that a certain service configured to forward the requests to a given pod</h2>
 <p>Run <code>kubectl describe service</code> and see if the IPs from "Endpoints" match any IPs from the output of <code>kubectl get pod -o wide</code>   </p>
 <h2 id="explain-what-will-happen-when-running-apply-on-the-following-block">Explain what will happen when running apply on the following block</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">Service</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -807,11 +839,16 @@ Another way is using the deployment configuration file: <code>kubectl delete -f 
 <span class="w">    </span><span class="n">service</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">app</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>It creates a new Service of the type "NodePort" which means it can be used for internal and external communication with the app.<br> <br />
 The port of the application is 8080 and the requests will forwarded to this port. The exposed port is 2017. As a note, this is not a common practice, to specify the nodePort.<br> <br />
 The port used TCP (instead of UDP) and this is also the default so you don't have to specify it.<br> <br />
 The selector used by the Service to know to which Pods to forward the requests. In this case, Pods with the label "type: backend" and "service: some-app".<br>   </p>
 <h2 id="how-to-turn-the-following-service-into-an-external-one">How to turn the following service into an external one?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">spec</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">selector</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">app</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">app</span><span class="w"></span>
@@ -821,7 +858,12 @@ The selector used by the Service to know to which Pods to forward the requests. 
 <span class="w">      </span><span class="n">targetPort</span><span class="o">:</span><span class="w"> </span><span class="mi">8081</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Adding <code>type: LoadBalancer</code> and <code>nodePort</code>   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">spec</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">selector</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="n">app</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">app</span><span class="w"></span>
@@ -832,6 +874,9 @@ The selector used by the Service to know to which Pods to forward the requests. 
 <span class="w">      </span><span class="n">targetPort</span><span class="o">:</span><span class="w"> </span><span class="mi">8081</span><span class="w"></span>
 <span class="w">      </span><span class="n">nodePort</span><span class="o">:</span><span class="w"> </span><span class="mi">32412</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-would-you-use-to-route-traffic-from-outside-the-kubernetes-cluster-to-services-within-a-cluster">What would you use to route traffic from outside the Kubernetes cluster to services within a cluster?</h2>
 <p>Ingress   </p>
@@ -879,12 +924,19 @@ Variables such as <code>[SERVICE_NAME]_SERVICE_HOST</code>, <code>[SERVICE_NAME]
 <p>From Kubernetes docs: "Ingress exposes HTTP and HTTPS routes from outside the cluster to services within the cluster. Traffic routing is controlled by rules defined on the Ingress resource."   </p>
 <p>Read more <a href="https://kubernetes.io/docs/concepts/services-networking/ingress/" target="_blank" class="external-link">here</a>   </p>
 <h2 id="complete-the-following-configuration-file-to-make-it-ingress">Complete the following configuration file to make it Ingress</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">metadata</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">someapp</span><span class="o">-</span><span class="n">ingress</span><span class="w"></span>
 <span class="n">spec</span><span class="o">:</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>There are several ways to answer this question.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">networking</span><span class="o">.</span><span class="na">k8s</span><span class="o">.</span><span class="na">io</span><span class="o">/</span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">Ingress</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -899,7 +951,12 @@ Variables such as <code>[SERVICE_NAME]_SERVICE_HOST</code>, <code>[SERVICE_NAME]
 <span class="w">          </span><span class="n">servicePort</span><span class="o">:</span><span class="w"> </span><span class="mi">8080</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <h2 id="explain-the-meaning-of-http-host-and-backend-directives">Explain the meaning of "http", "host" and "backend" directives</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">networking</span><span class="o">.</span><span class="na">k8s</span><span class="o">.</span><span class="na">io</span><span class="o">/</span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">Ingress</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -913,6 +970,9 @@ Variables such as <code>[SERVICE_NAME]_SERVICE_HOST</code>, <code>[SERVICE_NAME]
 <span class="w">          </span><span class="n">serviceName</span><span class="o">:</span><span class="w"> </span><span class="n">someapp</span><span class="o">-</span><span class="kd">internal</span><span class="o">-</span><span class="n">service</span><span class="w"></span>
 <span class="w">          </span><span class="n">servicePort</span><span class="o">:</span><span class="w"> </span><span class="mi">8080</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>host is the entry point of the cluster so basically a valid domain address that maps to cluster's node IP address<br> <br />
 the http line used for specifying that incoming requests will be forwarded to the internal service using http.<br> <br />
@@ -935,12 +995,17 @@ backend is referencing the internal service (serviceName is the name under metad
 <p>Create Service resource that specifies the name of the default backend as reflected in <code>kubectl describe ingress ...</code> and the port under the ports section.   </p>
 <h2 id="how-to-configure-tls-with-ingress">How to configure TLS with Ingress?</h2>
 <p>Add tls and secretName entries.   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">spec</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">tls</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="o">-</span><span class="w"> </span><span class="n">hosts</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">some_app</span><span class="o">.</span><span class="na">com</span><span class="w"></span>
 <span class="w">    </span><span class="n">secretName</span><span class="o">:</span><span class="w"> </span><span class="n">someapp</span><span class="o">-</span><span class="n">secret</span><span class="o">-</span><span class="n">tls</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="true-or-false-when-configuring-ingress-with-tls-the-secret-component-must-be-in-the-same-namespace-as-the-ingress-component">True or False? When configuring Ingress with TLS, the Secret component must be in the same namespace as the Ingress component</h2>
 <p>True   </p>
@@ -954,6 +1019,8 @@ backend is referencing the internal service (serviceName is the name under metad
 <p><a href="https://kubernetes.io/docs/concepts/workloads/controllers/replicaset" target="_blank" class="external-link">kubernetes.io</a>: "A ReplicaSet's purpose is to maintain a stable set of replica Pods running at any given time. As such, it is often used to guarantee the availability of a specified number of identical Pods."   </p>
 <p>In simpler words, a ReplicaSet will ensure the specified number of Pods replicas is running for a selected Pod. If there are more Pods than defined in the ReplicaSet, some will be removed. If there are less than what is defined in the ReplicaSet then, then more replicas will be added.   </p>
 <h2 id="what-the-following-block-of-lines-does">What the following block of lines does?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">spec</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">replicas</span><span class="o">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
 <span class="w">  </span><span class="n">selector</span><span class="o">:</span><span class="w"></span>
@@ -968,6 +1035,9 @@ backend is referencing the internal service (serviceName is the name under metad
 <span class="w">      </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">httpd</span><span class="o">-</span><span class="n">yup</span><span class="w"></span>
 <span class="w">        </span><span class="n">image</span><span class="o">:</span><span class="w"> </span><span class="n">httpd</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>It defines a replicaset for Pods whose type is set to "backend" so at any given point of time there will be 2 concurrent Pods running.   </p>
 <h2 id="what-will-happen-when-a-pod-created-by-replicaset-is-deleted-directly-with-kubectl-delete-po">What will happen when a Pod, created by ReplicaSet, is deleted directly with <code>kubectl delete po ...</code>?</h2>
@@ -1108,12 +1178,17 @@ A DaemonSet ensures that all Nodes run a copy of a Pod.   </p>
 <h2 id="how-to-create-a-namespace">How to create a namespace?</h2>
 <p>One way is by running <code>kubectl create namespace [NAMESPACE_NAME]</code>   </p>
 <p>Another way is by using namespace configuration file:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">ConfigMap</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">cofngimap</span><span class="w"></span>
 <span class="w">  </span><span class="kd">namespace</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="kd">namespace</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-default-namespace-contains">What default namespace contains?</h2>
 <p>Any resource you create while using Kubernetes.   </p>
@@ -1132,6 +1207,8 @@ A DaemonSet ensures that all Nodes run a copy of a Pod.   </p>
 <h2 id="let-s-say-you-have-three-namespaces-x-y-and-z-in-x-namespace-you-have-a-configmap-referencing-service-in-z-namespace-can-you-reference-the-configmap-in-x-namespace-from-y-namespace">Let's say you have three namespaces: x, y and z. In x namespace you have a ConfigMap referencing service in z namespace. Can you reference the ConfigMap in x namespace from y namespace?</code></h2>
 <p>No, you would have to create separate namespace in y namespace.   </p>
 <h2 id="which-service-and-in-which-namespace-the-following-file-is-referencing">Which service and in which namespace the following file is referencing?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">ConfigMap</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -1139,6 +1216,9 @@ A DaemonSet ensures that all Nodes run a copy of a Pod.   </p>
 <span class="n">data</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">some_url</span><span class="o">:</span><span class="w"> </span><span class="n">samurai</span><span class="o">.</span><span class="na">jack</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>It's referencing the service "samurai" in the namespace called "jack".   </p>
 <h2 id="which-components-can-t-be-created-within-a-namespace">Which components can't be created within a namespace?</code></h2>
@@ -1148,12 +1228,17 @@ A DaemonSet ensures that all Nodes run a copy of a Pod.   </p>
 <h2 id="how-to-create-components-in-a-namespace">How to create components in a namespace?</code></h2>
 <p>One way is by specifying --namespace like this: <code>kubectl apply -f my_component.yaml --namespace=some-namespace</code> <br />
 Another way is by specifying it in the YAML itself:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">ConfigMap</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">configmap</span><span class="w"></span>
 <span class="w">  </span><span class="kd">namespace</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="kd">namespace</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>and you can verify with: <code>kubectl get configmap -n some-namespace</code>   </p>
 <h2 id="how-to-execute-the-command-ls-in-an-existing-pod">How to execute the command "ls" in an existing pod?</code></h2>
@@ -1253,6 +1338,8 @@ Use kubeconfig files to organize information about clusters, users, namespaces, 
 <h2 id="true-or-false-storing-data-in-a-secret-component-makes-it-automatically-secured">True or False? storing data in a Secret component makes it automatically secured</h2>
 <p>False. Some known security mechanisms like "encryption" aren't enabled by default.   </p>
 <h2 id="what-is-the-problem-with-the-following-secret-file">What is the problem with the following Secret file:</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">Secret</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -1262,11 +1349,16 @@ Use kubeconfig files to organize information about clusters, users, namespaces, 
 <span class="w">    </span><span class="n">password</span><span class="o">:</span><span class="w"> </span><span class="n">mySecretPassword</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>Password isn't encrypted. <br />
 You should run something like this: <code>echo -n 'mySecretPassword' | base64</code> and paste the result to the file instead of using plain-text.   </p>
 <h2 id="how-to-create-a-secret-from-a-configuration-file">How to create a Secret from a configuration file?</h2>
 <p><code>kubectl apply -f some-secret.yaml</code>   </p>
 <h2 id="what-the-following-in-deployment-configuration-file-means">What the following in Deployment configuration file means?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">spec</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">containers</span><span class="o">:</span><span class="w"></span>
 <span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">USER_PASSWORD</span><span class="w"></span>
@@ -1275,6 +1367,9 @@ You should run something like this: <code>echo -n 'mySecretPassword' | base64</c
 <span class="w">          </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">secret</span><span class="w"></span>
 <span class="w">          </span><span class="n">key</span><span class="o">:</span><span class="w"> </span><span class="n">password</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>USER_PASSWORD environment variable will store the value from password key in the secret called "some-secret" <br />
 In other words, you reference a value from a Kubernetes Secret.   </p>
@@ -1336,6 +1431,8 @@ Without this container, the application would not exist. In addition to the appl
 <h2 id="explain-what-is-cronjob-and-what-is-it-used-for">Explain what is CronJob and what is it used for</h2>
 <p>A CronJob creates Jobs on a repeating schedule. One CronJob object is like one line of a crontab (cron table) file. It runs a job periodically on a given schedule, written in Cron format.   </p>
 <h2 id="what-possible-issue-can-arise-from-using-the-following-spec-and-how-to-fix-it">What possible issue can arise from using the following spec and how to fix it?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">batch</span><span class="o">/</span><span class="n">v1beta1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">CronJob</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -1346,9 +1443,14 @@ Without this container, the application would not exist. In addition to the appl
 <span class="w">  </span><span class="n">concurrencyPolicy</span><span class="o">:</span><span class="w"> </span><span class="n">Allow</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>If the cron job fails, the next job will not replace the previous one due to the "concurrencyPolicy" value which is "Allow". It will keep spawning new jobs and so eventually the system will be filled with failed cron jobs. <br />
 To avoid such problem, the "concurrencyPolicy" value should be either "Replace" or "Forbid".   </p>
 <h2 id="what-issue-might-arise-from-using-the-following-cronjob-and-how-to-fix-it">What issue might arise from using the following CronJob and how to fix it?</h2>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">batch</span><span class="o">/</span><span class="n">v1beta1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">CronJob</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -1365,11 +1467,19 @@ To avoid such problem, the "concurrencyPolicy" value should be either "Replace" 
 <span class="w">      </span><span class="n">failedJobsHistoryLimit</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>The following lines placed under the template:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">concurrencyPolicy</span><span class="o">:</span><span class="w"> </span><span class="n">Forbid</span><span class="w"></span>
 <span class="n">successfulJobsHistoryLimit</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 <span class="n">failedJobsHistoryLimit</span><span class="o">:</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <p>As a result this configuration isn't part of the cron job spec hence the cron job has no limits which can cause issues like OOM and potentially lead to API server being down.<br> <br />
 To fix it, these lines should placed in the spec of the cron job, above or under the "schedule" directive in the above example.   </p>
@@ -1442,6 +1552,8 @@ It is mostly used in testing environments such as CI pipelines or local hooks.  
 <p>Helm Charts is a bundle of YAML files. A bundle that you can consume from repositories or create your own and publish it to the repositories.   </p>
 <h2 id="it-is-said-that-helm-is-also-templating-engine-what-does-it-mean">It is said that Helm is also Templating Engine. What does it mean?</h2>
 <p>It is useful for scenarios where you have multiple applications and all are similar, so there are minor differences in their configuration files and most values are the same. With Helm you can define a common blueprint for all of them and the values that are not fixed and change can be placeholders. This is called a template file and it looks similar to the following   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">apiVersion</span><span class="o">:</span><span class="w"> </span><span class="n">v1</span><span class="w"></span>
 <span class="n">kind</span><span class="o">:</span><span class="w"> </span><span class="n">Pod</span><span class="w"></span>
 <span class="n">metadata</span><span class="o">:</span><span class="w"></span>
@@ -1453,13 +1565,21 @@ It is mostly used in testing environments such as CI pipelines or local hooks.  
 <span class="w">  </span><span class="n">port</span><span class="o">:</span><span class="w"> </span><span class="o">{{</span><span class="w"> </span><span class="o">.</span><span class="na">Values</span><span class="o">.</span><span class="na">container</span><span class="o">.</span><span class="na">port</span><span class="w"> </span><span class="o">}}</span><span class="w"></span>
 </code></pre></div>
 
+
+</div>
+
 <p>The values themselves will in separate file:   </p>
+<div class="lang-general">
+
 <div class="codehilite"><pre><span></span><code><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">app</span><span class="w"></span>
 <span class="n">container</span><span class="o">:</span><span class="w"></span>
 <span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">app</span><span class="o">-</span><span class="n">container</span><span class="w"></span>
 <span class="w">  </span><span class="n">image</span><span class="o">:</span><span class="w"> </span><span class="n">some</span><span class="o">-</span><span class="n">app</span><span class="o">-</span><span class="n">image</span><span class="w"></span>
 <span class="w">  </span><span class="n">port</span><span class="o">:</span><span class="w"> </span><span class="mi">1991</span><span class="w"></span>
 </code></pre></div>
+
+
+</div>
 
 <h2 id="what-are-some-use-cases-for-using-helm-template-file">What are some use cases for using Helm template file?</h2>
 <ul>
@@ -1526,13 +1646,13 @@ You might see one of the following:   </p>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A258581187941343866405215265037623721335{level}" class="graph_div"></div>
+    <div id="A224865706101403098640133123208631844647{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B258581187941343866405215265037623721335{level}" level="{level}" note_temp_id="258581187941343866405215265037623721335" onclick="window.ObsHtmlGraph.run(this, '258581187941343866405215265037623721335', 'kubernetes.flashcards');">
+        <button class="graph_button graph_show_button" id="B224865706101403098640133123208631844647{level}" level="{level}" note_temp_id="224865706101403098640133123208631844647" onclick="window.ObsHtmlGraph.run(this, '224865706101403098640133123208631844647', 'kubernetes.flashcards');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C258581187941343866405215265037623721335{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C224865706101403098640133123208631844647{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -2014,6 +2134,7 @@ You might see one of the following:   </p>
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>

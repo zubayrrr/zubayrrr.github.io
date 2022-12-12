@@ -46,6 +46,7 @@ The mnemonic to remember the data types in the OSI model is: "**D**on't **S**ome
    
 ---   
    
+
    
 # Layer 1 – Physical layer   
    
@@ -153,6 +154,7 @@ Devices that give physical response, hence a physical layer device.
   - Wireless Access Points   
   - [Media Converters](../devlog/media%20converters.md)
    
+
    
 # Layer 2 – Data-link Layer   
    
@@ -190,6 +192,7 @@ LLC allows a device to make a request for either less information at a time or t
 - [Switch](../devlog/switch.md)es   
 - [MAC](../devlog/mac.md) Addresses
    
+
    
 # Layer 3 – Network Layer   
    
@@ -291,6 +294,7 @@ The IP addressing is a connectionless service, thus the layer -3 provides a conn
    
 At the receiving end, it again reassembles them to the original size, thus becoming space efficient as a medium less load.
    
+
    
 # Layer 4 – Transport Layer   
    
@@ -342,6 +346,7 @@ This error detection & control method permits a receiver to rebuild the original
    
 See: [tcp vs udp](../devlog/tcp%20vs%20udp.md)
    
+
    
 # Layer 5 – Session Layer   
    
@@ -398,6 +403,7 @@ This will help in keeping the data safe and the whole data host will never compl
 - [NetBIOS](../devlog/netbios.md)   
   - Used by computers to share files over a network.
    
+
    
 # Layer 6 – Presentation Layer   
    
@@ -449,6 +455,7 @@ As suggested by the name itself, the presentation layer will present the data to
    
 - [TLS](../devlog/tls.md), [SSL](../devlog/ssl.md)
    
+
    
 # Layer 7 – Application Layer   
    
@@ -512,6 +519,7 @@ Application level services in the [OSI Model](../devlog/osi%20model.md) context 
    
 Using [wireshark](../devlog/wireshark.md) packet analyzer to pull apart network traffic and see the different layers of the OSI model.   
    
+
 ## Lab   
    
    

@@ -214,7 +214,7 @@
 <li><a href="#sam-framework-serverless-application-model" class="anchor-link">SAM Framework - Serverless Application Model</a></li>
 </ul>
 </div>
-<p>It is a compute service that lets you run code without having to install it on the operating system/provision a server. <a href="/devlog/serverless.html">serverless</a>. Lambda is stateless. It is event driven. It is a function that is invoked by an event and returns a response. Event sources can be events from <a href="/devlog/aws.S3.html">aws.S3</a>, <a href="/devlog/AWS DynamoDB.html">AWS DynamoDB</a>, <a href="/devlog/AWS API Gateway.html">AWS API Gateway</a>, <a href="/devlog/AWS SES.html">AWS SES</a>, based on these events we can many things.   </p>
+<p>It is a compute service that lets you run code without having to install it on the operating system/provision a server. <a href="/devlog/serverless.html">serverless</a>. Lambda is stateless. It is event driven. It is a function that is invoked by an event and returns a response. Event sources can be events from <a href="/devlog/aws.S3.html">aws.S3</a>, <a href="/devlog/AWS%20DynamoDB.html">AWS DynamoDB</a>, <a href="/devlog/AWS%20API%20Gateway.html">AWS API Gateway</a>, <a href="/devlog/AWS%20SES.html">AWS SES</a>, based on these events we can many things.   </p>
 <ul>
 <li>The Lambda function (Code and Deployment package) is a single file.   </li>
 <li>Memory Size Specification.   </li>
@@ -228,7 +228,7 @@
 <p>You can publish one or more versions of your Lambda functions. Each Lambda function has a unique ARN. Once published it cannot be changed. Latest version of the function is tagged as <strong>$Latest</strong> (which happens to be default version).   </p>
 <p>An Alias is a pointer to a specific Lambda function version. Each Alias has a unique ARN and unique Lambda functions they can be modified can be updated to point to different Lambda functions. They can be used for debugging and are ideal for rapid rollback deployments. Be careful when pointing multiple aliases to one version.   </p>
 <h2 id="sam-framework-serverless-application-model">SAM Framework - Serverless Application Model</h2>
-<p>It is an open source framework for building serverless applications. It provides shorthand syntax to expression functions, APIs, databases, event source mappings. We do this using <a href="/devlog/languages.YAML.html">languages.YAML</a>. It integrates with <a href="/devlog/aws.CloudFormation.html">aws.CloudFormation</a>. To use it we install <a href="/devlog/AWS SAM.html">AWS SAM</a> Cli, it provides a Lambda like execution environment to locally build, test and debug your applications and prepare them for integration with CloudFormation.   </p>
+<p>It is an open source framework for building serverless applications. It provides shorthand syntax to expression functions, APIs, databases, event source mappings. We do this using <a href="/devlog/languages.YAML.html">languages.YAML</a>. It integrates with <a href="/devlog/aws.CloudFormation.html">aws.CloudFormation</a>. To use it we install <a href="/devlog/AWS%20SAM.html">AWS SAM</a> Cli, it provides a Lambda like execution environment to locally build, test and debug your applications and prepare them for integration with CloudFormation.   </p>
 <p>It provides a bridge between Lambda and CloudFormation. Ultimately, we can store our Lambda functions and execute them within CloudFormation(templates). It is basically a CloudFormation extension optimized for serverless applications. Using the <strong>Transform function</strong> we can include SAM code in our CF templates.   </p>
 <p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1655655371/wiki/mhvxogw0tbatikroqohf.png" />   </p>
 <p>There is no charge for SAM. You’re only charged for the resources created.</p>
@@ -253,13 +253,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A237977750077463058271669845711544200048{level}" class="graph_div"></div>
+    <div id="A282681092406305381926166575144085279907{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B237977750077463058271669845711544200048{level}" level="{level}" note_temp_id="237977750077463058271669845711544200048" onclick="window.ObsHtmlGraph.run(this, '237977750077463058271669845711544200048', 'aws lambda');">
+        <button class="graph_button graph_show_button" id="B282681092406305381926166575144085279907{level}" level="{level}" note_temp_id="282681092406305381926166575144085279907" onclick="window.ObsHtmlGraph.run(this, '282681092406305381926166575144085279907', 'aws lambda');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C237977750077463058271669845711544200048{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C282681092406305381926166575144085279907{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -741,6 +741,7 @@
 		<li><a class="" href="/devlog/Azure Advanced Threat Protection.html"  >Azure Advanced Threat Protection</a></li>
 		<li><a class="" href="/devlog/Azure Advisor.html"  >Azure Advisor</a></li>
 		<li><a class="" href="/devlog/Azure Batch.html"  >Azure Batch</a></li>
+		<li><a class="" href="/devlog/Azure CLI.html"  >Azure CLI</a></li>
 		<li><a class="" href="/devlog/Azure Container Instances.html"  >Azure Container Instances</a></li>
 		<li><a class="" href="/devlog/Azure Functions.html"  >Azure Functions</a></li>
 		<li><a class="" href="/devlog/Azure Kubernetes Service.html"  >Azure Kubernetes Service</a></li>
