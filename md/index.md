@@ -100,9 +100,8 @@ This wiki was made possible with:
    
    
 - [About me](./archive/about.md)   
-- [Blog](https://zubayrali.in)   
-- [VocabJournal](https://lexicon.zubayrali.in)   
+- [Blog](https://zubayrali-in.netlify.app)   
+- [VocabJournal](https://zubayrrr.github.io/vocabJournal)   
 - [Github](https://github.com/zubayrrr)   
 - [Twitter](https://twitter.com/zoobhalu)   
-- [Blog](https://zubayrali.in)   
 - [Guestbook](https://www.yourworldoftext.com/~zubayrali/)
