@@ -12,7 +12,7 @@ tags:
 - sayings
 - phrases
 - people
-- webmark;
+- webmark
 - quotes
 title: /root
 updated: 1662909500650
@@ -54,7 +54,7 @@ This wiki was made possible with:
 - Make no distinction between "your" ideas and ideas of "others", because if you vibe with an idea; it's already yours.   
 - But also remember "If you've time to consume, you've time to produce.".   
 - Use [raindrop.io](https://raindrop.io) to manage your URL bookmarks.   
-- If you need to bookmark a webpage or an article all together, use [MarkDownload](https://chrome.google.com/webstore/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi?hl=en-GB) to rip the entire page. Let's call it a `{_obsidian_pattern_tag_webmark;}` it belong in the `/inbox`.   
+- If you need to bookmark a webpage or an article all together, use [MarkDownload](https://chrome.google.com/webstore/detail/markdownload-markdown-web/pcmpcfapbekmbjjkdalcgopdkipoggdi?hl=en-GB) to rip the entire page. Let's call it a `{_obsidian_pattern_tag_webmark}` ; it belong in the `/inbox`.   
 - Similar process is employed for capturing tweets using [tweet-to-markdown](https://github.com/kbravh/tweet-to-markdown) and it also belongs in the `/inbox`.   
    
 ### Don't force evolution   
