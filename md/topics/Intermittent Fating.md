@@ -22,4 +22,4 @@ To start doing intermittent fasting, you can try the following steps:
 3.  Don't eat or drink anything but water outside of your eating window. This means avoiding all food and drinks, except for water, during your fasting period. You can drink other calorie-free beverages, such as black coffee or tea, but avoid adding sugar or cream, as these can contain calories.   
 4.  Continue this pattern on a regular basis. You can do intermittent fasting every day, or a few days per week, depending on what works best for you.   
    
-Via — [ChatGPT](/not_created.md)
+Via — [ChatGPT](../devlog/ChatGPT.md)

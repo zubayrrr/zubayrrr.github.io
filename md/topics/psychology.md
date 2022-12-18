@@ -398,4 +398,5 @@ The connectome is the complete description of the structural connectivity (the p
    
    
 - [The Tyranny of the Shoulds — The Room - Psy](https://www.theroompsy.com/the-green-space-well-being/the-tyranny-of-the-shoulds)   
-- [Fetching Title#dkyj](https://psychiatry.org/psychiatrists/practice/dsm)
+- [Psychiatry.org - DSM](https://psychiatry.org/psychiatrists/practice/dsm)   
+- [What does the ‘still face’ experiment teach us about connection? - PsychHelp](https://psychhelp.com.au/what-does-the-still-face-experiment-teach-us-about-connection/)

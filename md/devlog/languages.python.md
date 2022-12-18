@@ -31,4 +31,5 @@ updated: 1658681069506
 ## Labs   
    
    
-- [website monitoring](../devlog/website%20monitoring.md)
+- [website monitoring](../devlog/website%20monitoring.md)   
+- [compare two csv files](../devlog/compare%20two%20csv%20files.md)

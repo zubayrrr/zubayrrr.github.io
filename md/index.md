@@ -18,7 +18,7 @@ title: /root
 updated: 1662909500650
 ---
    
-# The Unthought Known   
+# Cyber-Samadhi   
    
 This is [my](./archive/about.md) personal wiki, a commonplace book, a [digital garden](./archive/Digital%20Garden.md), a [Second Brain](./archive/Second%20Brain.md); notes by me, for me.   
    

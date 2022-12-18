@@ -903,4 +903,6 @@ Create an S3 bucket in your AWS account. Make sure to block public access.
    
    
 - `versions.tf` - you can provide the version of your provider(AWS, GCP etc or Custom providers)   
-- `random_string` (Resource) - The resource `random_string` generates a random permutation of alphanumeric characters and optionally special characters.
+- `random_string` (Resource) - The resource `random_string` generates a random permutation of alphanumeric characters and optionally special characters.   
+- `locals` - `common_tags`, `default_tags`   
+- merge function

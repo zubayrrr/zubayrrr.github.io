@@ -30,6 +30,11 @@ Via - [Work Chronicles | Common Salary Negotiation Mistakes](https://twitter.com
 > A career moat is an individual’s ability to maintain competitive advantages over your competition (say, in the job market) in order to protect your long term prospects, your employability, and your ability to generate sufficient financial returns to support the life you want to live. Just like a medieval castle, the moat serves to protect those inside the fortress and their riches from outsiders.   
  — via [Career Moats 101 - Commoncog](https://commoncog.com/career-moats-101/)   
    
+## Books   
+   
+   
+- [The Fake Resume Guide](../resources/books/The%20Fake%20Resume%20Guide.md)    
+   
 ## Resources   
    
    

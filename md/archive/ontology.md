@@ -25,7 +25,7 @@ At a high level, this note defines the tags/categories of notes.
    
 A tag defines the category of note at its most fundamental level, a tag can be used to define subcategories; such as:   
    
-Let’s say we’ve a note [Machine Learning](../topics/machine%20learning.md) tagged with \#topics and we have a note [Machine learning algorithms](../devlog/machine%20learning%20algorithms.md), this note will not be tagged \#CS or \#Machine-Learning or \#topics, it'll instead be backlinked to [Machine Learning](../topics/machine%20learning.md) under `Topics:`   
+Let’s say we’ve a note [machine learning](../devlog/machine%20learning.md) tagged with \#topics and we have a note [Machine learning algorithms](../devlog/machine%20learning%20algorithms.md), this note will not be tagged \#CS or \#Machine-Learning or \#topics, it'll instead be backlinked to [machine learning](../devlog/machine%20learning.md) under `Topics:`   
    
 I was pretty much lost, unable to find a way to properly use tags, until the timely discovery of this article: [How to Use Tags](https://karl-voit.at/2022/01/29/How-to-Use-Tags/)   
    

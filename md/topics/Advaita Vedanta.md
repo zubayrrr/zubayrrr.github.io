@@ -24,6 +24,22 @@ Gaudapada was an Indian philosopher who lived in the 6th century CE. He is best 
    
 See also:: [quantum](../topics/quantum.md)   
    
+## Quotes   
+   
+   
+- "The ultimate goal of human life is to realize the identity of the individual self and the ultimate reality." - Adi Shankara   
+- "The world is not separate from the Self. The Self is the world." - Ramana Maharshi   
+- "The individual self is nothing but the supreme Self, covered by the veil of ignorance." - Sankara   
+- "The Self is not something to be attained. It is already present. It is the essential nature of the individual." - Swami Satchidananda   
+- "The Self is the only reality. The ego, the individual self, is an illusion." - Swami Sivananda   
+- "The Self is not an object to be known, but the very source of knowledge itself." - Swami Vivekananda   
+- "The Self is not separate from the universe, nor is the universe separate from the Self. The Self is the universe and the universe is the Self." - Shankara   
+- "The world is a construct of our sensations, perceptions, memories. It is convenient to regard it as existing objectively on its own. But it certainly does not become manifest by its mere existence." - Erwin Schrödinger   
+- What we observe as material bodies and forces are nothing but shapes and variations in the structure of space. Particles are just schaumkommen (appearances)." - Erwin Schrödinger   
+- "The total number of minds in the world is one." - Erwin Schrödinger   
+- "The unity and continuity of mind is not impaired by the separation of bodies." - Erwin Schrödinger   
+- "I am not a unit. I am a unity." - Erwin Schrödinger   
+   
 ## Resources   
    
    

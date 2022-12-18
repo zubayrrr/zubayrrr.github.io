@@ -6,7 +6,7 @@ title: Machine learning algorithms
 updated: 1653437887100
 ---
    
-Topics::  [Machine Learning](../topics/machine%20learning.md)   
+Topics::  [machine learning](../devlog/machine%20learning.md)   
    
    
   - 1.Supervised   

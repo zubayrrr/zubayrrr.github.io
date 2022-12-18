@@ -6,7 +6,7 @@ title: Multi-armed bandit
 updated: 1653437887090
 ---
    
-Topics::  [Machine Learning](../topics/machine%20learning.md)   
+Topics::  [machine learning](../devlog/machine%20learning.md)   
    
    
 ---   

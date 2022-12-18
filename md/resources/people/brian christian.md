@@ -10,7 +10,7 @@ updated: 1653437887094
 ---
    
    
-- `Keywords:` [Rationality](../../topics/rationality.md), [Decision Making](../../topics/decision%20making.md), [computer science](../../topics/computer%20science.md), [Machine Learning](../../topics/machine%20learning.md), [Artificial Intelligence](../../topics/artificial%20intelligence.md), [ethics](../../topics/ethics.md)   
+- `Keywords:` [Rationality](../../topics/rationality.md), [Decision Making](../../topics/decision%20making.md), [computer science](../../topics/computer%20science.md), [machine learning](../../devlog/machine%20learning.md), [Artificial Intelligence](../../topics/artificial%20intelligence.md), [ethics](../../topics/ethics.md)   
 Profession::   
 Related::   
    
