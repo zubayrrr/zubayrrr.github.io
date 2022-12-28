@@ -8,3 +8,7 @@ title: Writing
 updated: 1665608039924
 ---
    
+## Resources   
+   
+   
+- [Excelsior OWL | Online Writing Lab | Excelsior University](https://owl.excelsior.edu/)

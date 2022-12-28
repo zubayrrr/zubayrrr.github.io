@@ -54,8 +54,6 @@ Granted that handling of infants, and its symbolic equivalent in grown-ups, reco
 "satisfactions," it would be better to substitute some more non-committal terra, such as "gains" or   
 "advantages.""   
    
-"somatic"   
-   
 "The advantages of social contact revolve around somatic and psychic equilibrium. They are related to the following factors: (1) the relief of tension (2) the avoidance of noxious situations (3) the procurement of stroking and (4) the maintenance of an established equilibrium."   
    
 "The most gratifying forms of social contact, whether or not they are embedded in a matrix of activity, are games and intimacy. Prolonged intimacy is rare, and even then it is primarily a private matter; significant social intercourse most commonly takes the form of games"   
@@ -114,15 +112,15 @@ Visitor: "I've loved barns ever since I was a little girl.""
 "(apotropaic)"   
    
 "Let us now consider Mr. C and Mr. D, who pass each other about once a day, trade one stroke each—Hi-Hi —and go their ways. Mr. C goes on a month's vacation. The day after he returns, he encounters Mr. D as usual. If on this occasion Mr. D   
-merely says "Hi!" and no more, Mr. C will be offended, "his spinal cord will shrivel slightly." By his calculations, Mr. D and he owe each other about thirty strokes. These can be compressed into a few transactions, if those transactions are emphatic enough. Mr. D's side properly runs something like this (where each unit of "intensity" or "interest" is equivalent to a stroke):    
+merely says "Hi!" and no more, Mr. C will be offended, "his spinal cord will shrivel slightly." By his calculations, Mr. D and he owe each other about thirty strokes. These can be compressed into a few transactions, if those transactions are emphatic enough. Mr. D's side properly runs something like this (where each unit of "intensity" or "interest" is equivalent to a stroke):   
    
    
 - 1D: "Hi!" (1 unit.)   
 - 2D: "Haven't seen you around lately." (2 units.)   
-- 3D: "Oh, have you! Where did you go?" (5 units.)     
-- 4D: "Say, that's interesting. How was it?" (7 units.)     
-- 5D: "Well, you're sure looking fine." (4 units.) "Did your family go along?" (4 units.)    
-- 6D: "Well, glad to see you back." (4 units.)     
+- 3D: "Oh, have you! Where did you go?" (5 units.)   
+- 4D: "Say, that's interesting. How was it?" (7 units.)   
+- 5D: "Well, you're sure looking fine." (4 units.) "Did your family go along?" (4 units.)   
+- 6D: "Well, glad to see you back." (4 units.)   
 - 7D: "So long." (I unit.)   
    
 ## CHAPTER FOUR Pastimes   

@@ -55,4 +55,5 @@ I honestly don’t think there’s much to be learnt here, I already have my [va
 ## Resources   
    
    
-- [The Healthy Masculinity of Ted Lasso | therapist explains - YouTube](https://youtu.be/1fHwkYgRBLI)
+- [The Healthy Masculinity of Ted Lasso | therapist explains - YouTube](https://youtu.be/1fHwkYgRBLI)   
+- [Exploring chinese masculinity (and china's ban on effeminate men) - YouTube](https://youtu.be/_JTzR_7jk_Q)

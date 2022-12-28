@@ -9,4 +9,9 @@ title: Aasa Ki Haddu Gudda Ki Siggundali
 updated: 2022-12-18 15:59:21.602000+00:00
 ---
    
-Āśa ki haddu guḍḍa ki siggu uṇḍāli — your desire should have limits and your ass should have some shame
+Related:: [Telugu](../topics/Telugu.md)   
+   
+   
+---   
+   
+Āśa ki haddu gudda ki siggu uṇḍāli — your desire should have limits and your ass should have some shame

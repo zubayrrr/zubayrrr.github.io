@@ -22,6 +22,12 @@ This note’s many aliases include:
 - Weight Training   
 - Lifting   
 - Nutritional Science   
+- Longevity   
+   
+   
+---   
+   
+For longevity - for men it is preferable to have 18-22 % body fat and for women 25-30 %.   
    
 ## Principles   
    
@@ -36,4 +42,5 @@ This note’s many aliases include:
 ## Resources   
    
    
-- [Harvard professor debunks the biggest exercise myths | Daniel Lieberman - YouTube](https://www.youtube.com/watch?v=n6AwsVGJDOY)
+- [Harvard professor debunks the biggest exercise myths | Daniel Lieberman - YouTube](https://www.youtube.com/watch?v=n6AwsVGJDOY)   
+- [Doctor Explains Why It's Actually Not Healthy For Women To Have 6-Pack Abs | Evie Magazine](http://www.eviemagazine.com/post/doctor-explains-why-its-actually-not-healthy-for-women-to-have-6-pack-abs)
