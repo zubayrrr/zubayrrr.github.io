@@ -203,7 +203,7 @@ Think of it like your system or process or a journey
    
 The happiest people are not the ones who achieve the most. They are the ones   
 who spend more time than others in a state of flow. — Héctor García and   
-Francesc Miralles, Ikigai: The Japanese Secret to a Long and Healthy Life   
+Francesc Miralles, Ikigai: The [Japanese](../topics/Japanese.md) Secret to a Long and Healthy Life   
 Artists, for example, who carry the torch of their ikigai instead of retiring, have this   
 power. Art, in all its forms, is an ikigai that can bring happiness and   
 purpose to our days. Enjoying or creating beauty is free, and something all   

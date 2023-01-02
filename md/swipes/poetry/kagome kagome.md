@@ -4,10 +4,14 @@ created: 2022-12-21 09:28:38.663000+00:00
 id: 1fe7671d-09f4-4cf5-bd48-c7c25d4ed68f
 tags:
 - poetry
-- japanese
 title: Kagome Kagome
 updated: 2022-12-21 09:28:39.599000+00:00
 ---
+   
+Topics:: [Japanese](../../topics/Japanese.md)   
+   
+   
+---   
    
 |  かごめかごめ 籠の中の鳥は     
 いついつ出やる　夜明けの晩に     

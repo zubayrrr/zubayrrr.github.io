@@ -8,7 +8,7 @@ title: Oil Pulling
 updated: 2022-12-17 22:49:36.156000+00:00
 ---
    
-Topics:: [Health](/not_created.md)   
+Topics:: [health](../topics/health.md)   
    
    
 ---   

@@ -108,6 +108,8 @@ Eros from Ancient Greek ἔρως (érōs) 'love, desire' is a concept in ancie
 > “This progressive effacement of human relationships is not without certain problems for the novel. How, in point of fact, would one handle the narration of those unbridled passions, stretching over many years, and at times making their effect felt on several generations? **We’re a long way from Wuthering Heights**, to say the least. The novel form is not conceived for depicting indifference or nothingness; a flatter, more terse, and dreary discourse would need to be invented.” ― Michel Houellebecq, [Whatever](https://www.goodreads.com/work/quotes/56842)   
    
 > “Never Love Unless You Can” — Thomas Campion, title of 1617 poem   
+   
+> “Love is a decision, not an emotion.” – Lao Tzu, Tao Te Ching    
 ## Resources   
    
    

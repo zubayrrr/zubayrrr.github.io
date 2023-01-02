@@ -4,15 +4,13 @@ desc: ''
 id: 5yojs3wsqs49cbifb0eqcs9
 tags:
 - people
-- japanese
 title: Ikkyū
 updated: 1652818011782
 ---
    
-   
-- `Keywords:` [buddhism](../../topics/buddhism.md), [Zen](/not_created.md)   
+Keywords: [buddhism](../../topics/buddhism.md), [Zen](/not_created.md)   
 Profession::   
-Related::   
+Related:: [Japanese](../../topics/Japanese.md)   
    
    
 ---   

@@ -8,7 +8,7 @@ title: Hachikō
 updated: 1652786931142
 ---
    
-Topics::  [Japanese](/not_created.md)   
+Topics::  [Japanese](../topics/Japanese.md)   
    
    
 ---   

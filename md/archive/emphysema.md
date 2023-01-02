@@ -8,7 +8,7 @@ title: Emphysema
 updated: 1653240411233
 ---
    
-Topics::  [biology](../topics/biology.md), [Health](/not_created.md)   
+Topics::  [biology](../topics/biology.md), [health](../topics/health.md)   
    
    
 ---   

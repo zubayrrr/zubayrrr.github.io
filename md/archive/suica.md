@@ -8,7 +8,7 @@ title: Suica
 updated: 1652786932293
 ---
    
-Topics::  [Japanese](/not_created.md)   
+Topics::  [Japanese](../topics/Japanese.md)   
    
    
 ---   

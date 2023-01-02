@@ -8,7 +8,7 @@ title: Tsundoku
 updated: 1652786932422
 ---
    
-Topics::  [Japanese](/not_created.md)   
+Topics::  [Japanese](../topics/Japanese.md)   
    
    
 ---   

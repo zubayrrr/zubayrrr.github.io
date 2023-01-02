@@ -14,4 +14,6 @@ updated: 1662336345966
    
    
 - [The Architecture of Silence](https://architectureofsilence.com/)   
-- [R E V E R I - Hypnosis for your wellbeing, backed by science](https://www.reveri.com/)
+- [R E V E R I - Hypnosis for your wellbeing, backed by science](https://www.reveri.com/)   
+- [Frank Yang Frank Yang — Consciousness](https://frankyang.wtf/consciousness-writings)   
+- [Frank Yang - YouTube](https://www.youtube.com/@frankyang)

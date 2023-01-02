@@ -3,12 +3,12 @@ created: 1660942496598
 desc: ''
 id: ydb3pe2zj9x8bk5f2q8eqs6
 tags:
-- japanese
+- archive
 title: Japanese aesthetics
 updated: 1660942584117
 ---
    
-Topics::  [aesthetics](../topics/aesthetics.md)   
+Topics::  [aesthetics](../topics/aesthetics.md), [Japanese](../topics/Japanese.md)   
    
    
 ---   

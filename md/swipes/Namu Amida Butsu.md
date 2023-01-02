@@ -4,12 +4,11 @@ created: 2022-12-11 02:18:55.505000+00:00
 id: 5bcc691c-6ab8-4444-8ce2-59b2ecec9093
 tags:
 - phrases
-- japanese
 title: Namu Amida Butsu
 updated: 2022-12-11 02:18:56.181000+00:00
 ---
    
-Topics:: [Buddhism](../topics/buddhism.md)   
+Topics:: [Buddhism](../topics/buddhism.md), [Japanese](../topics/Japanese.md)   
    
    
 ---   
