@@ -337,6 +337,34 @@ A named profile is a collection of settings and credentials that you can apply t
    
 See also: [terraform](../devlog/terraform.md) :)   
    
+## Examples   
+   
+```bash
+aws ec2 describe-instances --query "Reservations[].Instances[].{InstanceId:InstanceId,PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,Location:Placement.AvailabilityZone,Name:Tags[?Key=='Name']|[0].Value,Type:InstanceType,Status:State.Name,VpcId:VpcId, MAC:NetworkInterfaces[0].MacAddress, OS:PlatformDetails,DNS:PrivateDnsName}" --filters Name=instance-state-name,Values=running --output table
+```
+   
+   
+The `aws ec2 describe-instances` command is used to list information about Amazon Elastic Compute Cloud (EC2) instances.   
+   
+The `--query` option allows you to specify a JMESPath query to filter the results. The query provided in the example will return the following information for each instance:   
+   
+   
+-   `InstanceId`: the ID of the instance   
+-   `PublicIP`: the public IP address of the instance   
+-   `PrivateIP`: the private IP address of the instance   
+-   `Location`: the availability zone in which the instance is located   
+-   `Name`: the name of the instance (as specified by the 'Name' tag)   
+-   `Type`: the type of instance (e.g. t2.micro)   
+-   `Status`: the current status of the instance (e.g. running)   
+-   `VpcId`: the ID of the virtual private cloud (VPC) in which the instance is located   
+-   `MAC`: the MAC address of the instance   
+-   `OS`: the operating system of the instance   
+-   `DNS`: the private DNS name of the instance   
+   
+The `--filters` option is used to filter the results based on the specified criteria. In this case, the command will only return instances with a `Name` of `instance-state-name` and a `Values` of `running`.   
+   
+The `--output` option allows you to specify the format in which the results should be output. In this case, the results will be output in a table format.   
+   
 ## Resources   
    
    

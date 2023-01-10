@@ -78,7 +78,7 @@ You can also make the `inventory_aws_ec2.yaml` as the default host file inside t
    
 **Target only specific servers**   
    
-What if you wanted to target only specific servers. In the plugin configuration, you can use `filters` to filter the servers you want to use. The same filter attributes that are used by [aws.cli](../devlog/aws.cli.md). In our case, let's use the tag name.   
+What if you wanted to target only specific servers. In the plugin configuration, you can use `filters` to filter the servers you want to use. The same filter attributes that are used by [aws cli](../devlog/aws%20cli.md). In our case, let's use the tag name.   
    
 ```yaml
 filters:

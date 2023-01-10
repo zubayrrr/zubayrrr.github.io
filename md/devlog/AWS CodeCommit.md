@@ -29,7 +29,7 @@ It integrates well with other services ([AWS CodeDeploy](../devlog/AWS%20CodeDep
   - Download the credentials   
 - Clone the repository using the URL.   
    
-## CodeCommit repository actions using [AWS CLI](/not_created.md)   
+## CodeCommit repository actions using [AWS CLI](../devlog/aws%20cli.md)   
    
    
 - Create - `aws codecommit create-repository --repository-name My-repo`   

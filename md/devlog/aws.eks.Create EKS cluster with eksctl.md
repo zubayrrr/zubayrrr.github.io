@@ -13,7 +13,7 @@ We’ve seen how to [aws.eks.Create EKS cluster with AWS Management Console](../
    
 Manually creating EKS cluster has disadvantages like not being able to replicate the whole thing.   
    
-We can also achieve it using [aws.cli](../devlog/aws.cli.md).   
+We can also achieve it using [aws cli](../devlog/aws%20cli.md).   
    
 But let see how we can accomplish the same with `eksctl`.   
    
@@ -27,7 +27,7 @@ Install `eksctl` from [eksctl.io](https://eksctl.io/introduction/#installation).
    
 Connect `eksctl` with the AWS account with credentials.   
    
-It uses the same credentials that you configured for [aws.cli](../devlog/aws.cli.md). Checking for existing credentials `aws configure list` or `aws configure` to start configuring.   
+It uses the same credentials that you configured for [aws cli](../devlog/aws%20cli.md). Checking for existing credentials `aws configure list` or `aws configure` to start configuring.   
    
 ## Create cluster   
    

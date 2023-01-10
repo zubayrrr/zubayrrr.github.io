@@ -4,7 +4,7 @@ created: 2022-12-20 10:33:53.811000+00:00
 id: cd6f289f-05da-4592-883a-09af3f20ba93
 tags:
 - topics
-title: Face
+title: Attractiveness
 updated: 2022-12-20 10:33:54.295000+00:00
 ---
    
@@ -113,4 +113,5 @@ You need to do three things to transform your jawline and overall lower third of
 - [How To Improve Your Facial Attractiveness (My Looksmaxxing Guide) - YouTube](https://youtu.be/2atz-cB3R7g)   
 - [Doing Mewing - YouTube](https://youtu.be/Hmf-pR7EryY)   
 - [LOOKISM...and how "LOOKSMAXXING" is destroying everyone - YouTube](https://youtu.be/DKnfVHgaTf0)   
-- [Does Chewing Gum Help Your Jawline? | General Dentistry & Cosmetic Dentistry in Stockton, CA | Image Dental](https://www.myimagedental.com/post/does-chewing-gum-help-your-jawline#:~:text=In%20addition%2C%20just%20like%20regular,a%20person%20a%20chiseled%20jawline.)
+- [Does Chewing Gum Help Your Jawline? | General Dentistry & Cosmetic Dentistry in Stockton, CA | Image Dental](https://www.myimagedental.com/post/does-chewing-gum-help-your-jawline#:~:text=In%20addition%2C%20just%20like%20regular,a%20person%20a%20chiseled%20jawline.)   
+- [How to NOT Looksmax - YouTube](https://youtu.be/lGbsbIXfV6c)

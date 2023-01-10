@@ -5,7 +5,7 @@
         <head>
                 <!-- Page information -->
                 <meta charset="UTF-8" />
-                <meta name="node_id" content="aws.cli">
+                <meta name="node_id" content="loss of autonomy">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                 <link rel="shortcut icon" href="/favicon.ico" />
 
@@ -47,7 +47,7 @@
 
                 <!-- Onload tweaks -->
                 <script>
-                        const CURRENT_NODE = 'aws.cli';
+                        const CURRENT_NODE = 'loss of autonomy';
                         const HTML_URL_PREFIX = '';
                         const PAGE_DEPTH = 1;
                 </script>
@@ -161,7 +161,7 @@
                 }
         </script>
                                                         <div class="graph_header_div requires_js">
-            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=aws.cli" title="Open fullpage Graph">
+            <a id="graph_link" class="system-link" href="/obs.html/graph/index.html?node=loss of autonomy" title="Open fullpage Graph">
                     <img class="graph_header_div_svg" src = "/obs.html/static/graph.svg" alt="Open fullpage Graph" style="margin: 2px; width: 17px;"/>
             </a>
         </div>
@@ -205,394 +205,32 @@
                     <div style="width:100%; text-align: right;display: block;margin: 0.5rem;">
                         <div style="flex:1;display: none;"></div>
                         <div class="breadcrumbs" style="flex:1 ;padding: 0.5rem; width: fit-content;display: inline;border-radius: 0.2rem;">
-                            <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/devlog/devlog.html" style="color: var(--normal-text-color);">devlog</a> / <a href="/devlog/aws.cli.html" >aws.cli</a>
+                            <a href="/" style="color: rgb(var(--normal-text-color));">Home</a> / <a href="/archive/archive.html" style="color: var(--normal-text-color);">archive</a> / <a href="/archive/Loss of autonomy.html" >Loss of autonomy</a>
                         </div>
                     </div>
 <div class="toc">
-<ul>
-<li><a href="#install-and-configure" class="anchor-link">Install and Configure</a></li>
-<li><a href="#command-structure" class="anchor-link">Command Structure</a></li>
-<li><a href="#create-an-ec2-instance" class="anchor-link">Create an EC2 Instance</a></li>
-<li><a href="#filter-query" class="anchor-link">Filter &amp; Query</a></li>
-<li><a href="#using-iam-command" class="anchor-link">Using IAM Command</a></li>
-<li><a href="#create-credentials" class="anchor-link">Create Credentials</a></li>
-<li><a href="#create-and-assign-custom-policy" class="anchor-link">Create and Assign Custom Policy</a></li>
-<li><a href="#create-access-keys" class="anchor-link">Create Access keys</a></li>
-<li><a href="#switch-user" class="anchor-link">Switch User</a></li>
-<li><a href="#delete-resources" class="anchor-link">Delete Resources</a></li>
-<li><a href="#profiles" class="anchor-link">Profiles</a></li>
-<li><a href="#resources" class="anchor-link">Resources</a></li>
-</ul>
+<ul></ul>
 </div>
-<p>You use AWS Cli if you want programmatic access to your AWS resources. You can execute commands from other AWS services.   </p>
-<p>The AWS Cli is a very powerful command line tool. It provides commands for every AWS service and resources. Anything you can do with AWS Console can be achieved using the AWS Cli. It is also generally much easier to use AWS via the Cli than it is using the UI.   </p>
-<h2 id="install-and-configure">Install and Configure</h2>
-<ul>
-<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html" target="_blank" class="external-link">Installing or updating the latest version of the AWS CLI - AWS Command Line Interface</a>   </li>
-<li>The default configuration is stored <code>~/.aws/config</code> and user credentials are stored in <code>~/.aws/credentials</code>.   </li>
-<li>The access to AWS is configured through an Access ID and Secret Access Key(which is created from the console).   </li>
-<li><code>aws configure</code> to start configuring the Cli.   </li>
-<li>The default output format refers to the output(return) that AWS gives after running a command. This can be set as <code>json</code>.   </li>
-</ul>
-<h2 id="command-structure">Command Structure</h2>
-<p><code>aws &lt;command&gt; &lt;subcommand&gt; [options and parameters]</code>   </p>
-<ul>
-<li><code>aws</code> = the base call to the AWS Cli program.   </li>
-<li><code>command</code> = the AWS service   </li>
-<li><code>subcommand</code> = specifies which operation to perform.   </li>
-</ul>
-<p>Examples:   </p>
-<ul>
-<li><code>aws ec2 help</code>   </li>
-<li><code>aws iam help</code>   </li>
-</ul>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code><span class="c1"># launch ec2 instance in the specified subnet of a VPC</span>
-aws ec2 describe-subnets
-aws ec2 describe-instances <span class="c1"># -&gt; will give us ami-imageid, we will use the same one</span>
-aws ec2 run-instances <span class="se">\</span>
-    --image-id ami-xxxxxxxx <span class="se">\</span>
-    --count <span class="m">1</span> <span class="se">\ </span><span class="c1"># how many instances to launch</span>
-    --instance-type t2.micro <span class="se">\</span>
-    --key-name MyKeyPair <span class="se">\ </span><span class="c1"># pem file, you can reuse thats already created or create a new one</span>
-    --security-group-ids sg-903004f8 <span class="se">\ </span><span class="c1"># reuse already created or create a new one</span>
-    --subnet-id subnet-6e7f829e
-</code></pre></div>
-
-
-</div>
-
-<h2 id="create-an-ec2-instance">Create an EC2 Instance</h2>
-<p>Steps:   </p>
-<ul>
-<li>Create a security group.   </li>
-<li>Create an <a href="/devlog/ssh.html">SSH</a> key pair (to SSH into the created EC2 instance).   </li>
-<li>Create a EC2 instance.   </li>
-</ul>
-<p>Let's start with creating a security group:   </p>
-<ul>
-<li><code>aws ec2 describe-security-groups</code> - list all security groups   </li>
-</ul>
-<blockquote>
-<p>Since security group needs to be created inside a VPC, we need a VPC ID to create a new security group.   </p>
-</blockquote>
-<ul>
-<li><code>aws ec2 describe-vpcs</code> - get all existing VPCs   </li>
-<li><code>aws ec2 create-security-group --group-name my-sg --description "my security group" --vpc-id &lt;vpc id&gt;</code> - create a new security group.   </li>
-<li><code>aws ec2 describe-security-groups --group-ids &lt;security group id&gt;</code> - get info on an existing SG with ID.   </li>
-</ul>
-<blockquote>
-<p>Configure firewall rules   </p>
-</blockquote>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws ec2 authorize-security-group-ingress <span class="se">\</span>
---group-id &lt;SG id&gt; <span class="se">\</span>
---protocol tcp <span class="se">\</span>
---port <span class="m">22</span> <span class="se">\</span>
---cidr &lt;IP addr&gt;  <span class="c1"># source, check your IP address, who can access</span>
-</code></pre></div>
-
-
-</div>
-
-<p>By default security group has outbound permissions to all destinations.   </p>
-<blockquote>
-<p>Create Key pair   </p>
-</blockquote>
-<div class="lang-general">
-
-<div class="codehilite"><pre><span></span><code>aws ec2 create-key-pair \
---key-name MyKPCli \
---query &#39;KeyMaterial&#39; \ # gives unencrypted pem
---output text &gt; MyKPCli.pem
-</code></pre></div>
-
-
-</div>
-
-<blockquote>
-<p>Get image-id, subnet-id   </p>
-</blockquote>
-<ul>
-<li><code>aws ec2 describe-subnets</code> grab it either from the console or using this command   </li>
-<li><code>aws ec2</code> grab it from the console, from the list of AMIs   </li>
-</ul>
-<blockquote>
-<p>Create an EC2 instance   </p>
-</blockquote>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws ec2 run-instances <span class="se">\</span>
-    --image-id ami-xxxxxxxx <span class="se">\</span>
-    --count <span class="m">1</span> <span class="se">\</span>
-    --instance-type t2.micro <span class="se">\</span>
-    --key-name MyKPCli <span class="se">\</span>
-    --security-group-ids &lt;SG ID&gt; <span class="se">\</span>
-    --subnet-id &lt;subnet ID&gt;
-</code></pre></div>
-
-
-</div>
-
-<blockquote>
-<p>Grab public IP so you can SSH into it   </p>
-</blockquote>
-<p><code>aws ec2 describe-instances</code> list all instances in your region, grab the public IP from the output.   </p>
-<blockquote>
-<p>Change permissions of the .pem file   </p>
-</blockquote>
-<ul>
-<li><code>ls -l MyKPCli.pem</code> get info on permission of this file.   </li>
-<li><code>chmod 400 MyKPCli.pem</code> to modify the permissions to restrict it to only your user.   </li>
-<li>Read access only for the owner.   </li>
-</ul>
-<blockquote>
-<p>SSH into the machine   </p>
-</blockquote>
-<p><code>ssh -i MyKPCli.pem ec2-user@&lt;public-ip&gt;</code>   </p>
-<hr />
-<h2 id="filter-query">Filter &amp; Query</h2>
-<p><strong>Filter</strong> and <strong>Query</strong> - describe command's option   </p>
-<p><code>aws &lt;command&gt; describe-</code> helps you with listing certain components of a resource etc.   </p>
-<p>You can chain a filter to this command to filter <strong>certain components/resource</strong>.   </p>
-<p>You can also query(s) filter attributes of a filtered <strong>component's specific attributes</strong>.   </p>
-<p><strong>Examples</strong>:   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws ec2 describe-instances <span class="se">\</span>
---filters <span class="s2">&quot;Name=instance-type, Values=t2.micro&quot;</span> <span class="se">\</span>
---query <span class="s2">&quot;Reservations[].Instances[].InstanceId&quot;</span>
-</code></pre></div>
-
-
-</div>
-
-<p>Even tags can also be filtered.   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws ec2 describe-instances --filters <span class="s2">&quot;Name=tag:Type,Values=Web Server with Docker&quot;</span>
-</code></pre></div>
-
-
-</div>
-
-<p>OR   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws ec2 describe-instances <span class="se">\</span>
---filters <span class="s2">&quot;Name=tag:Type,Values=Web Server with Docker&quot;</span> <span class="se">\</span>
---query <span class="s2">&quot;Reservations[].Instances[].InstanceId&quot;</span>
-</code></pre></div>
-
-
-</div>
-
-<hr />
-<h2 id="using-iam-command">Using IAM Command</h2>
-<p>Create User, Group and assign permissions.   </p>
-<blockquote>
-<p>Create a group   </p>
-</blockquote>
-<p><code>aws iam create-group --group-name MyGroupCli</code> - the group names should sufficiently descriptive.   </p>
-<p>ARN = Amazon Resource Name; to uniquely identify a component/resource. It is basically a unique <strong>identifier</strong>.   </p>
-<blockquote>
-<p>Create a user   </p>
-</blockquote>
-<p><code>aws iam create-user --user-name MyUserCli</code>   </p>
-<blockquote>
-<p>Add user to group   </p>
-</blockquote>
-<p><code>aws iam add-user-to-group --user-name MyUserCli --group-name MyGroupCli</code>   </p>
-<blockquote>
-<p>Get group info   </p>
-</blockquote>
-<p><code>aws iam get-group --group-name MyGroupCli</code>   </p>
-<blockquote>
-<p>Get policy ARN   </p>
-</blockquote>
-<p>A policy is basically a <strong>group of permissions</strong>.   </p>
-<p><strong>From Console</strong>:   </p>
-<p>Go to the IAM, click on "Policies" on the left sidebar. Click a policy to open it's summary page. Copy the <strong>Policy ARN</strong>.   </p>
-<p><strong>From Cli</strong>:   </p>
-<p>You need to know the name of the policy.   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam list-policies <span class="se">\</span>
---query <span class="s1">&#39;Policies[?PolicyName==`AmazonEC2FullAccess`].{ARN:arn}&#39;</span>
---output text
-</code></pre></div>
-
-
-</div>
-
-<blockquote>
-<p>Assign permissions to group   </p>
-</blockquote>
-<p>Permissions can be assigned directly to a user but if you've a group of users that need same permissions it makes sense to group the users into a group and assign the permissions directly to the group.   </p>
-<ul>
-<li><code>aws iam attach-user-policy</code>   </li>
-<li><code>aws iam attach-group-policy</code>   </li>
-</ul>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam attach-group-policy <span class="se">\</span>
---group-name MyGroupCli <span class="se">\</span>
---policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
-</code></pre></div>
-
-
-</div>
-
-<blockquote>
-<p>Validate policy attachment   </p>
-</blockquote>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam list-attached-group-policies <span class="se">\</span>
---group-name MyGroupCli
-</code></pre></div>
-
-
-</div>
-
-<h2 id="create-credentials">Create Credentials</h2>
-<p><strong>For new User</strong>   </p>
-<p><img alt="" src="https://res.cloudinary.com/zubayr/image/upload/v1661087467/wiki/zvzaf7d2terov8xv4owm.png" />   </p>
-<p>When creating a user from the console you can setup all kinds of credentials/permissions for the user.   </p>
-<p>How do we do that same with the Cli?   </p>
-<blockquote>
-<p>Assign a password   </p>
-</blockquote>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam create-login-profile <span class="se">\</span>
---user-name MyUserCli <span class="se">\</span>
---password myPwd123Test <span class="se">\ </span><span class="c1"># password needs to be strong</span>
---password-reset-required <span class="c1"># make user reset password on first login</span>
-<span class="c1"># iam:ChangePassword policy needs to be attached to allow the user to change password</span>
-</code></pre></div>
-
-
-</div>
-
-<blockquote>
-<p>Get user info   </p>
-</blockquote>
-<p><code>aws iam get-user --user-name MyUserCli</code> - <code>Account ID or ARN</code> will be required for the user login(Sign in as IAM User).   </p>
-<h2 id="create-and-assign-custom-policy">Create and Assign Custom Policy</h2>
-<p>A custom policy for a user/group needs to be defined in a <code>.json</code> file.   </p>
-<div class="lang-json">
-
-<div class="codehilite"><pre><span></span><code><span class="c1">// changePwdPolicy.json</span><span class="w"></span>
-<span class="p">{</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;iam:GetAccountPasswordPolicy&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;**&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">},</span><span class="w"></span>
-<span class="w">    </span><span class="p">{</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;iam:ChangePassword&quot;</span><span class="p">,</span><span class="w"></span>
-<span class="w">      </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;arn:aws:iam::&lt;12-digit-account-id:user/${aws:username}&quot;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="w">  </span><span class="p">]</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-</code></pre></div>
-
-
-</div>
-
-<p><strong>Creating the policy</strong>:   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam create-policy <span class="se">\</span>
---policy-name changePwd <span class="se">\</span>
---policy-document file://changePwdPolicy.json
-</code></pre></div>
-
-
-</div>
-
-<p>Copy the ARN of the policy from the output.   </p>
-<p><strong>Assigning policy to user group</strong>:   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam attach-group-policy <span class="se">\</span>
---group-name MyGroupCli <span class="se">\</span>
---policy-arn &lt;copied-policy-arn&gt;
-</code></pre></div>
-
-
-</div>
-
-<h2 id="create-access-keys">Create Access keys</h2>
-<p><strong>For new User</strong>   </p>
-<div class="lang-bash">
-
-<div class="codehilite"><pre><span></span><code>aws iam create-access-key --user-name MyUserCli
-</code></pre></div>
-
-
-</div>
-
-<p>Copy the <code>AccessKeyId</code> and <code>SecretAccessKey</code> from the output in order to login as that user from the Cli (programmatic access).   </p>
-<h2 id="switch-user">Switch User</h2>
-<p><strong>In the Cli</strong>   </p>
-<p>There are 3 ways of switching the user in the Cli:   </p>
-<ol>
-<li><code>aws configure</code> to overwrite <code>~/.aws/</code> which was set previously.   </li>
-<li>
-<p>Use <code>aws configure set</code> to overwrite only the credentials.   </p>
-</li>
-<li>
-<p><code>aws configure set aws_access_key_id &lt;access-key&gt;</code>   </p>
-</li>
-<li>
-<p>Set bash <a href="/devlog/environment%20variable.html">environment variable</a>s to temporarily switch a user. It will automatically use the new credentials in that session(terminal).   </p>
-</li>
-<li>
-<p><code>export AWS_ACCESS_KEY_ID=&lt;access-key&gt;</code>   </p>
-</li>
-<li><code>export AWS_SECRET_ACCESS_KEY=&lt;secret-key&gt;</code>   </li>
-<li>Optionally you can also change your default region using <code>AWS_DEFAULT_REGION</code>   </li>
-</ol>
-<h2 id="delete-resources">Delete Resources</h2>
-<p><code>aws ec2 delete-</code> commands to delete your EC2 resources.   </p>
-<h2 id="profiles">Profiles</h2>
-<p>A named profile is a collection of settings and credentials that you can apply to a AWS CLI command. When you specify a profile to run a command, the settings and credentials are used to run that command. Multiple named profiles can be stored in the config and credentials files.   </p>
-<p>See also: <a href="/devlog/terraform.html">terraform</a> :)   </p>
-<h2 id="resources">Resources</h2>
-<ul>
-<li><a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html" target="_blank" class="external-link">aws — AWS CLI 2.8.0 Command Reference</a></li>
-</ul>
+<p>Loss of autonomy refers to a reduction or loss of the ability to make independent decisions or to control one's own actions. This can be due to various factors such as physical or mental impairments, external pressures or constraints, or loss of power or authority. The experience of loss of autonomy can be distressing and can have a negative impact on an individual's well-being and quality of life. It is important to recognize and respect an individual's autonomy and to provide support and assistance as needed to help them maintain or regain control over their lives.</p>
 <div class="note-footer">
-<div class="backlinks">
-<h2>Backlinks</h2>
-<ul>
-	<li><a class="backlink" href="/devlog/aws.eks.Create EKS cluster with eksctl.html">aws.eks.create eks cluster with eksctl</a></li>
-	<li><a class="backlink" href="/devlog/ansible.html">ansible</a></li>
-	<li><a class="backlink" href="/devlog/ansible.dynamic inventory.html">ansible.dynamic inventory</a></li>
-	<li><a class="backlink" href="/devlog/terraform.Automate Provisioning EKS cluster.html">terraform.automate provisioning eks cluster</a></li>
-</ul>
-</div>
+<div class="backlinks" style="display:none"></div>
 
 <div class="tags">
-
+<h2>Tags</h2>
+<ul>
+	<li><a class="backlink" href="/obs.html/tags/archive/index.html">archive</a></li>
+</ul>
 </div>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A268285457403869823335847692189678900831{level}" class="graph_div"></div>
+    <div id="A307530475636556039229631155591260990489{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B268285457403869823335847692189678900831{level}" level="{level}" note_temp_id="268285457403869823335847692189678900831" onclick="window.ObsHtmlGraph.run(this, '268285457403869823335847692189678900831', 'aws.cli');">
+        <button class="graph_button graph_show_button" id="B307530475636556039229631155591260990489{level}" level="{level}" note_temp_id="307530475636556039229631155591260990489" onclick="window.ObsHtmlGraph.run(this, '307530475636556039229631155591260990489', 'loss of autonomy');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C268285457403869823335847692189678900831{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C307530475636556039229631155591260990489{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -618,7 +256,7 @@ aws ec2 run-instances <span class="se">\</span>
                                 <div id="right_pane_fold_header" class="right_pane_fold_header fold_header">x</div>
                                 <div id="right_pane_content" class="right_pane_content">
                                         <button id="folder-1" class="dir-button" onclick="toggle_dir(this.id)">archive</button>
-<div id="folder-container-1" class="dir-container requires_js " path="/archive">
+<div id="folder-container-1" class="dir-container requires_js active" path="/archive">
 	<ul class="dir-list">
 		<li><a class="" href="/archive/2C-B.html"  >2C-B</a></li>
 		<li><a class="" href="/archive/3-1 Rule of Microphone Placement.html"  >3-1 Rule of Microphone Placement</a></li>
@@ -675,6 +313,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/archive/Gratis versus libre.html"  >Gratis versus libre</a></li>
 		<li><a class="" href="/archive/Grover s algorithm.html"  >Grover s algorithm</a></li>
 		<li><a class="" href="/archive/HPPD.html"  >HPPD</a></li>
+		<li><a class="" href="/archive/Halo Effect.html"  >Halo Effect</a></li>
 		<li><a class="" href="/archive/Hanged  drawn and quartered.html"  >Hanged  drawn and quartered</a></li>
 		<li><a class="" href="/archive/Havana syndrome.html"  >Havana syndrome</a></li>
 		<li><a class="" href="/archive/Hemi-Sync.html"  >Hemi-Sync</a></li>
@@ -690,6 +329,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/archive/LSD.html"  >LSD</a></li>
 		<li><a class="" href="/archive/Last man.html"  >Last man</a></li>
 		<li><a class="" href="/archive/Law of triviality.html"  >Law of triviality</a></li>
+		<li><a class="active" href="/archive/Loss of autonomy.html"  >Loss of autonomy</a></li>
 		<li><a class="" href="/archive/MDMA.html"  >MDMA</a></li>
 		<li><a class="" href="/archive/Machiavellianism.html"  >Machiavellianism</a></li>
 		<li><a class="" href="/archive/Male gaze.html"  >Male gaze</a></li>
@@ -722,6 +362,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/archive/Proof by Contradiction.html"  >Proof by Contradiction</a></li>
 		<li><a class="" href="/archive/Psilocybe cubensis.html"  >Psilocybe cubensis</a></li>
 		<li><a class="" href="/archive/Rabbit test.html"  >Rabbit test</a></li>
+		<li><a class="" href="/archive/Radically Open Dialectical Behavior Therapy.html"  >Radically Open Dialectical Behavior Therapy</a></li>
 		<li><a class="" href="/archive/Raliv Galiv ya Chaliv.html"  >Raliv Galiv ya Chaliv</a></li>
 		<li><a class="" href="/archive/Rapamycin.html"  >Rapamycin</a></li>
 		<li><a class="" href="/archive/Reactance.html"  >Reactance</a></li>
@@ -1067,7 +708,7 @@ aws ec2 run-instances <span class="se">\</span>
 	</ul>
 </div>
 <button id="folder-2" class="dir-button" onclick="toggle_dir(this.id)">devlog</button>
-<div id="folder-container-2" class="dir-container requires_js active" path="/devlog">
+<div id="folder-container-2" class="dir-container requires_js " path="/devlog">
 	<ul class="dir-list">
 		<li><a class="" href="/devlog/3d printer.html"  >3d printer</a></li>
 		<li><a class="" href="/devlog/API.html"  >API</a></li>
@@ -1313,6 +954,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/devlog/availability.html"  >availability</a></li>
 		<li><a class="" href="/devlog/awk.html"  >awk</a></li>
 		<li><a class="" href="/devlog/aws.html"  >aws</a></li>
+		<li><a class="" href="/devlog/aws cli.html"  >aws cli</a></li>
 		<li><a class="" href="/devlog/aws.Acceptable Use Policy.html"  >aws.Acceptable Use Policy</a></li>
 		<li><a class="" href="/devlog/aws.Artifact.html"  >aws.Artifact</a></li>
 		<li><a class="" href="/devlog/aws.CloudFormation.html"  >aws.CloudFormation</a></li>
@@ -1333,7 +975,6 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/devlog/aws.Trusted Advisor.html"  >aws.Trusted Advisor</a></li>
 		<li><a class="" href="/devlog/aws.VPC.html"  >aws.VPC</a></li>
 		<li><a class="" href="/devlog/aws.budgets.html"  >aws.budgets</a></li>
-		<li><a class="active" href="/devlog/aws.cli.html"  >aws.cli</a></li>
 		<li><a class="" href="/devlog/aws.dms.html"  >aws.dms</a></li>
 		<li><a class="" href="/devlog/aws.ecr.html"  >aws.ecr</a></li>
 		<li><a class="" href="/devlog/aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub.html"  >aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a></li>
@@ -2316,7 +1957,6 @@ aws ec2 run-instances <span class="se">\</span>
 			<li><a class="" href="/resources/podcasts/one repays a teacher badly if one always remains nothing but a pupil.html"  >one repays a teacher badly if one always remains nothing but a pupil</a></li>
 			<li><a class="" href="/resources/podcasts/pay attention be astonished tell about it.html"  >pay attention be astonished tell about it</a></li>
 			<li><a class="" href="/resources/podcasts/peace begins with a smile.html"  >peace begins with a smile</a></li>
-			<li><a class="" href="/resources/podcasts/people who work get bored when they don t work.html"  >people who work get bored when they don t work</a></li>
 			<li><a class="" href="/resources/podcasts/perfection is finally attained not when.html"  >perfection is finally attained not when</a></li>
 			<li><a class="" href="/resources/podcasts/plans are worthless  but planning is everything.html"  >plans are worthless  but planning is everything</a></li>
 			<li><a class="" href="/resources/podcasts/podcasts.html"  >podcasts</a></li>
@@ -2551,6 +2191,7 @@ aws ec2 run-instances <span class="se">\</span>
 			<li><a class="" href="/swipes/quotes/The ultimate power in life is to be completely self-reliant.html"  >The ultimate power in life is to be completely self-reliant</a></li>
 			<li><a class="" href="/swipes/quotes/To be naked is to be oneself.html"  >To be naked is to be oneself</a></li>
 			<li><a class="" href="/swipes/quotes/beauty is a greater recommendation than any letter of introduction.html"  >beauty is a greater recommendation than any letter of introduction</a></li>
+			<li><a class="" href="/swipes/quotes/people who work get bored when they don t work.html"  >people who work get bored when they don t work</a></li>
 			<li><a class="" href="/swipes/quotes/the basic tool for the manipulation of reality is the manipulation of words.html"  >the basic tool for the manipulation of reality is the manipulation of words</a></li>
 			<li><a class="" href="/swipes/quotes/the real problem of humanity is the following.html"  >the real problem of humanity is the following</a></li>
 			<li><a class="" href="/swipes/quotes/the unexamined life is not worth living.html"  >the unexamined life is not worth living</a></li>
@@ -2630,6 +2271,7 @@ aws ec2 run-instances <span class="se">\</span>
 <div id="folder-container-18" class="dir-container requires_js " path="/topics">
 	<ul class="dir-list">
 		<li><a class="" href="/topics/Advaita Vedanta.html"  >Advaita Vedanta</a></li>
+		<li><a class="" href="/topics/Attractiveness.html"  >Attractiveness</a></li>
 		<li><a class="" href="/topics/Biomechanics.html"  >Biomechanics</a></li>
 		<li><a class="" href="/topics/Breathing.html"  >Breathing</a></li>
 		<li><a class="" href="/topics/Cloud native.html"  >Cloud native</a></li>
@@ -2639,7 +2281,6 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/topics/Eros.html"  >Eros</a></li>
 		<li><a class="" href="/topics/Exercises.html"  >Exercises</a></li>
 		<li><a class="" href="/topics/Existentialism.html"  >Existentialism</a></li>
-		<li><a class="" href="/topics/Face.html"  >Face</a></li>
 		<li><a class="" href="/topics/Feminism.html"  >Feminism</a></li>
 		<li><a class="" href="/topics/Habits.html"  >Habits</a></li>
 		<li><a class="" href="/topics/Happiness.html"  >Happiness</a></li>

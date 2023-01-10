@@ -238,6 +238,7 @@
 <li><a href="#switch-user" class="anchor-link">Switch User</a></li>
 <li><a href="#delete-resources" class="anchor-link">Delete Resources</a></li>
 <li><a href="#profiles" class="anchor-link">Profiles</a></li>
+<li><a href="#examples" class="anchor-link">Examples</a></li>
 <li><a href="#resources" class="anchor-link">Resources</a></li>
 <li><a href="#resources_1" class="anchor-link">Resources</a></li>
 </ul>
@@ -756,6 +757,32 @@ aws ec2 run-instances <span class="se">\</span>
 <h2 id="profiles">Profiles</h2>
 <p>A named profile is a collection of settings and credentials that you can apply to a AWS CLI command. When you specify a profile to run a command, the settings and credentials are used to run that command. Multiple named profiles can be stored in the config and credentials files.   </p>
 <p>See also: <a href="/devlog/terraform.html">terraform</a> :)   </p>
+<h2 id="examples">Examples</h2>
+<div class="lang-bash">
+
+<div class="codehilite"><pre><span></span><code>aws ec2 describe-instances --query <span class="s2">&quot;Reservations[].Instances[].{InstanceId:InstanceId,PublicIP:PublicIpAddress,PrivateIP:PrivateIpAddress,Location:Placement.AvailabilityZone,Name:Tags[?Key==&#39;Name&#39;]|[0].Value,Type:InstanceType,Status:State.Name,VpcId:VpcId, MAC:NetworkInterfaces[0].MacAddress, OS:PlatformDetails,DNS:PrivateDnsName}&quot;</span> --filters <span class="nv">Name</span><span class="o">=</span>instance-state-name,Values<span class="o">=</span>running --output table
+</code></pre></div>
+
+
+</div>
+
+<p>The <code>aws ec2 describe-instances</code> command is used to list information about Amazon Elastic Compute Cloud (EC2) instances.   </p>
+<p>The <code>--query</code> option allows you to specify a JMESPath query to filter the results. The query provided in the example will return the following information for each instance:   </p>
+<ul>
+<li><code>InstanceId</code>: the ID of the instance   </li>
+<li><code>PublicIP</code>: the public IP address of the instance   </li>
+<li><code>PrivateIP</code>: the private IP address of the instance   </li>
+<li><code>Location</code>: the availability zone in which the instance is located   </li>
+<li><code>Name</code>: the name of the instance (as specified by the 'Name' tag)   </li>
+<li><code>Type</code>: the type of instance (e.g. t2.micro)   </li>
+<li><code>Status</code>: the current status of the instance (e.g. running)   </li>
+<li><code>VpcId</code>: the ID of the virtual private cloud (VPC) in which the instance is located   </li>
+<li><code>MAC</code>: the MAC address of the instance   </li>
+<li><code>OS</code>: the operating system of the instance   </li>
+<li><code>DNS</code>: the private DNS name of the instance   </li>
+</ul>
+<p>The <code>--filters</code> option is used to filter the results based on the specified criteria. In this case, the command will only return instances with a <code>Name</code> of <code>instance-state-name</code> and a <code>Values</code> of <code>running</code>.   </p>
+<p>The <code>--output</code> option allows you to specify the format in which the results should be output. In this case, the results will be output in a table format.   </p>
 <h2 id="resources">Resources</h2>
 <ul>
 <li><a href="https://awscli.amazonaws.com/v2/documentation/api/latest/reference/index.html" target="_blank" class="external-link">aws — AWS CLI 2.8.0 Command Reference</a></li>
@@ -790,13 +817,13 @@ aws ec2 run-instances <span class="se">\</span>
 
 </div>
 <div class="graph requires_js ">
-    <div id="A57532555979403700320383316377047679657{level}" class="graph_div"></div>
+    <div id="A237006201641456414634470162197831937793{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B57532555979403700320383316377047679657{level}" level="{level}" note_temp_id="57532555979403700320383316377047679657" onclick="window.ObsHtmlGraph.run(this, '57532555979403700320383316377047679657', 'aws');">
+        <button class="graph_button graph_show_button" id="B237006201641456414634470162197831937793{level}" level="{level}" note_temp_id="237006201641456414634470162197831937793" onclick="window.ObsHtmlGraph.run(this, '237006201641456414634470162197831937793', 'aws');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C57532555979403700320383316377047679657{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C237006201641456414634470162197831937793{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -879,6 +906,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/archive/Gratis versus libre.html"  >Gratis versus libre</a></li>
 		<li><a class="" href="/archive/Grover s algorithm.html"  >Grover s algorithm</a></li>
 		<li><a class="" href="/archive/HPPD.html"  >HPPD</a></li>
+		<li><a class="" href="/archive/Halo Effect.html"  >Halo Effect</a></li>
 		<li><a class="" href="/archive/Hanged  drawn and quartered.html"  >Hanged  drawn and quartered</a></li>
 		<li><a class="" href="/archive/Havana syndrome.html"  >Havana syndrome</a></li>
 		<li><a class="" href="/archive/Hemi-Sync.html"  >Hemi-Sync</a></li>
@@ -894,6 +922,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/archive/LSD.html"  >LSD</a></li>
 		<li><a class="" href="/archive/Last man.html"  >Last man</a></li>
 		<li><a class="" href="/archive/Law of triviality.html"  >Law of triviality</a></li>
+		<li><a class="" href="/archive/Loss of autonomy.html"  >Loss of autonomy</a></li>
 		<li><a class="" href="/archive/MDMA.html"  >MDMA</a></li>
 		<li><a class="" href="/archive/Machiavellianism.html"  >Machiavellianism</a></li>
 		<li><a class="" href="/archive/Male gaze.html"  >Male gaze</a></li>
@@ -926,6 +955,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/archive/Proof by Contradiction.html"  >Proof by Contradiction</a></li>
 		<li><a class="" href="/archive/Psilocybe cubensis.html"  >Psilocybe cubensis</a></li>
 		<li><a class="" href="/archive/Rabbit test.html"  >Rabbit test</a></li>
+		<li><a class="" href="/archive/Radically Open Dialectical Behavior Therapy.html"  >Radically Open Dialectical Behavior Therapy</a></li>
 		<li><a class="" href="/archive/Raliv Galiv ya Chaliv.html"  >Raliv Galiv ya Chaliv</a></li>
 		<li><a class="" href="/archive/Rapamycin.html"  >Rapamycin</a></li>
 		<li><a class="" href="/archive/Reactance.html"  >Reactance</a></li>
@@ -1517,6 +1547,7 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/devlog/availability.html"  >availability</a></li>
 		<li><a class="" href="/devlog/awk.html"  >awk</a></li>
 		<li><a class="active" href="/devlog/aws.html"  >aws</a></li>
+		<li><a class="" href="/devlog/aws cli.html"  >aws cli</a></li>
 		<li><a class="" href="/devlog/aws.Acceptable Use Policy.html"  >aws.Acceptable Use Policy</a></li>
 		<li><a class="" href="/devlog/aws.Artifact.html"  >aws.Artifact</a></li>
 		<li><a class="" href="/devlog/aws.CloudFormation.html"  >aws.CloudFormation</a></li>
@@ -1537,7 +1568,6 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/devlog/aws.Trusted Advisor.html"  >aws.Trusted Advisor</a></li>
 		<li><a class="" href="/devlog/aws.VPC.html"  >aws.VPC</a></li>
 		<li><a class="" href="/devlog/aws.budgets.html"  >aws.budgets</a></li>
-		<li><a class="" href="/devlog/aws.cli.html"  >aws.cli</a></li>
 		<li><a class="" href="/devlog/aws.dms.html"  >aws.dms</a></li>
 		<li><a class="" href="/devlog/aws.ecr.html"  >aws.ecr</a></li>
 		<li><a class="" href="/devlog/aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub.html"  >aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a></li>
@@ -2520,7 +2550,6 @@ aws ec2 run-instances <span class="se">\</span>
 			<li><a class="" href="/resources/podcasts/one repays a teacher badly if one always remains nothing but a pupil.html"  >one repays a teacher badly if one always remains nothing but a pupil</a></li>
 			<li><a class="" href="/resources/podcasts/pay attention be astonished tell about it.html"  >pay attention be astonished tell about it</a></li>
 			<li><a class="" href="/resources/podcasts/peace begins with a smile.html"  >peace begins with a smile</a></li>
-			<li><a class="" href="/resources/podcasts/people who work get bored when they don t work.html"  >people who work get bored when they don t work</a></li>
 			<li><a class="" href="/resources/podcasts/perfection is finally attained not when.html"  >perfection is finally attained not when</a></li>
 			<li><a class="" href="/resources/podcasts/plans are worthless  but planning is everything.html"  >plans are worthless  but planning is everything</a></li>
 			<li><a class="" href="/resources/podcasts/podcasts.html"  >podcasts</a></li>
@@ -2755,6 +2784,7 @@ aws ec2 run-instances <span class="se">\</span>
 			<li><a class="" href="/swipes/quotes/The ultimate power in life is to be completely self-reliant.html"  >The ultimate power in life is to be completely self-reliant</a></li>
 			<li><a class="" href="/swipes/quotes/To be naked is to be oneself.html"  >To be naked is to be oneself</a></li>
 			<li><a class="" href="/swipes/quotes/beauty is a greater recommendation than any letter of introduction.html"  >beauty is a greater recommendation than any letter of introduction</a></li>
+			<li><a class="" href="/swipes/quotes/people who work get bored when they don t work.html"  >people who work get bored when they don t work</a></li>
 			<li><a class="" href="/swipes/quotes/the basic tool for the manipulation of reality is the manipulation of words.html"  >the basic tool for the manipulation of reality is the manipulation of words</a></li>
 			<li><a class="" href="/swipes/quotes/the real problem of humanity is the following.html"  >the real problem of humanity is the following</a></li>
 			<li><a class="" href="/swipes/quotes/the unexamined life is not worth living.html"  >the unexamined life is not worth living</a></li>
@@ -2834,6 +2864,7 @@ aws ec2 run-instances <span class="se">\</span>
 <div id="folder-container-18" class="dir-container requires_js " path="/topics">
 	<ul class="dir-list">
 		<li><a class="" href="/topics/Advaita Vedanta.html"  >Advaita Vedanta</a></li>
+		<li><a class="" href="/topics/Attractiveness.html"  >Attractiveness</a></li>
 		<li><a class="" href="/topics/Biomechanics.html"  >Biomechanics</a></li>
 		<li><a class="" href="/topics/Breathing.html"  >Breathing</a></li>
 		<li><a class="" href="/topics/Cloud native.html"  >Cloud native</a></li>
@@ -2843,7 +2874,6 @@ aws ec2 run-instances <span class="se">\</span>
 		<li><a class="" href="/topics/Eros.html"  >Eros</a></li>
 		<li><a class="" href="/topics/Exercises.html"  >Exercises</a></li>
 		<li><a class="" href="/topics/Existentialism.html"  >Existentialism</a></li>
-		<li><a class="" href="/topics/Face.html"  >Face</a></li>
 		<li><a class="" href="/topics/Feminism.html"  >Feminism</a></li>
 		<li><a class="" href="/topics/Habits.html"  >Habits</a></li>
 		<li><a class="" href="/topics/Happiness.html"  >Happiness</a></li>

@@ -93,4 +93,6 @@ Don’t ignore that nagging gut instinct telling you “sexual liberation” lea
    
 - [Modern obsession with butts | Evolutionary psychology | Philosophical anthropology - YouTube](https://www.youtube.com/watch?v=KhJW_0y_2r4&t=538s)   
 - [The Vagina Monologues - Wikipedia](https://en.wikipedia.org/wiki/The_Vagina_Monologues)   
-- Meredith L. Chivers, Michael C. Seto and Ray Blanchard, 'Gender and Sexual Orientation Differences in Sexual Response to Sexual Activities Versus Gender of Actors in Sexual Films', in the _Journal of Personality and Social Psychology_, Vol. 93, No. 6, 1108-1121 (American Psychological Association, 2007).
+- Meredith L. Chivers, Michael C. Seto and Ray Blanchard, 'Gender and Sexual Orientation Differences in Sexual Response to Sexual Activities Versus Gender of Actors in Sexual Films', in the _Journal of Personality and Social Psychology_, Vol. 93, No. 6, 1108-1121 (American Psychological Association, 2007).   
+- [https://caps.unl.edu/Creating Emotional Connection Handouts.pdf](https://caps.unl.edu/Creating%20Emotional%20Connection%20Handouts.pdf)   
+- [A low-risk technique for gaining intimacy with people - YouTube](https://youtu.be/WyKFHd7cSaU)

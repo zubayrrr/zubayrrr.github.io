@@ -219,14 +219,14 @@
 <hr />
 <p>We’ve seen how to <a href="/devlog/aws.eks.Create%20EKS%20cluster%20with%20AWS%20Management%20Console.html">aws.eks.Create EKS cluster with AWS Management Console</a> and <a href="/devlog/aws.eks.Create%20EKS%20Cluster%20with%20Fargate.html">aws.eks.Create EKS Cluster with Fargate</a>   </p>
 <p>Manually creating EKS cluster has disadvantages like not being able to replicate the whole thing.   </p>
-<p>We can also achieve it using <a href="/devlog/aws.cli.html">aws.cli</a>.   </p>
+<p>We can also achieve it using <a href="/devlog/aws%20cli.html">aws cli</a>.   </p>
 <p>But let see how we can accomplish the same with <code>eksctl</code>.   </p>
 <p><code>eksctl</code> is a command line tool for working with EKS clusters that automates many individual tasks. Using this tool we can avoid having to create the different Roles, VPC etc.   </p>
 <p>We simply execute a single command and all the necessary components get created and configured in the background. With the cli options we can customize the cluster for things like region, K8s version, EC2 instance types, Node Group or Fargate for Worker Nodes etc.   </p>
 <h2 id="configure-eksctl">Configure <code>eksctl</code></h2>
 <p>Install <code>eksctl</code> from <a href="https://eksctl.io/introduction/#installation" target="_blank" class="external-link">eksctl.io</a>.   </p>
 <p>Connect <code>eksctl</code> with the AWS account with credentials.   </p>
-<p>It uses the same credentials that you configured for <a href="/devlog/aws.cli.html">aws.cli</a>. Checking for existing credentials <code>aws configure list</code> or <code>aws configure</code> to start configuring.   </p>
+<p>It uses the same credentials that you configured for <a href="/devlog/aws%20cli.html">aws cli</a>. Checking for existing credentials <code>aws configure list</code> or <code>aws configure</code> to start configuring.   </p>
 <h2 id="create-cluster">Create cluster</h2>
 <p><code>eksctl create cluster</code> takes default parameters and creates a cluster.   </p>
 <p><strong>Create cluster with custom parameters</strong>   </p>
@@ -280,13 +280,13 @@
 
 </div>
 <div class="graph requires_js ">
-    <div id="A271195220024954563019239959273220853811{level}" class="graph_div"></div>
+    <div id="A305299765135784298523916614757253440795{level}" class="graph_div"></div>
     
     <div class="graph-button-row" style="display:flex;">
-        <button class="graph_button graph_show_button" id="B271195220024954563019239959273220853811{level}" level="{level}" note_temp_id="271195220024954563019239959273220853811" onclick="window.ObsHtmlGraph.run(this, '271195220024954563019239959273220853811', 'aws.eks.create eks cluster with eksctl');">
+        <button class="graph_button graph_show_button" id="B305299765135784298523916614757253440795{level}" level="{level}" note_temp_id="305299765135784298523916614757253440795" onclick="window.ObsHtmlGraph.run(this, '305299765135784298523916614757253440795', 'aws.eks.create eks cluster with eksctl');">
             Show Graph
         </button>
-        <button class="graph_button graph_type_button" id="C271195220024954563019239959273220853811{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
+        <button class="graph_button graph_type_button" id="C305299765135784298523916614757253440795{level}" style="flex:1" onclick="window.ObsHtmlGraph.switch_graph_type(this);">
             2D
         </button>
     </div>
@@ -369,6 +369,7 @@
 		<li><a class="" href="/archive/Gratis versus libre.html"  >Gratis versus libre</a></li>
 		<li><a class="" href="/archive/Grover s algorithm.html"  >Grover s algorithm</a></li>
 		<li><a class="" href="/archive/HPPD.html"  >HPPD</a></li>
+		<li><a class="" href="/archive/Halo Effect.html"  >Halo Effect</a></li>
 		<li><a class="" href="/archive/Hanged  drawn and quartered.html"  >Hanged  drawn and quartered</a></li>
 		<li><a class="" href="/archive/Havana syndrome.html"  >Havana syndrome</a></li>
 		<li><a class="" href="/archive/Hemi-Sync.html"  >Hemi-Sync</a></li>
@@ -384,6 +385,7 @@
 		<li><a class="" href="/archive/LSD.html"  >LSD</a></li>
 		<li><a class="" href="/archive/Last man.html"  >Last man</a></li>
 		<li><a class="" href="/archive/Law of triviality.html"  >Law of triviality</a></li>
+		<li><a class="" href="/archive/Loss of autonomy.html"  >Loss of autonomy</a></li>
 		<li><a class="" href="/archive/MDMA.html"  >MDMA</a></li>
 		<li><a class="" href="/archive/Machiavellianism.html"  >Machiavellianism</a></li>
 		<li><a class="" href="/archive/Male gaze.html"  >Male gaze</a></li>
@@ -416,6 +418,7 @@
 		<li><a class="" href="/archive/Proof by Contradiction.html"  >Proof by Contradiction</a></li>
 		<li><a class="" href="/archive/Psilocybe cubensis.html"  >Psilocybe cubensis</a></li>
 		<li><a class="" href="/archive/Rabbit test.html"  >Rabbit test</a></li>
+		<li><a class="" href="/archive/Radically Open Dialectical Behavior Therapy.html"  >Radically Open Dialectical Behavior Therapy</a></li>
 		<li><a class="" href="/archive/Raliv Galiv ya Chaliv.html"  >Raliv Galiv ya Chaliv</a></li>
 		<li><a class="" href="/archive/Rapamycin.html"  >Rapamycin</a></li>
 		<li><a class="" href="/archive/Reactance.html"  >Reactance</a></li>
@@ -1007,6 +1010,7 @@
 		<li><a class="" href="/devlog/availability.html"  >availability</a></li>
 		<li><a class="" href="/devlog/awk.html"  >awk</a></li>
 		<li><a class="" href="/devlog/aws.html"  >aws</a></li>
+		<li><a class="" href="/devlog/aws cli.html"  >aws cli</a></li>
 		<li><a class="" href="/devlog/aws.Acceptable Use Policy.html"  >aws.Acceptable Use Policy</a></li>
 		<li><a class="" href="/devlog/aws.Artifact.html"  >aws.Artifact</a></li>
 		<li><a class="" href="/devlog/aws.CloudFormation.html"  >aws.CloudFormation</a></li>
@@ -1027,7 +1031,6 @@
 		<li><a class="" href="/devlog/aws.Trusted Advisor.html"  >aws.Trusted Advisor</a></li>
 		<li><a class="" href="/devlog/aws.VPC.html"  >aws.VPC</a></li>
 		<li><a class="" href="/devlog/aws.budgets.html"  >aws.budgets</a></li>
-		<li><a class="" href="/devlog/aws.cli.html"  >aws.cli</a></li>
 		<li><a class="" href="/devlog/aws.dms.html"  >aws.dms</a></li>
 		<li><a class="" href="/devlog/aws.ecr.html"  >aws.ecr</a></li>
 		<li><a class="" href="/devlog/aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub.html"  >aws.eks.Complete CI⁄CD Pipeline with EKS and DockerHub</a></li>
@@ -2010,7 +2013,6 @@
 			<li><a class="" href="/resources/podcasts/one repays a teacher badly if one always remains nothing but a pupil.html"  >one repays a teacher badly if one always remains nothing but a pupil</a></li>
 			<li><a class="" href="/resources/podcasts/pay attention be astonished tell about it.html"  >pay attention be astonished tell about it</a></li>
 			<li><a class="" href="/resources/podcasts/peace begins with a smile.html"  >peace begins with a smile</a></li>
-			<li><a class="" href="/resources/podcasts/people who work get bored when they don t work.html"  >people who work get bored when they don t work</a></li>
 			<li><a class="" href="/resources/podcasts/perfection is finally attained not when.html"  >perfection is finally attained not when</a></li>
 			<li><a class="" href="/resources/podcasts/plans are worthless  but planning is everything.html"  >plans are worthless  but planning is everything</a></li>
 			<li><a class="" href="/resources/podcasts/podcasts.html"  >podcasts</a></li>
@@ -2245,6 +2247,7 @@
 			<li><a class="" href="/swipes/quotes/The ultimate power in life is to be completely self-reliant.html"  >The ultimate power in life is to be completely self-reliant</a></li>
 			<li><a class="" href="/swipes/quotes/To be naked is to be oneself.html"  >To be naked is to be oneself</a></li>
 			<li><a class="" href="/swipes/quotes/beauty is a greater recommendation than any letter of introduction.html"  >beauty is a greater recommendation than any letter of introduction</a></li>
+			<li><a class="" href="/swipes/quotes/people who work get bored when they don t work.html"  >people who work get bored when they don t work</a></li>
 			<li><a class="" href="/swipes/quotes/the basic tool for the manipulation of reality is the manipulation of words.html"  >the basic tool for the manipulation of reality is the manipulation of words</a></li>
 			<li><a class="" href="/swipes/quotes/the real problem of humanity is the following.html"  >the real problem of humanity is the following</a></li>
 			<li><a class="" href="/swipes/quotes/the unexamined life is not worth living.html"  >the unexamined life is not worth living</a></li>
@@ -2324,6 +2327,7 @@
 <div id="folder-container-18" class="dir-container requires_js " path="/topics">
 	<ul class="dir-list">
 		<li><a class="" href="/topics/Advaita Vedanta.html"  >Advaita Vedanta</a></li>
+		<li><a class="" href="/topics/Attractiveness.html"  >Attractiveness</a></li>
 		<li><a class="" href="/topics/Biomechanics.html"  >Biomechanics</a></li>
 		<li><a class="" href="/topics/Breathing.html"  >Breathing</a></li>
 		<li><a class="" href="/topics/Cloud native.html"  >Cloud native</a></li>
@@ -2333,7 +2337,6 @@
 		<li><a class="" href="/topics/Eros.html"  >Eros</a></li>
 		<li><a class="" href="/topics/Exercises.html"  >Exercises</a></li>
 		<li><a class="" href="/topics/Existentialism.html"  >Existentialism</a></li>
-		<li><a class="" href="/topics/Face.html"  >Face</a></li>
 		<li><a class="" href="/topics/Feminism.html"  >Feminism</a></li>
 		<li><a class="" href="/topics/Habits.html"  >Habits</a></li>
 		<li><a class="" href="/topics/Happiness.html"  >Happiness</a></li>

@@ -143,7 +143,7 @@ Configure the [kubernetes](../devlog/kubernetes.md) provider.
 - Configure `kubectl` with cluster kubeconfig file.   
   - A default file is created when you run `kubectl` for the first time inside the user's home dir `~/.kube/config`   
   - This file contains all the information about the cluster like its endpoint, CA certificate, token, IAM authenticator.   
-- [aws.cli](../devlog/aws.cli.md), `kubectl` and `aws-iam-authenticator` must be installed.   
+- [aws cli](../devlog/aws%20cli.md), `kubectl` and `aws-iam-authenticator` must be installed.   
    
 `aws eks update-kubeconfig --name myapp-eks-cluster --region eu-west-2` to add a new context to `~/.kube/config`.   
    
